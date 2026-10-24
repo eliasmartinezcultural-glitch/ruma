@@ -1,0 +1,85 @@
+name: RUMA — crear guías comunitarias originales
+
+on:
+  push:
+    paths:
+      - ".github/workflows/crear-guias-comunitarias.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crear:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Crear dos guías PDF en español
+        run: |
+          python -m pip install --quiet reportlab pypdf
+          python - <<'PY'
+          from pathlib import Path
+          from reportlab.lib.pagesizes import A4
+          from reportlab.lib import colors
+          from reportlab.lib.units import mm
+          from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+          from reportlab.lib.enums import TA_CENTER
+          from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
+          from pypdf import PdfReader
+
+          out=Path("descargas"); out.mkdir(exist_ok=True)
+          ink=colors.HexColor("#42594b"); muted=colors.HexColor("#655f55"); line=colors.HexColor("#cfc6b5"); soft=colors.HexColor("#f5efe3")
+          s=getSampleStyleSheet()
+          s.add(ParagraphStyle(name="BigR",parent=s["Title"],fontName="Helvetica-Bold",fontSize=22,leading=27,textColor=ink,alignment=TA_CENTER,spaceAfter=9))
+          s.add(ParagraphStyle(name="IntroR",parent=s["Normal"],fontSize=10,leading=15,textColor=muted,alignment=TA_CENTER,spaceAfter=12))
+          s.add(ParagraphStyle(name="HeadR",parent=s["Heading2"],fontSize=14,leading=18,textColor=ink,spaceBefore=4,spaceAfter=8))
+          s.add(ParagraphStyle(name="TextR",parent=s["BodyText"],fontSize=10,leading=14,textColor=ink,spaceAfter=7))
+          s.add(ParagraphStyle(name="QuestionR",parent=s["BodyText"],fontSize=11,leading=15,textColor=ink,spaceAfter=4))
+          def footer(c,doc):
+            c.saveState(); c.setStrokeColor(line); c.line(17*mm,13*mm,A4[0]-17*mm,13*mm)
+            c.setFont("Helvetica",7); c.setFillColor(muted); c.drawString(17*mm,8*mm,"RUMA · Material original · CC BY 4.0"); c.drawRightString(A4[0]-17*mm,8*mm,f"Página {doc.page}"); c.restoreState()
+          def boxed(rows,widths,heights=None):
+            t=Table(rows,colWidths=widths,rowHeights=heights)
+            t.setStyle(TableStyle([("GRID",(0,0),(-1,-1),0.55,line),("VALIGN",(0,0),(-1,-1),"TOP"),("LEFTPADDING",(0,0),(-1,-1),7),("RIGHTPADDING",(0,0),(-1,-1),7),("TOPPADDING",(0,0),(-1,-1),7),("BOTTOMPADDING",(0,0),(-1,-1),7)]))
+            return t
+          # Guide 1: oral memory and local stories.
+          p=out/"historias-que-guarda-nuestro-lugar.pdf"
+          doc=SimpleDocTemplate(str(p),pagesize=A4,rightMargin=17*mm,leftMargin=17*mm,topMargin=16*mm,bottomMargin=18*mm,title="Historias que guarda nuestro lugar",author="RUMA")
+          story=[Spacer(1,8*mm),Paragraph("HISTORIAS QUE GUARDA<br/>NUESTRO LUGAR",s["BigR"]),Paragraph("Un cuaderno para escuchar recuerdos familiares y del pueblo con respeto",s["IntroR"]),Spacer(1,8*mm),Paragraph("Cada persona guarda una parte de la historia. No hace falta ser historiador: alcanza con escuchar, preguntar con cariño y anotar lo que alguien desea compartir.",s["TextR"]),Spacer(1,5*mm)]
+          story += [boxed([[Paragraph("<b>Nombre o apodo de quien cuenta (solo si quiere)</b><br/><br/>",s["TextR"])],[Paragraph("<b>Fecha y lugar aproximados del recuerdo</b><br/><br/>",s["TextR"])],[Paragraph("<b>¿Por qué elegí escuchar esta historia?</b><br/><br/><br/>",s["TextR"])]],[165*mm],[30*mm,30*mm,42*mm]),PageBreak()]
+          story += [Paragraph("1. Escuchar antes de anotar",s["HeadR"]),Paragraph("Podés elegir algunas preguntas. No hace falta hacerlas todas ni insistir si la persona no quiere responder.",s["TextR"])]
+          for q in ["¿Cómo era este lugar cuando eras chico o chica?","¿Qué sonido, aroma o paisaje recordás con cariño?","¿Qué trabajo, costumbre o celebración era importante?","¿Qué cosa cambió y qué cosa sigue igual?","¿Hay alguna palabra o expresión que quieras enseñarme?"]:
+            story += [Paragraph(q,s["QuestionR"]),Spacer(1,15*mm)]
+          story += [PageBreak(),Paragraph("2. Lo que quiero conservar",s["HeadR"]),Paragraph("Escribí el recuerdo con tus palabras. Si usás una frase exacta, preguntá si la podés citar.",s["TextR"]),Spacer(1,3*mm)]
+          story += [boxed([[""],[""],[""],[""],[""]],[165*mm],[32*mm]*5),Spacer(1,6*mm),Paragraph("Antes de publicar: pedí permiso para compartir nombres, fotos, grabaciones o detalles personales. Una historia familiar puede guardarse en privado; no todo necesita estar en internet.",s["TextR"]),PageBreak()]
+          story += [Paragraph("3. Cuidar la memoria",s["HeadR"]),Paragraph("Una memoria es valiosa aunque no recuerde cada fecha con exactitud. Si el dato importa para una investigación, comparalo con otras fuentes y anotá qué parte es recuerdo personal y qué parte está documentada.",s["TextR"]),Spacer(1,4*mm)]
+          for q in ["¿Qué parte de esta historia puedo verificar?","¿Hay otra persona o documento que pueda aportar contexto?","¿Qué aprendí sobre mi familia o mi comunidad?","¿Qué me gustaría preguntarle la próxima vez?"]:
+            story += [Paragraph(q,s["QuestionR"]),Spacer(1,17*mm)]
+          story += [Paragraph("Material original de RUMA. Licencia CC BY 4.0. Compartí y adaptá citando a RUMA.",s["IntroR"])]
+          doc.build(story,onFirstPage=footer,onLaterPages=footer)
+          # Guide 2: browser downloads and safety.
+          p=out/"descargar-sin-miedo-guia-sencilla.pdf"
+          doc=SimpleDocTemplate(str(p),pagesize=A4,rightMargin=17*mm,leftMargin=17*mm,topMargin=16*mm,bottomMargin=18*mm,title="Descargar sin miedo",author="RUMA")
+          story=[Spacer(1,6*mm),Paragraph("DESCARGAR SIN MIEDO",s["BigR"]),Paragraph("Una guía sencilla para encontrar, abrir y cuidar tus archivos",s["IntroR"]),Paragraph("1. Elegí el archivo",s["HeadR"]),Paragraph("Leé el título y la descripción. Mirá el formato: PDF suele servir para leer o imprimir; CSV es una tabla de datos y puede abrirse con una aplicación de hojas de cálculo. Si no sabés qué es un formato, no hace falta descargarlo enseguida.",s["TextR"]),Paragraph("2. Tocá o hacé clic en “Descargar”",s["HeadR"]),Paragraph("El navegador puede mostrar una flecha de descarga o avisarte que el archivo se guardó. Si aparece una ventana inesperada, un pedido de contraseña o una oferta para instalar algo, detenete y no aceptes sin entenderlo.",s["TextR"]),Paragraph("3. Encontrá el archivo",s["HeadR"]),Paragraph("En muchos navegadores, las descargas recientes aparecen en el menú de descargas, identificado con una flecha hacia abajo. En teléfonos, el archivo suele estar en la aplicación Archivos o Descargas. El nombre y el lugar exacto pueden variar según el dispositivo.",s["TextR"]),PageBreak(),Paragraph("4. Abrí el archivo con calma",s["HeadR"]),Paragraph("Un PDF normalmente se abre en el navegador o en un lector de PDF que ya tengas. Un CSV es una tabla: si aparece como texto con punto y coma, no significa necesariamente que esté roto. No instales programas desconocidos solo porque una página lo sugiera.",s["TextR"]),Paragraph("5. Si usás un equipo compartido",s["HeadR"]),Paragraph("No guardes contraseñas ni información privada. Evitá descargar documentos personales. Cerrá tus cuentas al terminar y preguntá antes de borrar archivos que puedan pertenecer a otra persona. Si solo querés leer algo, podés abrirlo en el navegador cuando esa opción esté disponible.",s["TextR"]),Paragraph("6. Cómo reconocer una descarga más confiable",s["HeadR"]),Paragraph("Preferí páginas conocidas, mirá quién publica el archivo y leé la descripción. Si el título no coincide, el archivo pide datos que no necesitás o aparecen mensajes alarmantes, cerrá la página. RUMA no te pide una cuenta, contraseña ni pago para descargar recursos.",s["TextR"]),Spacer(1,4*mm)]
+          story += [boxed([[Paragraph("<b>Recordatorio</b><br/>Descargar un archivo no significa que debas instalar nada, entregar datos personales ni pagar. Podés detenerte y pedir ayuda cuando algo no te resulte claro.",s["TextR"])]],[165*mm],[35*mm]),Spacer(1,7*mm),Paragraph("Material original de RUMA. Licencia CC BY 4.0. Compartí y adaptá citando a RUMA.",s["IntroR"])]
+          doc.build(story,onFirstPage=footer,onLaterPages=footer)
+          checks={
+            "historias-que-guarda-nuestro-lugar.pdf":["HISTORIAS QUE GUARDA","Escuchar antes de anotar","Cuidar la memoria"],
+            "descargar-sin-miedo-guia-sencilla.pdf":["DESCARGAR SIN MIEDO","equipo compartido","RUMA no te pide una cuenta"],
+          }
+          for name,phrases in checks.items():
+            path=out/name; reader=PdfReader(str(path)); extracted=" ".join(page.extract_text() or "" for page in reader.pages)
+            if len(reader.pages)<2 or path.stat().st_size<2500: raise SystemExit(f"PDF inválido: {name}")
+            for phrase in phrases:
+              if phrase not in extracted: raise SystemExit(f"{name}: falta {phrase}")
+            print(f"OK {name}: {len(reader.pages)} páginas, {path.stat().st_size} bytes")
+          PY
+      - name: Publicar las guías en RUMA
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add descargas/historias-que-guarda-nuestro-lugar.pdf descargas/descargar-sin-miedo-guia-sencilla.pdf
+          git commit -m "Añade cuaderno de memoria local y guía de descargas"
+          git pull --rebase origin main
+          git push
