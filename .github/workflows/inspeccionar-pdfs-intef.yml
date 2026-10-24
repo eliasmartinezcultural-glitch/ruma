@@ -25,7 +25,9 @@ jobs:
           out=Path("salida-intef"); out.mkdir(exist_ok=True)
           items=[
             ("ficha-partes-del-cuerpo.pdf","https://descargas.intef.es/recursos_educativos/RED_ES/02_Primaria/1/P_1_004_2025_0202/P_1_004_2025_0202_IL_02025.pdf","PENTEC; recurso Mi cuerpo por dentro y por fuera; CC BY-SA 4.0; fuente de la página de sesión y créditos."),
-            ("ficha-descripcion-de-objetos.pdf","https://descargas.intef.es/recursos_educativos/RED_ES/02_Primaria/2/P_2_004_2025_0225/P_2_004_2025_0225_IL_02483.pdf","PENTEC; recurso Los inventos; CC BY-SA 4.0; ficha para describir tres objetos.")
+            ("ficha-descripcion-de-objetos.pdf","https://descargas.intef.es/recursos_educativos/RED_ES/02_Primaria/2/P_2_004_2025_0225/P_2_004_2025_0225_IL_02483.pdf","PENTEC; recurso Los inventos; CC BY-SA 4.0; ficha para describir tres objetos."),
+            ("mis-oraciones-con-dados.pdf","https://descargas.intef.es/recursos_educativos/It_didac/Leng_Pri/2/09/La_oracin/MIS_ORACIONES_CON_DADOS.pdf","Área de Recursos Educativos Digitales (INTEF); licencia CC BY-SA 4.0 España declarada en el propio PDF."),
+            ("crea-tus-dados.pdf","https://descargas.intef.es/recursos_educativos/It_didac/Leng_Pri/2/09/La_oracin/CREA_TUS_DADOS.pdf","Área de Recursos Educativos Digitales (INTEF); licencia CC BY-SA 4.0 España declarada en el propio PDF.")
           ]
           report=["# Inspección de fichas educativas CC BY-SA 4.0",""]
           for name,url,lic in items:
@@ -40,6 +42,8 @@ jobs:
               if len(data)<1000: raise ValueError("Archivo demasiado pequeño")
               report += [f"- Tamaño: {len(data)} bytes",f"- SHA-256: {hashlib.sha256(data).hexdigest()}",f"- Páginas: {len(reader.pages)}",f"- Texto extraído: {text[:500]!r}"]
               if name.startswith("ficha-descripcion") and "Objeto 1" not in text: raise ValueError("No aparece el contenido esperado.")
+              if name.startswith("mis-oraciones") and "MIS ORACIONES CON DADOS" not in text: raise ValueError("No aparece el título esperado.")
+              if name.startswith("crea-tus-dados") and "CREA TUS DADOS" not in text: raise ValueError("No aparece el título esperado.")
             except Exception as e: report.append(f"- ERROR: {type(e).__name__}: {e}")
             report.append("")
           (out/"INFORME.md").write_text("\\n".join(report)+"\\n",encoding="utf-8")
