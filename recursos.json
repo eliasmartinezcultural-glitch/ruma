@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "updated": "2026-10-24",
   "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
   "resources": [
@@ -402,6 +402,46 @@
       "download": "descargas/ficha-descripcion-de-objetos-intef.pdf",
       "author": "PENTEC · recurso educativo abierto de INTEF",
       "source": "https://descargas.intef.es/recursos_educativos/RED_ES/02_Primaria/2/P_2_004_2025_0225/crditos.html"
+    },
+    {
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY-SA 4.0 España",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+      "author": "Área de Recursos Educativos Digitales · INTEF",
+      "source": "https://descargas.intef.es/recursos_educativos/It_didac/Leng_Pri/2/09/La_oracin/actividades_de_ampliacin.html",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "mis-oraciones-con-dados-intef",
+      "title": "Mis oraciones con dados — inventá y escribí",
+      "description": "Plantilla para lanzar dados, dibujar los objetos que salieron y crear oraciones propias. Una actividad sencilla para practicar escritura e imaginación; licencia indicada en el propio PDF.",
+      "category": "crear",
+      "subcategory": "escritura-y-juego",
+      "format": "PDF · 1 página A4",
+      "sizeLabel": "1,34 MB",
+      "download": "descargas/mis-oraciones-con-dados-intef.pdf"
+    },
+    {
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY-SA 4.0 España",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+      "author": "Área de Recursos Educativos Digitales · INTEF",
+      "source": "https://descargas.intef.es/recursos_educativos/It_didac/Leng_Pri/2/09/La_oracin/actividades_de_ampliacin.html",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "crea-tus-dados-intef",
+      "title": "Crea tus dados — plantilla para recortar y armar",
+      "description": "Plantilla imprimible para crear dados propios y usarlos en juegos de palabras o historias. Requiere tijera y pegamento para montar; supervisión adulta recomendada para niñas y niños pequeños.",
+      "category": "crear",
+      "subcategory": "manualidades-y-juego",
+      "format": "PDF · 1 página A4",
+      "sizeLabel": "1,34 MB",
+      "download": "descargas/crea-tus-dados-intef.pdf"
     }
   ]
 }
