@@ -4,11 +4,12 @@ RUMA es un autoservicio digital gratuito y tranquilo para encontrar recursos út
 
 ## Estado del catálogo — 24 de octubre de 2026
 
-Hay 18 recursos catalogados con archivos alojados en \`descargas/\`:
+Hay 20 recursos catalogados con archivos alojados en \`descargas/\`:
 
 - 3 PDF de pasatiempos de un proyecto que declara CC0 1.0; están en inglés y así se indica en las fichas.
 - 6 archivos de datos abiertos de Neuquén: espacios culturales, nomenclador territorial, datos censales, instrumentos de planificación y GeoJSON regional.
 - 1 tabla de 24 jurisdicciones argentinas y sus códigos oficiales, generada desde el Servicio Georef (CC BY 4.0).
+- 2 fichas educativas de PENTEC/INTEF en español, con licencia CC BY-SA 4.0.
 - 1 extracto de tres espacios culturales de San Patricio del Chañar, derivado de la base provincial y sin domicilios ni coordenadas.
 - 1 mapa esquemático A4 creado por RUMA a partir del GeoJSON oficial.
 - 6 PDF originales de RUMA en español: cuaderno de exploración local, agenda semanal, cuaderno de plantas, marcapáginas, cuaderno de memoria oral y guía de descargas seguras.
