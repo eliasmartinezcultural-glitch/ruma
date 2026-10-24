@@ -22,7 +22,7 @@ La integración de GitHub conectada permite editar y crear archivos de texto des
 
 ## Límite actual
 
-Las acciones conectadas de GitHub para crear o reemplazar archivos de texto no bastan por sí solas para transferir un PDF binario. La vía de automatización propuesta es GitHub Actions en la nube, con artefactos temporales de inspección y una segunda etapa de publicación deliberada. La etapa de inspección no debe publicar automáticamente en la web recursos todavía no revisados.
+Las acciones conectadas de GitHub para crear o reemplazar archivos de texto no transfieren por sí solas un PDF binario. Ya se probó un flujo cloud con GitHub Actions: inspección temporal con artefactos de siete días y publicación deliberada mediante una lista cerrada de archivos, validación de SHA-256 y commit a descargas/. Este mecanismo ya publicó tres PDF CC0 y tres CSV CC BY 4.0. La etapa de inspección no publica automáticamente; la etapa de publicación solo acepta IDs y huellas previamente aprobados.
 
 ## Condiciones para publicar
 
