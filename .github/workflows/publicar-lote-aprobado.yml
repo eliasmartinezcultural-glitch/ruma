@@ -93,4 +93,5 @@ jobs:
             exit 0
           fi
           git commit -m "Publica lote 01 de recursos revisados"
+          git pull --rebase origin main
           git push
