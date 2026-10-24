@@ -1,0 +1,114 @@
+name: RUMA — crear kit de imprimibles originales
+
+on:
+  push:
+    paths:
+      - ".github/workflows/crear-kit-imprimibles.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crear:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Crear tres PDF en español en la nube
+        run: |
+          python -m pip install --quiet reportlab pypdf
+          python - <<'PY'
+          from pathlib import Path
+          from reportlab.lib.pagesizes import A4
+          from reportlab.lib import colors
+          from reportlab.lib.units import mm
+          from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+          from reportlab.lib.enums import TA_CENTER
+          from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
+          from pypdf import PdfReader
+
+          out=Path("descargas"); out.mkdir(exist_ok=True)
+          ink=colors.HexColor("#394b40"); line=colors.HexColor("#9aa495"); soft=colors.HexColor("#f4efe4")
+          styles=getSampleStyleSheet()
+          styles.add(ParagraphStyle(name="RTitle",parent=styles["Title"],fontName="Helvetica-Bold",fontSize=22,leading=27,textColor=ink,alignment=TA_CENTER,spaceAfter=8))
+          styles.add(ParagraphStyle(name="RSub",parent=styles["Normal"],fontSize=10,leading=14,textColor=colors.HexColor("#6b6559"),alignment=TA_CENTER,spaceAfter=12))
+          styles.add(ParagraphStyle(name="RHead",parent=styles["Heading2"],fontSize=12,leading=15,textColor=ink,spaceAfter=5))
+          styles.add(ParagraphStyle(name="RText",parent=styles["BodyText"],fontSize=9,leading=12,textColor=ink))
+          def footer(c,doc):
+            c.saveState(); c.setStrokeColor(line); c.line(16*mm,13*mm,A4[0]-16*mm,13*mm)
+            c.setFont("Helvetica",7); c.setFillColor(colors.HexColor("#6b6559"))
+            c.drawString(16*mm,8*mm,"RUMA · Material original para imprimir")
+            c.drawRightString(A4[0]-16*mm,8*mm,f"Página {doc.page}"); c.restoreState()
+          def table_style(tbl,header=False):
+            rules=[("GRID",(0,0),(-1,-1),0.55,line),("VALIGN",(0,0),(-1,-1),"TOP"),("LEFTPADDING",(0,0),(-1,-1),6),("RIGHTPADDING",(0,0),(-1,-1),6),("TOPPADDING",(0,0),(-1,-1),6),("BOTTOMPADDING",(0,0),(-1,-1),6)]
+            if header: rules.append(("BACKGROUND",(0,0),(-1,0),soft))
+            tbl.setStyle(TableStyle(rules))
+          # 1) Agenda semanal simple, A4.
+          p=out/"agenda-semanal-simple-ruma.pdf"
+          doc=SimpleDocTemplate(str(p),pagesize=A4,rightMargin=16*mm,leftMargin=16*mm,topMargin=14*mm,bottomMargin=18*mm,title="Agenda semanal simple",author="RUMA")
+          story=[Paragraph("MI SEMANA, A MI RITMO",styles["RTitle"]),Paragraph("Una hoja sencilla para ordenar lo importante sin llenar el día de obligaciones.",styles["RSub"]),Paragraph("Semana del: _____________________   Algo importante para recordar: __________________________________",styles["RText"]),Spacer(1,5*mm)]
+          data=[[Paragraph("<b>Día</b>",styles["RText"]),Paragraph("<b>Lo principal</b>",styles["RText"]),Paragraph("<b>Un pequeño paso</b>",styles["RText"]),Paragraph("<b>Listo</b>",styles["RText"])]]
+          for day in ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]:
+            data.append([Paragraph(f"<b>{day}</b>",styles["RText"]),"","","□"])
+          t=Table(data,colWidths=[25*mm,62*mm,62*mm,18*mm],rowHeights=[11*mm]+[24*mm]*7); table_style(t,True); story += [t,Spacer(1,7*mm),Paragraph("<b>Si me queda tiempo:</b>",styles["RText"]),Spacer(1,5*mm)]
+          notes=Table([[""],[""],[""]],colWidths=[167*mm],rowHeights=[12*mm]*3); table_style(notes); story += [notes,Spacer(1,6*mm),Paragraph("Recordatorio amable: no hace falta hacer todo. Elegí una cosa posible y empezá por ahí.",styles["RSub"])]
+          doc.build(story,onFirstPage=footer,onLaterPages=footer)
+          # 2) Cuaderno de observación y jardín, 4 páginas.
+          p=out/"cuaderno-mi-rincon-verde-ruma.pdf"
+          doc=SimpleDocTemplate(str(p),pagesize=A4,rightMargin=17*mm,leftMargin=17*mm,topMargin=16*mm,bottomMargin=18*mm,title="Mi rincón verde",author="RUMA")
+          story=[Spacer(1,12*mm),Paragraph("MI RINCÓN VERDE",styles["RTitle"]),Paragraph("Cuaderno de huerta, plantas y pequeñas observaciones",styles["RSub"]),Spacer(1,8*mm),Paragraph("No hace falta tener un jardín grande. Una maceta, una ventana o un árbol del barrio pueden ser el comienzo.",styles["RText"]),Spacer(1,18*mm)]
+          cover=Table([[Paragraph("<b>Mi planta o lugar elegido</b><br/><br/><br/>",styles["RText"])],[Paragraph("<b>Fecha en que empecé</b><br/><br/>",styles["RText"])],[Paragraph("<b>Qué me gustaría descubrir</b><br/><br/><br/>",styles["RText"])]],colWidths=[165*mm],rowHeights=[45*mm,30*mm,45*mm]); table_style(cover); story += [cover,PageBreak()]
+          story += [Paragraph("1. Observar sin apurarse",styles["RHead"]),Paragraph("Anotá lo que ves. Si no sabés el nombre de algo, podés describirlo o dibujarlo.",styles["RText"]),Spacer(1,4*mm)]
+          obs=[["Fecha","¿Qué veo?","¿Qué cambió?","Clima / sensación"]]+[["","","",""] for _ in range(7)]
+          t=Table(obs,colWidths=[24*mm,53*mm,48*mm,40*mm],rowHeights=[11*mm]+[22*mm]*7); table_style(t,True); story += [t,PageBreak()]
+          story += [Paragraph("2. El cuidado que puedo ofrecer",styles["RHead"]),Paragraph("Las plantas necesitan cuidados diferentes. Antes de regar mucho o cambiar una planta de lugar, averiguá qué necesita esa especie.",styles["RText"]),Spacer(1,5*mm)]
+          care=[["Día","¿Regué?","¿Recibió luz?","¿Qué hice?"]]+[["","","",""] for _ in range(7)]
+          t=Table(care,colWidths=[27*mm,30*mm,38*mm,70*mm],rowHeights=[11*mm]+[22*mm]*7); table_style(t,True); story += [t,Spacer(1,8*mm),Paragraph("Una pregunta para investigar:",styles["RHead"]),Spacer(1,5*mm)]
+          q=Table([[""],[""],[""]],colWidths=[165*mm],rowHeights=[14*mm]*3); table_style(q); story += [q,PageBreak()]
+          story += [Paragraph("3. Dibujo de lo que descubrí",styles["RHead"]),Paragraph("Dibujá una hoja, una flor, una semilla, un insecto o un rincón que te haya llamado la atención. Observá sin arrancar ni lastimar.",styles["RText"]),Spacer(1,5*mm)]
+          draw=Table([[""]],colWidths=[165*mm],rowHeights=[170*mm]); table_style(draw); story += [draw,Spacer(1,5*mm),Paragraph("Material original de RUMA. Licencia CC BY 4.0. Reutilizá y compartí citando a RUMA.",styles["RSub"])]
+          doc.build(story,onFirstPage=footer,onLaterPages=footer)
+          # 3) Marcapáginas de bajo consumo de tinta.
+          p=out/"marcapaginas-para-compartir-ruma.pdf"
+          doc=SimpleDocTemplate(str(p),pagesize=A4,rightMargin=18*mm,leftMargin=18*mm,topMargin=18*mm,bottomMargin=18*mm,title="Marcapáginas para compartir",author="RUMA")
+          story=[Paragraph("MARCAPÁGINAS PARA COMPARTIR",styles["RTitle"]),Paragraph("Imprimí, recortá por las líneas y regalá uno a alguien que disfrute leer.",styles["RSub"]),Spacer(1,5*mm)]
+          messages=[
+            ("Un ratito de lectura también es un descanso.","RUMA · Un rinconcito para compartir"),
+            ("Las historias hacen compañía.","Que nunca falte la curiosidad."),
+            ("Cada página puede abrir una ventana.","Leé a tu ritmo, sin apuro."),
+            ("Un libro, una pausa, un mate.","Compartir también es regalar tiempo."),
+          ]
+          rows=[]
+          for i in range(0,4,2):
+            row=[]
+            for msg,sub in messages[i:i+2]:
+              row.append(Paragraph(f'<font size="14"><b>{msg}</b></font><br/><br/><font size="9">{sub}</font><br/><br/><font size="8">✿ RUMA</font>',styles["RText"]))
+            rows.append(row)
+          t=Table(rows,colWidths=[82*mm,82*mm],rowHeights=[105*mm,105*mm]); table_style(t)
+          story += [t,Spacer(1,4*mm),Paragraph("Sugerencia: imprimí en papel común o reciclado. No necesitás cartulina especial.",styles["RSub"])]
+          doc.build(story,onFirstPage=footer,onLaterPages=footer)
+          # Verify all PDFs and their contents.
+          checks={
+            "agenda-semanal-simple-ruma.pdf":["MI SEMANA","Lunes","Domingo"],
+            "cuaderno-mi-rincon-verde-ruma.pdf":["MI RINCÓN VERDE","Observar sin apurarse","Dibujo de lo que descubrí"],
+            "marcapaginas-para-compartir-ruma.pdf":["MARCAPÁGINAS PARA COMPARTIR","Las historias hacen compañía"],
+          }
+          for filename,phrases in checks.items():
+            path=out/filename; reader=PdfReader(str(path))
+            extracted=" ".join(page.extract_text() or "" for page in reader.pages)
+            if len(reader.pages)<1 or path.stat().st_size<2500:
+              raise SystemExit(f"PDF ausente, vacío o pequeño: {filename}")
+            for phrase in phrases:
+              if phrase not in extracted:
+                raise SystemExit(f"{filename}: falta el texto {phrase}")
+            print(f"OK {filename}: {len(reader.pages)} páginas, {path.stat().st_size} bytes")
+          PY
+      - name: Publicar los tres PDF dentro de RUMA
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add descargas/agenda-semanal-simple-ruma.pdf descargas/cuaderno-mi-rincon-verde-ruma.pdf descargas/marcapaginas-para-compartir-ruma.pdf
+          git commit -m "Añade tres imprimibles originales en español"
+          git pull --rebase origin main
+          git push
