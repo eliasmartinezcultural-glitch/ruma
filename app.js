@@ -45,6 +45,14 @@ function renderResources() {
       (region === "todas" || item.region === region) &&
       (language === "todos" || item.language === language) &&
       text.includes(term);
+  }).sort((a, b) => {
+    // Orden editorial: primero lo local, después papelería e imprimibles.
+    const rank = item => item.region === "chanar" ? 0
+      : item.subcategory === "papelería" ? 1
+      : item.category === "crear" ? 2
+      : String(item.format || "").includes("PDF") ? 3
+      : 4;
+    return rank(a) - rank(b) || String(a.title).localeCompare(String(b.title), "es");
   });
 
   if (resultCount) {
