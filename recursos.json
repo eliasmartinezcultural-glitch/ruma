@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "updated": "2026-10-24",
   "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
   "resources": [
@@ -182,6 +182,26 @@
       "download": "descargas/regiones-neuquen.geojson",
       "author": "COPADE · Ministerio de Planificación, Innovación y Modernización",
       "source": "https://portaldatosabiertos.neuquen.gov.ar/dataset/capa-de-regiones-de-la-provincia-del-neuquen"
+    },
+    {
+      "id": "cuaderno-exploracion-chanar",
+      "title": "Chañar para mirar despacio — cuaderno de exploración",
+      "description": "Cuaderno original de cinco páginas para observar el entorno, dibujar un mapa personal de recuerdos y recoger historias del pueblo con permiso. Para imprimir en A4, usar en casa o en la escuela. Incluye enlaces a fuentes municipales oficiales; no contiene mapas ni fotografías copiadas.",
+      "category": "aprender",
+      "subcategory": "actividades-locales",
+      "region": "chanar",
+      "regionLabel": "San Patricio del Chañar",
+      "language": "es",
+      "languageLabel": "Español",
+      "format": "PDF · 5 páginas A4",
+      "sizeLabel": "7,7 KB",
+      "download": "descargas/cuaderno-exploracion-san-patricio-del-chanar.pdf",
+      "licenseLabel": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "RUMA · material original",
+      "source": "https://www.sanpatricio.gob.ar/identidad",
+      "reviewedOn": "2026-10-24",
+      "approved": true
     }
   ]
 }
