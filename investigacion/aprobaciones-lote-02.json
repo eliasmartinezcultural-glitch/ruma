@@ -1,0 +1,22 @@
+{
+  "lote": "02",
+  "revisado": "2026-10-24",
+  "nota": "Archivos descargados desde el Portal de Datos Abiertos de Neuquén en entorno remoto. Se revisaron licencia CC BY 4.0 declarada por el dataset, encabezados, codificación, separador, filas y muestras. Los archivos se publican sin modificar; sus fechas de corte se describen claramente. Verificar la actualidad antes de usar direcciones o datos culturales.",
+  "resources": [
+    {
+      "id": "espacios-culturales-neuquen",
+      "approved": true,
+      "review": "CSV original, 360 registros de datos y 10 columnas, relevamiento hasta marzo de 2025. Incluye nombres, tipos, localidad, acceso, dependencia, domicilio y coordenadas; no se presenta como directorio en tiempo real."
+    },
+    {
+      "id": "nomenclador-neuquen",
+      "approved": true,
+      "review": "CSV original, 59 filas de datos y 7 columnas. Incluye nombres y códigos de regiones, departamentos y gobiernos locales, incluido San Patricio del Chañar."
+    },
+    {
+      "id": "poblacion-neuquen-censos",
+      "approved": true,
+      "review": "CSV original, 51 filas de datos y 6 columnas. Datos censales por departamento de 2001, 2010 y 2022; se identifica como histórico, no estimación actual."
+    }
+  ]
+}
