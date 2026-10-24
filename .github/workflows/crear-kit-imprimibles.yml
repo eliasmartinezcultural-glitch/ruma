@@ -38,7 +38,7 @@ jobs:
           def footer(c,doc):
             c.saveState(); c.setStrokeColor(line); c.line(16*mm,13*mm,A4[0]-16*mm,13*mm)
             c.setFont("Helvetica",7); c.setFillColor(colors.HexColor("#6b6559"))
-            c.drawString(16*mm,8*mm,"RUMA · Material original para imprimir")
+            c.drawString(16*mm,8*mm,"RUMA · Material original · CC BY 4.0")
             c.drawRightString(A4[0]-16*mm,8*mm,f"Página {doc.page}"); c.restoreState()
           def table_style(tbl,header=False):
             rules=[("GRID",(0,0),(-1,-1),0.55,line),("VALIGN",(0,0),(-1,-1),"TOP"),("LEFTPADDING",(0,0),(-1,-1),6),("RIGHTPADDING",(0,0),(-1,-1),6),("TOPPADDING",(0,0),(-1,-1),6),("BOTTOMPADDING",(0,0),(-1,-1),6)]
