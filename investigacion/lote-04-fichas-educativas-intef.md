@@ -1,7 +1,7 @@
 # Lote 04 — fichas educativas abiertas en español
 
 Fecha de revisión: 2026-10-24  
-Estado: dos fichas PDF originales de PENTEC/INTEF fueron inspeccionadas en GitHub Actions y alojadas en RUMA.
+Estado: cuatro fichas PDF educativas de INTEF/PENTEC fueron inspeccionadas en GitHub Actions y alojadas en RUMA. Las dos primeras pertenecen a recursos educativos abiertos cuyos créditos declaran CC BY-SA 4.0; las otras dos incluyen la licencia CC BY-SA 4.0 España en el propio PDF.
 
 ## 1. Partes del cuerpo humano
 - Archivo: \`descargas/ficha-partes-del-cuerpo-intef.pdf\`
