@@ -1,0 +1,99 @@
+name: RUMA — inspección de datos abiertos de Neuquén
+
+on:
+  push:
+    paths:
+      - ".github/workflows/inspeccionar-datos-neuquen.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspeccionar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Preparar entorno de inspección en la nube
+        uses: actions/checkout@v4
+
+      - name: Descargar y revisar CSV oficiales (sin publicarlos)
+        run: |
+          python - <<'PY'
+          import csv, hashlib, io, urllib.request
+          from pathlib import Path
+
+          out = Path("salida-inspeccion-neuquen")
+          out.mkdir(parents=True, exist_ok=True)
+          datasets = [
+              ("espacios-culturales.csv", "https://portaldatosabiertos.neuquen.gov.ar/dataset/9f0b080d-9ce2-4fe8-bb58-c6423d46e3de/resource/b4781225-e22f-4252-8912-75b87b3fde78/download/espaciosculturales_odafyc_3-25.csv", "Espacios culturales de Neuquén; relevamiento hasta marzo de 2025; CC BY 4.0"),
+              ("nomenclador-territorial.csv", "https://portaldatosabiertos.neuquen.gov.ar/dataset/3a53436c-7767-455f-9f39-bbbbd1e9a29c/resource/4438f5ef-91e9-4e51-aa57-e5c368f9a6fc/download/codigos-regiones-departamentos-y-gobiernos-locales.csv", "Nomenclador territorial de Neuquén; CC BY 4.0"),
+              ("poblacion-departamentos-censos.csv", "https://portaldatosabiertos.neuquen.gov.ar/dataset/2ed87b73-74a7-45f4-804b-1a4e6d8fa68b/resource/b24eb9e1-695f-4efa-b465-644486dde6e3/download/poblacion-censos-2001-2010-2022.csv", "Población por departamento; censos 2001, 2010 y 2022; CC BY 4.0"),
+          ]
+          report = [
+              "# Inspección remota — datos abiertos de Neuquén",
+              "",
+              "Los archivos de este artefacto son temporales para análisis; no se publican automáticamente en RUMA.",
+              "Las fichas de origen declaran CC BY 4.0. Atribuir al organismo responsable y enlazar el dataset.",
+              "",
+          ]
+          for filename, url, note in datasets:
+              report += [f"## {filename}", "", note, f"Origen: {url}", ""]
+              try:
+                  req = urllib.request.Request(url, headers={"User-Agent": "RUMA-OpenData-Review/1.0"})
+                  with urllib.request.urlopen(req, timeout=40) as response:
+                      raw = response.read(10 * 1024 * 1024 + 1)
+                  if len(raw) > 10 * 1024 * 1024:
+                      raise ValueError("CSV superior a 10 MiB; requiere revisión específica.")
+                  (out / filename).write_bytes(raw)
+                  report.append(f"- Tamaño: {len(raw)} bytes")
+                  report.append(f"- SHA-256: {hashlib.sha256(raw).hexdigest()}")
+                  text = None
+                  encoding = None
+                  for candidate in ("utf-8-sig", "utf-8", "cp1252", "latin-1"):
+                      try:
+                          text = raw.decode(candidate)
+                          encoding = candidate
+                          break
+                      except UnicodeDecodeError:
+                          continue
+                  if text is None:
+                      raise ValueError("No se pudo decodificar el archivo como texto.")
+                  sample = text[:10000]
+                  try:
+                      dialect = csv.Sniffer().sniff(sample, delimiters=",;\\t|")
+                      delimiter = dialect.delimiter
+                  except Exception:
+                      delimiter = ","
+                  reader = csv.reader(io.StringIO(text), delimiter=delimiter)
+                  rows = list(reader)
+                  report.append(f"- Codificación: {encoding}; separador detectado: {repr(delimiter)}")
+                  report.append(f"- Filas incluidas, contando encabezado: {len(rows)}")
+                  report.append(f"- Cantidad de columnas del encabezado: {len(rows[0]) if rows else 0}")
+                  report.append(f"- Encabezado: {repr(rows[0] if rows else [])}")
+                  report.append("- Muestra de filas:")
+                  for row in rows[1:6]:
+                      report.append("  - " + repr(row[:12]))
+                  if any(any(term in cell.lower() for term in ("dni", "documento", "email personal", "teléfono personal")) for row in rows[:20] for cell in row):
+                      report.append("- ALERTA: revisar posibles campos personales antes de publicar.")
+                  if not rows or len(rows[0]) < 2:
+                      report.append("- ALERTA: estructura inesperada; no aprobar sin inspección manual.")
+              except Exception as exc:
+                  report.append(f"- ERROR: {type(exc).__name__}: {exc}")
+              report.append("")
+          report += [
+              "## Decisión",
+              "",
+              "No se aprueba ningún archivo automáticamente. Revisar campos, actualidad, privacidad, licencia de la ficha y utilidad pública. El CSV cultural tiene fecha de relevamiento hasta marzo de 2025; no presentarlo como directorio en tiempo real.",
+          ]
+          (out / "INFORME.md").write_text("\\n".join(report) + "\\n", encoding="utf-8")
+          print((out / "INFORME.md").read_text(encoding="utf-8"))
+          PY
+
+      - name: Guardar paquete de inspección por siete días
+        uses: actions/upload-artifact@v4
+        with:
+          name: ruma-datos-neuquen-inspeccion
+          path: salida-inspeccion-neuquen/
+          if-no-files-found: error
+          retention-days: 7
