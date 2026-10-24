@@ -79,3 +79,21 @@ copyButton?.addEventListener("click", async () => {
 });
 
 renderResources();
+
+
+// Opciones de lectura: simples, visibles y sin guardar datos personales.
+const textLarger = document.querySelector("#text-larger");
+const textSmaller = document.querySelector("#text-smaller");
+const textReset = document.querySelector("#text-reset");
+function setReadingSize(size) {
+  document.body.classList.toggle("text-large", size === "large");
+  document.body.classList.toggle("text-small", size === "small");
+  [textLarger, textSmaller, textReset].forEach(button => {
+    if (button) button.setAttribute("aria-pressed", "false");
+  });
+  const active = size === "large" ? textLarger : size === "small" ? textSmaller : textReset;
+  active?.setAttribute("aria-pressed", "true");
+}
+textLarger?.addEventListener("click", () => setReadingSize("large"));
+textSmaller?.addEventListener("click", () => setReadingSize("small"));
+textReset?.addEventListener("click", () => setReadingSize("normal"));
