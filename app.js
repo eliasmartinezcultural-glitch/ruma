@@ -36,7 +36,7 @@ function renderResources() {
   const filtered = resources.filter(item => {
     const text = [
       item.title, item.description, item.format, item.author,
-      item.regionLabel, item.region, item.subcategory
+      item.regionLabel, item.region, item.subcategory, item.languageLabel
     ].join(" ").toLocaleLowerCase("es");
     return (category === "todas" || item.category === category) &&
       (region === "todas" || item.region === region) &&
@@ -70,6 +70,7 @@ function renderResources() {
       '<div class="resource-details">' +
         (regionLabel ? '<span><strong>Alcance:</strong> ' + escapeHTML(regionLabel) + '</span>' : '') +
         (author ? '<span><strong>Autoría:</strong> ' + escapeHTML(author) + '</span>' : '') +
+        (item.languageLabel ? '<span><strong>Idioma:</strong> ' + escapeHTML(item.languageLabel) + '</span>' : '') +
         (sizeLabel ? '<span><strong>Tamaño:</strong> ' + escapeHTML(sizeLabel) + '</span>' : '') +
         '<span><strong>Licencia:</strong> ' + licenseLink + '</span>' +
         (sourceLink ? '<span>' + sourceLink + '</span>' : '') +
