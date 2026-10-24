@@ -98,6 +98,19 @@ Preferencias: CC0, dominio público confirmado para Argentina, CC BY y CC BY-SA,
 6. Añadir materiales locales y regionales cuando sus licencias estén claras.
 7. Expandir por país e idioma manteniendo las mismas reglas.
 
+## Estado real del proyecto — 2026-10-24
+
+- Catálogo público: seis recursos con archivo real alojado en \`descargas/\`, ficha, licencia, fuente y fecha de revisión.
+- Lote 01: tres PDF declarados CC0 1.0 (laberintos, láminas para colorear y sudokus/variantes). Conservan su idioma original, inglés, y la ficha lo indica.
+- Lote 02: tres CSV del Portal de Datos Abiertos del Neuquén, cuyas fichas declaran CC BY 4.0 (espacios culturales con corte a marzo de 2025, nomenclador territorial y población por censos 2001/2010/2022). Se alojan sin modificar y con atribución.
+- Los seis archivos fueron descargados y verificados en entornos remotos de GitHub Actions; el responsable no tuvo que descargar los archivos a la computadora ajena.
+- Existe un control automático que revisa sintaxis de JavaScript, estructura del catálogo, rutas locales seguras y presencia de cada archivo.
+- La capa geográfica de regiones de Neuquén sigue en investigación; no se publica todavía.
+- El contacto de correcciones y retiro aún no tiene un canal real configurado. No promover ampliamente el sitio hasta resolverlo.
+- La publicación final de GitHub Pages se controla mediante el estado de la acción de despliegue; no considerar un commit como prueba suficiente de que la versión ya está visible.
+
+Próxima prioridad: conseguir materiales imprimibles en español con licencia CC0/CC BY/CC BY-SA; seleccionar ilustraciones CC0 relacionadas con naturaleza, huerta, animales y Patagonia; después sumar materiales locales con permisos claros. Evitar aumentar el catálogo con recursos en inglés solo para inflar el número.
+
 ## No negociables
 - no inventar archivos ni rutas;
 - no declarar un recurso como alojado hasta verificarlo;
