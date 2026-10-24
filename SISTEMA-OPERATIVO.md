@@ -1,7 +1,15 @@
 # RUMA — Sistema operativo interno
 
 ## Propósito
-La interfaz debe sentirse como un rinconcito amable, claro y tranquilo. Por detrás, el catálogo se administra con reglas firmes para que el frente siga siendo fácil de usar y no dependa de que Elías esté conectado.
+RUMA es una biblioteca digital gratuita y curada: investiga materiales que ya existen dispersos en la web, verifica que puedan compartirse, revisa que el archivo funcione y lo organiza para que cualquier persona lo encuentre y descargue sin vueltas. El trabajo central es la búsqueda, selección, verificación, atribución y organización; no producir todo desde cero. La interfaz debe sentirse amable, clara y tranquila, y el catálogo debe poder usarse sin que Elías esté conectado.
+
+## Prioridad editorial
+1. Papelería útil para imprimir o guardar en el celular: agendas, calendarios, planificadores, fichas, etiquetas, formularios, cuadernos, listas y organizadores.
+2. Recursos útiles para San Patricio del Chañar: información pública, cultura, educación, territorio, mapas y materiales comunitarios.
+3. Recursos de Neuquén y Patagonia; luego Argentina y mundo hispanohablante.
+4. Juegos, lecturas y materiales para disfrutar, siempre que la fuente y la licencia sean claras.
+
+Los materiales originales de RUMA pueden permanecer si ya aportan valor, pero deben identificarse como tales y no convertirse en el eje de la biblioteca. Priorizar archivos existentes y legalmente redistribuibles. Nunca confundir “gratis para descargar” con permiso para volver a alojar o compartir.
 
 ## Estructura prevista
 - `index.html`: puerta de entrada para visitantes.
@@ -48,7 +56,7 @@ La interfaz debe sentirse como un rinconcito amable, claro y tranquilo. Por detr
 }
 ```
 
-Categorías permitidas: `aprender`, `crear`, `resolver`, `disfrutar`. Las regiones admitidas actualmente son `chanar`, `neuquen`, `argentina`, `hispanoamerica`, `hispanohablante` e `internacional`. Indicar el idioma real en `languageLabel`; no confundir alcance geográfico con idioma. La ficha debe enlazar la fuente y la licencia.
+Categorías internas: `aprender`, `crear`, `resolver`, `disfrutar`. En la interfaz, `crear` se presenta como **Papelería e imprimir** y `disfrutar` como **Jugar y disfrutar**. Los nombres visibles deben describir la necesidad del usuario, no la estructura técnica. Las regiones admitidas actualmente son `chanar`, `neuquen`, `argentina`, `hispanoamerica`, `hispanohablante` e `internacional`. Indicar el idioma real en `languageLabel`; no confundir alcance geográfico con idioma. La ficha debe enlazar la fuente y la licencia.
 
 ## Reglas de experiencia para personas mayores
 - Texto legible y posibilidad de agrandarlo desde la página.
@@ -72,6 +80,7 @@ Categorías permitidas: `aprender`, `crear`, `resolver`, `disfrutar`. Las region
 - [ ] El canal real de correcciones y retiro está configurado antes de abrir al público.
 
 ## Estado actual — 2026-10-24
+La orientación pública se ajusta para comunicar a RUMA como biblioteca curada de archivos existentes. La puerta “Crear” se presenta como “Papelería e imprimir” para priorizar la necesidad de uso; “Disfrutar” pasa a “Jugar y disfrutar”. Se agrega una explicación explícita del enfoque territorial: Chañar primero, expansión regional y luego hispanohablante.
 La interfaz lee un catálogo separado y muestra solo entradas aprobadas con rutas locales seguras, fuente y licencia HTTPS. Al 2026-10-24 hay 22 recursos catalogados: tres PDF CC0 de un proyecto externo en inglés; seis archivos de datos abiertos de Neuquén (CSV y GeoJSON); un extracto local adaptado; un mapa A4 original basado en el GeoJSON; seis PDF originales RUMA en español; una tabla territorial nacional de Georef; y cuatro fichas educativas abiertas de INTEF/PENTEC con CC BY-SA 4.0. Los recursos tienen ficha, idioma, alcance, formato, licencia y enlace a fuente. Los archivos se generaron o inspeccionaron en la nube y se validaron antes de publicar.
 
 Hay automatización de inspección de datos, publicación con lista de IDs y huellas SHA-256, generación de PDF y verificación del catálogo. El canal de correcciones y retiro aún debe configurarse con un medio real antes de promover RUMA ampliamente. La publicación en GitHub Pages debe verificarse por separado; no confundir un commit exitoso con un sitio desplegado.
