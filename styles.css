@@ -47,3 +47,7 @@ body.text-small p,body.text-small a,body.text-small button,body.text-small input
   .resource-meta{align-items:center}
   .resource-meta>span{font-size:11px}
 }
+
+
+.clear-filters{margin-top:14px;border:1px solid #cbd5c0;background:#fffdf6;color:var(--green-dark);border-radius:24px;padding:11px 17px;min-height:44px;font-weight:700;cursor:pointer}
+.clear-filters:hover{background:var(--green);color:#fff}
