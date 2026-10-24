@@ -1,6 +1,8 @@
-# RUMA — un rinconcito para compartir
+# RUMA — biblioteca digital para llevar
 
-RUMA es un autoservicio digital gratuito y tranquilo para encontrar recursos útiles, imprimirlos y descargarlos directamente. No exige cuenta, pago ni donación. La colaboración voluntaria es independiente del acceso.
+RUMA es una biblioteca digital gratuita y curada. Busca en la web recursos que ya existen —papelería imprimible, documentos, formularios, fichas, mapas, guías y archivos útiles—, comprueba si se pueden redistribuir y reúne los archivos en un lugar sencillo, con descarga directa, fuente y licencia visibles. No es un repositorio indiscriminado ni un proyecto centrado en crear materiales desde cero: el valor principal es la investigación, selección, verificación y organización.
+
+**Punto de partida:** San Patricio del Chañar. **Expansión:** Neuquén y Patagonia, Argentina y mundo hispanohablante. **Acceso:** gratuito, sin registro y sin obligación de donar. Los materiales originales de RUMA pueden mantenerse como excepciones identificadas, pero no deben desplazar la misión principal de curaduría.
 
 ## Estado del catálogo — 24 de octubre de 2026
 
@@ -15,6 +17,8 @@ Hay 22 recursos catalogados con archivos alojados en \`descargas/\`:
 - 6 PDF originales de RUMA en español: cuaderno de exploración local, agenda semanal, cuaderno de plantas, marcapáginas, cuaderno de memoria oral y guía de descargas seguras.
 
 ## Cómo se revisan los recursos
+
+La biblioteca prioriza archivos ya existentes que aporten una utilidad concreta, especialmente papelería (agendas, calendarios, planificadores, etiquetas, fichas, cuadernos, formularios y organizadores), además de documentos públicos, recursos educativos, mapas y materiales para guardar en el celular. La cercanía territorial decide por dónde investigar, no impide que se sumen recursos útiles de otras regiones. No se agrega un archivo solo para inflar el número de recursos.
 
 1. Revisar la ficha y la licencia del archivo concreto.
 2. Confirmar que la licencia permite redistribución y cumplir atribución/compartir igual cuando corresponda.
