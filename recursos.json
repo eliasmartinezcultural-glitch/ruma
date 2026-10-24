@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "updated": "2026-10-24",
   "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
   "resources": [
@@ -362,6 +362,46 @@
       "source": "https://www.argentina.gob.ar/georef/condiciones-de-uso-y-licencia",
       "reviewedOn": "2026-10-24",
       "approved": true
+    },
+    {
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "ficha-partes-del-cuerpo-intef",
+      "title": "Partes del cuerpo humano — ficha para observar y aprender",
+      "description": "Ficha ilustrada de una página para reconocer partes externas del cuerpo humano. Recurso educativo abierto de PENTEC/INTEF para primer ciclo de primaria. La imagen se revisó visualmente; no tiene texto digital extraíble.",
+      "category": "aprender",
+      "subcategory": "cuerpo-y-ciencias",
+      "format": "PDF · 1 página A4",
+      "sizeLabel": "696 KB",
+      "download": "descargas/ficha-partes-del-cuerpo-intef.pdf",
+      "author": "PENTEC · recurso educativo abierto de INTEF",
+      "source": "https://descargas.intef.es/recursos_educativos/RED_ES/02_Primaria/1/P_1_004_2025_0202/crditos.html"
+    },
+    {
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "ficha-descripcion-objetos-intef",
+      "title": "Ficha para describir tres objetos",
+      "description": "Plantilla de una página para dibujar o elegir tres objetos y escribir una descripción de cada uno. Útil para observación, vocabulario y escritura inicial.",
+      "category": "aprender",
+      "subcategory": "observación-y-lengua",
+      "format": "PDF · 1 página A4",
+      "sizeLabel": "13 KB",
+      "download": "descargas/ficha-descripcion-de-objetos-intef.pdf",
+      "author": "PENTEC · recurso educativo abierto de INTEF",
+      "source": "https://descargas.intef.es/recursos_educativos/RED_ES/02_Primaria/2/P_2_004_2025_0225/crditos.html"
     }
   ]
 }
