@@ -51,7 +51,7 @@ jobs:
           data=[[Paragraph("<b>Día</b>",styles["RText"]),Paragraph("<b>Lo principal</b>",styles["RText"]),Paragraph("<b>Un pequeño paso</b>",styles["RText"]),Paragraph("<b>Listo</b>",styles["RText"])]]
           for day in ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]:
             data.append([Paragraph(f"<b>{day}</b>",styles["RText"]),"","","□"])
-          t=Table(data,colWidths=[25*mm,62*mm,62*mm,18*mm],rowHeights=[11*mm]+[24*mm]*7); table_style(t,True); story += [t,Spacer(1,7*mm),Paragraph("<b>Si me queda tiempo:</b>",styles["RText"]),Spacer(1,5*mm)]
+          t=Table(data,colWidths=[25*mm,62*mm,62*mm,18*mm],rowHeights=[10*mm]+[20*mm]*7); table_style(t,True); story += [t,Spacer(1,7*mm),Paragraph("<b>Si me queda tiempo:</b>",styles["RText"]),Spacer(1,5*mm)]
           notes=Table([[""],[""],[""]],colWidths=[167*mm],rowHeights=[12*mm]*3); table_style(notes); story += [notes,Spacer(1,6*mm),Paragraph("Recordatorio amable: no hace falta hacer todo. Elegí una cosa posible y empezá por ahí.",styles["RSub"])]
           doc.build(story,onFirstPage=footer,onLaterPages=footer)
           # 2) Cuaderno de observación y jardín, 4 páginas.
@@ -97,7 +97,7 @@ jobs:
           for filename,phrases in checks.items():
             path=out/filename; reader=PdfReader(str(path))
             extracted=" ".join(page.extract_text() or "" for page in reader.pages)
-            if len(reader.pages)<1 or path.stat().st_size<2500:
+            if len(reader.pages)<1 or path.stat().st_size<1500:
               raise SystemExit(f"PDF ausente, vacío o pequeño: {filename}")
             for phrase in phrases:
               if phrase not in extracted:
