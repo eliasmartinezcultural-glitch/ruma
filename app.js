@@ -9,6 +9,7 @@ const categoryNames = {
 };
 
 const grid = document.querySelector("#resource-grid");
+const resultCount = document.querySelector("#result-count");
 const search = document.querySelector("#search");
 const categoryFilter = document.querySelector("#category-filter");
 const regionFilter = document.querySelector("#region-filter");
@@ -45,6 +46,14 @@ function renderResources() {
       (language === "todos" || item.language === language) &&
       text.includes(term);
   });
+
+  if (resultCount) {
+    resultCount.textContent = resources.length === 0
+      ? "Preparando el estante…"
+      : (filtered.length === resources.length
+          ? resources.length + (resources.length === 1 ? " recurso disponible" : " recursos disponibles")
+          : filtered.length + " de " + resources.length + " recursos");
+  }
 
   if (!filtered.length) {
     if (resources.length) {
