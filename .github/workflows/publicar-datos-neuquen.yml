@@ -21,7 +21,7 @@ jobs:
       - name: Verificar archivos oficiales y guardarlos en RUMA
         run: |
           python - <<'PY'
-          import hashlib, json, urllib.request
+          import hashlib, json, urllib.request, zipfile, io
           from pathlib import Path
 
           manifest = json.loads(Path("investigacion/aprobaciones-lote-02.json").read_text(encoding="utf-8"))
@@ -44,6 +44,27 @@ jobs:
                   "target": "descargas/poblacion-departamentos-neuquen-censos.csv",
                   "max_bytes": 20000,
               },
+              "planificacion-provincial-neuquen": {
+                  "url": "https://portaldatosabiertos.neuquen.gov.ar/dataset/0dbeb4cf-3a74-4f64-b676-44522f777582/resource/7f78aa40-dc50-4dc9-adc4-1809bcef3692/download/instrumentos-de-planificacion-provinciales.csv",
+                  "sha256": "a3e146fb310ef27b20a0880da8c21d1bd5863359bf36f01a85512e84ca8add01",
+                  "target": "descargas/instrumentos-planificacion-provincial-neuquen.csv",
+                  "max_bytes": 10000,
+              },
+              "planificacion-gobiernos-locales-neuquen": {
+                  "url": "https://portaldatosabiertos.neuquen.gov.ar/dataset/0dbeb4cf-3a74-4f64-b676-44522f777582/resource/332ad11c-0ee8-46bc-9a99-28869578348d/download/instrumentos-de-planificacion-para-gobiernos-locales.csv",
+                  "sha256": "d9ca88069539f48524351997b02b78c8065beaa755b1b4bea77a4a3ee4f4ae4a",
+                  "target": "descargas/instrumentos-planificacion-gobiernos-locales-neuquen.csv",
+                  "max_bytes": 40000,
+              },
+              "regiones-neuquen-geojson": {
+                  "url": "https://portaldatosabiertos.neuquen.gov.ar/dataset/fcbefeef-8fb6-4595-93d8-cff87719388c/resource/ab5006b8-9d19-49cb-a895-e4aa864190c8/download/regiones_geojson.zip",
+                  "sha256": "012e4e6f010b743f7eed8ee3df70560f59f57d961a31269b21f5de7835f8b6c4",
+                  "target": "descargas/regiones-neuquen.geojson",
+                  "max_bytes": 600000,
+                  "member": "regiones.geojson",
+                  "output_sha256": "99b2414f289434b53ebdc4954380de3c496032c1a17118d5ee150be3e341e6ea",
+                  "max_output_bytes": 3000000,
+              },
           }
           items = manifest.get("resources")
           if not isinstance(items, list) or not items:
@@ -61,10 +82,21 @@ jobs:
               digest = hashlib.sha256(data).hexdigest()
               if digest != spec["sha256"]:
                   raise SystemExit(f"{resource_id}: el archivo de origen cambió; requiere nueva inspección.")
+              payload = data
+              if "member" in spec:
+                  with zipfile.ZipFile(io.BytesIO(data)) as archive:
+                      if spec["member"] not in archive.namelist():
+                          raise SystemExit(f"{resource_id}: falta el archivo interno autorizado.")
+                      payload = archive.read(spec["member"])
+                  if len(payload) > spec["max_output_bytes"]:
+                      raise SystemExit(f"{resource_id}: el archivo extraído supera el límite.")
+                  output_digest = hashlib.sha256(payload).hexdigest()
+                  if output_digest != spec["output_sha256"]:
+                      raise SystemExit(f"{resource_id}: el archivo extraído cambió; requiere nueva inspección.")
               target = Path(spec["target"])
               target.parent.mkdir(parents=True, exist_ok=True)
-              target.write_bytes(data)
-              print(f"VERIFICADO {resource_id}: {target}, {len(data)} bytes, SHA-256 {digest}")
+              target.write_bytes(payload)
+              print(f"VERIFICADO {resource_id}: {target}, {len(payload)} bytes, SHA-256 {hashlib.sha256(payload).hexdigest()}")
           PY
 
       - name: Confirmar archivos en el repositorio
