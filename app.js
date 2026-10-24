@@ -3,9 +3,9 @@ let resources = [];
 
 const categoryNames = {
   aprender: "Aprender",
-  crear: "Crear",
+  crear: "Papelería e imprimir",
   resolver: "Resolver",
-  disfrutar: "Disfrutar"
+  disfrutar: "Jugar y disfrutar"
 };
 
 const grid = document.querySelector("#resource-grid");
