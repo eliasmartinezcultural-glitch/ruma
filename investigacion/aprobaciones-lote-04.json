@@ -1,0 +1,17 @@
+{
+  "lote": "04",
+  "revisado": "2026-10-24",
+  "nota": "Dos fichas imprimibles en español de recursos educativos abiertos de INTEF/PENTEC. Las páginas de créditos de ambos recursos declaran CC BY-SA 4.0. Se descargaron en la nube, se revisaron tamaño, SHA-256, páginas y contenido visual; se confirmaron los créditos de la ficha de origen. La ficha del cuerpo humano es imagen, por eso no tiene texto extraíble; se inspeccionó visualmente.",
+  "resources": [
+    {
+      "id": "ficha-partes-del-cuerpo-intef",
+      "approved": true,
+      "review": "PDF de una página, 712266 bytes, SHA-256 b230993c306302d3bfd3e8ee20767594053e58b3f98f69560a8d39a8940b2ac8. PENTEC; ficha de partes del cuerpo; licencia CC BY-SA 4.0 confirmada en créditos del recurso."
+    },
+    {
+      "id": "ficha-descripcion-objetos-intef",
+      "approved": true,
+      "review": "PDF de una página, 13233 bytes, SHA-256 4b07a1293a7aeb97114259003a937a11259a57bcca2b727290f9bd2703d6f941. PENTEC; ficha para describir tres objetos; licencia CC BY-SA 4.0 confirmada en créditos del recurso."
+    }
+  ]
+}
