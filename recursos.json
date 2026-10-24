@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "updated": "2026-10-24",
   "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
   "resources": [
@@ -240,7 +240,7 @@
       "category": "resolver",
       "subcategory": "organización",
       "format": "PDF · 1 página A4",
-      "sizeLabel": "3,7 KB",
+      "sizeLabel": "2,9 KB",
       "download": "descargas/agenda-semanal-simple-ruma.pdf"
     },
     {
@@ -260,7 +260,7 @@
       "category": "aprender",
       "subcategory": "naturaleza-y-huerta",
       "format": "PDF · 4 páginas A4",
-      "sizeLabel": "6,1 KB",
+      "sizeLabel": "6 KB",
       "download": "descargas/cuaderno-mi-rincon-verde-ruma.pdf"
     },
     {
@@ -280,7 +280,7 @@
       "category": "crear",
       "subcategory": "papelería",
       "format": "PDF · A4",
-      "sizeLabel": "2,6 KB",
+      "sizeLabel": "2,5 KB",
       "download": "descargas/marcapaginas-para-compartir-ruma.pdf"
     },
     {
