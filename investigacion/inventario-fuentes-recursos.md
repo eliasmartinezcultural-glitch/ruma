@@ -36,3 +36,19 @@ Este archivo registra fuentes para investigar recursos descargables e imprimible
 3. Seleccionar cuentos con derechos y edición claramente compatibles con la publicación en Argentina.
 4. Abrir cada archivo descargado y comprobar que se ve bien en pantalla y en impresión A4.
 5. Solo entonces copiar los archivos a `descargas/`, crear fichas de catálogo y enlazar botones de descarga directa en RUMA.
+
+
+## Fuentes de San Patricio del Chañar y Neuquén (agregadas 2026-10-23)
+
+- Municipio — Nuestra ciudad: https://sanpatricio.gob.ar/nuestra
+- Municipio — Qué hacer: https://sanpatricio.gob.ar/quehacer
+- Municipio — Identidad e historia: https://www.sanpatricio.gob.ar/identidad
+- Municipio — Ubicación y llegada: https://www.sanpatricio.gob.ar/llegar
+- Mapoteca Digital provincial: https://dpc.neuquen.gov.ar/Mapa
+- Mapas de localidades: https://dpc.neuquen.gov.ar/dpcasp/mapoteca_digital/localidades.asp
+- IDE Patagonia: https://idepatagonia.gob.ar/
+- Geovisor de Estadística y Censos de Neuquén: https://www.estadisticaneuquen.gov.ar/apps/visor/
+- Mapa Cultural de Argentina: https://www.sinca.gob.ar/mapa.aspx
+- Informes municipales: https://www.economianqn.gob.ar/municipios/contenido/san-patricio-del-chanar
+
+**Aviso de derechos importante:** la Mapoteca Digital provincial especifica que sus mapas se pueden descargar e imprimir para uso personal, y que la reproducción en otros soportes requiere autorización expresa. No copiar esos mapas a RUMA sin permiso escrito. Usar como fuente de consulta o localizar datos alternativos con licencia abierta explícita.
