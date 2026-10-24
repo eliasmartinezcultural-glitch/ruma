@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5efe3">
-  <meta name="description" content="RUMA, un rinconcito amable para encontrar recursos libres, útiles y listos para descargar.">
-  <title>RUMA — Servite lo que necesites</title>
+  <meta name="description" content="RUMA es una biblioteca digital gratuita: recursos imprimibles, papelería, documentos y archivos útiles, seleccionados con fuentes y licencias revisadas.">
+  <title>RUMA — Biblioteca digital para llevar</title>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
@@ -24,7 +24,7 @@
       <div class="welcome-copy">
         <p class="eyebrow"><span class="tiny-sun" aria-hidden="true">✳</span> UNA CASITA DIGITAL, ABIERTA PARA TODOS</p>
         <h1>Pasá, mirá<br>y <em>llevate lo que te sirva.</em></h1>
-        <p class="intro">Acá juntamos recursos libres para aprender, crear, resolver pequeñas cosas y disfrutar un rato. Sin apuro, sin registro y sin pagar para descargar.</p>
+        <p class="intro">Una biblioteca digital de archivos útiles que encontramos dispersos por la web y reunimos en un solo lugar: papelería imprimible, documentos, mapas, fichas y materiales para guardar en el celular. Sin registro ni pago obligatorio.</p>
         <a class="primary-link" href="#puertas">Entrar a los pasillos <span aria-hidden="true">↓</span></a>
       </div>
       <div class="welcome-art" aria-label="Ilustración decorativa de una casita rural y un jardín" role="img">
@@ -39,10 +39,15 @@
       </div>
     </section>
 
+    <section class="local-first" aria-labelledby="local-title">
+      <div class="local-first-mark" aria-hidden="true">⌖</div>
+      <div><p class="eyebrow">EMPEZAMOS CERCA, CRECEMOS CON CUIDADO</p><h2 id="local-title">Primero, cosas útiles para nuestra comunidad.</h2><p>Buscamos materiales que sirvan en San Patricio del Chañar; después ampliamos a Neuquén, la Patagonia, Argentina y el mundo hispanohablante. Cada archivo debe tener fuente, permisos revisados y una descarga que funcione.</p></div>
+    </section>
+
     <section class="hallway" id="puertas">
       <div class="section-heading">
-        <div><p class="eyebrow">ELEGÍ POR DÓNDE EMPEZAR</p><h2>Cuatro puertas, muchas posibilidades.</h2></div>
-        <p class="section-note">Paseá tranquilo. Cada recurso tendrá su descripción, su licencia y un botón claro para obtenerlo.</p>
+        <div><p class="eyebrow">EL ESTANTE ESTÁ ORDENADO POR NECESIDAD</p><h2>Cuatro puertas para encontrar lo que necesitás.</h2></div>
+        <p class="section-note">No acumulamos enlaces: seleccionamos archivos, revisamos su permiso de uso y ofrecemos una descarga directa cuando es legal hacerlo.</p>
       </div>
       <div class="door-grid">
         <a class="door-card door-learn" href="#catalogo" data-category="aprender">
@@ -50,16 +55,16 @@
           <h3>Aprender</h3><p>Lecturas, fichas y materiales para descubrir algo nuevo.</p><span class="door-action">Entrar al pasillo <b aria-hidden="true">↗</b></span>
         </a>
         <a class="door-card door-create" href="#catalogo" data-category="crear">
-          <span class="door-number">02 / PARA LAS MANOS</span><span class="door-icon" aria-hidden="true">✿</span>
-          <h3>Crear</h3><p>Láminas, imprimibles, plantillas y pequeñas ideas creativas.</p><span class="door-action">Entrar al pasillo <b aria-hidden="true">↗</b></span>
+          <span class="door-number">02 / PARA IMPRIMIR</span><span class="door-icon" aria-hidden="true">✿</span>
+          <h3>Papelería e imprimir</h3><p>Agendas, calendarios, etiquetas, cuadernos, fichas y láminas listas para usar.</p><span class="door-action">Entrar al pasillo <b aria-hidden="true">↗</b></span>
         </a>
         <a class="door-card door-solve" href="#catalogo" data-category="resolver">
           <span class="door-number">03 / PARA EL DÍA A DÍA</span><span class="door-icon" aria-hidden="true">⌂</span>
           <h3>Resolver</h3><p>Organizadores y herramientas prácticas para la vida cotidiana.</p><span class="door-action">Entrar al pasillo <b aria-hidden="true">↗</b></span>
         </a>
         <a class="door-card door-enjoy" href="#catalogo" data-category="disfrutar">
-          <span class="door-number">04 / PARA DISFRUTAR</span><span class="door-icon" aria-hidden="true">☼</span>
-          <h3>Disfrutar</h3><p>Juegos, pasatiempos, cuentos y ratitos para compartir.</p><span class="door-action">Entrar al pasillo <b aria-hidden="true">↗</b></span>
+          <span class="door-number">04 / PARA UN RATO LINDO</span><span class="door-icon" aria-hidden="true">☼</span>
+          <h3>Jugar y disfrutar</h3><p>Pasatiempos, juegos imprimibles, lecturas y actividades para compartir.</p><span class="door-action">Entrar al pasillo <b aria-hidden="true">↗</b></span>
         </a>
       </div>
     </section>
@@ -77,8 +82,9 @@
       </div>
       <div class="search-row">
         <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="¿Qué estás buscando?" autocomplete="off" aria-label="Buscar recursos"></label>
-        <label class="filter-label"><span class="visually-hidden">Filtrar por categoría</span><select id="category-filter"><option value="todas">Todas las puertas</option><option value="aprender">Aprender</option><option value="crear">Crear</option><option value="resolver">Resolver</option><option value="disfrutar">Disfrutar</option></select></label>
-        <label class="filter-label"><span class="visually-hidden">Filtrar por región</span><select id="region-filter" aria-label="Filtrar por región"><option value="todas">Todas las regiones</option><option value="chanar">San Patricio del Chañar</option><option value="neuquen">Neuquén y Patagonia</option><option value="argentina">Argentina</option><option value="hispanoamerica">Hispanoamérica</option><option value="hispanohablante">Mundo hispanohablante</option><option value="internacional">Internacional</option></select></label>\n        <label class="filter-label"><span class="visually-hidden">Filtrar por idioma</span><select id="language-filter" aria-label="Filtrar por idioma"><option value="todos">Todos los idiomas</option><option value="es">Español</option><option value="en">Inglés</option></select></label>
+        <label class="filter-label"><span class="visually-hidden">Filtrar por categoría</span><select id="category-filter"><option value="todas">Todas las puertas</option><option value="aprender">Aprender</option><option value="crear">Papelería e imprimir</option><option value="resolver">Resolver</option><option value="disfrutar">Jugar y disfrutar</option></select></label>
+        <label class="filter-label"><span class="visually-hidden">Filtrar por región</span><select id="region-filter" aria-label="Filtrar por región"><option value="todas">Todas las regiones</option><option value="chanar">San Patricio del Chañar</option><option value="neuquen">Neuquén y Patagonia</option><option value="argentina">Argentina</option><option value="hispanoamerica">Hispanoamérica</option><option value="hispanohablante">Mundo hispanohablante</option><option value="internacional">Internacional</option></select></label>
+        <label class="filter-label"><span class="visually-hidden">Filtrar por idioma</span><select id="language-filter" aria-label="Filtrar por idioma"><option value="todos">Todos los idiomas</option><option value="es">Español</option><option value="en">Inglés</option></select></label>
       </div>
       <p class="result-count" id="result-count" aria-live="polite">Preparando el estante…</p>
       <div class="resource-grid" id="resource-grid" aria-live="polite"></div>
@@ -87,8 +93,8 @@
 
     <section class="promise">
       <div class="promise-symbol" aria-hidden="true">♡</div>
-      <div><p class="eyebrow">LA IDEA ES SENCILLA</p><h2>Lo que necesitás, sin vueltas.</h2><p>Buscamos recursos que podamos compartir legalmente y dejamos los archivos listos acá mismo. Si algo no se puede alojar y descargar con facilidad, no entra en RUMA.</p></div>
-      <div class="promise-list"><span>✓ Descarga directa</span><span>✓ Licencias revisadas</span><span>✓ Sin obligación de colaborar</span></div>
+      <div><p class="eyebrow">LA IDEA ES SENCILLA</p><h2>Lo que necesitás, sin vueltas.</h2><p>La tarea de RUMA es buscar con paciencia en bibliotecas, organismos públicos, archivos y proyectos abiertos; comprobar qué se puede compartir y reunirlo en un estante fácil de usar. Si la licencia no está clara o el archivo no funciona, no se publica.</p></div>
+      <div class="promise-list"><span>✓ Archivos alojados y probados</span><span>✓ Fuente y licencia visibles</span><span>✓ Sin obligación de colaborar</span></div>
     </section>
 
     <section class="donation" id="colaborar">
