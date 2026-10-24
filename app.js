@@ -11,18 +11,20 @@ const categoryNames = {
 const grid = document.querySelector("#resource-grid");
 const search = document.querySelector("#search");
 const categoryFilter = document.querySelector("#category-filter");
+const regionFilter = document.querySelector("#region-filter");
 
 function renderResources() {
   if (!grid) return;
   const term = (search?.value || "").trim().toLocaleLowerCase("es");
   const category = categoryFilter?.value || "todas";
+  const region = regionFilter?.value || "todas";
   const filtered = resources.filter(item => {
-    const text = [item.title, item.description, item.format, item.author].join(" ").toLocaleLowerCase("es");
-    return (category === "todas" || item.category === category) && text.includes(term);
+    const text = [item.title, item.description, item.format, item.author, item.regionLabel, item.region].join(" ").toLocaleLowerCase("es");
+    return (category === "todas" || item.category === category) && (region === "todas" || item.region === region) && text.includes(term);
   });
 
   if (!filtered.length) {
-    const selected = category === "todas" ? "" : " en la puerta " + categoryNames[category];
+    const selected = category !== "todas" ? " en la puerta " + categoryNames[category] : region !== "todas" ? " para esta región" : "";
     grid.innerHTML = '<div class="empty-note"><strong>Este estante todavía se está preparando.</strong><p>Estamos revisando permisos y reuniendo archivos que podamos alojar legalmente y ofrecer con una sola descarga. Pronto habrá nuevos hallazgos' + escapeHTML(selected) + '.</p></div>';
     return;
   }
@@ -52,6 +54,7 @@ function safeDownload(value) {
 
 search?.addEventListener("input", renderResources);
 categoryFilter?.addEventListener("change", renderResources);
+regionFilter?.addEventListener("change", renderResources);
 
 document.querySelectorAll("[data-category]").forEach(link => {
   link.addEventListener("click", () => {
