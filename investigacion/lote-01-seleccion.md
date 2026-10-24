@@ -1,30 +1,31 @@
-# Lote 01 — selección de archivos reales para inspección
+# Lote 01 — archivos revisados y publicados
 
-Fecha de investigación: 2026-10-23.
+Fecha de inspección y publicación: 2026-10-24.
 
-**Estado del lote: localizado, pendiente de descargar e inspeccionar. No está publicado para visitantes.** La fuente declara CC0 1.0 para sus recursos. Antes de incorporarlos a RUMA debemos obtener el archivo, verificar su contenido, revisar PDFs internos, comprobar impresión A4 y crear copias locales.
+**Resultado:** tres archivos reales están alojados dentro de RUMA y tienen ficha de descarga directa. Se obtuvieron e inspeccionaron mediante GitHub Actions en la nube; no se requirió descargar archivos a la computadora del responsable.
 
-## Candidatos de primera prioridad
+## Recursos publicados
 
-| Recurso | Qué contiene según la publicación | Archivo publicado | Tamaño publicado | Estado |
-|---|---|---|---:|---|
-| Laberintos imprimibles | 30 laberintos de varias formas en la versión inicial | [Mazes.v1.0.0.zip](https://github.com/dead0eye/free-printable-resources/releases/download/Mazes/Mazes.v1.0.0.zip) | 355,616 bytes | Pendiente de inspección |
-| Sopa de letras | Tres variantes, niveles fácil/experto y distintas bases de palabras | [Word.Search.v1.0.0.zip](https://github.com/dead0eye/free-printable-resources/releases/download/word-puzzles/Word.Search.v1.0.0.zip) | 2,224,766 bytes | Pendiente de inspección |
-| Cuaderno para colorear | 20 frases de obras de dominio público | [Quote.Coloring.Book.v1.0.0.zip](https://github.com/dead0eye/free-printable-resources/releases/download/coloring-books/Quote.Coloring.Book.v1.0.0.zip) | 628,391 bytes | Pendiente de inspección |
-| Sudoku fácil | 25 sudokus | [Sudoku.Puzzles.Easy.-.25.v1.0.0.zip](https://github.com/dead0eye/free-printable-resources/releases/download/sudoku-puzzles/Sudoku.Puzzles.Easy.-.25.v1.0.0.zip) | 463,024 bytes | Pendiente de inspección |
-| Planificador semanal | Planificador para octubre, noviembre y diciembre de 2026 | [Weekly.Planner.2026.v1.0.0.zip](https://github.com/dead0eye/free-printable-resources/releases/download/planners-productivity/Weekly.Planner.2026.v1.0.0.zip) | 59,789 bytes | Pendiente de inspección; caduca como recurso anual |
+| Recurso | PDF alojado en RUMA | Tamaño | Revisión |
+|---|---|---:|---|
+| 30 laberintos imprimibles, con soluciones | \`descargas/30-laberintos-imprimibles.pdf\` | 414.085 bytes | 36 páginas; muestra visual legible; incluye soluciones; instrucciones en inglés |
+| 20 láminas para colorear con citas literarias | \`descargas/20-laminas-para-colorear-literatura.pdf\` | 644.778 bytes | 20 páginas; muestra visual legible; frases en inglés |
+| 25 sudokus y variantes, con soluciones | \`descargas/25-sudokus-y-variantes.pdf\` | 1.584.353 bytes | 39 páginas; incluye varios tipos de sudoku y soluciones; etiquetas en inglés |
 
-Fuente de licencia: [repositorio y declaración CC0 1.0](https://github.com/dead0eye/free-printable-resources), donde el autor declara que los recursos son brandless y se pueden imprimir, compartir, modificar y reutilizar sin atribución.
+## Fuente y licencia
 
-## Protocolo para pasar a “aprobado”
-1. Descargar el ZIP desde la URL original.
-2. Extraerlo localmente y listar todos los archivos incluidos.
-3. Confirmar que los PDFs son realmente los descritos, sin páginas de publicidad, marcas de agua, datos ocultos o contenido inesperado.
-4. Abrir cada PDF y probar impresión A4; revisar márgenes, legibilidad y soluciones de los juegos.
-5. Seleccionar archivos útiles y livianos. No subir ZIPs enteros si es mejor ofrecer cada PDF por separado.
-6. Guardar el PDF final en `descargas/` y registrar la procedencia y la licencia.
-7. Añadirlo a `recursos.json` con `approved: true` solo al terminar la revisión.
-8. Probar la descarga directa desde la web publicada.
+- Fuente: https://github.com/dead0eye/free-printable-resources
+- Licencia declarada en los archivos: CC0 1.0 Universal.
+- Texto de licencia en español: https://creativecommons.org/publicdomain/zero/1.0/deed.es
+- Se inspeccionaron los archivos de licencia incluidos en los ZIP, los nombres de los archivos, tamaños, huellas SHA-256, apertura de los PDF, número de páginas, texto extraíble y muestras visuales. No se detectaron páginas promocionales en los tres PDF seleccionados.
+- La publicación vuelve a descargar los ZIP en la nube y comprueba que las huellas coincidan con los archivos inspeccionados antes de alojarlos.
 
-## Restricción operativa actual
-En esta fase se han confirmado las publicaciones y sus metadatos, pero no se han extraído los ZIP ni comprobado los PDFs que contienen. No anunciar estos candidatos como productos ya disponibles. El lote se considera aprobado únicamente después de la inspección local.
+## Candidato no seleccionado
+
+La colección de sopa de letras contiene palabras y etiquetas en inglés, con vocabulario difícil o poco útil para el público inicial de RUMA. No se publicó en este lote. Podrá reconsiderarse si se encuentra una versión en español o se determina una adaptación legal y útil.
+
+## Limitaciones honestas
+
+- Los tres recursos conservan su idioma original (inglés); las fichas lo dicen explícitamente.
+- Se verificó apertura, estructura, muestras visuales y huellas digitales, pero no se hizo una resolución independiente de cada pasatiempo ni una auditoría de accesibilidad de todas las páginas.
+- Los archivos están alojados dentro del repositorio. La disponibilidad final en el sitio público depende de que termine correctamente la publicación de GitHub Pages.
