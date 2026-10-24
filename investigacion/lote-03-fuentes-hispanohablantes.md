@@ -77,3 +77,19 @@ Estado: investigación de fuentes; ningún archivo de este documento se consider
 ## Regla de admisión
 
 Una fuente en esta lista no equivale a una descarga publicada. El recurso solo pasa a RUMA después de confirmar licencia del archivo específico, obtener y revisar el archivo en la nube, alojar la copia dentro del repositorio, registrar atribución y probar el botón de descarga.
+
+
+## Actualización de implementación — 2026-10-24
+
+Además de las fuentes candidatas en español, el tercer lote territorial ya se inspeccionó en GitHub Actions y tres archivos quedaron alojados en RUMA:
+
+- \`descargas/instrumentos-planificacion-provincial-neuquen.csv\` — 20 filas de datos más encabezado, 2.726 bytes. Planificación provincial 2019–2025.
+- \`descargas/instrumentos-planificacion-gobiernos-locales-neuquen.csv\` — 167 filas de datos más encabezado, 29.699 bytes. Planificación por gobierno local, 2019–2025.
+- \`descargas/regiones-neuquen.geojson\` — 1.860.760 bytes. FeatureCollection con siete entidades regionales, extraída de un ZIP oficial y validada con SHA-256.
+
+Las fichas de los conjuntos declaran CC BY 4.0. Se agregaron las atribuciones a \`creditos.html\` y las fichas al catálogo público. Los archivos de planificación son datos históricos del período 2019–2025 y no prueban que un instrumento esté vigente. El GeoJSON es un archivo técnico para software compatible, no un mapa ilustrado para imprimir.
+
+### Próxima meta en español
+
+El siguiente lote debe aportar recursos directamente útiles para familias: cuentos con edición autorizada, cuadernos de lectura, actividades de naturaleza y materiales para imprimir bajo CC0, CC BY o CC BY-SA. Cada archivo deberá revisarse individualmente. Las páginas de Argentina.gob.ar con cuentos clásicos son una fuente para investigar, no una autorización automática para rehostear cada PDF.
+
