@@ -83,7 +83,7 @@ jobs:
           for i in range(0,4,2):
             row=[]
             for msg,sub in messages[i:i+2]:
-              row.append(Paragraph(f'<font size="14"><b>{msg}</b></font><br/><br/><font size="9">{sub}</font><br/><br/><font size="8">✿ RUMA</font>',styles["RText"]))
+              row.append(Paragraph(f'<font size="14"><b>{msg}</b></font><br/><br/><font size="9">{sub}</font><br/><br/><font size="8">RUMA</font>',styles["RText"]))
             rows.append(row)
           t=Table(rows,colWidths=[82*mm,82*mm],rowHeights=[105*mm,105*mm]); table_style(t)
           story += [t,Spacer(1,4*mm),Paragraph("Sugerencia: imprimí en papel común o reciclado. No necesitás cartulina especial.",styles["RSub"])]
