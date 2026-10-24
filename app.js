@@ -1,5 +1,5 @@
 /* RUMA: el catálogo solo muestra recursos revisados y aprobados. */
-const resources = [];
+let resources = [];
 
 const categoryNames = {
   aprender: "Aprender",
@@ -97,3 +97,24 @@ function setReadingSize(size) {
 textLarger?.addEventListener("click", () => setReadingSize("large"));
 textSmaller?.addEventListener("click", () => setReadingSize("small"));
 textReset?.addEventListener("click", () => setReadingSize("normal"));
+
+
+// El catálogo vive en un archivo separado para facilitar el mantenimiento.
+fetch("./recursos.json")
+  .then(response => {
+    if (!response.ok) throw new Error("No se pudo leer el catálogo");
+    return response.json();
+  })
+  .then(catalog => {
+    if (!catalog || !Array.isArray(catalog.resources)) throw new Error("Formato de catálogo incorrecto");
+    resources = catalog.resources.filter(item =>
+      item && item.approved === true &&
+      typeof item.title === "string" &&
+      typeof item.download === "string" &&
+      typeof item.licenseLabel === "string"
+    );
+    renderResources();
+  })
+  .catch(() => {
+    if (grid) grid.innerHTML = '<div class="empty-note"><strong>Estamos acomodando el estante.</strong><p>El catálogo no pudo cargarse en este momento. Volvé a intentarlo más tarde.</p></div>';
+  });
