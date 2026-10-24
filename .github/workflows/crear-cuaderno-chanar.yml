@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Crear PDF A4 original en la nube
         run: |
-          python -m pip install --quiet reportlab
+          python -m pip install --quiet reportlab pypdf
           python - <<'PY'
           from reportlab.lib.pagesizes import A4
           from reportlab.lib import colors
