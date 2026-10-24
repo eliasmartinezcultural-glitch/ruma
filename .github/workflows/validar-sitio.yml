@@ -1,0 +1,64 @@
+name: RUMA — validar sitio y catálogo
+
+on:
+  push:
+    paths:
+      - "index.html"
+      - "styles.css"
+      - "app.js"
+      - "recursos.json"
+      - "descargas/**"
+      - "creditos.html"
+      - "contacto.html"
+      - ".github/workflows/validar-sitio.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+
+      - name: Comprobar sintaxis de JavaScript
+        run: node --check app.js
+
+      - name: Comprobar catálogo y descargas locales
+        run: |
+          python - <<'PY'
+          import json, re
+          from pathlib import Path
+
+          catalog = json.loads(Path("recursos.json").read_text(encoding="utf-8"))
+          resources = catalog.get("resources")
+          if not isinstance(resources, list):
+              raise SystemExit("resources debe ser una lista.")
+          ids = set()
+          for item in resources:
+              if item.get("approved") is not True:
+                  raise SystemExit(f"Recurso no aprobado dentro del catálogo público: {item.get('id')}")
+              rid = item.get("id")
+              if not rid or rid in ids:
+                  raise SystemExit(f"ID ausente o repetido: {rid}")
+              ids.add(rid)
+              path = item.get("download", "")
+              if not re.fullmatch(r"descargas/[A-Za-z0-9._/-]+", path) or ".." in path or "//" in path:
+                  raise SystemExit(f"Ruta de descarga no segura: {path}")
+              if not Path(path).is_file():
+                  raise SystemExit(f"Falta el archivo real: {path}")
+              if not item.get("title") or not item.get("description") or not item.get("format"):
+                  raise SystemExit(f"Ficha incompleta: {rid}")
+              if not str(item.get("source", "")).startswith("https://"):
+                  raise SystemExit(f"Fuente HTTPS ausente: {rid}")
+              if not str(item.get("licenseUrl", "")).startswith("https://") or not item.get("licenseLabel"):
+                  raise SystemExit(f"Licencia o enlace de licencia ausente: {rid}")
+              print(f"OK {rid}: {path} ({Path(path).stat().st_size} bytes)")
+          html = Path("index.html").read_text(encoding="utf-8")
+          for element_id in ("resource-grid", "category-filter", "region-filter", "search"):
+              if f'id="{element_id}"' not in html:
+                  raise SystemExit(f"Falta el control esperado: {element_id}")
+          print(f"Catálogo válido: {len(resources)} recursos, archivos presentes y rutas seguras.")
+          PY
