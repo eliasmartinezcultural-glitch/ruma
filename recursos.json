@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "updated": "2026-10-24",
   "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
   "resources": [
@@ -302,6 +302,46 @@
       "source": "https://portaldatosabiertos.neuquen.gov.ar/dataset/espacios-culturales-del-neuquen",
       "reviewedOn": "2026-10-24",
       "approved": true
+    },
+    {
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY 4.0 · material original RUMA",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "RUMA · material original",
+      "source": "https://github.com/eliasmartinezcultural-glitch/ruma",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "historias-que-guarda-nuestro-lugar",
+      "title": "Historias que guarda nuestro lugar — cuaderno de memoria oral",
+      "description": "Cuaderno para escuchar recuerdos familiares y del pueblo, anotar preguntas y distinguir memoria personal de datos que conviene verificar. Incluye recordatorios para pedir permiso antes de publicar nombres, fotos o grabaciones.",
+      "category": "aprender",
+      "subcategory": "memoria-y-comunidad",
+      "format": "PDF · 4 páginas A4",
+      "sizeLabel": "5,9 KB",
+      "download": "descargas/historias-que-guarda-nuestro-lugar.pdf"
+    },
+    {
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY 4.0 · material original RUMA",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "RUMA · material original",
+      "source": "https://github.com/eliasmartinezcultural-glitch/ruma",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "descargar-sin-miedo",
+      "title": "Descargar sin miedo — guía sencilla para archivos",
+      "description": "Guía en lenguaje simple para elegir, descargar y abrir archivos, reconocer señales de alerta y cuidarse al usar una computadora compartida. No exige instalar programas ni entregar datos personales.",
+      "category": "resolver",
+      "subcategory": "alfabetización-digital",
+      "format": "PDF · 2 páginas A4",
+      "sizeLabel": "4,3 KB",
+      "download": "descargas/descargar-sin-miedo-guia-sencilla.pdf"
     }
   ]
 }
