@@ -1,22 +1,37 @@
 {
-  "lote": "02",
+  "lote": "02-03",
   "revisado": "2026-10-24",
-  "nota": "Archivos descargados desde el Portal de Datos Abiertos de Neuquén en entorno remoto. Se revisaron licencia CC BY 4.0 declarada por el dataset, encabezados, codificación, separador, filas y muestras. Los archivos se publican sin modificar; sus fechas de corte se describen claramente. Verificar la actualidad antes de usar direcciones o datos culturales.",
+  "nota": "Seis archivos del Portal de Datos Abiertos de Neuquén con fichas que declaran CC BY 4.0. Tamaños, SHA-256, estructura y muestras revisados en GitHub Actions. Los archivos originales se alojan sin modificar salvo la capa GeoJSON, extraída de un ZIP oficial; la huella del ZIP y del GeoJSON extraído están fijadas. Fechas y alcance deben constar en las fichas.",
   "resources": [
     {
       "id": "espacios-culturales-neuquen",
       "approved": true,
-      "review": "CSV original, 360 registros de datos y 10 columnas, relevamiento hasta marzo de 2025. Incluye nombres, tipos, localidad, acceso, dependencia, domicilio y coordenadas; no se presenta como directorio en tiempo real."
+      "review": "CSV original; 360 registros de datos; relevamiento hasta marzo de 2025. No presentar como directorio en tiempo real."
     },
     {
       "id": "nomenclador-neuquen",
       "approved": true,
-      "review": "CSV original, 59 filas de datos y 7 columnas. Incluye nombres y códigos de regiones, departamentos y gobiernos locales, incluido San Patricio del Chañar."
+      "review": "CSV original; 59 filas de datos; regiones, departamentos y gobiernos locales."
     },
     {
       "id": "poblacion-neuquen-censos",
       "approved": true,
-      "review": "CSV original, 51 filas de datos y 6 columnas. Datos censales por departamento de 2001, 2010 y 2022; se identifica como histórico, no estimación actual."
+      "review": "CSV original; 51 filas de datos; censos 2001, 2010 y 2022. Datos históricos."
+    },
+    {
+      "id": "planificacion-provincial-neuquen",
+      "approved": true,
+      "review": "CSV original; 20 filas de datos más encabezado; instrumentos provinciales de planificación 2019-2025."
+    },
+    {
+      "id": "planificacion-gobiernos-locales-neuquen",
+      "approved": true,
+      "review": "CSV original; 167 filas de datos más encabezado; instrumentos de planificación por gobierno local 2019-2025."
+    },
+    {
+      "id": "regiones-neuquen-geojson",
+      "approved": true,
+      "review": "GeoJSON extraído del ZIP oficial con hashes del ZIP y del archivo interno verificados; FeatureCollection con 7 entidades regionales. Licencia CC BY 4.0; no es un mapa listo para navegar, sino un archivo de datos geográficos."
     }
   ]
 }
