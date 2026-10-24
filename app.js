@@ -11,7 +11,8 @@ const categoryNames = {
 const grid = document.querySelector("#resource-grid");
 const search = document.querySelector("#search");
 const categoryFilter = document.querySelector("#category-filter");
-const regionFilter = document.querySelector("#region-filter");\nconst languageFilter = document.querySelector("#language-filter");
+const regionFilter = document.querySelector("#region-filter");
+const languageFilter = document.querySelector("#language-filter");
 
 function isSafeDownload(value) {
   const path = String(value || "");
@@ -32,7 +33,8 @@ function renderResources() {
   if (!grid) return;
   const term = (search?.value || "").trim().toLocaleLowerCase("es");
   const category = categoryFilter?.value || "todas";
-  const region = regionFilter?.value || "todas";\n  const language = languageFilter?.value || "todos";
+  const region = regionFilter?.value || "todas";
+  const language = languageFilter?.value || "todos";
   const filtered = resources.filter(item => {
     const text = [
       item.title, item.description, item.format, item.author,
@@ -40,6 +42,7 @@ function renderResources() {
     ].join(" ").toLocaleLowerCase("es");
     return (category === "todas" || item.category === category) &&
       (region === "todas" || item.region === region) &&
+      (language === "todos" || item.language === language) &&
       text.includes(term);
   });
 
@@ -50,6 +53,7 @@ function renderResources() {
         if (search) search.value = "";
         if (categoryFilter) categoryFilter.value = "todas";
         if (regionFilter) regionFilter.value = "todas";
+        if (languageFilter) languageFilter.value = "todos";
         renderResources();
       });
     } else {
@@ -96,7 +100,9 @@ function escapeHTML(value) {
 
 search?.addEventListener("input", renderResources);
 categoryFilter?.addEventListener("change", renderResources);
-regionFilter?.addEventListener("change", renderResources);\nlanguageFilter?.addEventListener("change", renderResources);
+regionFilter?.addEventListener("change", renderResources);
+languageFilter?.addEventListener("change", renderResources);
+languageFilter?.addEventListener("change", renderResources);
 
 document.querySelectorAll("[data-category]").forEach(link => {
   link.addEventListener("click", () => {
