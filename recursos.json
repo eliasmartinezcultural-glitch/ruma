@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "updated": "2026-10-24",
   "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
   "resources": [
@@ -200,6 +200,26 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
       "author": "RUMA · material original",
       "source": "https://www.sanpatricio.gob.ar/identidad",
+      "reviewedOn": "2026-10-24",
+      "approved": true
+    },
+    {
+      "id": "mapa-regiones-neuquen-imprimible",
+      "title": "Mapa esquemático imprimible de las regiones de Neuquén",
+      "description": "Mapa original de una página A4 generado a partir de la capa geográfica abierta de COPADE. Sirve para aprender y conversar sobre las regiones; no es un mapa de calles ni sirve para navegación. Incluye atribución y fuente.",
+      "category": "aprender",
+      "subcategory": "mapas-y-territorio",
+      "region": "neuquen",
+      "regionLabel": "Neuquén y Patagonia",
+      "language": "es",
+      "languageLabel": "Español",
+      "format": "PDF · 1 página A4",
+      "sizeLabel": "17 KB",
+      "download": "descargas/mapa-regiones-neuquen-imprimible.pdf",
+      "licenseLabel": "CC BY 4.0 · visualización original RUMA",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "RUMA · visualización basada en datos de COPADE",
+      "source": "https://portaldatosabiertos.neuquen.gov.ar/dataset/capa-de-regiones-de-la-provincia-del-neuquen",
       "reviewedOn": "2026-10-24",
       "approved": true
     }
