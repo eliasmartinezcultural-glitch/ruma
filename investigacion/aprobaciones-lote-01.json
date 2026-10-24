@@ -1,0 +1,25 @@
+{
+  "lote": "01",
+  "revisado": "2026-10-24",
+  "nota": "Aprobación técnica de los tres PDF seleccionados tras inspección remota de archivos, páginas, contenido extraído y muestras visuales. Los recursos conservan su idioma original (inglés). El proceso de publicación vuelve a verificar los SHA-256 antes de alojarlos. No se seleccionó el paquete de sopa de letras porque su vocabulario está en inglés y no aporta valor suficiente al público inicial.",
+  "resources": [
+    {
+      "id": "laberintos-30",
+      "approved": true,
+      "language": "en",
+      "review": "ZIP y PDF verificados; 36 páginas, incluye 30 laberintos y soluciones; muestra visual legible; sin páginas promocionales detectadas."
+    },
+    {
+      "id": "colorear-literatura",
+      "approved": true,
+      "language": "en",
+      "review": "ZIP y PDF verificados; 20 páginas de láminas para colorear basadas en referencias literarias de dominio público; muestra visual legible; sin páginas promocionales detectadas."
+    },
+    {
+      "id": "sudoku-variantes",
+      "approved": true,
+      "language": "en",
+      "review": "ZIP y PDF verificados; 39 páginas, 25 sudokus de varios tipos con soluciones; muestra visual legible; sin páginas promocionales detectadas."
+    }
+  ]
+}
