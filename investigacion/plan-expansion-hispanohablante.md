@@ -100,16 +100,17 @@ Preferencias: CC0, dominio público confirmado para Argentina, CC BY y CC BY-SA,
 
 ## Estado real del proyecto — 2026-10-24
 
-- Catálogo público: seis recursos con archivo real alojado en \`descargas/\`, ficha, licencia, fuente y fecha de revisión.
+- Catálogo público: 17 recursos con archivos reales alojados en \`descargas/\`, fichas, licencias, fuentes y fechas de revisión.
 - Lote 01: tres PDF declarados CC0 1.0 (laberintos, láminas para colorear y sudokus/variantes). Conservan su idioma original, inglés, y la ficha lo indica.
-- Lote 02: tres CSV del Portal de Datos Abiertos del Neuquén, cuyas fichas declaran CC BY 4.0 (espacios culturales con corte a marzo de 2025, nomenclador territorial y población por censos 2001/2010/2022). Se alojan sin modificar y con atribución.
-- Los seis archivos fueron descargados y verificados en entornos remotos de GitHub Actions; el responsable no tuvo que descargar los archivos a la computadora ajena.
+- Lotes 02 y 03: seis archivos de datos abiertos de Neuquén con licencia declarada CC BY 4.0 (espacios culturales, nomenclador, población censal, instrumentos de planificación provincial y local, GeoJSON de regiones). Se alojan sin modificar salvo la extracción del GeoJSON desde su ZIP, con huellas verificadas y atribución.
+- Se añadió un extracto local de tres espacios culturales de San Patricio del Chañar, con domicilios y coordenadas eliminados, y un mapa A4 esquemático generado desde el GeoJSON.
+- Se generaron seis PDF originales en español: cuaderno de exploración del Chañar, agenda semanal, cuaderno de plantas, marcapáginas, cuaderno de memoria oral y guía de descargas seguras.
+- La inspección, generación y publicación de archivos se hace en GitHub Actions; el responsable no tuvo que descargar archivos a la computadora ajena.
 - Existe un control automático que revisa sintaxis de JavaScript, estructura del catálogo, rutas locales seguras y presencia de cada archivo.
-- La capa geográfica de regiones de Neuquén sigue en investigación; no se publica todavía.
-- El contacto de correcciones y retiro aún no tiene un canal real configurado. No promover ampliamente el sitio hasta resolverlo.
-- La publicación final de GitHub Pages se controla mediante el estado de la acción de despliegue; no considerar un commit como prueba suficiente de que la versión ya está visible.
+- El canal de correcciones y retiro aún no tiene un canal real configurado. No promover ampliamente el sitio hasta resolverlo.
+- La publicación final de GitHub Pages debe verificarse mediante el estado de la acción de despliegue; no considerar un commit como prueba suficiente de que la versión ya está visible.
 
-Próxima prioridad: conseguir materiales imprimibles en español con licencia CC0/CC BY/CC BY-SA; seleccionar ilustraciones CC0 relacionadas con naturaleza, huerta, animales y Patagonia; después sumar materiales locales con permisos claros. Evitar aumentar el catálogo con recursos en inglés solo para inflar el número.
+Próxima prioridad: conseguir más recursos en español de terceros con licencia CC0, CC BY o CC BY-SA, en especial actividades de naturaleza, educación y lectura; continuar la búsqueda de permisos para materiales locales y no sumar recursos en inglés solo para inflar el número.
 
 ## No negociables
 - no inventar archivos ni rutas;
