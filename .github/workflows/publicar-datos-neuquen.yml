@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "investigacion/aprobaciones-lote-02.json"
+      - "investigacion/aprobaciones-lote-04.json"
 
 permissions:
   contents: write
@@ -24,7 +25,8 @@ jobs:
           import hashlib, json, urllib.request, zipfile, io
           from pathlib import Path
 
-          manifest = json.loads(Path("investigacion/aprobaciones-lote-02.json").read_text(encoding="utf-8"))
+          manifests = [json.loads(Path(p).read_text(encoding="utf-8")) for p in ("investigacion/aprobaciones-lote-02.json", "investigacion/aprobaciones-lote-04.json") if Path(p).exists()]
+          manifest_resources = [item for manifest in manifests for item in manifest.get("resources", [])]
           allowed = {
               "espacios-culturales-neuquen": {
                   "url": "https://portaldatosabiertos.neuquen.gov.ar/dataset/9f0b080d-9ce2-4fe8-bb58-c6423d46e3de/resource/b4781225-e22f-4252-8912-75b87b3fde78/download/espaciosculturales_odafyc_3-25.csv",
@@ -65,8 +67,20 @@ jobs:
                   "output_sha256": "99b2414f289434b53ebdc4954380de3c496032c1a17118d5ee150be3e341e6ea",
                   "max_output_bytes": 3000000,
               },
+              "ficha-partes-del-cuerpo-intef": {
+                  "url": "https://descargas.intef.es/recursos_educativos/RED_ES/02_Primaria/1/P_1_004_2025_0202/P_1_004_2025_0202_IL_02025.pdf",
+                  "sha256": "b230993c306302d3bfd3e8ee20767594053e58b3f98f69560a8d39a8940b2ac8",
+                  "target": "descargas/ficha-partes-del-cuerpo-intef.pdf",
+                  "max_bytes": 800000,
+              },
+              "ficha-descripcion-objetos-intef": {
+                  "url": "https://descargas.intef.es/recursos_educativos/RED_ES/02_Primaria/2/P_2_004_2025_0225/P_2_004_2025_0225_IL_02483.pdf",
+                  "sha256": "4b07a1293a7aeb97114259003a937a11259a57bcca2b727290f9bd2703d6f941",
+                  "target": "descargas/ficha-descripcion-de-objetos-intef.pdf",
+                  "max_bytes": 20000,
+              },
           }
-          items = manifest.get("resources")
+          items = manifest_resources
           if not isinstance(items, list) or not items:
               raise SystemExit("El manifiesto no contiene recursos.")
           ids = [x.get("id") for x in items if isinstance(x, dict) and x.get("approved") is True]
