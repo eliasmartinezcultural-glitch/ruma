@@ -102,7 +102,6 @@ search?.addEventListener("input", renderResources);
 categoryFilter?.addEventListener("change", renderResources);
 regionFilter?.addEventListener("change", renderResources);
 languageFilter?.addEventListener("change", renderResources);
-languageFilter?.addEventListener("change", renderResources);
 
 document.querySelectorAll("[data-category]").forEach(link => {
   link.addEventListener("click", () => {
