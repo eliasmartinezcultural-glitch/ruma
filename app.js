@@ -44,9 +44,17 @@ function renderResources() {
   });
 
   if (!filtered.length) {
-    const selected = category !== "todas" ? " en la puerta " + categoryNames[category] :
-      region !== "todas" ? " para esta región" : "";
-    grid.innerHTML = '<div class="empty-note"><strong>Este estante todavía se está preparando.</strong><p>Estamos revisando permisos y reuniendo archivos que podamos alojar legalmente y ofrecer con una sola descarga. Todavía no hay archivos aprobados disponibles' + escapeHTML(selected) + '.</p></div>';
+    if (resources.length) {
+      grid.innerHTML = '<div class="empty-note"><strong>No encontramos coincidencias.</strong><p>Probá otra palabra o cambiá la puerta o la región elegida.</p><button class="clear-filters" id="clear-filters" type="button">Mostrar todos los recursos</button></div>';
+      document.querySelector("#clear-filters")?.addEventListener("click", () => {
+        if (search) search.value = "";
+        if (categoryFilter) categoryFilter.value = "todas";
+        if (regionFilter) regionFilter.value = "todas";
+        renderResources();
+      });
+    } else {
+      grid.innerHTML = '<div class="empty-note"><strong>Este estante todavía se está preparando.</strong><p>Estamos revisando permisos y reuniendo archivos que podamos alojar legalmente y ofrecer con una sola descarga.</p></div>';
+    }
     return;
   }
 
