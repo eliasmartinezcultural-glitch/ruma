@@ -1,0 +1,150 @@
+name: RUMA — crear mapa imprimible de regiones de Neuquén
+
+on:
+  push:
+    paths:
+      - ".github/workflows/crear-mapa-regiones-pdf.yml"
+      - "descargas/regiones-neuquen.geojson"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mapa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dibujar mapa esquemático A4 desde GeoJSON abierto
+        run: |
+          python -m pip install --quiet reportlab pypdf
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          from reportlab.pdfgen import canvas
+          from reportlab.lib.pagesizes import A4
+          from reportlab.lib import colors
+          from reportlab.pdfbase.pdfmetrics import stringWidth
+          from pypdf import PdfReader
+
+          data=json.loads(Path("descargas/regiones-neuquen.geojson").read_text(encoding="utf-8"))
+          features=data.get("features",[])
+          if len(features)!=7:
+            raise SystemExit(f"Se esperaban 7 regiones; se encontraron {len(features)}.")
+          W,H=A4
+          out=Path("descargas/mapa-regiones-neuquen-imprimible.pdf")
+          c=canvas.Canvas(str(out),pagesize=A4)
+          c.setTitle("Regiones de Neuquén — mapa esquemático imprimible")
+          c.setAuthor("RUMA")
+          ink=colors.HexColor("#42594b")
+          muted=colors.HexColor("#6c6b60")
+          paper=colors.HexColor("#fbf8f0")
+          palette=["#d8e5cf","#e8d8c1","#d9e5e8","#ead7d9","#e8e6c8","#d6e0d2","#e6dcca"]
+          c.setFillColor(paper); c.rect(0,0,W,H,fill=1,stroke=0)
+          c.setFillColor(ink); c.setFont("Helvetica-Bold",18)
+          c.drawString(38,H-42,"REGIONES DE NEUQUÉN")
+          c.setFillColor(muted); c.setFont("Helvetica",9)
+          c.drawString(38,H-58,"Mapa esquemático para aprender y conversar · no usar para navegación")
+          allcoords=[]
+          def iter_coords(obj):
+            if isinstance(obj,(list,tuple)) and len(obj)>=2 and isinstance(obj[0],(int,float)) and isinstance(obj[1],(int,float)):
+              yield obj
+            elif isinstance(obj,(list,tuple)):
+              for item in obj: yield from iter_coords(item)
+          for feat in features:
+            allcoords.extend(iter_coords(feat["geometry"]["coordinates"]))
+          if not allcoords: raise SystemExit("GeoJSON sin coordenadas.")
+          lat0=sum(p[1] for p in allcoords)/len(allcoords)
+          coslat=math.cos(math.radians(lat0))
+          xs=[p[0]*coslat for p in allcoords]; ys=[p[1] for p in allcoords]
+          xmin,xmax=min(xs),max(xs); ymin,ymax=min(ys),max(ys)
+          map_x,map_y=38,150
+          map_w,map_h=350,570
+          scale=min(map_w/(xmax-xmin),map_h/(ymax-ymin))
+          used_w=(xmax-xmin)*scale; used_h=(ymax-ymin)*scale
+          ox=map_x+(map_w-used_w)/2; oy=map_y+(map_h-used_h)/2
+          def project(pt):
+            return ox+(pt[0]*coslat-xmin)*scale, oy+(pt[1]-ymin)*scale
+          def draw_ring(ring):
+            pts=ring[::max(1,len(ring)//180)]
+            if pts[-1]!=ring[-1]: pts.append(ring[-1])
+            p=c.beginPath()
+            x,y=project(pts[0]); p.moveTo(x,y)
+            for coord in pts[1:]:
+              x,y=project(coord); p.lineTo(x,y)
+            p.close()
+            c.drawPath(p,stroke=1,fill=1)
+          for idx,feat in enumerate(features):
+            geom=feat.get("geometry",{})
+            polygons=geom.get("coordinates",[])
+            if geom.get("type")=="Polygon": polygons=[polygons]
+            c.setFillColor(colors.HexColor(palette[idx%len(palette)]))
+            c.setStrokeColor(colors.HexColor("#8e9b89")); c.setLineWidth(0.45)
+            for polygon in polygons:
+              if polygon: draw_ring(polygon[0])
+          # Legend stays outside the geometry so all seven names remain legible.
+          lx,ly=410,H-105
+          c.setFillColor(ink); c.setFont("Helvetica-Bold",10); c.drawString(lx,ly,"REGIONES")
+          ly-=22
+          for idx,feat in enumerate(features):
+            props=feat.get("properties",{})
+            name=str(props.get("region","Región sin nombre"))
+            c.setFillColor(colors.HexColor(palette[idx%len(palette)]))
+            c.setStrokeColor(colors.HexColor("#8e9b89"))
+            c.rect(lx,ly-3,10,10,fill=1,stroke=1)
+            c.setFillColor(ink); c.setFont("Helvetica-Bold",7.3)
+            words=name.split(); lines=[]; current=""
+            for word in words:
+              test=(current+" "+word).strip()
+              if stringWidth(test,"Helvetica-Bold",7.3)>122 and current:
+                lines.append(current); current=word
+              else: current=test
+            if current: lines.append(current)
+            for line_i,line in enumerate(lines):
+              c.drawString(lx+15,ly+2-line_i*9,line)
+            ly-=max(27,len(lines)*10+12)
+          # Localities are cited as examples from the open dataset, not as a complete directory.
+          c.setFillColor(ink); c.setFont("Helvetica-Bold",9)
+          c.drawString(410,145,"¿PARA QUÉ SIRVE?")
+          c.setFillColor(muted); c.setFont("Helvetica",8)
+          text=[
+            "Para reconocer las regiones",
+            "administrativas y conversar",
+            "sobre el territorio provincial.",
+            "",
+            "La delimitación y los nombres",
+            "provienen de la capa publicada",
+            "por COPADE. Consultá la fuente",
+            "para el contexto técnico y legal.",
+            "",
+            "No representa calles, rutas,",
+            "límites parcelarios ni accesos.",
+          ]
+          yy=130
+          for line in text:
+            if line: c.drawString(410,yy,line)
+            yy-=12
+          c.setStrokeColor(colors.HexColor("#d9cbb5")); c.line(38,65,W-38,65)
+          c.setFillColor(muted); c.setFont("Helvetica",7)
+          c.drawString(38,52,"Fuente: COPADE · Portal de Datos Abiertos del Neuquén · Capa geográfica de regiones")
+          c.drawString(38,40,"https://portaldatosabiertos.neuquen.gov.ar/dataset/capa-de-regiones-de-la-provincia-del-neuquen")
+          c.drawString(38,28,"GeoJSON original publicado bajo CC BY 4.0 · visualización esquemática creada por RUMA · 24/10/2026")
+          c.save()
+          reader=PdfReader(str(out))
+          extracted=" ".join(page.extract_text() or "" for page in reader.pages)
+          if len(reader.pages)!=1 or "REGIONES DE NEUQUÉN" not in extracted or "COPADE" not in extracted:
+            raise SystemExit("El PDF no pasó las verificaciones de página, título o atribución.")
+          if out.stat().st_size<3000:
+            raise SystemExit("El PDF resultó demasiado pequeño.")
+          print(f"Mapa PDF verificado: {len(reader.pages)} página, {out.stat().st_size} bytes")
+          PY
+      - name: Guardar el mapa dentro de RUMA
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add descargas/mapa-regiones-neuquen-imprimible.pdf
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Añade mapa esquemático imprimible de regiones de Neuquén"
+          git pull --rebase origin main
+          git push
