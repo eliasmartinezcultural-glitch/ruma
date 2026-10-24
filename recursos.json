@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "updated": "2026-10-24",
   "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
   "resources": [
@@ -222,6 +222,66 @@
       "source": "https://portaldatosabiertos.neuquen.gov.ar/dataset/capa-de-regiones-de-la-provincia-del-neuquen",
       "reviewedOn": "2026-10-24",
       "approved": true
+    },
+    {
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY 4.0 · material original RUMA",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "RUMA · material original",
+      "source": "https://github.com/eliasmartinezcultural-glitch/ruma",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "agenda-semanal-simple",
+      "title": "Mi semana, a mi ritmo — agenda semanal sencilla",
+      "description": "Una hoja A4 para ordenar lo principal de cada día, anotar pequeños pasos y dejar espacio para recordatorios. Diseño sencillo, bajo consumo de tinta y sin fechas preimpresas.",
+      "category": "resolver",
+      "subcategory": "organización",
+      "format": "PDF · 1 página A4",
+      "sizeLabel": "3,7 KB",
+      "download": "descargas/agenda-semanal-simple-ruma.pdf"
+    },
+    {
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY 4.0 · material original RUMA",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "RUMA · material original",
+      "source": "https://github.com/eliasmartinezcultural-glitch/ruma",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "cuaderno-mi-rincon-verde",
+      "title": "Mi rincón verde — cuaderno de plantas y observación",
+      "description": "Cuaderno de cuatro páginas para registrar una planta, observar cambios, anotar cuidados y dibujar lo descubierto. No requiere conexión ni herramientas especiales.",
+      "category": "aprender",
+      "subcategory": "naturaleza-y-huerta",
+      "format": "PDF · 4 páginas A4",
+      "sizeLabel": "6,1 KB",
+      "download": "descargas/cuaderno-mi-rincon-verde-ruma.pdf"
+    },
+    {
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY 4.0 · material original RUMA",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "RUMA · material original",
+      "source": "https://github.com/eliasmartinezcultural-glitch/ruma",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "marcapaginas-para-compartir",
+      "title": "Marcapáginas para compartir",
+      "description": "Cuatro marcapáginas imprimibles con frases originales sobre lectura, descanso y curiosidad. Recortá por las líneas y regalá uno; pensado para imprimir en papel común o reciclado.",
+      "category": "crear",
+      "subcategory": "papelería",
+      "format": "PDF · A4",
+      "sizeLabel": "2,6 KB",
+      "download": "descargas/marcapaginas-para-compartir-ruma.pdf"
     }
   ]
 }
