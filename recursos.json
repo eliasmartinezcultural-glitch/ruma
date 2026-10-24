@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "updated": "2026-10-24",
   "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
   "resources": [
@@ -342,6 +342,26 @@
       "format": "PDF · 2 páginas A4",
       "sizeLabel": "4,3 KB",
       "download": "descargas/descargar-sin-miedo-guia-sencilla.pdf"
+    },
+    {
+      "id": "jurisdicciones-argentina-georef",
+      "title": "Provincias y jurisdicciones de Argentina — códigos oficiales",
+      "description": "Tabla sencilla con las 24 jurisdicciones argentinas y sus códigos Georef. Útil para estudiar el país, preparar listados o aprender a reconocer códigos territoriales. Los nombres se obtuvieron del servicio oficial Georef; el archivo puede cambiar si la fuente actualiza sus datos.",
+      "category": "aprender",
+      "subcategory": "territorio-argentino",
+      "region": "argentina",
+      "regionLabel": "Argentina",
+      "language": "es",
+      "languageLabel": "Español",
+      "format": "CSV · 24 jurisdicciones",
+      "sizeLabel": "menos de 1 KB",
+      "download": "descargas/jurisdicciones-de-argentina-georef.csv",
+      "licenseLabel": "CC BY 4.0 · Servicio Georef",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "Servicio Georef · argentina.gob.ar/georef",
+      "source": "https://www.argentina.gob.ar/georef/condiciones-de-uso-y-licencia",
+      "reviewedOn": "2026-10-24",
+      "approved": true
     }
   ]
 }
