@@ -1,4 +1,4 @@
-/* RUMA: el catálogo solo muestra recursos revisados y aprobados. */
+/* RUMA: el catálogo solo muestra recursos revisados, alojados y aprobados. */
 let resources = [];
 
 const categoryNames = {
@@ -13,28 +13,68 @@ const search = document.querySelector("#search");
 const categoryFilter = document.querySelector("#category-filter");
 const regionFilter = document.querySelector("#region-filter");
 
+function isSafeDownload(value) {
+  const path = String(value || "");
+  return /^descargas\/[A-Za-z0-9._/-]+$/.test(path) &&
+    !path.includes("..") && !path.includes("//");
+}
+
+function safeHttpsUrl(value) {
+  try {
+    const url = new URL(String(value || ""));
+    return url.protocol === "https:" ? url.href : "";
+  } catch {
+    return "";
+  }
+}
+
 function renderResources() {
   if (!grid) return;
   const term = (search?.value || "").trim().toLocaleLowerCase("es");
   const category = categoryFilter?.value || "todas";
   const region = regionFilter?.value || "todas";
   const filtered = resources.filter(item => {
-    const text = [item.title, item.description, item.format, item.author, item.regionLabel, item.region].join(" ").toLocaleLowerCase("es");
-    return (category === "todas" || item.category === category) && (region === "todas" || item.region === region) && text.includes(term);
+    const text = [
+      item.title, item.description, item.format, item.author,
+      item.regionLabel, item.region, item.subcategory
+    ].join(" ").toLocaleLowerCase("es");
+    return (category === "todas" || item.category === category) &&
+      (region === "todas" || item.region === region) &&
+      text.includes(term);
   });
 
   if (!filtered.length) {
-    const selected = category !== "todas" ? " en la puerta " + categoryNames[category] : region !== "todas" ? " para esta región" : "";
-    grid.innerHTML = '<div class="empty-note"><strong>Este estante todavía se está preparando.</strong><p>Estamos revisando permisos y reuniendo archivos que podamos alojar legalmente y ofrecer con una sola descarga. Pronto habrá nuevos hallazgos' + escapeHTML(selected) + '.</p></div>';
+    const selected = category !== "todas" ? " en la puerta " + categoryNames[category] :
+      region !== "todas" ? " para esta región" : "";
+    grid.innerHTML = '<div class="empty-note"><strong>Este estante todavía se está preparando.</strong><p>Estamos revisando permisos y reuniendo archivos que podamos alojar legalmente y ofrecer con una sola descarga. Todavía no hay archivos aprobados disponibles' + escapeHTML(selected) + '.</p></div>';
     return;
   }
 
   grid.innerHTML = filtered.map(item => {
     const categoryName = categoryNames[item.category] || "Recurso";
+    const sourceUrl = safeHttpsUrl(item.source);
+    const licenseUrl = safeHttpsUrl(item.licenseUrl);
+    const regionLabel = item.regionLabel || "";
+    const author = item.author || "";
+    const sizeLabel = item.sizeLabel || "";
+    const sourceLink = sourceUrl
+      ? '<a href="' + escapeHTML(sourceUrl) + '" target="_blank" rel="noopener noreferrer">Fuente original</a>'
+      : "";
+    const licenseLink = licenseUrl
+      ? '<a href="' + escapeHTML(licenseUrl) + '" target="_blank" rel="noopener noreferrer">' + escapeHTML(item.licenseLabel) + '</a>'
+      : '<span>' + escapeHTML(item.licenseLabel) + '</span>';
+
     return '<article class="resource-card">' +
       '<div class="resource-top"><span class="resource-category">' + escapeHTML(categoryName) + '</span><span class="format-pill">' + escapeHTML(item.format || "Archivo") + '</span></div>' +
       '<h3>' + escapeHTML(item.title) + '</h3><p>' + escapeHTML(item.description) + '</p>' +
-      '<div class="resource-meta"><span>Licencia: ' + escapeHTML(item.licenseLabel || "Consultar ficha") + '</span><a class="download-link" href="' + safeDownload(item.download) + '" download>Obtener ↓</a></div>' +
+      '<div class="resource-details">' +
+        (regionLabel ? '<span><strong>Alcance:</strong> ' + escapeHTML(regionLabel) + '</span>' : '') +
+        (author ? '<span><strong>Autoría:</strong> ' + escapeHTML(author) + '</span>' : '') +
+        (sizeLabel ? '<span><strong>Tamaño:</strong> ' + escapeHTML(sizeLabel) + '</span>' : '') +
+        '<span><strong>Licencia:</strong> ' + licenseLink + '</span>' +
+        (sourceLink ? '<span>' + sourceLink + '</span>' : '') +
+      '</div>' +
+      '<div class="resource-meta"><span>Archivo alojado en RUMA</span><a class="download-link" href="' + escapeHTML(item.download) + '" download>Descargar ↓</a></div>' +
       '</article>';
   }).join("");
 }
@@ -43,13 +83,6 @@ function escapeHTML(value) {
   return String(value ?? "").replace(/[&<>"']/g, character => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
   })[character]);
-}
-
-function safeDownload(value) {
-  // Only same-site relative download paths are accepted in the local catalogue.
-  const path = String(value || "");
-  if (!path || path.startsWith("/") || path.includes("..") || /^[a-z]+:/i.test(path)) return "#catalogo";
-  return escapeHTML(path);
 }
 
 search?.addEventListener("input", renderResources);
@@ -70,19 +103,16 @@ copyButton?.addEventListener("click", async () => {
   const alias = aliasValue?.textContent?.trim() || "ocarina.guitarra";
   try {
     await navigator.clipboard.writeText(alias);
-    copyStatus.textContent = "Alias copiado. ¡Gracias por pasar!";
+    if (copyStatus) copyStatus.textContent = "Alias copiado. ¡Gracias por pasar!";
   } catch {
     const range = document.createRange();
-    range.selectNodeContents(aliasValue);
+    if (aliasValue) range.selectNodeContents(aliasValue);
     const selection = window.getSelection();
     selection?.removeAllRanges();
     selection?.addRange(range);
-    copyStatus.textContent = "Seleccioná el alias y copialo.";
+    if (copyStatus) copyStatus.textContent = "Seleccioná el alias y copialo.";
   }
 });
-
-renderResources();
-
 
 // Opciones de lectura: simples, visibles y sin guardar datos personales.
 const textLarger = document.querySelector("#text-larger");
@@ -101,8 +131,7 @@ textLarger?.addEventListener("click", () => setReadingSize("large"));
 textSmaller?.addEventListener("click", () => setReadingSize("small"));
 textReset?.addEventListener("click", () => setReadingSize("normal"));
 
-
-// El catálogo vive en un archivo separado para facilitar el mantenimiento.
+// El catálogo vive separado. No se muestra nada que no tenga archivo local seguro.
 fetch("./recursos.json")
   .then(response => {
     if (!response.ok) throw new Error("No se pudo leer el catálogo");
@@ -111,13 +140,21 @@ fetch("./recursos.json")
   .then(catalog => {
     if (!catalog || !Array.isArray(catalog.resources)) throw new Error("Formato de catálogo incorrecto");
     resources = catalog.resources.filter(item =>
-      item && item.approved === true &&
+      item &&
+      item.approved === true &&
       typeof item.title === "string" &&
-      typeof item.download === "string" &&
-      typeof item.licenseLabel === "string"
+      typeof item.description === "string" &&
+      categoryNames[item.category] &&
+      typeof item.format === "string" &&
+      typeof item.licenseLabel === "string" &&
+      isSafeDownload(item.download) &&
+      safeHttpsUrl(item.source) &&
+      safeHttpsUrl(item.licenseUrl)
     );
     renderResources();
   })
   .catch(() => {
     if (grid) grid.innerHTML = '<div class="empty-note"><strong>Estamos acomodando el estante.</strong><p>El catálogo no pudo cargarse en este momento. Volvé a intentarlo más tarde.</p></div>';
   });
+
+renderResources();
