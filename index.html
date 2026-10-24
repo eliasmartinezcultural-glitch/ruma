@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5efe3">
+  <meta name="description" content="RUMA, un rinconcito amable para encontrar recursos libres, útiles y listos para descargar.">
+  <title>RUMA — Servite lo que necesites</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="RUMA, inicio">
+      <span class="brand-mark" aria-hidden="true">r</span>
+      <span><strong>ruma</strong><small>un rinconcito para compartir</small></span>
+    </a>
+    <a class="header-note" href="#colaborar">Si querés, invitá un mate <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="contenido">
+    <section class="welcome">
+      <div class="welcome-copy">
+        <p class="eyebrow"><span class="tiny-sun" aria-hidden="true">✳</span> UNA CASITA DIGITAL, ABIERTA PARA TODOS</p>
+        <h1>Pasá, mirá<br>y <em>llevate lo que te sirva.</em></h1>
+        <p class="intro">Acá juntamos recursos libres para aprender, crear, resolver pequeñas cosas y disfrutar un rato. Sin apuro, sin registro y sin pagar para descargar.</p>
+        <a class="primary-link" href="#puertas">Entrar a los pasillos <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="welcome-art" aria-label="Ilustración decorativa de una casita rural y un jardín" role="img">
+        <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="hill hill-back"></div><div class="hill hill-front"></div>
+        <div class="house">
+          <div class="roof"></div><div class="house-body"><div class="window window-left"></div><div class="door"></div><div class="window window-right"></div></div>
+        </div>
+        <div class="plant plant-left"><i></i><i></i><i></i></div>
+        <div class="plant plant-right"><i></i><i></i><i></i></div>
+        <span class="art-caption">un lugarcito hecho con cariño</span>
+      </div>
+    </section>
+
+    <section class="hallway" id="puertas">
+      <div class="section-heading">
+        <div><p class="eyebrow">ELEGÍ POR DÓNDE EMPEZAR</p><h2>Cuatro puertas, muchas posibilidades.</h2></div>
+        <p class="section-note">Paseá tranquilo. Cada recurso tendrá su descripción, su licencia y un botón claro para obtenerlo.</p>
+      </div>
+      <div class="door-grid">
+        <a class="door-card door-learn" href="#catalogo" data-category="aprender">
+          <span class="door-number">01 / PARA LA CABEZA</span><span class="door-icon" aria-hidden="true">✎</span>
+          <h3>Aprender</h3><p>Lecturas, fichas y materiales para descubrir algo nuevo.</p><span class="door-action">Entrar al pasillo <b aria-hidden="true">↗</b></span>
+        </a>
+        <a class="door-card door-create" href="#catalogo" data-category="crear">
+          <span class="door-number">02 / PARA LAS MANOS</span><span class="door-icon" aria-hidden="true">✿</span>
+          <h3>Crear</h3><p>Láminas, imprimibles, plantillas y pequeñas ideas creativas.</p><span class="door-action">Entrar al pasillo <b aria-hidden="true">↗</b></span>
+        </a>
+        <a class="door-card door-solve" href="#catalogo" data-category="resolver">
+          <span class="door-number">03 / PARA EL DÍA A DÍA</span><span class="door-icon" aria-hidden="true">⌂</span>
+          <h3>Resolver</h3><p>Organizadores y herramientas prácticas para la vida cotidiana.</p><span class="door-action">Entrar al pasillo <b aria-hidden="true">↗</b></span>
+        </a>
+        <a class="door-card door-enjoy" href="#catalogo" data-category="disfrutar">
+          <span class="door-number">04 / PARA DISFRUTAR</span><span class="door-icon" aria-hidden="true">☼</span>
+          <h3>Disfrutar</h3><p>Juegos, pasatiempos, cuentos y ratitos para compartir.</p><span class="door-action">Entrar al pasillo <b aria-hidden="true">↗</b></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading catalog-heading">
+        <div><p class="eyebrow">EL ESTANTE COMUNITARIO</p><h2>Buscá tu próximo hallazgo.</h2></div>
+        <span class="shelf-stamp">TODO GRATIS · SIN REGISTRO</span>
+      </div>
+      <div class="search-row">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="¿Qué estás buscando?" autocomplete="off" aria-label="Buscar recursos"></label>
+        <label class="filter-label"><span class="visually-hidden">Filtrar por categoría</span><select id="category-filter"><option value="todas">Todas las puertas</option><option value="aprender">Aprender</option><option value="crear">Crear</option><option value="resolver">Resolver</option><option value="disfrutar">Disfrutar</option></select></label>
+      </div>
+      <div class="resource-grid" id="resource-grid" aria-live="polite"></div>
+      <noscript><p class="empty-note">Para ver el catálogo necesitás activar JavaScript. La página no pide cuentas ni datos personales.</p></noscript>
+    </section>
+
+    <section class="promise">
+      <div class="promise-symbol" aria-hidden="true">♡</div>
+      <div><p class="eyebrow">LA IDEA ES SENCILLA</p><h2>Lo que necesitás, sin vueltas.</h2><p>Buscamos recursos que podamos compartir legalmente y dejamos los archivos listos acá mismo. Si algo no se puede alojar y descargar con facilidad, no entra en RUMA.</p></div>
+      <div class="promise-list"><span>✓ Descarga directa</span><span>✓ Licencias revisadas</span><span>✓ Sin obligación de colaborar</span></div>
+    </section>
+
+    <section class="donation" id="colaborar">
+      <div class="donation-doodle" aria-hidden="true">☕</div>
+      <div class="donation-copy"><p class="eyebrow">UNA MATEADA VOLUNTARIA</p><h2>Servite lo que necesites.<br><em>Si querés, dejá un donativo.</em></h2><p>RUMA es de acceso libre. Si este rinconcito te resultó útil y te nace colaborar para ayudar a sostenerlo, podés hacerlo. No hace falta y no cambia lo que podés descargar.</p></div>
+      <div class="donation-action"><p class="alias-label">Alias para colaborar</p><code id="alias-value">ocarina.guitarra</code><button class="copy-button" id="copy-alias" type="button">Copiar alias</button><small>A nombre de Elías Martínez</small><span class="copy-status" id="copy-status" aria-live="polite"></span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="./">ruma <span>✿</span></a>
+    <p>Un rinconcito amable. Llevate lo que te sirva y compartí con respeto.</p>
+    <nav aria-label="Información"><a href="creditos.html">Fuentes y licencias</a><a href="contacto.html">Correcciones y consultas</a></nav>
+    <small>RUMA · Un proyecto independiente, abierto y comunitario.</small>
+  </footer>
+</body>
+</html>
