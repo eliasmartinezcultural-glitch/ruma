@@ -11,7 +11,7 @@ const categoryNames = {
 const grid = document.querySelector("#resource-grid");
 const search = document.querySelector("#search");
 const categoryFilter = document.querySelector("#category-filter");
-const regionFilter = document.querySelector("#region-filter");
+const regionFilter = document.querySelector("#region-filter");\nconst languageFilter = document.querySelector("#language-filter");
 
 function isSafeDownload(value) {
   const path = String(value || "");
@@ -32,7 +32,7 @@ function renderResources() {
   if (!grid) return;
   const term = (search?.value || "").trim().toLocaleLowerCase("es");
   const category = categoryFilter?.value || "todas";
-  const region = regionFilter?.value || "todas";
+  const region = regionFilter?.value || "todas";\n  const language = languageFilter?.value || "todos";
   const filtered = resources.filter(item => {
     const text = [
       item.title, item.description, item.format, item.author,
@@ -96,7 +96,7 @@ function escapeHTML(value) {
 
 search?.addEventListener("input", renderResources);
 categoryFilter?.addEventListener("change", renderResources);
-regionFilter?.addEventListener("change", renderResources);
+regionFilter?.addEventListener("change", renderResources);\nlanguageFilter?.addEventListener("change", renderResources);
 
 document.querySelectorAll("[data-category]").forEach(link => {
   link.addEventListener("click", () => {
