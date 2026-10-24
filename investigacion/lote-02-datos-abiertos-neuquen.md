@@ -1,7 +1,7 @@
 # Lote 02 — datos abiertos para el territorio
 
 Fecha de revisión: 2026-10-24  
-Estado: fuentes identificadas; archivos concretos todavía no alojados ni publicados en RUMA.
+Estado: tres CSV oficiales fueron inspeccionados en la nube y publicados en RUMA el 2026-10-24. La capa geográfica permanece pendiente de inspección y no está publicada.
 
 Este lote prioriza datos que permiten crear recursos territoriales descargables sin copiar mapas con restricciones ni depender de enlaces externos para la descarga del visitante.
 
@@ -58,6 +58,17 @@ Este lote prioriza datos que permiten crear recursos territoriales descargables 
 - Informes municipales provinciales: https://www.economianqn.gob.ar/municipios/contenido/san-patricio-del-chanar
 
 Estas páginas sirven para investigar y verificar hechos. No autorizan automáticamente a copiar sus textos, fotografías o mapas. RUMA puede elaborar un índice original de datos factuales, citar fuentes y poner fecha de revisión; no debe presentar una guía como oficial ni prometer que la información cambiante está actualizada sin comprobarla.
+
+
+## Archivos efectivamente publicados en RUMA
+
+| Archivo alojado | Contenido | Tamaño | Precaución |
+|---|---|---:|---|
+| \`descargas/espacios-culturales-neuquen-2025.csv\` | 360 registros de espacios culturales, relevados hasta marzo de 2025 | 68.244 bytes | No es un directorio en tiempo real; confirmar antes de visitar |
+| \`descargas/nomenclador-regiones-y-municipios-neuquen.csv\` | 59 filas con regiones, departamentos, gobiernos locales y códigos | 3.419 bytes | CSV original con separador punto y coma y codificación cp1252 |
+| \`descargas/poblacion-departamentos-neuquen-censos.csv\` | 51 filas de población por departamento para censos 2001, 2010 y 2022 | 1.965 bytes | Datos censales históricos, no estimación actual |
+
+Las tres fichas de origen declaran CC BY 4.0. Los archivos originales se alojan sin modificar; la atribución y el enlace de licencia están en la página de créditos de RUMA. La inspección remota verificó tamaño, SHA-256, codificación, separador, encabezados, filas y muestras. El archivo cultural incluye tres registros de San Patricio del Chañar (biblioteca popular, centro cultural y Mercado de Creadores); los datos tienen corte hasta marzo de 2025 y no deben tratarse como confirmación de vigencia actual.
 
 ## Exclusiones y precauciones
 
