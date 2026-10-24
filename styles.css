@@ -34,3 +34,16 @@ body.text-large h1{font-size:clamp(2.8rem,6vw,4.5rem)}
 body.text-large h2{font-size:clamp(1.9rem,4vw,2.5rem)}
 body.text-small p,body.text-small a,body.text-small button,body.text-small input,body.text-small select,body.text-small label,body.text-small small,body.text-small span,body.text-small code{font-size:.92rem}
 @media(max-width:620px){.accessibility-tools{justify-content:flex-start;margin:0 0 14px}.accessibility-tools span{width:100%;margin-bottom:2px}.accessibility-tools button{min-height:46px}.search-row{flex-direction:column}.filter-label select{height:48px;width:100%}.resource-grid{grid-template-columns:1fr}.resource-card{min-height:0}.resource-meta{font-size:12px}.door-card p{font-size:13px}.promise,.donation{padding:23px 20px}}
+
+
+/* Ficha de recursos: atribución, alcance y licencia fáciles de encontrar. */
+.resource-details{display:flex;flex-direction:column;gap:6px;padding:12px 0 14px;font-size:11px;line-height:1.55;color:var(--muted)}
+.resource-details strong{color:var(--ink);font-weight:700}
+.resource-details a{color:var(--green-dark);text-decoration:underline;text-underline-offset:2px}
+.resource-details a:hover{color:#32482d}
+.resource-meta>span{font-size:10px;line-height:1.4}
+@media(max-width:620px){
+  .resource-details{font-size:13px;gap:8px}
+  .resource-meta{align-items:center}
+  .resource-meta>span{font-size:11px}
+}
