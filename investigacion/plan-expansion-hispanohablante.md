@@ -100,11 +100,12 @@ Preferencias: CC0, dominio público confirmado para Argentina, CC BY y CC BY-SA,
 
 ## Estado real del proyecto — 2026-10-24
 
-- Catálogo público: 18 recursos con archivos reales alojados en \`descargas/\`, fichas, licencias, fuentes y fechas de revisión.
+- Catálogo público: 20 recursos con archivos reales alojados en \`descargas/\`, fichas, licencias, fuentes y fechas de revisión.
 - Lote 01: tres PDF declarados CC0 1.0 (laberintos, láminas para colorear y sudokus/variantes). Conservan su idioma original, inglés, y la ficha lo indica.
 - Lotes 02 y 03: seis archivos de datos abiertos de Neuquén con licencia declarada CC BY 4.0 (espacios culturales, nomenclador, población censal, instrumentos de planificación provincial y local, GeoJSON de regiones). Se alojan sin modificar salvo la extracción del GeoJSON desde su ZIP, con huellas verificadas y atribución.
 - Se añadió una tabla nacional de 24 jurisdicciones argentinas con códigos Georef y atribución CC BY 4.0.
 - Se añadió un extracto local de tres espacios culturales de San Patricio del Chañar, con domicilios y coordenadas eliminados, y un mapa A4 esquemático generado desde el GeoJSON.
+- Se incorporaron dos fichas educativas abiertas de PENTEC/INTEF con CC BY-SA 4.0, inspeccionadas visualmente y con atribución.
 - Se generaron seis PDF originales en español: cuaderno de exploración del Chañar, agenda semanal, cuaderno de plantas, marcapáginas, cuaderno de memoria oral y guía de descargas seguras.
 - La inspección, generación y publicación de archivos se hace en GitHub Actions; el responsable no tuvo que descargar archivos a la computadora ajena.
 - Existe un control automático que revisa sintaxis de JavaScript, estructura del catálogo, rutas locales seguras y presencia de cada archivo.
