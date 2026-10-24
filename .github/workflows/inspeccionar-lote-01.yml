@@ -1,0 +1,125 @@
+name: RUMA — inspección remota de recursos CC0
+
+on:
+  push:
+    paths:
+      - ".github/workflows/inspeccionar-lote-01.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspeccionar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Preparar entorno temporal en la nube
+        uses: actions/checkout@v4
+
+      - name: Instalar lector de PDF
+        run: python -m pip install --disable-pip-version-check pypdf
+
+      - name: Obtener e inspeccionar candidatos (sin publicarlos)
+        run: |
+          python - <<'PY'
+          import hashlib, io, os, re, urllib.request, zipfile
+          from pathlib import Path
+          from pypdf import PdfReader
+
+          out = Path("salida-inspeccion")
+          pdf_dir = out / "pdf"
+          pdf_dir.mkdir(parents=True, exist_ok=True)
+          sources = [
+              ("laberintos", "https://github.com/dead0eye/free-printable-resources/releases/download/Mazes/Mazes.v1.0.0.zip"),
+              ("sopa-de-letras-pendiente", "https://github.com/dead0eye/free-printable-resources/releases/download/word-puzzles/Word.Search.v1.0.0.zip"),
+              ("colorear-frases", "https://github.com/dead0eye/free-printable-resources/releases/download/coloring-books/Quote.Coloring.Book.v1.0.0.zip"),
+              ("sudoku-facil", "https://github.com/dead0eye/free-printable-resources/releases/download/sudoku-puzzles/Sudoku.Puzzles.Easy.-.25.v1.0.0.zip"),
+          ]
+          lines = [
+              "# Informe de inspección remota — RUMA lote 01",
+              "",
+              "Este informe y los PDF extraídos son un artefacto temporal de inspección. No se publican automáticamente en RUMA.",
+              "",
+              "Licencia declarada por la fuente: CC0 1.0. Revisar los avisos y el contenido de cada archivo antes de aprobarlo.",
+              "",
+          ]
+          total_extracted = 0
+          for label, url in sources:
+              lines += [f"## {label}", "", f"URL de origen: {url}", ""]
+              try:
+                  req = urllib.request.Request(url, headers={"User-Agent": "RUMA-Resource-Review/1.0"})
+                  with urllib.request.urlopen(req, timeout=45) as response:
+                      raw = response.read(20 * 1024 * 1024 + 1)
+                  if len(raw) > 20 * 1024 * 1024:
+                      raise ValueError("El ZIP supera el límite de 20 MiB.")
+                  lines.append(f"- ZIP recibido: {len(raw)} bytes")
+                  lines.append(f"- SHA-256 ZIP: {hashlib.sha256(raw).hexdigest()}")
+                  with zipfile.ZipFile(io.BytesIO(raw)) as zf:
+                      members = zf.infolist()
+                      lines.append(f"- Entradas en ZIP: {len(members)}")
+                      if len(members) > 200:
+                          raise ValueError("El ZIP contiene más de 200 entradas.")
+                      pdf_count = 0
+                      for member in members:
+                          name = member.filename.replace("\\", "/")
+                          if name.startswith("/") or re.match(r"^[A-Za-z]:", name) or ".." in name.split("/"):
+                              lines.append(f"- OMITIDO por ruta insegura: {name}")
+                              continue
+                          if member.is_dir():
+                              continue
+                          if member.file_size > 12 * 1024 * 1024:
+                              lines.append(f"- OMITIDO por tamaño individual: {name} ({member.file_size} bytes)")
+                              continue
+                          suffix = Path(name).suffix.lower()
+                          if suffix not in (".pdf", ".txt", ".md", ".license"):
+                              lines.append(f"- Archivo no PDF, no extraído: {name} ({member.file_size} bytes)")
+                              continue
+                          data = zf.read(member)
+                          if suffix != ".pdf":
+                              lines.append(f"- Archivo de texto/licencia detectado: {name} ({len(data)} bytes)")
+                              if Path(name).name.lower() in ("license", "license.txt", "readme.md", "licence", "licence.txt"):
+                                  snippet = data.decode("utf-8", "replace")[:1200].replace("\n", " ")
+                                  lines.append(f"  - Muestra: {snippet}")
+                              continue
+                          if total_extracted + len(data) > 35 * 1024 * 1024:
+                              lines.append("- Se alcanzó el límite total de 35 MiB; el resto no se extrajo.")
+                              break
+                          safe_base = re.sub(r"[^A-Za-z0-9._-]+", "-", Path(name).name).strip(".-") or "archivo.pdf"
+                          target = pdf_dir / f"{label}--{safe_base}"
+                          target.write_bytes(data)
+                          total_extracted += len(data)
+                          pdf_count += 1
+                          try:
+                              reader = PdfReader(io.BytesIO(data), strict=False)
+                              pages = len(reader.pages)
+                              sample = " ".join((reader.pages[0].extract_text() or "").split())[:500] if pages else ""
+                              lines.append(f"- PDF: {name}")
+                              lines.append(f"  - Tamaño: {len(data)} bytes; páginas: {pages}; SHA-256: {hashlib.sha256(data).hexdigest()}")
+                              lines.append(f"  - Muestra de primera página: {sample or '[sin texto extraíble; requiere inspección visual]'}")
+                              if reader.is_encrypted:
+                                  lines.append("  - ALERTA: PDF cifrado.")
+                          except Exception as exc:
+                              lines.append(f"- PDF con error de lectura: {name} — {type(exc).__name__}: {exc}")
+                      lines.append(f"- PDF extraídos para inspección: {pdf_count}")
+              except Exception as exc:
+                  lines.append(f"- ERROR al obtener o leer la fuente: {type(exc).__name__}: {exc}")
+              lines.append("")
+          lines += [
+              "## Decisión",
+              "",
+              "No se marca ningún recurso como aprobado por este proceso. Confirmar la licencia, revisar visualmente cada PDF, comprobar impresión A4 y detectar páginas o contenidos inesperados antes de incorporarlo al catálogo.",
+              "",
+              "Nota de investigación: la descripción del repositorio de origen para la categoría de sopa de letras parece inconsistente con la descripción de sus contenidos; verificar el ZIP antes de usarlo.",
+          ]
+          (out / "INFORME.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+          print((out / "INFORME.md").read_text(encoding="utf-8"))
+          PY
+
+      - name: Guardar paquete temporal de inspección
+        uses: actions/upload-artifact@v4
+        with:
+          name: ruma-lote-01-inspeccion
+          path: salida-inspeccion/
+          if-no-files-found: error
+          retention-days: 7
