@@ -79,6 +79,18 @@ jobs:
                   "target": "descargas/ficha-descripcion-de-objetos-intef.pdf",
                   "max_bytes": 20000,
               },
+              "mis-oraciones-con-dados-intef": {
+                  "url": "https://descargas.intef.es/recursos_educativos/It_didac/Leng_Pri/2/09/La_oracin/MIS_ORACIONES_CON_DADOS.pdf",
+                  "sha256": "9797cd197785918ad04ec8e2575d2e6219f0098c30fd3d2f90829cb9e83ae522",
+                  "target": "descargas/mis-oraciones-con-dados-intef.pdf",
+                  "max_bytes": 1400000,
+              },
+              "crea-tus-dados-intef": {
+                  "url": "https://descargas.intef.es/recursos_educativos/It_didac/Leng_Pri/2/09/La_oracin/CREA_TUS_DADOS.pdf",
+                  "sha256": "c9af7c1474b835aac68fcbda91cdad8513c68754fa3883f0ee44aacd2fa5aab5",
+                  "target": "descargas/crea-tus-dados-intef.pdf",
+                  "max_bytes": 1400000,
+              },
           }
           items = manifest_resources
           if not isinstance(items, list) or not items:
