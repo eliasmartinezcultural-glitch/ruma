@@ -16,11 +16,11 @@ La interfaz debe sentirse como un rinconcito amable, claro y tranquilo. Por detr
 ## Cómo incorporar un recurso
 1. Encontrar la página oficial del archivo, no un repost sin procedencia.
 2. Confirmar la licencia de ese archivo específico. Priorizar CC0 o una declaración explícita de dominio público que permita redistribución; revisar derechos de terceros y marcas.
-3. Descargar el archivo original y abrirlo para comprobar que no esté vacío, roto, protegido, con marcas de agua o con contenido inesperado.
-4. Comprobar tamaño, formato y que imprima bien en A4. No publicar archivos enormes si una versión ligera y legible está disponible.
-5. Guardar una copia local dentro de `descargas/`; no enlazar la descarga de un tercero ni hacer hotlink.
+3. Ejecutar la inspección remota desde GitHub Actions en la nube cuando el formato lo permita; no pedir al responsable que descargue archivos a una computadora ajena.
+4. Revisar inventario, tipo, tamaño, número de páginas, texto extraíble y muestras visuales; no publicar archivos enormes si existe una versión ligera y legible.
+5. Verificar SHA-256 y extraer solo los archivos autorizados a `descargas/` desde la nube; no enlazar la descarga de un tercero ni hacer hotlink.
 6. Registrar la ficha en `investigacion/registro-de-recursos.csv` y anotar la fecha de revisión.
-7. Añadir el objeto correspondiente a `recursos.json`, con `approved: true` únicamente tras completar todas las verificaciones.
+7. Añadir el objeto correspondiente a `recursos.json`, con `approved: true` únicamente cuando el archivo esté alojado y las verificaciones estén completas.
 8. Probar el botón desde un móvil y una computadora, con y sin filtros.
 9. Si hay dudas sobre la licencia, no se publica.
 
@@ -65,5 +65,7 @@ Categorías permitidas: `aprender`, `crear`, `resolver`, `disfrutar`.
 - [ ] No se solicitan datos personales.
 - [ ] El canal real de correcciones y retiro está configurado antes de abrir al público.
 
-## Estado actual
-La interfaz está preparada para leer un catálogo separado y mostrar solo entradas marcadas como aprobadas. El catálogo todavía no contiene recursos: no se deben inventar archivos ni mostrar botones de descarga hasta que se incorporen copias reales y revisadas.
+## Estado actual — 2026-10-24
+La interfaz lee un catálogo separado y muestra solo entradas aprobadas con rutas locales seguras, fuente y licencia HTTPS. El lote 01 ya contiene tres PDF CC0 alojados en `descargas/`: 30 laberintos, 20 láminas para colorear y 25 sudokus/variantes. Los tres archivos conservan su idioma original (inglés), que se indica en las fichas. El proceso de nube vuelve a comprobar las huellas SHA-256 antes de publicar los archivos.
+
+El canal de correcciones y retiro aún debe configurarse con un medio real antes de promover RUMA ampliamente. La publicación en GitHub Pages debe verificarse por separado; no confundir un commit exitoso con un sitio desplegado.
