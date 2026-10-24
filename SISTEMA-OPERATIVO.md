@@ -31,18 +31,24 @@ La interfaz debe sentirse como un rinconcito amable, claro y tranquilo. Por detr
   "title": "Título comprensible",
   "description": "Qué es y para quién sirve",
   "category": "crear",
+  "subcategory": "colorear",
+  "region": "internacional",
+  "regionLabel": "Internacional",
+  "language": "es",
+  "languageLabel": "Español",
   "format": "PDF A4",
+  "sizeLabel": "250 KB",
   "download": "descargas/archivo.pdf",
   "licenseLabel": "CC0 1.0",
   "author": "Autor o institución",
-  "source": "URL de la ficha oficial",
-  "licenseUrl": "URL del texto de licencia",
+  "source": "https://sitio-oficial.example/ficha",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.es",
   "reviewedOn": "AAAA-MM-DD",
   "approved": true
 }
 ```
 
-Categorías permitidas: `aprender`, `crear`, `resolver`, `disfrutar`.
+Categorías permitidas: `aprender`, `crear`, `resolver`, `disfrutar`. Las regiones admitidas actualmente son `chanar`, `neuquen`, `argentina`, `hispanoamerica`, `hispanohablante` e `internacional`. Indicar el idioma real en `languageLabel`; no confundir alcance geográfico con idioma. La ficha debe enlazar la fuente y la licencia.
 
 ## Reglas de experiencia para personas mayores
 - Texto legible y posibilidad de agrandarlo desde la página.
