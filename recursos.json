@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "updated": "2026-10-24",
   "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
   "resources": [
@@ -122,6 +122,66 @@
       "source": "https://portaldatosabiertos.neuquen.gov.ar/dataset/poblacion-segun-departamento-censos-2001-2010-y-2022",
       "reviewedOn": "2026-10-24",
       "approved": true
+    },
+    {
+      "category": "aprender",
+      "region": "neuquen",
+      "regionLabel": "Neuquén y Patagonia",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "planificacion-provincial-neuquen",
+      "title": "Instrumentos de planificación de la provincia de Neuquén",
+      "description": "Listado de 20 instrumentos o proyectos de planificación provincial, con año y estado registrado. El conjunto cubre el período 2019–2025; no significa que todos los proyectos estén vigentes hoy.",
+      "subcategory": "territorio",
+      "format": "CSV · 20 registros",
+      "sizeLabel": "2,7 KB",
+      "download": "descargas/instrumentos-planificacion-provincial-neuquen.csv",
+      "author": "COPADE · Dirección Provincial de Planificación Territorial",
+      "source": "https://portaldatosabiertos.neuquen.gov.ar/dataset/instrumentos-de-planificacion-territoriales-en-la-provincia-del-neuquen"
+    },
+    {
+      "category": "aprender",
+      "region": "neuquen",
+      "regionLabel": "Neuquén y Patagonia",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "planificacion-gobiernos-locales-neuquen",
+      "title": "Planificación territorial de gobiernos locales de Neuquén",
+      "description": "Tabla con 167 registros de instrumentos de planificación por gobierno local, localidad, región, año y estado. Datos correspondientes al período 2019–2025; consultar la fuente para confirmar vigencia.",
+      "subcategory": "territorio",
+      "format": "CSV · 167 registros",
+      "sizeLabel": "29 KB",
+      "download": "descargas/instrumentos-planificacion-gobiernos-locales-neuquen.csv",
+      "author": "COPADE · Dirección Provincial de Planificación Territorial",
+      "source": "https://portaldatosabiertos.neuquen.gov.ar/dataset/instrumentos-de-planificacion-territoriales-en-la-provincia-del-neuquen"
+    },
+    {
+      "category": "aprender",
+      "region": "neuquen",
+      "regionLabel": "Neuquén y Patagonia",
+      "language": "es",
+      "languageLabel": "Español",
+      "licenseLabel": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "reviewedOn": "2026-10-24",
+      "approved": true,
+      "id": "regiones-neuquen-geojson",
+      "title": "Datos geográficos de las regiones de Neuquén",
+      "description": "Archivo GeoJSON con siete entidades regionales. Es un archivo de datos geográficos para sistemas compatibles, no un mapa ilustrado listo para imprimir. Incluye propiedades territoriales y referencia a la Ley provincial 3480.",
+      "subcategory": "mapas-y-datos",
+      "format": "GeoJSON",
+      "sizeLabel": "1,86 MB",
+      "download": "descargas/regiones-neuquen.geojson",
+      "author": "COPADE · Ministerio de Planificación, Innovación y Modernización",
+      "source": "https://portaldatosabiertos.neuquen.gov.ar/dataset/capa-de-regiones-de-la-provincia-del-neuquen"
     }
   ]
 }
