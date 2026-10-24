@@ -1,0 +1,103 @@
+name: RUMA — crear cuaderno local imprimible
+
+on:
+  push:
+    paths:
+      - ".github/workflows/crear-cuaderno-chanar.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crear:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Crear PDF A4 original en la nube
+        run: |
+          python -m pip install --quiet reportlab
+          python - <<'PY'
+          from reportlab.lib.pagesizes import A4
+          from reportlab.lib import colors
+          from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+          from reportlab.lib.enums import TA_CENTER
+          from reportlab.lib.units import mm
+          from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, Table, TableStyle, KeepTogether
+          from pathlib import Path
+
+          target = Path("descargas/cuaderno-exploracion-san-patricio-del-chanar.pdf")
+          target.parent.mkdir(parents=True, exist_ok=True)
+          doc = SimpleDocTemplate(str(target), pagesize=A4, rightMargin=18*mm, leftMargin=18*mm, topMargin=18*mm, bottomMargin=18*mm, title="Chañar para mirar despacio — cuaderno de exploración", author="RUMA")
+          styles = getSampleStyleSheet()
+          styles.add(ParagraphStyle(name="Cover", parent=styles["Title"], fontName="Helvetica-Bold", fontSize=25, leading=30, textColor=colors.HexColor("#42594b"), alignment=TA_CENTER, spaceAfter=12))
+          styles.add(ParagraphStyle(name="Sub", parent=styles["Normal"], fontSize=12, leading=17, alignment=TA_CENTER, textColor=colors.HexColor("#78634c"), spaceAfter=15))
+          styles.add(ParagraphStyle(name="Section", parent=styles["Heading1"], fontSize=18, leading=22, textColor=colors.HexColor("#42594b"), spaceBefore=6, spaceAfter=10))
+          styles.add(ParagraphStyle(name="BodyR", parent=styles["BodyText"], fontSize=11, leading=16, spaceAfter=8))
+          styles.add(ParagraphStyle(name="SmallR", parent=styles["BodyText"], fontSize=8, leading=11, textColor=colors.HexColor("#655f55")))
+          styles.add(ParagraphStyle(name="Prompt", parent=styles["BodyText"], fontSize=12, leading=18, spaceAfter=8, textColor=colors.HexColor("#4e5b4d")))
+          story=[]
+          story += [Spacer(1,28*mm), Paragraph("CHAÑAR PARA<br/>MIRAR DESPACIO",styles["Cover"]), Paragraph("Un cuaderno tranquilo para explorar San Patricio del Chañar",styles["Sub"]), Spacer(1,8*mm)]
+          cover=Table([[Paragraph("<b>Mirar</b><br/>Descubrir detalles que a veces pasan desapercibidos.",styles["BodyR"]),Paragraph("<b>Recordar</b><br/>Guardar pequeñas historias de nuestro lugar.",styles["BodyR"])],[Paragraph("<b>Dibujar</b><br/>Hacer una página propia con lápiz y colores.",styles["BodyR"]),Paragraph("<b>Compartir</b><br/>Conversar con alguien que conozca el pueblo.",styles["BodyR"])]],colWidths=[78*mm,78*mm],rowHeights=[35*mm,35*mm])
+          cover.setStyle(TableStyle([("BACKGROUND",(0,0),(-1,-1),colors.HexColor("#f5efe3")),("BOX",(0,0),(-1,-1),0.7,colors.HexColor("#d9cbb5")),("INNERGRID",(0,0),(-1,-1),0.5,colors.HexColor("#d9cbb5")),("VALIGN",(0,0),(-1,-1),"MIDDLE"),("LEFTPADDING",(0,0),(-1,-1),10),("RIGHTPADDING",(0,0),(-1,-1),10),("TOPPADDING",(0,0),(-1,-1),8)]))
+          story += [cover,Spacer(1,14*mm),Paragraph("No hace falta viajar lejos ni saber mucho. Alcanza con tener curiosidad, cuidar el lugar y mirar con atención.",styles["Sub"]),Spacer(1,18*mm),Paragraph("Para usar en casa, en la escuela o durante un paseo acompañado. No requiere conexión a internet.",styles["BodyR"]),PageBreak()]
+          story += [Paragraph("1. Una caminata de observación",styles["Section"]),Paragraph("Elegí un lugar público y seguro, andá acompañado si sos menor y respetá los espacios privados. No hace falta completar todo: podés hacerlo de a poco.",styles["BodyR"])]
+          for q in ["Anotá tres sonidos que escuchaste:","Buscá dos colores distintos en la naturaleza:","¿Qué plantas o árboles reconocés? Si no sabés el nombre, dibujalos:","¿Qué señales muestran que aquí vive o trabaja gente?","¿Qué detalle pequeño te gustaría mostrarle a otra persona?"]:
+            story += [Paragraph(q,styles["Prompt"]),Spacer(1,18*mm)]
+          story += [PageBreak(),Paragraph("2. Mi mapa de recuerdos",styles["Section"]),Paragraph("Este no es un mapa oficial ni sirve para orientarse. Es un dibujo personal de lugares que conocés y querés recordar. No marques tu domicilio ni datos privados.",styles["BodyR"])]
+          for i in range(6):
+            story += [Paragraph("Lugar o recuerdo: ______________________________________________",styles["Prompt"]),Spacer(1,7*mm)]
+          blank=Table([[" "] for _ in range(1)],colWidths=[160*mm],rowHeights=[78*mm])
+          blank.setStyle(TableStyle([("BOX",(0,0),(-1,-1),0.8,colors.HexColor("#b6bcae"))]))
+          story += [Spacer(1,4*mm),blank,PageBreak()]
+          story += [Paragraph("3. Una historia del Chañar",styles["Section"]),Paragraph("Los lugares se conocen también por las voces de quienes los habitan. Pedile a una persona de confianza que te cuente un recuerdo del pueblo. Escuchá con respeto y preguntá si podés anotarlo.",styles["BodyR"])]
+          for q in ["¿Quién me contó esta historia? (solo si quiere aparecer):","¿En qué época ocurrió?","¿Qué lugar aparece en el recuerdo?","¿Qué cambió desde entonces?","¿Qué parte me sorprendió?"]:
+            story += [Paragraph(q,styles["Prompt"]),Spacer(1,12*mm)]
+          story += [Paragraph("Antes de compartir una historia o una foto, pedí permiso a las personas que aparecen en ella.",styles["BodyR"]),PageBreak()]
+          story += [Paragraph("4. Seguir aprendiendo",styles["Section"]),Paragraph("Para conocer la historia, los espacios públicos y las propuestas culturales, consultá las fuentes oficiales. La información sobre actividades, accesos y horarios puede cambiar: confirmala antes de salir.",styles["BodyR"])]
+          refs=[
+            ("Identidad e historia municipal","https://www.sanpatricio.gob.ar/identidad"),
+            ("Qué hacer en San Patricio del Chañar","https://sanpatricio.gob.ar/quehacer"),
+            ("Nuestra ciudad","https://sanpatricio.gob.ar/nuestra"),
+            ("Llegar a San Patricio del Chañar","https://www.sanpatricio.gob.ar/llegar"),
+            ("Portal de Datos Abiertos de Neuquén","https://portaldatosabiertos.neuquen.gov.ar/"),
+          ]
+          for label,url in refs:
+            story += [Paragraph(f'<b>{label}</b><br/><font size="9">{url}</font>',styles["BodyR"]),Spacer(1,3*mm)]
+          story += [Spacer(1,5*mm),Paragraph("Este cuaderno es un material original de RUMA, creado para observar, aprender y compartir con respeto. No reproduce mapas, fotografías ni textos de las páginas citadas. Revisión: 24 de octubre de 2026.",styles["SmallR"]),Spacer(1,6*mm),Paragraph("Una última pregunta: ¿qué cosa linda de tu lugar te gustaría que otras personas conocieran?",styles["Prompt"]),Spacer(1,25*mm)]
+          def footer(canvas, doc):
+            canvas.saveState()
+            canvas.setStrokeColor(colors.HexColor("#d9cbb5"))
+            canvas.line(18*mm,13*mm,A4[0]-18*mm,13*mm)
+            canvas.setFont("Helvetica",8)
+            canvas.setFillColor(colors.HexColor("#655f55"))
+            canvas.drawString(18*mm,8*mm,"RUMA · Un rinconcito para compartir")
+            canvas.drawRightString(A4[0]-18*mm,8*mm,f"Página {doc.page}")
+            canvas.restoreState()
+          doc.build(story,onFirstPage=footer,onLaterPages=footer)
+          print(f"Creado {target}: {target.stat().st_size} bytes")
+          PY
+      - name: Verificar el PDF y guardarlo en el repositorio
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          p=Path("descargas/cuaderno-exploracion-san-patricio-del-chanar.pdf")
+          if not p.exists() or p.stat().st_size < 8000:
+            raise SystemExit("PDF ausente o demasiado pequeño.")
+          reader=PdfReader(str(p))
+          if len(reader.pages) < 4:
+            raise SystemExit("El cuaderno no contiene las páginas esperadas.")
+          text=" ".join(page.extract_text() or "" for page in reader.pages)
+          for phrase in ("CHAÑAR PARA","Una caminata de observación","Una historia del Chañar"):
+            if phrase not in text:
+              raise SystemExit(f"Falta contenido: {phrase}")
+          print(f"PDF verificado: {len(reader.pages)} páginas, {p.stat().st_size} bytes")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add descargas/cuaderno-exploracion-san-patricio-del-chanar.pdf
+          git commit -m "Añade cuaderno original de exploración de San Patricio del Chañar"
+          git pull --rebase origin main
+          git push
