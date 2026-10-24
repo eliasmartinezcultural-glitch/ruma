@@ -1,0 +1,81 @@
+name: RUMA — publicar datos abiertos regionales
+
+on:
+  push:
+    paths:
+      - "investigacion/aprobaciones-lote-02.json"
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Verificar archivos oficiales y guardarlos en RUMA
+        run: |
+          python - <<'PY'
+          import hashlib, json, urllib.request
+          from pathlib import Path
+
+          manifest = json.loads(Path("investigacion/aprobaciones-lote-02.json").read_text(encoding="utf-8"))
+          allowed = {
+              "espacios-culturales-neuquen": {
+                  "url": "https://portaldatosabiertos.neuquen.gov.ar/dataset/9f0b080d-9ce2-4fe8-bb58-c6423d46e3de/resource/b4781225-e22f-4252-8912-75b87b3fde78/download/espaciosculturales_odafyc_3-25.csv",
+                  "sha256": "e500fa7505f47e8a20163cd56e76e97a6c2f3cf6187b16f11893b0ce1f812956",
+                  "target": "descargas/espacios-culturales-neuquen-2025.csv",
+                  "max_bytes": 200000,
+              },
+              "nomenclador-neuquen": {
+                  "url": "https://portaldatosabiertos.neuquen.gov.ar/dataset/3a53436c-7767-455f-9f39-bbbbd1e9a29c/resource/4438f5ef-91e9-4e51-aa57-e5c368f9a6fc/download/codigos-regiones-departamentos-y-gobiernos-locales.csv",
+                  "sha256": "fff12d531ee881a19e078f685282ed5ef6667e9de95895e21192bab552e2d7f6",
+                  "target": "descargas/nomenclador-regiones-y-municipios-neuquen.csv",
+                  "max_bytes": 20000,
+              },
+              "poblacion-neuquen-censos": {
+                  "url": "https://portaldatosabiertos.neuquen.gov.ar/dataset/2ed87b73-74a7-45f4-804b-1a4e6d8fa68b/resource/b24eb9e1-695f-4efa-b465-644486dde6e3/download/poblacion-censos-2001-2010-2022.csv",
+                  "sha256": "bebd4c7b155343b58bc9919950eb4907aa32ac6cae062fc73d648e4320bb33cd",
+                  "target": "descargas/poblacion-departamentos-neuquen-censos.csv",
+                  "max_bytes": 20000,
+              },
+          }
+          items = manifest.get("resources")
+          if not isinstance(items, list) or not items:
+              raise SystemExit("El manifiesto no contiene recursos.")
+          ids = [x.get("id") for x in items if isinstance(x, dict) and x.get("approved") is True]
+          if len(ids) != len(items) or len(ids) != len(set(ids)) or any(i not in allowed for i in ids):
+              raise SystemExit("El manifiesto contiene IDs no autorizados, entradas inválidas o duplicadas.")
+          for resource_id in ids:
+              spec = allowed[resource_id]
+              request = urllib.request.Request(spec["url"], headers={"User-Agent": "RUMA-OpenData-Publisher/1.0"})
+              with urllib.request.urlopen(request, timeout=45) as response:
+                  data = response.read(spec["max_bytes"] + 1)
+              if len(data) > spec["max_bytes"]:
+                  raise SystemExit(f"{resource_id}: supera el tamaño máximo permitido.")
+              digest = hashlib.sha256(data).hexdigest()
+              if digest != spec["sha256"]:
+                  raise SystemExit(f"{resource_id}: el archivo de origen cambió; requiere nueva inspección.")
+              target = Path(spec["target"])
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(data)
+              print(f"VERIFICADO {resource_id}: {target}, {len(data)} bytes, SHA-256 {digest}")
+          PY
+
+      - name: Confirmar archivos en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add descargas/
+          if git diff --cached --quiet; then
+            echo "No hay archivos nuevos para publicar."
+            exit 0
+          fi
+          git commit -m "Publica datos abiertos de Neuquén revisados"
+          git pull --rebase origin main
+          git push
