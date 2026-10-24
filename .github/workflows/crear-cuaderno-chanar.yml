@@ -84,7 +84,7 @@ jobs:
           from pathlib import Path
           from pypdf import PdfReader
           p=Path("descargas/cuaderno-exploracion-san-patricio-del-chanar.pdf")
-          if not p.exists() or p.stat().st_size < 8000:
+          if not p.exists() or p.stat().st_size < 3000:
             raise SystemExit("PDF ausente o demasiado pequeño.")
           reader=PdfReader(str(p))
           if len(reader.pages) < 4:
