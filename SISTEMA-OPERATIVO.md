@@ -84,3 +84,7 @@ La orientación pública se ajusta para comunicar a RUMA como biblioteca curada 
 La interfaz lee un catálogo separado y muestra solo entradas aprobadas con rutas locales seguras, fuente y licencia HTTPS. Al 2026-10-24 hay 22 recursos catalogados: tres PDF CC0 de un proyecto externo en inglés; seis archivos de datos abiertos de Neuquén (CSV y GeoJSON); un extracto local adaptado; un mapa A4 original basado en el GeoJSON; seis PDF originales RUMA en español; una tabla territorial nacional de Georef; y cuatro fichas educativas abiertas de INTEF/PENTEC con CC BY-SA 4.0. Los recursos tienen ficha, idioma, alcance, formato, licencia y enlace a fuente. Los archivos se generaron o inspeccionaron en la nube y se validaron antes de publicar.
 
 Hay automatización de inspección de datos, publicación con lista de IDs y huellas SHA-256, generación de PDF y verificación del catálogo. El canal de correcciones y retiro aún debe configurarse con un medio real antes de promover RUMA ampliamente. La publicación en GitHub Pages debe verificarse por separado; no confundir un commit exitoso con un sitio desplegado.
+
+
+## Norte absoluto: Ley Mundial de RUMA
+La referencia obligatoria para cada decisión es [`LEY-MUNDIAL-DE-RUMA.md`](./LEY-MUNDIAL-DE-RUMA.md). Consultarla antes de cada cambio editorial, visual, técnico o de catálogo. Regla resumida: sistema robusto por dentro; frente corto, colorido, amable y accesible; cada recurso con vista previa fiel, descarga comprobada, permisos claros y un cartelito voluntario persistente con alias `ocarina.guitarra` que nunca interrumpe.
