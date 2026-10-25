@@ -1,5 +1,5 @@
 # LEY MUNDIAL DE RUMA
-## Norte absoluto del proyecto · versión 1.0 · 24 de octubre de 2026
+## Norte absoluto del proyecto · versión 1.1 · 24 de octubre de 2026
 
 Esta ley es la referencia principal de RUMA. Debe consultarse antes de cada decisión editorial, visual, técnica, comercial o de crecimiento. Si una idea contradice esta ley, se corrige o se descarta. No se cambia esta ley por comodidad ni para sumar números.
 
@@ -45,6 +45,8 @@ Un pequeño cartel de colaboración voluntaria con el alias **ocarina.guitarra**
 La prioridad territorial orienta la búsqueda; no impide sumar un gran recurso universal.
 
 ## 9. Curaduría estricta: belleza, utilidad y profundidad
+
+Estándar operativo y colecciones prioritarias: [investigacion/estandar-de-curaduria-y-colecciones.md](./investigacion/estandar-de-curaduria-y-colecciones.md). Debe usarse junto con esta ley.
 
 La biblioteca no es un depósito de archivos ni una competencia por cantidad. Solo entran recursos sobresalientes para su propósito: visualmente cuidados, realmente útiles, completos y agradables de usar.
 
