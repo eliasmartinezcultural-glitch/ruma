@@ -1,7 +1,7 @@
 {
-  "version": 14,
+  "version": 15,
   "updated": "2026-10-24",
-  "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
+  "notice": "Solo se muestran recursos que superan la revisión editorial, tienen archivo alojado, licencia revisada y descarga directa.",
   "resources": [
     {
       "id": "laberintos-30",
@@ -282,26 +282,6 @@
       "format": "PDF · A4",
       "sizeLabel": "2,5 KB",
       "download": "descargas/marcapaginas-para-compartir-ruma.pdf"
-    },
-    {
-      "id": "espacios-culturales-chanar",
-      "title": "Espacios culturales registrados en San Patricio del Chañar",
-      "description": "Extracto de tres registros de la base provincial relevada hasta marzo de 2025: biblioteca popular, centro cultural y Mercado de Creadores. Se quitaron domicilios y coordenadas para simplificar y evitar difundir direcciones innecesarias. Confirmá la vigencia antes de visitar.",
-      "category": "aprender",
-      "subcategory": "cultura-local",
-      "region": "chanar",
-      "regionLabel": "San Patricio del Chañar",
-      "language": "es",
-      "languageLabel": "Español",
-      "format": "CSV · 3 registros",
-      "sizeLabel": "menos de 1 KB",
-      "download": "descargas/espacios-culturales-san-patricio-del-chanar.csv",
-      "licenseLabel": "CC BY 4.0 · extracto adaptado",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
-      "author": "UPEPS / ODAFyC · datos originales; extracto RUMA",
-      "source": "https://portaldatosabiertos.neuquen.gov.ar/dataset/espacios-culturales-del-neuquen",
-      "reviewedOn": "2026-10-24",
-      "approved": true
     },
     {
       "region": "hispanohablante",
