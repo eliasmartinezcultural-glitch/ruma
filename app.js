@@ -148,6 +148,20 @@ categoryFilter?.addEventListener("change", renderResources);
 regionFilter?.addEventListener("change", renderResources);
 languageFilter?.addEventListener("change", renderResources);
 
+// Atajos materos: cada elección lleva al estante con la categoría correspondiente.
+document.querySelectorAll("[data-mood]").forEach(button => {
+  button.addEventListener("click", () => {
+    const chosen = button.dataset.mood || "todas";
+    if (categoryFilter) categoryFilter.value = chosen;
+    if (search) search.value = "";
+    if (regionFilter) regionFilter.value = "todas";
+    if (languageFilter) languageFilter.value = "todos";
+    renderResources();
+    document.querySelectorAll("[data-mood]").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+    document.querySelector("#catalogo")?.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
+  });
+});
+
 document.querySelectorAll("[data-category]").forEach(link => {
   link.addEventListener("click", () => {
     if (categoryFilter) categoryFilter.value = link.dataset.category || "todas";
