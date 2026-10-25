@@ -4,19 +4,105 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4efe6">
-  <meta name="description" content="RUMA: un rinconcito para encontrar cositas bonitas que suman y aportan valor.">
-  <title>RUMA · Un rinconcito</title>
+  <meta name="description" content="RUMA reúne recursos gratuitos, útiles y valiosos para aprender, trabajar, explorar y disfrutar.">
+  <title>RUMA — La biblioteca de las cosas que valen la pena</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="inicio">
-    <p class="marca">RUMA</p>
-    <div class="ilustracion" aria-hidden="true">🌱</div>
-    <h1>Un rinconcito para encontrar cosas bonitas</h1>
-    <p class="intro">Un lugar sencillo para descubrir, compartir y llevarte algo que te haga bien.</p>
-    <p class="estado">Estamos preparando este espacio con cariño.</p>
-    <footer>Hecho con amor · RUMA</footer>
+  <header class="barra">
+    <a class="marca" href="#inicio" aria-label="RUMA, inicio"><span class="marca-simbolo">r.</span><span>RUMA<small>UNA BIBLIOTECA PARA TODOS</small></span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#colecciones">Las puertas</a>
+      <a href="#regla">Nuestra regla</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-texto">
+        <p class="ceja"><span class="punto"></span> UN RINCÓN DE COSAS QUE SUMAN</p>
+        <h1>Encontrar algo bueno <em>debería ser sencillo.</em></h1>
+        <p class="bajada">Una biblioteca viva de recursos gratuitos que ya existen: reunidos, revisados y ordenados para que llegues a lo que necesitás sin dar mil vueltas.</p>
+        <a class="boton-principal" href="#colecciones">Explorar las puertas <span aria-hidden="true">↓</span></a>
+        <p class="nota-hero">Sin costo para explorar · Sin cuentas · Sin vueltas</p>
+      </div>
+      <div class="hero-dibujo" aria-label="Ilustración decorativa de una casita, libros y una planta">
+        <div class="sol"></div><div class="nube nube-a"></div><div class="nube nube-b"></div>
+        <div class="paisaje"></div>
+        <div class="casita"><div class="techo"></div><div class="pared"><div class="ventana"></div><div class="puerta"></div></div></div>
+        <div class="libros"><i></i><i></i><i></i></div>
+        <div class="maceta"><span class="hoja hoja-a"></span><span class="hoja hoja-b"></span><span class="hoja hoja-c"></span><b></b></div>
+        <span class="estrellita estrella-a">✳</span><span class="estrellita estrella-b">✦</span>
+        <p class="dibujo-pie">Un rinconcito para descubrir.</p>
+      </div>
+    </section>
+
+    <section class="buscador-seccion" aria-labelledby="titulo-busqueda">
+      <div class="buscador-cabecera">
+        <p class="ceja">TU BÚSQUEDA EMPIEZA ACÁ</p>
+        <h2 id="titulo-busqueda">¿Qué te gustaría encontrar?</h2>
+        <p>Escribí una idea, un tema o algo que necesitás.</p>
+      </div>
+      <form id="form-busqueda" class="buscador" role="search">
+        <span aria-hidden="true">⌕</span>
+        <label class="solo-lectores" for="consulta">Buscar en RUMA</label>
+        <input id="consulta" name="consulta" type="search" placeholder="Ej.: mapas, estudiar, emprendimientos…" autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
+      <div id="resultado-busqueda" class="resultado" aria-live="polite">Estamos preparando la primera selección de recursos. Mientras tanto, podés conocer nuestras cuatro puertas.</div>
+    </section>
+
+    <section class="colecciones" id="colecciones">
+      <div class="seccion-titulo">
+        <div><p class="ceja">CUATRO PUERTAS, MUCHOS CAMINOS</p><h2>¿Por dónde empezamos?</h2></div>
+        <span class="contador">01 — 04</span>
+      </div>
+      <div class="puertas">
+        <article class="puerta puerta-aprender" data-categoria="aprender" data-palabras="aprender estudiar educación libros lectura cursos escuela estudiantes docentes conocimiento">
+          <div class="puerta-icono" aria-hidden="true">✳</div><span class="numero">PUERTA 01</span>
+          <h3>Aprender</h3><p>Libros, materiales educativos, guías de estudio y saberes para descubrir.</p>
+          <span class="estado"><i></i> Colección en preparación</span>
+        </article>
+        <article class="puerta puerta-trabajar" data-categoria="trabajar" data-palabras="trabajar emprendimientos emprendedores oficios herramientas negocios trámites trabajo proyectos">
+          <div class="puerta-icono" aria-hidden="true">↗</div><span class="numero">PUERTA 02</span>
+          <h3>Trabajar</h3><p>Herramientas prácticas para emprender, organizarse y resolver cosas.</p>
+          <span class="estado"><i></i> Colección en preparación</span>
+        </article>
+        <article class="puerta puerta-explorar" data-categoria="explorar" data-palabras="explorar mapas territorio neuquen patagonia argentina latinoamerica historia naturaleza turismo cultura datos">
+          <div class="puerta-icono" aria-hidden="true">⌁</div><span class="numero">PUERTA 03</span>
+          <h3>Explorar</h3><p>Mapas, historia, territorio, naturaleza y curiosidades del mundo.</p>
+          <span class="estado"><i></i> Colección en preparación</span>
+        </article>
+        <article class="puerta puerta-disfrutar" data-categoria="disfrutar" data-palabras="disfrutar cuentos arte dibujos musica lectura ocio creatividad belleza cultura">
+          <div class="puerta-icono" aria-hidden="true">♡</div><span class="numero">PUERTA 04</span>
+          <h3>Disfrutar</h3><p>Lecturas, arte, ideas lindas y hallazgos para regalarse un momento.</p>
+          <span class="estado"><i></i> Colección en preparación</span>
+        </article>
+      </div>
+      <p id="sin-coincidencias" class="sin-coincidencias" hidden>No encontramos una puerta relacionada con esa búsqueda. Probá con otra palabra o explorá las cuatro categorías.</p>
+      <button id="ver-todo" class="boton-texto" type="button" hidden>Ver las cuatro puertas</button>
+    </section>
+
+    <section class="regla" id="regla">
+      <div class="regla-ilustracion" aria-hidden="true"><div class="circulo"></div><span>R</span><i>✳</i></div>
+      <div class="regla-texto"><p class="ceja">LA REGLA MUNDIAL DE RUMA</p><h2>No creamos los recursos.<br><em>Los reunimos.</em></h2><p>Buscamos en fuentes locales, provinciales, regionales, nacionales y latinoamericanas. Solo entra lo que aporta valor y merece ser encontrado.</p>
+        <div class="principios"><span><b>01</b> Reunir</span><span><b>02</b> Filtrar</span><span><b>03</b> Ordenar</span><span><b>04</b> Facilitar</span></div>
+      </div>
+    </section>
+
+    <section class="compromiso">
+      <span class="ramita" aria-hidden="true">❧</span>
+      <p>Gratis no siempre significa que se pueda volver a publicar.</p>
+      <h2>Valor, confianza y respeto.</h2>
+      <p class="compromiso-texto">Cuando un recurso permita descarga directa, la acercaremos desde RUMA. Si tiene condiciones de uso, te llevaremos a su fuente oficial. Sin engaños ni enlaces inventados.</p>
+    </section>
   </main>
+
+  <footer class="pie">
+    <a class="marca marca-pie" href="#inicio"><span class="marca-simbolo">r.</span><span>RUMA<small>HECHO CON CARIÑO</small></span></a>
+    <p>Un rinconcito de recursos que valen la pena.</p>
+    <a href="#inicio" class="volver">Volver arriba ↑</a>
+  </footer>
   <script src="app.js"></script>
 </body>
 </html>
