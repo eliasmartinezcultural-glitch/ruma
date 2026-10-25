@@ -224,3 +224,13 @@ body{background:radial-gradient(ellipse at 8% 10%,#f8e9df80,transparent 28rem),r
  .postcard-preview{min-height:205px}
 }
 @media(prefers-reduced-motion:reduce){.primary-link,.door-card,.mood-option,.resource-card,.postcard-preview{transition:none!important}}
+
+.shelf-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}
+.shelf-actions .result-count{margin:0}
+.surprise-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:9px 16px;border:1px solid #d8c9a9;border-radius:99px;background:#f8e9be;color:#665737;font-size:12px;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #eadbb8;transition:transform .2s,box-shadow .2s}
+.surprise-button:hover{transform:translateY(-2px);box-shadow:0 6px 0 #eadbb8}
+.surprise-button span{font-size:17px}
+.resource-card.surprise-picked{outline:4px solid #d5b86d;outline-offset:3px;animation:surprise-glow 1s ease-in-out 2}
+@keyframes surprise-glow{50%{box-shadow:0 0 0 9px #f6e9bf,0 12px 28px #65734c18}}
+@media(max-width:620px){.shelf-actions{align-items:flex-start;flex-direction:column;gap:8px}.surprise-button{width:100%}}
+@media(prefers-reduced-motion:reduce){.surprise-button,.resource-card.surprise-picked{animation:none!important;transition:none!important}}
