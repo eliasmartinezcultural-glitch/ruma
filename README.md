@@ -57,3 +57,7 @@ Un recurso no debe figurar como disponible si el archivo no está alojado y prob
 - No copiar mapas, fotografías o documentos sin permiso.
 - Cuidar la privacidad: publicar solo los datos necesarios.
 - Mantener el catálogo pequeño, útil y fiable antes que inflarlo con archivos dudosos.
+
+
+## Ley Mundial de RUMA — norte absoluto
+Antes de tomar cualquier decisión, consultar [`LEY-MUNDIAL-DE-RUMA.md`](./LEY-MUNDIAL-DE-RUMA.md). RUMA debe tener mucha estructura interna y una experiencia frontal corta, amable, colorida y fácil; abundantes recursos legales descargables con vista previa real; y un pequeño cartelito voluntario persistente con alias `ocarina.guitarra`, sin bloquear contenido ni condicionar descargas.
