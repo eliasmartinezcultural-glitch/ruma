@@ -117,3 +117,34 @@ La donación voluntaria de RUMA no convierte por sí sola un uso en comercial o 
 - ARASAAC, Aula abierta: https://aulaabierta.arasaac.org/
 
 **Regla final:** una fuente puede ser mundialmente valiosa y aun así no ser apta para alojarla. RUMA publica el archivo solo cuando la licencia, el archivo y la experiencia de descarga están comprobados.
+
+## 9. Libros completos y materiales de estudio — nueva prioridad editorial
+
+RUMA busca libros íntegros, ilustrados y bien editados, no fragmentos pobres ni simples enlaces a títulos famosos. Las fuentes siguientes son pistas de investigación; no equivalen a una aprobación automática.
+
+### OpenStax — libros de ciencias y materias escolares
+- Catálogo: https://openstax.org/subjects
+- Ejemplo de biología: https://openstax.org/details/books/biology-2e
+- Ventaja: libros completos, revisados, con ilustraciones, índice y ejercicios.
+- **Advertencia de licencia:** los resultados consultados presentan información de licencia que puede variar entre títulos y páginas. Biology 2e aparece con indicaciones contradictorias en distintos registros consultados (CC BY frente a CC BY-NC-SA). Por eso no copiar ni alojar ese libro hasta confirmar el aviso legal exacto de la versión/archivo descargado y sus excepciones de imágenes. Puede conservarse el enlace de lectura oficial mientras se resuelve, sin presentarlo como descarga alojada por RUMA.
+
+### Project Gutenberg — clásicos y literatura
+- Política oficial de licencia: https://www.gutenberg.org/policy/license.html
+- Ventaja: catálogo amplio de literatura y libros completos en distintos formatos.
+- Precaución: la propia organización advierte que el estado de derechos depende del país. Para distribución desde Argentina hay que verificar el autor, fecha de fallecimiento, edición y traducción; no basta con que el libro figure en el catálogo. Si se redistribuye manteniendo el nombre/marca Project Gutenberg, respetar las condiciones de su licencia y conservar los avisos requeridos.
+
+### Wikisource — textos históricos y literatura en español
+- Portal: https://es.wikisource.org/wiki/Portada
+- Usar para localizar textos primarios y clásicos; revisar la situación legal de la edición y la traducción. Una obra antigua puede tener una traducción moderna todavía protegida.
+
+### Reglas para una colección escolar de alta calidad
+- Priorizar libros completos en español y materiales que sirvan a estudiantes de secundaria, terciarios, docentes y lectores generales.
+- Cubrir historia, biología, geografía, ciencias naturales, lengua, literatura, matemática y ciudadanía.
+- Seleccionar atlas, mapas, líneas de tiempo, láminas de anatomía/botánica, diagramas, guías de estudio y ejercicios con soluciones cuando sea apropiado.
+- Evitar textos con diseño deficiente, escaneos borrosos, páginas faltantes, tablas ilegibles, enlaces rotos o idioma no anunciado.
+- En libros grandes, revisar si existe una versión PDF comprimida y legible; registrar páginas, tamaño, edición, autores, editorial, idioma, licencia y atribuciones.
+- La licencia del libro no necesariamente cubre todas las fotografías, figuras o marcas. Revisar los avisos internos.
+
+## 10. Puerta editorial de calidad
+
+Cada candidato recibe una puntuación interna de 0 a 5 en: diseño visual, utilidad, profundidad/integridad, facilidad de lectura/impresión y licencia/procedencia. Solo se publica con **20/25 o más, ningún criterio por debajo de 3**, derechos claros, archivo real, vista previa y descarga probadas. Un material corto puede aprobar si es excelente y cumple una función; uno largo puede rechazarse si es mediocre.
