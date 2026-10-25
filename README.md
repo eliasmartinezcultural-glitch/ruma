@@ -70,3 +70,12 @@ Se incorporó el [Mapa mundial de fuentes y expansión](./investigacion/mapa-mun
 **Importante:** esta lista es un mapa de investigación, no una declaración de que todo el contenido de esas plataformas se pueda republicar. Cada archivo requiere su propia comprobación. Se priorizan CC0, dominio público comprobado, CC BY y CC BY-SA; las licencias NC, ND o ambiguas quedan fuera de la incorporación automática.
 
 Próxima etapa: incorporar los PDF CEDEC/EDIA ya revisados en origen, inspeccionarlos desde la nube, verificar páginas/tamaño/SHA-256 y probar su vista previa antes de aprobar las fichas.
+
+
+## Estándar de calidad: solo entra lo mejor
+
+RUMA no publicará materiales solo para aumentar el catálogo. Cada candidato se compara con alternativas y se evalúa por diseño visual, utilidad, profundidad, facilidad de lectura/impresión y claridad de licencia. Umbral interno: **20/25 puntos y ningún criterio por debajo de 3**, además de licencia confirmada, archivo alojado, vista previa real y descarga probada.
+
+La expansión editorial incluye libros completos de libre distribución, materiales bien presentados para historia, biología, geografía, matemática, lengua y ciencias; mapas locales y regionales; y papelería artística. Los datos crudos se mantendrán como apoyo cuando tengan valor claro, no como sustituto de recursos visualmente terminados.
+
+La Ley Mundial de RUMA es la regla superior: [leerla](./LEY-MUNDIAL-DE-RUMA.md).
