@@ -98,7 +98,7 @@ function renderResources() {
       ? '<div class="resource-preview"><iframe src="' + escapeHTML(previewPath) + '" title="Vista previa de ' + escapeHTML(item.title) + '" loading="lazy"></iframe><span class="resource-preview-note">Vista previa del archivo</span></div>'
       : '<div class="resource-preview"><a href="' + escapeHTML(item.download) + '"><span aria-hidden="true">▧</span> Abrir recurso</a></div>';
 
-    return '<article class="resource-card">' +
+    return '<article class="resource-card" data-resource-id="' + escapeHTML(item.id || item.title) + '">' +
       '<div class="resource-top"><span class="resource-category">' + escapeHTML(categoryName) + '</span><span class="format-pill">' + escapeHTML(item.format || "Archivo") + '</span></div>' +
       preview +
       '<h3>' + escapeHTML(item.title) + '</h3><p>' + escapeHTML(item.description) + '</p>' +
@@ -141,6 +141,23 @@ floatingCopyButton?.addEventListener("click", async () => {
   } catch {
     showStatus("Alias: ocarina.guitarra");
   }
+});
+
+const surpriseButton = document.querySelector("#surprise-me");
+surpriseButton?.addEventListener("click", () => {
+  const cards = [...document.querySelectorAll(".resource-card")];
+  if (!cards.length) {
+    document.querySelector("#catalogo")?.scrollIntoView({behavior:"smooth",block:"start"});
+    return;
+  }
+  const chosen = cards[Math.floor(Math.random() * cards.length)];
+  cards.forEach(card => card.classList.remove("surprise-picked"));
+  chosen.classList.add("surprise-picked");
+  chosen.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",block:"center"});
+  surpriseButton.innerHTML = '<span aria-hidden="true">✦</span> ¡Este puede ser!';
+  window.setTimeout(() => {
+    if (surpriseButton.isConnected) surpriseButton.innerHTML = '<span aria-hidden="true">✦</span> Sorprendeme';
+  }, 2400);
 });
 
 search?.addEventListener("input", renderResources);
