@@ -130,3 +130,10 @@ Fuentes priorizadas por utilidad y trazabilidad:
 - La donación voluntaria de RUMA no resuelve por sí sola las dudas de compatibilidad con una licencia NC.
 
 La expansión mundial no sustituye el foco territorial: Chañar, Neuquén y Patagonia siguen siendo una ventaja distintiva; los recursos universales se suman cuando resuelven necesidades reales.
+
+
+## Documento operativo de curaduría
+
+Antes de aprobar una ficha, aplicar [el Estándar de Curaduría y Colecciones](./investigacion/estandar-de-curaduria-y-colecciones.md). La puntuación mínima es 20/25, ningún criterio por debajo de 3 y no hay publicación sin licencia clara, archivo local, vista previa y descarga comprobadas.
+
+La colección debe crecer en profundidad: libros completos de libre distribución, materiales visuales de alta calidad para historia, biología, geografía, ciencias, lengua y literatura, y mapas locales/regionales. La calidad visual y la utilidad son requisitos simultáneos. Se retiró del catálogo el extracto de solo tres espacios culturales porque no era un recurso autónomo suficientemente útil.
