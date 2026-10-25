@@ -44,7 +44,39 @@ Un pequeño cartel de colaboración voluntaria con el alias **ocarina.guitarra**
 5. Juegos, pasatiempos, curiosidades y lecturas con permisos claros.
 La prioridad territorial orienta la búsqueda; no impide sumar un gran recurso universal.
 
-## 9. Lista obligatoria antes de cada decisión
+## 9. Curaduría estricta: belleza, utilidad y profundidad
+
+La biblioteca no es un depósito de archivos ni una competencia por cantidad. Solo entran recursos sobresalientes para su propósito: visualmente cuidados, realmente útiles, completos y agradables de usar.
+
+### Requisitos obligatorios
+- **Utilidad real:** debe resolver una necesidad, enseñar algo, apoyar una tarea, ofrecer una lectura valiosa o ser una pieza artística/decorativa que la gente genuinamente quiera guardar, imprimir o regalar.
+- **Calidad visual:** composición deliberada, jerarquía clara, legibilidad, buen uso del espacio, ilustraciones o diseño adecuados al propósito. No publicar hojas descuidadas, capturas borrosas, páginas desalineadas, archivos feos por defecto ni materiales que parezcan incompletos.
+- **Contenido suficiente:** descartar materiales triviales, repetitivos o de apenas unas líneas si no ofrecen una función concreta. La brevedad solo es una virtud cuando el recurso breve está muy bien hecho y sirve para algo.
+- **Curación comparativa:** antes de elegir, buscar alternativas y quedarse con la mejor o con una selección pequeña y complementaria. No publicar cinco variantes flojas si existe una opción excelente.
+- **Integridad:** comprobar todas las páginas, instrucciones, respuestas/soluciones si se prometen, idioma, formato, márgenes, impresión y lectura en pantalla.
+- **Acceso práctico:** el archivo debe abrirse, verse bien en móvil y poder imprimirse o guardarse sin pasos innecesarios.
+- **Licencia y procedencia:** el valor visual no reemplaza la revisión de derechos; ambos son obligatorios.
+
+### Puntuación editorial interna
+Puntuar cada criterio de 0 a 5:
+1. Diseño y presentación visual.
+2. Utilidad y relevancia para el público.
+3. Calidad, profundidad e integridad del contenido.
+4. Facilidad para leer, guardar e imprimir.
+5. Calidad de fuente, licencia y atribución.
+
+**Umbral de publicación:** al menos 20/25, sin ningún criterio por debajo de 3. La licencia debe estar confirmada y la descarga/previsualización comprobadas; esas condiciones no se compensan con puntos. Si no llega al umbral, se descarta o se guarda como candidato pendiente, nunca se publica por llenar catálogo.
+
+### Colecciones y públicos que queremos cubrir
+- **Libros completos y lecturas:** obras de dominio público o con licencia que permita redistribución; edición legible, texto íntegro, traducción comprobada, índice cuando corresponda y archivo razonablemente liviano.
+- **Estudio y escuela:** historia, biología, geografía, ciencias, matemática, lengua, literatura, arte y ciudadanía; guías visuales, atlas, láminas, mapas conceptuales, líneas de tiempo, fichas de estudio y materiales docentes.
+- **Mapas y territorio:** mapas locales de Chañar, Neuquén y Patagonia, mapas oficiales o esquemáticos bien diseñados, con escala/fecha/fuente y límites claros de uso.
+- **Arte y papelería:** postales, tarjetas, cartas, láminas, marcapáginas, organizadores y papelería que destaque por su diseño y calidad.
+- **Uso cotidiano:** guías completas y claras, recursos accesibles, herramientas imprimibles que resuelvan un problema real.
+
+Los archivos de datos crudos (CSV, GeoJSON) pueden servir como soporte de investigación, pero no deben ocupar el primer plano de la biblioteca general si no tienen una explicación clara o una representación visual útil. Mantenerlos en una sección de apoyo o transformarlos —cuando sea legal y técnicamente correcto— en un mapa, tabla o guía comprensible.
+
+## 10. Lista obligatoria antes de cada decisión
 Antes de incorporar, diseñar, quitar, reorganizar o publicar algo, comprobar:
 1. ¿Le sirve primero a una persona común?
 2. ¿Es útil, bonito o valioso de verdad?
@@ -59,7 +91,7 @@ Antes de incorporar, diseñar, quitar, reorganizar o publicar algo, comprobar:
 
 Si alguna respuesta esencial es “no”, no se publica todavía. Se corrige primero.
 
-## 10. Regla de crecimiento
+## 11. Regla de crecimiento
 Queremos MUCHOS recursos, pero nunca a costa de calidad, legalidad, vista previa, seguridad o facilidad de uso. La meta no es acumular enlaces: es construir el autoservicio digital más útil, amable y fácil posible para cualquier persona.
 
 **Frase guía:** RUMA debe tener un gran sistema por dentro y un abrazo sencillo por fuera.
