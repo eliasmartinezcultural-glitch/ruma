@@ -21,6 +21,21 @@ Los materiales originales de RUMA pueden permanecer si ya aportan valor, pero de
 - `creditos.html`: política de atribución y licencias.
 - `contacto.html`: canal para consultas, correcciones y solicitudes de retiro.
 
+## Curaduría estricta: no publicar por cantidad
+
+Todo candidato debe puntuarse de 0 a 5 en diseño visual, utilidad, profundidad/integridad, facilidad de lectura/impresión y licencia/procedencia. Se exige 20/25 o más, ningún criterio inferior a 3, licencia confirmada, archivo real alojado, vista previa y descarga probadas. No se compensa una licencia dudosa con un diseño bonito.
+
+Descartar recursos triviales, repetitivos, descuidados, incompletos o de pocas líneas sin utilidad concreta. Antes de admitir un material, comparar alternativas y elegir la mejor o una pequeña selección complementaria.
+
+### Colecciones de alta prioridad
+1. **Libros completos de libre distribución:** dominio público comprobado o licencia explícita que permita alojar y redistribuir; texto íntegro, edición legible, traducción verificada, índice y tamaño razonable.
+2. **Estudio:** materiales de calidad para historia, biología, geografía, matemática, lengua, literatura, ciencias, arte y ciudadanía; atlas, láminas, líneas de tiempo, mapas conceptuales, fichas y guías.
+3. **Mapas territoriales:** Chañar, Neuquén y Patagonia primero; fuentes oficiales, fecha, escala y limitaciones claras.
+4. **Arte y papelería:** piezas visualmente cuidadas, listas para imprimir o guardar; tarjetas, postales, cartas, láminas, marcapáginas, organizadores.
+5. **Vida cotidiana:** guías completas, herramientas y recursos accesibles que resuelvan necesidades reales.
+
+Los datos crudos (CSV/GeoJSON) son material de apoyo, no necesariamente una pieza principal para público general. Mantenerlos solo cuando tengan valor investigativo claro y ofrecer una explicación, tabla o representación visual cuando sea posible. La biblioteca pública debe destacar por sus recursos terminados y bien presentados.
+
 ## Cómo incorporar un recurso
 1. Encontrar la página oficial del archivo, no un repost sin procedencia.
 2. Confirmar la licencia de ese archivo específico. Priorizar CC0 o una declaración explícita de dominio público que permita redistribución; revisar derechos de terceros y marcas.
