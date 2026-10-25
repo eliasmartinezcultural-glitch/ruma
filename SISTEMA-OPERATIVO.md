@@ -88,3 +88,30 @@ Hay automatización de inspección de datos, publicación con lista de IDs y hue
 
 ## Norte absoluto: Ley Mundial de RUMA
 La referencia obligatoria para cada decisión es [`LEY-MUNDIAL-DE-RUMA.md`](./LEY-MUNDIAL-DE-RUMA.md). Consultarla antes de cada cambio editorial, visual, técnico o de catálogo. Regla resumida: sistema robusto por dentro; frente corto, colorido, amable y accesible; cada recurso con vista previa fiel, descarga comprobada, permisos claros y un cartelito voluntario persistente con alias `ocarina.guitarra` que nunca interrumpe.
+
+
+## Expansión mundial — plan de investigación vigente
+
+Mapa de fuentes y criterios: [`investigacion/mapa-mundial-de-fuentes-y-expansion.md`](./investigacion/mapa-mundial-de-fuentes-y-expansion.md).
+
+Fuentes priorizadas por utilidad y trazabilidad:
+1. CEDEC / Proyecto EDIA / INTEF: plantillas, rúbricas y fichas breves en español; verificar la licencia individual.
+2. Wikimedia Commons: mapas e imágenes; cada archivo tiene su propia licencia y atribución.
+3. Smithsonian Open Access: objetos visuales marcados expresamente como reutilizables/CC0; revisar el registro individual.
+4. UNESCO Open Access: publicaciones educativas y culturales; revisar licencia y créditos por publicación.
+5. COERLL y OER Commons: recursos educativos en español; el portal no concede una licencia única a todo su catálogo.
+6. Wikisource: textos de dominio público; verificar autor, edición, traducción y jurisdicción.
+7. ARASAAC: fuente relevante para accesibilidad, pero las licencias NC y las condiciones particulares impiden una incorporación automática.
+
+### Puerta de entrada para la admisión mundial
+
+- Buscar el archivo en la fuente primaria.
+- Comprobar permiso para redistribuir el archivo concreto.
+- Dar prioridad a CC0, dominio público comprobado, CC BY y CC BY-SA.
+- No incorporar automáticamente licencias NC, ND, “solo educativo”, “uso personal” ni licencias ambiguas.
+- Descargar e inspeccionar desde la nube; calcular tamaño, páginas cuando aplique y SHA-256.
+- Confirmar que la vista previa muestra el archivo real.
+- Solo después aprobar la ficha y publicar la descarga local.
+- La donación voluntaria de RUMA no resuelve por sí sola las dudas de compatibilidad con una licencia NC.
+
+La expansión mundial no sustituye el foco territorial: Chañar, Neuquén y Patagonia siguen siendo una ventaja distintiva; los recursos universales se suman cuando resuelven necesidades reales.
