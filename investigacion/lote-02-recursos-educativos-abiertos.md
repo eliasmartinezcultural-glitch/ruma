@@ -83,3 +83,30 @@
 ## Nota de publicación
 
 Este archivo es un registro de investigación, no un lote ya publicado. Ningún candidato pasa a `recursos.json` hasta que el archivo descargable exista en el repositorio y haya superado los controles. La misión es reunir recursos existentes con permisos claros, no atribuir a RUMA la autoría de materiales externos.
+
+
+## Verificación adicional de enlaces directos (24-10-2026)
+
+Se abrieron los PDF originales y se comprobó contenido y licencia visible en cada uno. Estos pasan de “candidato general” a “PDF revisado en origen”; aún falta alojarlos en RUMA, verificar tamaño/hash y probar la descarga pública.
+
+### 6. Plantilla de idea de negocio
+- **PDF directo:** https://descargas.intef.es/cedec/proyectoedia/FP/EIE/contenidos/eie_desafio1/cedec-Plantilla_Idea_Negocio-eie.pdf
+- **Comprobación:** PDF de 1 página; incluye título, necesidad, valor añadido, clientes y competencia; licencia CC BY-SA 4.0 España visible en el documento.
+- **Estado:** APTO PARA PREPARAR INCORPORACIÓN.
+
+### 7. Guía de observación del trabajo en equipo
+- **PDF directo:** https://descargas.intef.es/cedec/proyectoedia/FP/EIE/contenidos/eie_desafio1/cedec-Guia-de-observacion-del-trabajo-en-equipo-EIE.pdf
+- **Comprobación:** PDF de 2 páginas; criterios de participación, cooperación, ayuda, aportes, planificación y ambiente de equipo; licencia CC BY-SA 4.0 España visible en el documento.
+- **Estado:** APTO PARA PREPARAR INCORPORACIÓN. Por contener campos para nombre y apellidos, describirlo como plantilla para uso voluntario y evitar publicar copias ya completadas por personas.
+
+### 8. Ficha de retrospectiva
+- **PDF directo:** https://descargas.intef.es/cedec/proyectoedia/FP/EIE/contenidos/eie_desafio10/cedec-Ficha-Retrospectiva-eie.pdf
+- **Comprobación:** PDF de 1 página; incluye coordinación, resolución de conflictos, tiempos, calidad, investigación y propuestas de mejora; licencia CC BY-SA 4.0 España visible en el documento.
+- **Estado:** APTO PARA PREPARAR INCORPORACIÓN.
+
+### 9. Lista de control para crear un tablero Kanban
+- **PDF directo:** https://descargas.intef.es/cedec/proyectoedia/tecnologia/contenidos/construyendo/cedec_lista_realizacion_tablero_kanban.pdf
+- **Comprobación:** PDF de 1 página; lista columnas, etiquetas, participación y estructura de un tablero; licencia CC BY-SA 4.0 España visible en el documento.
+- **Estado:** APTO PARA PREPARAR INCORPORACIÓN. En el título del PDF hay una errata original (“KABAN”); conservar el archivo intacto y corregir solo la descripción de RUMA, no el título autoral.
+
+**Resultado:** este lote tiene cuatro PDFs directos adicionales abiertos y revisados. No se consideran todavía recursos publicados ni alojados por RUMA.
