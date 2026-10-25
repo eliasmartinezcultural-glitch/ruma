@@ -58,3 +58,25 @@ body.text-small p,body.text-small a,body.text-small button,body.text-small input
 /* Biblioteca local primero: bloque de orientación editorial */
 .local-first{max-width:1104px;margin:0 auto 78px;padding:23px 28px;display:flex;align-items:center;gap:20px;border:1px solid #dfe5d7;border-radius:16px;background:#f0f2e9}.local-first-mark{flex:0 0 52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#fffdf8;color:var(--green-dark);font-size:30px}.local-first h2{font-size:25px;line-height:1.2;margin:0 0 7px}.local-first p:not(.eyebrow){font-size:12px;line-height:1.8;color:var(--muted);margin:0;max-width:780px}.local-first .eyebrow{margin-bottom:7px}
 @media(max-width:700px){.local-first{margin:0 18px 58px;padding:20px;align-items:flex-start;gap:13px}.local-first-mark{flex-basis:40px;height:40px;font-size:24px}.local-first h2{font-size:22px}}
+
+
+/* RUMA: identidad visual de postal, amable, legible y adaptable. */
+.brand strong,.footer-brand{letter-spacing:.08em}
+.postcard-corner{max-width:1160px;margin:0 auto;padding:0 28px 84px}
+.postcard-heading{max-width:700px;margin:0 auto 28px;text-align:center}
+.postcard-heading .eyebrow{margin-bottom:10px}
+.postcard-heading h2{font-size:clamp(29px,3.5vw,43px);line-height:1.14;margin:0 0 13px}
+.postcard-heading h2 em{color:#b17e76}
+.postcard-heading>p:last-child{font-size:14px;line-height:1.8;color:var(--muted);max-width:580px;margin:0 auto}
+.postcard-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.postcard-preview{min-height:310px;position:relative;overflow:hidden;border-radius:18px;text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px 20px;border:1px solid #ffffffc9;box-shadow:0 12px 28px #5d63420c;transition:transform .2s,box-shadow .2s}
+.postcard-preview:hover{transform:translateY(-4px) rotate(-.5deg);box-shadow:var(--shadow)}
+.postcard-sage{background:#e4ecdf;color:#42583e}
+.postcard-rose{background:#f2e1df;color:#805e59}
+.postcard-cream{background:#f4ead6;color:#6a674f}
+.postcard-stamp{position:absolute;top:17px;left:18px;font-size:9px;letter-spacing:.13em;font-weight:700;opacity:.8;border:1px solid currentColor;border-radius:20px;padding:6px 9px}
+.postcard-art-house,.postcard-art-heart,.postcard-art-letter{font-size:52px;line-height:1;margin:22px 0 16px;opacity:.8}
+.postcard-preview strong{font-family:Georgia,serif;font-size:clamp(23px,2.4vw,30px);font-weight:500;line-height:1.18}
+.postcard-preview small{margin-top:23px;padding-top:12px;border-top:1px solid currentColor;font-size:11px;font-weight:700;letter-spacing:.04em}
+@media(max-width:760px){.postcard-corner{padding:0 20px 58px}.postcard-grid{grid-template-columns:1fr;gap:12px}.postcard-preview{min-height:220px}.postcard-art-house,.postcard-art-heart,.postcard-art-letter{font-size:42px;margin:12px 0}.postcard-preview strong{font-size:27px}.postcard-heading{text-align:left}.postcard-heading>p:last-child{margin:0}}
+@media print{.site-header,.header-note,.primary-link,.postcard-preview small,.site-footer,.donation{display:none!important}.postcard-corner{break-inside:avoid}}
