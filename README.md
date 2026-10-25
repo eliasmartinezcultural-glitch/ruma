@@ -79,3 +79,6 @@ RUMA no publicará materiales solo para aumentar el catálogo. Cada candidato se
 La expansión editorial incluye libros completos de libre distribución, materiales bien presentados para historia, biología, geografía, matemática, lengua y ciencias; mapas locales y regionales; y papelería artística. Los datos crudos se mantendrán como apoyo cuando tengan valor claro, no como sustituto de recursos visualmente terminados.
 
 La Ley Mundial de RUMA es la regla superior: [leerla](./LEY-MUNDIAL-DE-RUMA.md).
+
+
+Estándar completo de selección: [investigacion/estandar-de-curaduria-y-colecciones.md](./investigacion/estandar-de-curaduria-y-colecciones.md). El mapa mundial también se amplió con fuentes de libros y materias escolares. La lista de fuentes sirve para investigar, no significa que todo lo publicado allí tenga licencia compatible.
