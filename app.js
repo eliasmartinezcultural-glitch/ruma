@@ -93,8 +93,14 @@ function renderResources() {
       ? '<a href="' + escapeHTML(licenseUrl) + '" target="_blank" rel="noopener noreferrer">' + escapeHTML(item.licenseLabel) + '</a>'
       : '<span>' + escapeHTML(item.licenseLabel) + '</span>';
 
+    const previewPath = isSafeDownload(item.download) ? item.download : "";
+    const preview = previewPath
+      ? '<div class="resource-preview"><iframe src="' + escapeHTML(previewPath) + '" title="Vista previa de ' + escapeHTML(item.title) + '" loading="lazy"></iframe><span class="resource-preview-note">Vista previa del archivo</span></div>'
+      : '<div class="resource-preview"><a href="' + escapeHTML(item.download) + '"><span aria-hidden="true">▧</span> Abrir recurso</a></div>';
+
     return '<article class="resource-card">' +
       '<div class="resource-top"><span class="resource-category">' + escapeHTML(categoryName) + '</span><span class="format-pill">' + escapeHTML(item.format || "Archivo") + '</span></div>' +
+      preview +
       '<h3>' + escapeHTML(item.title) + '</h3><p>' + escapeHTML(item.description) + '</p>' +
       '<div class="resource-details">' +
         (regionLabel ? '<span><strong>Alcance:</strong> ' + escapeHTML(regionLabel) + '</span>' : '') +
@@ -114,6 +120,28 @@ function escapeHTML(value) {
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
   })[character]);
 }
+
+
+const floatingCopyButton = document.querySelector("#copy-floating-alias");
+floatingCopyButton?.addEventListener("click", async () => {
+  const alias = "ocarina.guitarra";
+  const showStatus = message => {
+    let status = document.querySelector(".copy-floating-status");
+    if (!status) {
+      status = document.createElement("span");
+      status.className = "copy-floating-status";
+      status.setAttribute("role", "status");
+      document.querySelector(".floating-support")?.appendChild(status);
+    }
+    status.textContent = message;
+  };
+  try {
+    await navigator.clipboard.writeText(alias);
+    showStatus("¡Alias copiado! Gracias por pasar.");
+  } catch {
+    showStatus("Alias: ocarina.guitarra");
+  }
+});
 
 search?.addEventListener("input", renderResources);
 categoryFilter?.addEventListener("change", renderResources);
