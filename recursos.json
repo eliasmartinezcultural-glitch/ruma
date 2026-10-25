@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "updated": "2026-10-24",
   "notice": "Solo se muestran recursos con archivo alojado, licencia revisada y descarga directa.",
   "resources": [
@@ -442,6 +442,66 @@
       "format": "PDF · 1 página A4",
       "sizeLabel": "1,34 MB",
       "download": "descargas/crea-tus-dados-intef.pdf"
+    },
+    {
+      "id": "postal-rinconcito-calma",
+      "title": "Postal: un rinconcito de calma",
+      "description": "Postal ilustrada de RUMA para imprimir, guardar como imagen o compartir con alguien. Formato SVG, se abre en navegador y conserva buena calidad al ampliar.",
+      "category": "crear",
+      "subcategory": "postales",
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "format": "SVG · postal apaisada",
+      "sizeLabel": "archivo liviano",
+      "download": "descargas/postal-un-rinconcito-de-calma.svg",
+      "licenseLabel": "CC BY 4.0 · material original RUMA",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "RUMA · material original",
+      "source": "https://github.com/eliasmartinezcultural-glitch/ruma",
+      "reviewedOn": "2026-10-24",
+      "approved": true
+    },
+    {
+      "id": "tarjeta-pequenos-pasos",
+      "title": "Tarjeta: no hace falta hacerlo todo hoy",
+      "description": "Tarjeta amable para acompañar a alguien o recordarte que los pasos pequeños también cuentan. Imprimible y liviana para guardar en el celular.",
+      "category": "crear",
+      "subcategory": "tarjetas",
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "format": "SVG · tarjeta apaisada",
+      "sizeLabel": "archivo liviano",
+      "download": "descargas/tarjeta-pequenos-pasos.svg",
+      "licenseLabel": "CC BY 4.0 · material original RUMA",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "RUMA · material original",
+      "source": "https://github.com/eliasmartinezcultural-glitch/ruma",
+      "reviewedOn": "2026-10-24",
+      "approved": true
+    },
+    {
+      "id": "carta-alguien-querido",
+      "title": "Carta para alguien querido",
+      "description": "Hoja A4 con espacio para escribir una carta a mano. Para imprimir, completar con lápiz o bolígrafo y regalar; también se puede abrir en el navegador.",
+      "category": "crear",
+      "subcategory": "cartas",
+      "region": "hispanohablante",
+      "regionLabel": "Mundo hispanohablante",
+      "language": "es",
+      "languageLabel": "Español",
+      "format": "SVG · hoja A4",
+      "sizeLabel": "archivo liviano",
+      "download": "descargas/carta-para-alguien-querido.svg",
+      "licenseLabel": "CC BY 4.0 · material original RUMA",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "author": "RUMA · material original",
+      "source": "https://github.com/eliasmartinezcultural-glitch/ruma",
+      "reviewedOn": "2026-10-24",
+      "approved": true
     }
   ]
 }
