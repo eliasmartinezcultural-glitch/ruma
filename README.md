@@ -61,3 +61,12 @@ Un recurso no debe figurar como disponible si el archivo no está alojado y prob
 
 ## Ley Mundial de RUMA — norte absoluto
 Antes de tomar cualquier decisión, consultar [`LEY-MUNDIAL-DE-RUMA.md`](./LEY-MUNDIAL-DE-RUMA.md). RUMA debe tener mucha estructura interna y una experiencia frontal corta, amable, colorida y fácil; abundantes recursos legales descargables con vista previa real; y un pequeño cartelito voluntario persistente con alias `ocarina.guitarra`, sin bloquear contenido ni condicionar descargas.
+
+
+## Expansión mundial: fuentes y control de derechos
+
+Se incorporó el [Mapa mundial de fuentes y expansión](./investigacion/mapa-mundial-de-fuentes-y-expansion.md), con repositorios institucionales y educativos para investigar materiales de uso global: CEDEC/EDIA/INTEF, Wikimedia Commons, Smithsonian Open Access, UNESCO Open Access, COERLL, OER Commons, Wikisource y ARASAAC.
+
+**Importante:** esta lista es un mapa de investigación, no una declaración de que todo el contenido de esas plataformas se pueda republicar. Cada archivo requiere su propia comprobación. Se priorizan CC0, dominio público comprobado, CC BY y CC BY-SA; las licencias NC, ND o ambiguas quedan fuera de la incorporación automática.
+
+Próxima etapa: incorporar los PDF CEDEC/EDIA ya revisados en origen, inspeccionarlos desde la nube, verificar páginas/tamaño/SHA-256 y probar su vista previa antes de aprobar las fichas.
