@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f3e9">
-  <meta name="description" content="RUMA Chañar: recursos útiles, fuentes públicas y materiales de consulta para vecinos, familias, estudiantes y emprendedores.">
+  <meta name="description" content="RUMA: biblioteca de materiales reales, archivos y recursos gratuitos con acceso directo a sus fuentes.">
   <title>RUMA Chañar — Un lugarcito para lo útil</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -26,7 +26,7 @@
       <div class="welcome-copy">
         <p class="eyebrow"><span class="sun-dot" aria-hidden="true"></span> HECHO CON CARIÑO EN SAN PATRICIO DEL CHAÑAR</p>
         <h1 id="welcome-title">Un lugarcito para<br><em>encontrar lo útil.</em></h1>
-        <p class="welcome-text">A veces, lo que necesitamos está por ahí, pero cuesta encontrarlo. RUMA reúne recursos confiables de nuestro pueblo para que lleguen más fácil a tus manos.</p>
+        <p class="welcome-text">Buscamos y reunimos materiales que ya existen: libros, mapas, archivos y recursos educativos. No inventamos contenidos ni fabricamos archivos. Cada botón te lleva al material real o a su fuente original.</p>
         <a class="button button-primary" href="#buscar">Vamos a buscar <span aria-hidden="true">↓</span></a>
         <div class="welcome-promise"><span aria-hidden="true">♡</span><p>Para vecinos, abuelos, estudiantes, familias y quienes emprenden. <strong>Entrás, encontrás y te lo llevás.</strong></p></div>
       </div>
@@ -40,31 +40,30 @@
     </section>
 
     <section class="search-panel" id="buscar" aria-labelledby="search-title">
-      <div class="section-intro"><span class="section-kicker">PRIMEROS PASITOS</span><h2 id="search-title">¿Qué necesitás hoy?</h2><p>Podés escribir una palabra o tocar uno de estos accesos.</p></div>
+      <div class="section-intro"><span class="section-kicker">BUSCÁ EN LA BIBLIOTECA</span><h2 id="search-title">¿Qué necesitás hoy?</h2><p>Podés escribir una palabra o tocar uno de estos accesos.</p></div>
       <form id="search-form" role="search">
         <label class="sr-only" for="search">Buscar entre los recursos de RUMA</label>
         <span class="search-symbol" aria-hidden="true">⌕</span>
-        <input id="search" type="search" placeholder="Ej.: trámites, mapa, emprender…" autocomplete="off">
+        <input id="search" type="search" placeholder="Ej.: Martín Fierro, mapa, cuentos, historia…" autocomplete="off">
         <button class="button button-primary" type="submit">Buscar</button>
       </form>
       <div class="quick-links" aria-label="Accesos directos">
-        <button type="button" data-query="trámites">🧾 Trámites</button>
-        <button type="button" data-query="mapa">🗺️ Mapa del pueblo</button>
-        <button type="button" data-query="contacto municipio">☎️ Contactos</button>
-        <button type="button" data-query="emprender">🌱 Para emprender</button>
+        <button type="button" data-query="libro">📚 Libros</button>
+        <button type="button" data-query="mapa">🗺️ Mapas</button>
+        <button type="button" data-query="estudiantes">🎒 Para estudiar</button>
+        <button type="button" data-query="historia">🏛️ Historia y archivos</button>
       </div>
       <p class="search-count" id="result-count" aria-live="polite">Tenemos una primera colección de recursos elegidos para empezar.</p>
     </section>
 
     <section class="shelves" id="estantes" aria-labelledby="shelves-title">
-      <div class="shelves-heading"><div><span class="section-kicker">UNA BIBLIOTECA EN CRECIMIENTO</span><h2 id="shelves-title">Recursos que vale la pena encontrar.</h2></div><p>Empezamos por San Patricio del Chañar y ampliamos la colección con fuentes públicas confiables. Cada ficha explica qué ofrece y quién está detrás.</p></div>
+      <div class="shelves-heading"><div><span class="section-kicker">UNA BIBLIOTECA EN CRECIMIENTO</span><h2 id="shelves-title">Recursos que vale la pena encontrar.</h2></div><p>Empezamos por San Patricio del Chañar y ampliamos la colección con fuentes públicas confiables. Cada ficha identifica el material real, su autoría y la fuente de origen.</p></div>
       <nav class="filters" aria-label="Filtrar recursos por tema">
         <button type="button" class="filter active" data-filter="Todos" aria-pressed="true">Todo</button>
-        <button type="button" class="filter" data-filter="Vecinos" aria-pressed="false">Para vecinos</button>
-        <button type="button" class="filter" data-filter="Documentos" aria-pressed="false">Documentos</button>
+        <button type="button" class="filter" data-filter="Lectura" aria-pressed="false">Libros y lectura</button>
         <button type="button" class="filter" data-filter="Mapas" aria-pressed="false">Mapas</button>
-        <button type="button" class="filter" data-filter="Conocer Chañar" aria-pressed="false">Conocer Chañar</button>
-        <button type="button" class="filter" data-filter="Trabajo y estudio" aria-pressed="false">Trabajo y estudio</button>
+        <button type="button" class="filter" data-filter="Estudio" aria-pressed="false">Estudio</button>
+        <button type="button" class="filter" data-filter="Historia" aria-pressed="false">Historia y archivos</button>
       </nav>
       <div class="resource-grid" id="resource-grid"></div>
       <div class="empty-state" id="no-results" hidden><span aria-hidden="true">🌾</span><h3>Por ahora no tenemos eso en la estantería.</h3><p>Probá con otra palabra o mirá todos los recursos. No inventamos resultados para llenar espacio.</p><button type="button" class="button button-soft" id="clear-search">Ver todos los recursos</button></div>
@@ -83,7 +82,7 @@
     </section>
   </main>
 
-  <footer class="site-footer"><a class="footer-brand" href="#inicio">RUMA <span>CHAÑAR</span></a><p>Un rinconcito de recursos útiles, empezando por San Patricio del Chañar.</p><p class="footer-small">Las fichas se leen y descargan dentro de RUMA. Son guías originales y no sustituyen documentos oficiales íntegros. La información puede cambiar.</p><a class="back-top" href="#inicio">Volver arriba ↑</a></footer>
+  <footer class="site-footer"><a class="footer-brand" href="#inicio">RUMA <span>CHAÑAR</span></a><p>Un rinconcito de recursos útiles, empezando por San Patricio del Chañar.</p><p class="footer-small">RUMA cataloga materiales existentes. Los archivos se abren desde sus fuentes originales; respetamos sus autorías y condiciones de uso.</p><a class="back-top" href="#inicio">Volver arriba ↑</a></footer>
   <dialog class="resource-dialog" id="resource-dialog" aria-labelledby="dialog-title">
     <div class="dialog-head">
       <div><span class="section-kicker">ENCONTRADO EN RUMA</span><h2 id="dialog-title">Tu recurso</h2></div>
