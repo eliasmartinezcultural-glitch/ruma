@@ -298,3 +298,15 @@ button,a{touch-action:manipulation}
  .accion-ver,.accion-descargar{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+
+/* Los estantes hacen visible el orden de la biblioteca, sin añadir pasos. */
+.grupo-zona{padding:28px 0 8px;border-top:1px solid #e2ddcf;margin-top:18px}
+.grupo-zona:first-child{border-top:0;margin-top:0}
+.grupo-cabecera{margin-bottom:17px}
+.grupo-cabecera .ceja{margin-bottom:5px}
+.grupo-cabecera h3{font:clamp(26px,3.4vw,36px)/1.2 Georgia,serif;margin:0 0 5px;letter-spacing:-.02em}
+.grupo-cabecera>p:last-child{font-size:14px;line-height:1.55;color:#6c7466;margin:0;max-width:650px}
+.grupo-recursos{margin-top:0}
+.estante-vacio{max-width:780px;padding:17px 19px;border-radius:8px;background:#f0ece2;color:#697263;font-size:14px;line-height:1.7}
+@media(max-width:650px){.grupo-zona{padding-top:24px;margin-top:13px}.grupo-cabecera{margin-bottom:12px}.grupo-cabecera h3{font-size:28px}}
