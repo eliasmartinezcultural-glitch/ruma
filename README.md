@@ -13,10 +13,10 @@ RUMA busca, selecciona y cataloga materiales que ya existen. Su punto de partida
 
 ## Catálogo incorporado
 
-La colección de esta versión contiene **44 recursos**:
+La colección de esta versión contiene **47 recursos**:
 - Quince libros en PDF de literatura argentina y clásica publicados por el Gobierno de la Provincia de Buenos Aires; las fichas incluyen portadas originales del catálogo oficial cuando están disponibles.
 - Recursos de utilidad cotidiana de San Patricio del Chañar: trámites municipales, contactos institucionales, desarrollo económico local y guía municipal de lugares de interés.
-- Recursos para decorar e imprimir: Openclipart (CC0/dominio público según su política) y Wikimedia Commons, con la obligación de revisar la licencia individual de cada archivo.
+- Recursos para decorar e imprimir: Openclipart (CC0/dominio público según su política), Smithsonian Open Access, obras Open Access del Metropolitan Museum y Getty Open Content; Wikimedia Commons también se enlaza como colección donde hay que revisar la licencia individual de cada archivo.
 - Herramientas para emprendedores: guía descargable y recursos de formación del Estado nacional.
 - Tres accesos a mapas y cartografía oficial del Neuquén: colección Mapas Neuquinos de COPADE, visor SIG y Mapoteca Digital; además, el mapa cultural nacional de SInCA.
 - Recursos pedagógicos del Ministerio de Educación del Neuquén y catálogo Educ.ar.
