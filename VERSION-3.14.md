@@ -199,3 +199,12 @@ Las fichas externas identifican la institución o autor, describen el contenido 
 
 Se conservan los cambios históricos en Git. Los archivos SVG anteriores dejan de formar parte del catálogo visible; su eliminación física se realiza por separado de este registro histórico.
 
+
+
+## Ampliación de la vidriera · 27 de octubre de 2026
+
+- El catálogo pasó de 23 a 46 fichas seleccionadas.
+- Se agregaron portales educativos de Neuquén y Argentina, herramientas de mapas, bibliotecas digitales, archivos patrimoniales, recursos de salud pública y guías prácticas.
+- Se mantiene el criterio de acceso honesto: cada ficha conduce a la fuente original; los recursos no se presentan como alojados dentro de RUMA si no lo están.
+- La inclusión en la vidriera no significa que RUMA tenga permiso para copiar el archivo. Se debe verificar la licencia de cada pieza antes de alojarla localmente.
+- Validación de sintaxis de `app.js`: correcta. La verificación de sintaxis no reemplaza la prueba visual de GitHub Pages ni la revisión individual de cada enlace.
