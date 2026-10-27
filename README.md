@@ -1,42 +1,32 @@
-# RUMA — una vidriera para encontrar recursos valiosos
+# RUMA — recursos para ver y descargar dentro de RUMA
 
-**RUMA ES ACCESO.** RUMA busca, selecciona y ordena materiales reales, terminados y útiles para acercarlos a la gente. La prioridad inicial es Argentina y la Patagonia, sin cerrar la puerta al mundo hispanohablante.
+**RUMA ES ACCESO.** El catálogo solo admite materiales que se puedan previsualizar y descargar directamente desde este sitio, sin enviar a otras páginas.
 
-## Primera vidriera curada
+## Biblioteca inicial: cinco archivos locales
 
-El catálogo actual contiene **46 fichas seleccionadas** en cinco puertas:
-- **Lecturas:** clásicos de la literatura argentina en PDF y bibliotecas digitales.
-- **Para estudiar:** portales educativos provinciales y nacionales, cuadernillos, recursos de ciencia, ambiente y actividades escolares.
-- **Recursos útiles:** guías sobre ciberestafas y reducción del desperdicio de alimentos.
-- **Para decorar:** láminas y afiches de biodiversidad y naturaleza.
-- **Mapas e historia:** mapas escolares de Neuquén y Río Negro, herramientas para crear mapas, recursos patrimoniales y materiales sobre el bosque de pewen.
+- **Lecturas:** registro de lectura.
+- **Para estudiar:** tabla de multiplicar.
+- **Recursos útiles:** planificador semanal.
+- **Para decorar:** stickers originales de la Patagonia y póster para cuidar la naturaleza.
 
-## Qué hace cada ficha
+Los cinco archivos iniciales son diseños originales en SVG alojados en `archivos/descargas/`. Cada ficha muestra una vista previa del propio archivo y un botón de descarga local. Se pueden imprimir en A4 y ampliar sin perder nitidez.
 
-Cada ficha identifica el material, su autor u organismo, formato, una descripción práctica y un acceso claro. Cuando la URL es un PDF directo, el botón abre ese documento en la fuente original; en otros casos, abre el catálogo oficial donde se elige o descarga el material.
+## Regla de incorporación
 
-**Importante:** esta primera fase es una vidriera de acceso, no una biblioteca que ya aloja todos esos archivos. No se copian archivos de terceros sin verificar sus derechos. En particular, que una descarga sea gratuita no significa automáticamente que esté permitido republicarla.
+1. Debe existir un archivo descargable dentro del repositorio.
+2. La vista previa debe representar ese mismo archivo.
+3. El botón descarga desde RUMA y no abre otro sitio.
+4. Los archivos de terceros solo se incorporan cuando la licencia o autorización permite redistribución, conservando atribución y licencia.
+5. No se admiten fichas que sean únicamente enlaces, botones de búsqueda o páginas externas.
 
-## Criterios de selección
-
-1. Priorizar archivos terminados, completos y concretos; evitar fichas vacías o enlaces genéricos que no aportan valor.
-2. Preferir fuentes oficiales, bibliotecas reconocidas, obras de dominio público y materiales con licencias claras.
-3. Identificar autoría, institución, formato y fuente.
-4. No inventar licencias, permisos ni disponibilidad.
-5. Alojar dentro de RUMA únicamente materiales cuya licencia o autorización permita redistribución. Mantener la atribución y las condiciones de la licencia.
-6. Dar preferencia a contenidos locales y regionales, sin descuidar libros, mapas y recursos de utilidad general.
-7. Revisar periódicamente enlaces y disponibilidad; un enlace publicado hoy puede cambiar.
-
-## Experiencia y accesibilidad
+## Experiencia
 
 - Buscador que no distingue mayúsculas ni tildes.
-- Filtros por cinco categorías.
-- Fichas legibles en celular y computadora.
-- Sin cuenta, pago ni ventanas emergentes.
-- El cartelito fijo «Convidar un mate» lleva a la colaboración voluntaria. Alias: `ocarina.guitarra`, a nombre de Elías Martínez.
+- Filtros por categoría.
+- Vista previa visual en cada tarjeta.
+- Descarga local, sin cuenta ni pago.
+- Colaboración voluntaria: alias `ocarina.guitarra`, a nombre de Elías Martínez.
 
-## Siguiente fase de RUMA
+## Próximos pasos
 
-La próxima tarea de curaduría es comprobar licencia por licencia y sumar al repositorio los archivos descargables que puedan redistribuirse legalmente, con su autoría y licencia visibles. Los demás seguirán en la vidriera con acceso directo a la fuente original.
-
-La comprobación del repositorio no equivale a una prueba visual completa de GitHub Pages. La publicación debe probarse en teléfonos y computadoras.
+Investigar y sumar archivos concretos que puedan redistribuirse legalmente: obras de dominio público verificadas, mapas con licencias compatibles, fichas, láminas y materiales abiertos. No confundir acceso gratuito con permiso para republicar.
