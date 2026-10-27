@@ -1,4 +1,4 @@
-/* Catálogo inicial RUMA. Los registros distinguen descarga directa y acceso a fuente oficial. */
+/* Catálogo documental RUMA. La zona geográfica es un campo controlado; las tarjetas mantienen solo Ver y Descargar. */
 window.RUMA_RECURSOS = [
   {
     id: "mapa-patagonia-wv",
