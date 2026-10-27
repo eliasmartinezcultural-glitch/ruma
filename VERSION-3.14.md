@@ -185,3 +185,17 @@ También se agregaron ocho fichas de vidriera hacia colecciones externas de lect
 **Estado del catálogo tras esta ampliación:** 40 fichas: 32 archivos SVG imprimibles locales y 8 fichas que llevan a colecciones externas. Las fichas externas se identifican visualmente como vidrieras y ofrecen una acción de apertura, no un botón de descarga que prometa algo que RUMA no aloja. Las descargas de esas colecciones se hacen en su sitio original, respetando sus condiciones.
 
 Los materiales nuevos son SVG imprimibles, no PDF. El siguiente control necesario es probar la versión publicada en GitHub Pages y revisar el diseño en un navegador real.
+
+
+---
+
+## Cambio de rumbo · Vidriera curada de recursos
+
+**Fecha:** 27 de octubre de 2026.
+
+Se reemplazó el catálogo visible de plantillas locales por una primera selección de 23 recursos encontrados en fuentes públicas, bibliotecas y portales educativos. La selección incluye libros en PDF, mapas escolares, materiales sobre el bosque de pewen y Ruca Choroy, prevención de incendios en la Patagonia, láminas de biodiversidad y guías prácticas sobre ciberestafas y desperdicio de alimentos.
+
+Las fichas externas identifican la institución o autor, describen el contenido y abren el PDF o la página original. Esta fase no implica que los archivos estén almacenados en el repositorio de RUMA. No se debe copiar ni redistribuir material de terceros sin licencia compatible o autorización expresa.
+
+Se conservan los cambios históricos en Git. Los archivos SVG anteriores dejan de formar parte del catálogo visible; su eliminación física se realiza por separado de este registro histórico.
+
