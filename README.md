@@ -9,7 +9,7 @@
 - **Recursos útiles:** planificador semanal.
 - **Para decorar:** stickers originales de la Patagonia y póster para cuidar la naturaleza.
 
-Los cinco archivos iniciales son diseños originales en SVG alojados en `archivos/descargas/`. Cada ficha muestra una vista previa del propio archivo y un botón de descarga local. Se pueden imprimir en A4 y ampliar sin perder nitidez.
+Los diez archivos iniciales son diseños originales en SVG alojados en `archivos/descargas/`. Cada ficha muestra una vista previa del propio archivo y un botón de descarga local. Se pueden imprimir en A4 y ampliar sin perder nitidez.
 
 ## Regla de incorporación
 
