@@ -22,8 +22,12 @@ El catálogo actual ofrece **22 archivos SVG imprimibles**, alojados dentro de e
 ## Donación voluntaria
 El cartelito fijo «Convidar un mate» lleva al apartado de colaboración. Alias: `ocarina.guitarra`, a nombre de Elías Martínez. La colaboración es opcional y nunca condiciona el acceso.
 
-## Regla para ampliar la biblioteca
-Sumar materiales útiles y bien terminados, organizados en su carpeta temática. Solo alojar contenido propio o archivos cuya licencia o permiso permita redistribuirlos. No copiar material de terceros sin autorización y no anunciar como disponible ningún archivo que no esté realmente en RUMA.
+## RUMA también es una vidriera para creadores
+RUMA reúne tanto materiales propios como obras terminadas de otras personas: planificadores, mapas, cuentos, libros, láminas, guías, recursos educativos, papelería y cualquier creación que tenga valor real. Nuestro trabajo es descubrir, seleccionar, describir, ordenar y ayudar a que cada obra llegue a su público; no atribuirnos su autoría.
+
+Cada ficha debe identificar al creador y, cuando corresponda, la fuente y la licencia. Si la licencia o una autorización expresa permite alojar y redistribuir el archivo, podemos guardarlo dentro de RUMA para ofrecer **Ver** y **Descargar** directamente. Si no lo permite, mostramos la obra como vidriera y dirigimos a la página oficial del creador, sin copiar ni redistribuir el archivo. Un material gratuito no necesariamente puede republicarse.
+
+No inventar autores, permisos, licencias ni disponibilidad. No sumar obras de relleno: cada material debe ser real, estar terminado, ser útil, bonito o interesante, y poder presentarse con honestidad.
 
 ## Control de calidad pendiente
 La comprobación del repositorio confirma la estructura y los archivos fuente; aún hay que probar la versión publicada en GitHub Pages en teléfonos y computadoras, incluida la descarga real desde cada navegador. Guardar un commit no demuestra por sí solo que Pages ya publicó la última versión.
