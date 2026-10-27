@@ -1,135 +1,146 @@
-/* RUMA · búsqueda sencilla, una acción principal por recurso y guardados locales. */
+/* RUMA · una biblioteca de paso: buscar, ver, descargar y seguir. */
 (() => {
   "use strict";
   const $ = (selector) => document.querySelector(selector);
-  const form = $("#form-busqueda"), input = $("#consulta"), result = $("#resultado-busqueda");
-  const list = $("#lista-recursos"), empty = $("#sin-recursos"), count = $("#contador-recursos");
-  const filterButtons = [...document.querySelectorAll("[data-filtro]")];
-  const accessButtons = [...document.querySelectorAll("[data-acceso]")];
-  const savedButton = $("#ver-guardados"), clearButton = $("#limpiar-busqueda");
   const resources = Array.isArray(window.RUMA_RECURSOS) ? window.RUMA_RECURSOS : [];
-  const storageKey = "ruma-guardados-v1";
-  let category = "todos", access = "todos", query = "", onlySaved = false, saved = readSaved();
+  const list = $("#lista-recursos"), input = $("#consulta"), form = $("#form-busqueda");
+  const result = $("#resultado-busqueda"), count = $("#contador-recursos"), empty = $("#sin-recursos");
+  const zoneMessage = $("#mensaje-zona"), modal = $("#vista-recurso"), modalContent = $("#modal-contenido");
+  let query = "", zone = "todos";
 
-  function readSaved() {
-    try { const v = JSON.parse(localStorage.getItem(storageKey) || "[]"); return new Set(Array.isArray(v) ? v : []); }
-    catch (_) { return new Set(); }
-  }
-  function writeSaved() { try { localStorage.setItem(storageKey, JSON.stringify([...saved])); } catch (_) {} }
+  const zoneLabels = {
+    todos: "Todos los estantes",
+    chanar: "San Patricio del Chañar",
+    neuquen: "Neuquén",
+    patagonia: "Patagonia",
+    argentina: "Argentina",
+    hispanoamerica: "América y mundo hispanohablante"
+  };
   function escapeHtml(value = "") {
     return String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
   }
-  function norm(value = "") { return String(value).toLocaleLowerCase("es").normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
-  function categoryName(value) { return ({aprender:"Aprender",trabajar:"Trabajar",explorar:"Explorar",disfrutar:"Disfrutar"})[value] || "Hallazgo"; }
-  function categoryIcon(value) { return ({aprender:"✳",trabajar:"↗",explorar:"⌁",disfrutar:"♡"})[value] || "r."; }
+  function norm(value = "") {
+    return String(value).toLocaleLowerCase("es").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
   function safeUrl(value) {
-    try { const u = new URL(value, window.location.href); return ["https:","http:"].includes(u.protocol) ? u.href : "#"; }
+    try { const url = new URL(value, window.location.href); return ["https:","http:"].includes(url.protocol) ? url.href : "#"; }
     catch (_) { return "#"; }
   }
-  function card(item) {
-    const hasPreview = Boolean(item.vistaPrevia);
-    const preview = hasPreview
-      ? '<div class="recurso-preview"><img src="'+escapeHtml(safeUrl(item.vistaPrevia))+'" alt="Vista previa de '+escapeHtml(item.titulo)+'" loading="lazy"><span class="etiqueta-vista">Vista previa</span></div>'
-      : '<div class="recurso-preview portada-recurso portada-'+escapeHtml(item.categoria)+'"><span class="portada-icono" aria-hidden="true">'+categoryIcon(item.categoria)+'</span><strong>'+escapeHtml(item.titulo)+'</strong><small>VISTA PREVIA ORIENTATIVA · '+escapeHtml(item.formato || "RECURSO")+'</small></div>';
-    const direct = item.modoAcceso === "directo" && item.descarga;
-    const destination = safeUrl(direct ? item.descarga : item.fuente);
-    const accessLabel = direct ? "Archivo disponible" : "Enlace a fuente original";
-    const actionLabel = direct ? "Ver y obtener archivo ↗" : "Ver y obtener en la fuente ↗";
-    const licenseHref = item.licenciaUrl || item.fuente;
-    const isSaved = saved.has(item.id);
-    const terms = (item.etiquetas || []).slice(0,5).map(tag => '<span class="etiqueta">'+escapeHtml(tag)+'</span>').join("");
-    return '<article class="recurso-card" data-recurso="'+escapeHtml(item.id)+'">'+preview+
-      '<div class="recurso-cuerpo"><div class="recurso-insignias"><span class="recurso-tipo">'+escapeHtml(categoryName(item.categoria))+'</span><span class="tipo-acceso">'+escapeHtml(accessLabel)+'</span></div>'+
-      '<p class="recurso-alcance">'+escapeHtml(item.alcance || "Alcance por confirmar")+'</p><h3>'+escapeHtml(item.titulo)+'</h3>'+
-      '<p class="recurso-descripcion">'+escapeHtml(item.descripcion)+'</p>'+
-      '<p class="recurso-meta"><strong>Formato:</strong> '+escapeHtml(item.formato || "Por confirmar")+'</p>'+
-      '<p class="recurso-meta"><strong>Creado por:</strong> '+escapeHtml(item.creador || "Autoría en revisión")+'</p>'+
-      '<p class="recurso-meta"><strong>Licencia:</strong> <a href="'+escapeHtml(safeUrl(licenseHref))+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(item.licencia || "Consultar ficha original")+' ↗</a></p>'+
-      '<details class="recurso-detalles"><summary>Antes de obtenerlo</summary><p>'+escapeHtml(item.nota || "")+'</p><p class="estado-legal"><strong>Uso y permisos:</strong> '+escapeHtml(item.estadoLegal || "Consultá las condiciones de la fuente original.")+'</p><p class="recurso-meta"><strong>Origen:</strong> <a href="'+escapeHtml(safeUrl(item.fuente))+'" target="_blank" rel="noopener noreferrer">Consultar la ficha original ↗</a></p></details>'+
-      '<div class="etiquetas">'+terms+'</div><div class="recurso-acciones"><a class="recurso-accion accion-principal" href="'+escapeHtml(destination)+'" target="_blank" rel="noopener noreferrer">'+actionLabel+'</a>'+
-      '<button class="recurso-accion guardar '+(isSaved ? "guardado" : "secundario")+'" type="button" data-guardar="'+escapeHtml(item.id)+'" aria-pressed="'+String(isSaved)+'" aria-label="'+(isSaved ? "Quitar de mis guardados" : "Guardar este recurso")+'">'+(isSaved ? "♥ Guardado" : "♡ Guardar")+'</button></div></div></article>';
+  function region(item) {
+    const place = norm([item.alcance,item.titulo,item.descripcion,...(item.etiquetas || [])].join(" "));
+    if (place.includes("san patricio del chanar") || place.includes("san patricio del chañar") || place.includes("chañar")) return "chanar";
+    if (place.includes("neuquen") || place.includes("alumine") || place.includes("zapala") || place.includes("huinganco") || place.includes("las ovejas") || place.includes("pulmari") || place.includes("rahue")) return "neuquen";
+    if (place.includes("patagonia") || place.includes("esquel") || place.includes("chubut")) return "patagonia";
+    if (place.includes("argentina")) return "argentina";
+    return "hispanoamerica";
   }
-  function matches(item) {
-    if (category !== "todos" && item.categoria !== category) return false;
-    if (access === "directo" && !(item.modoAcceso === "directo" && item.descarga)) return false;
-    if (access === "fuente" && item.modoAcceso !== "fuente") return false;
-    if (onlySaved && !saved.has(item.id)) return false;
-    const terms = norm(query).split(/\s+/).filter(Boolean);
-    if (!terms.length) return true;
-    const haystack = norm([item.titulo,item.descripcion,item.categoria,item.alcance,item.formato,item.creador,item.licencia,item.estadoLegal,item.nota,...(item.etiquetas || [])].join(" "));
-    return terms.every(term => haystack.includes(term));
+  const zoneRank = {chanar:0,neuquen:1,patagonia:2,argentina:3,hispanoamerica:4};
+  function matchesZone(item) {
+    if (zone === "todos") return true;
+    const itemZone = region(item);
+    if (zone === "neuquen") return itemZone === "neuquen";
+    if (zone === "patagonia") return ["chanar","neuquen","patagonia"].includes(itemZone);
+    if (zone === "argentina") return ["chanar","neuquen","patagonia","argentina"].includes(itemZone);
+    if (zone === "hispanoamerica") return itemZone === "hispanoamerica" || itemZone === "argentina";
+    return itemZone === zone;
+  }
+  function cover(item, large = false) {
+    const classes = "portada-recurso portada-" + escapeHtml(item.categoria || "explorar") + (large ? " portada-grande" : "");
+    if (item.vistaPrevia) {
+      return '<div class="recurso-preview'+(large ? ' preview-grande' : '')+'"><img src="'+escapeHtml(safeUrl(item.vistaPrevia))+'" alt="Vista previa de '+escapeHtml(item.titulo)+'" loading="lazy"><span class="etiqueta-vista">Vista previa</span></div>';
+    }
+    return '<div class="'+classes+'"><span class="portada-icono" aria-hidden="true">'+(item.categoria === "aprender" ? "✳" : item.categoria === "trabajar" ? "↗" : item.categoria === "disfrutar" ? "♡" : "⌁")+'</span><strong>'+escapeHtml(item.titulo)+'</strong><small>VISTA PREVIA DESCRIPTIVA</small><p>'+escapeHtml(item.descripcion)+'</p></div>';
+  }
+  function actionTarget(item) {
+    return safeUrl(item.modoAcceso === "directo" && item.descarga ? item.descarga : item.fuente);
+  }
+  function card(item) {
+    const direct = item.modoAcceso === "directo" && Boolean(item.descarga);
+    return '<article class="recurso-card" data-id="'+escapeHtml(item.id)+'">'+
+      '<button class="zona-vista" type="button" data-ver="'+escapeHtml(item.id)+'" aria-label="Ver vista previa de '+escapeHtml(item.titulo)+'">'+cover(item)+'</button>'+
+      '<div class="recurso-cuerpo"><p class="recurso-lugar">'+escapeHtml(item.alcance || "Alcance general")+'</p>'+
+      '<h3>'+escapeHtml(item.titulo)+'</h3><p class="recurso-descripcion">'+escapeHtml(item.descripcion)+'</p>'+
+      '<div class="recurso-acciones"><button class="accion-ver" type="button" data-ver="'+escapeHtml(item.id)+'">Ver</button>'+
+      '<a class="accion-descargar" href="'+escapeHtml(actionTarget(item))+'" target="_blank" rel="noopener noreferrer">'+(direct ? "Descargar" : "Descargar ↗")+'</a></div>'+
+      (direct ? '' : '<p class="nota-fuente">La descarga se ofrece desde la fuente oficial.</p>')+
+      '</div></article>';
+  }
+  function modalView(item) {
+    const direct = item.modoAcceso === "directo" && Boolean(item.descarga);
+    modalContent.innerHTML = '<div class="modal-ficha">'+cover(item,true)+'<div class="modal-detalles">'+
+      '<p class="recurso-lugar">'+escapeHtml(item.alcance || "Alcance general")+'</p><h2 id="modal-titulo">'+escapeHtml(item.titulo)+'</h2>'+
+      '<p>'+escapeHtml(item.descripcion)+'</p>'+
+      '<dl><div><dt>Creado por</dt><dd>'+escapeHtml(item.creador || "Autoría según la fuente original")+'</dd></div>'+
+      '<div><dt>Formato</dt><dd>'+escapeHtml(item.formato || "Consultar en la fuente original")+'</dd></div>'+
+      '<div><dt>Licencia</dt><dd>'+escapeHtml(item.licencia || "Consultar la fuente original")+'</dd></div></dl>'+
+      '<p class="nota-licencia">'+escapeHtml(item.estadoLegal || item.nota || "Revisá la ficha original para conocer las condiciones de uso.")+'</p>'+
+      '<p class="modal-fuente">Fuente: <a href="'+escapeHtml(safeUrl(item.fuente))+'" target="_blank" rel="noopener noreferrer">consultar la ficha original ↗</a></p>'+
+      (direct ? '<a class="accion-descargar modal-descargar" href="'+escapeHtml(actionTarget(item))+'" target="_blank" rel="noopener noreferrer">Descargar</a>' : '<p class="nota-fuente">Este material se obtiene desde la fuente oficial.</p>')+
+      '</div></div>';
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open","");
   }
   function render() {
-    const found = resources.filter(matches);
+    const terms = norm(query).split(/\s+/).filter(Boolean);
+    const found = resources.filter(item => {
+      if (!matchesZone(item)) return false;
+      const haystack = norm([item.titulo,item.descripcion,item.categoria,item.alcance,item.formato,item.creador,item.licencia,item.estadoLegal,item.nota,...(item.etiquetas || [])].join(" "));
+      return terms.every(term => haystack.includes(term));
+    }).sort((a,b) => zoneRank[region(a)] - zoneRank[region(b)] || String(a.titulo).localeCompare(String(b.titulo),"es"));
     list.innerHTML = found.map(card).join("");
-    empty.hidden = found.length > 0;
     count.textContent = found.length + (found.length === 1 ? " recurso" : " recursos");
-    savedButton.setAttribute("aria-pressed", String(onlySaved));
-    savedButton.textContent = onlySaved ? "♥ Ver todos" : "♡ Mis guardados ("+saved.size+")";
-    if (onlySaved) result.textContent = found.length ? "Tus hallazgos guardados en este dispositivo." : "Todavía no guardaste recursos que coincidan con estos filtros.";
-    else if (query || category !== "todos" || access !== "todos") result.textContent = found.length ? "Encontramos "+found.length+(found.length === 1 ? " recurso" : " recursos")+" para vos." : "Todavía no encontramos algo que coincida. Probá otra palabra o elegí otra puerta.";
-    else result.textContent = "Hay "+resources.length+" hallazgos en esta primera caja. Cada uno muestra una vista previa y un camino claro para obtenerlo.";
-    list.querySelectorAll("[data-guardar]").forEach(button => button.addEventListener("click", () => {
-      const id = button.dataset.guardar; if (saved.has(id)) saved.delete(id); else saved.add(id);
-      writeSaved(); render();
+    empty.hidden = found.length > 0;
+    $("#mostrar-todo").hidden = zone === "todos" && !query;
+    if (query) result.textContent = found.length ? "Encontramos "+found.length+(found.length === 1 ? " resultado." : " resultados.") : "No encontramos ese término en este estante.";
+    else result.textContent = found.length ? "Mostrando "+found.length+(found.length === 1 ? " recurso." : " recursos.") : "Este estante todavía no tiene recursos publicados.";
+    if (zone === "chanar" && found.length === 0) {
+      empty.textContent = "Estamos buscando materiales propios de San Patricio del Chañar. Preferimos esperar y verificar antes que inventar recursos o permisos.";
+      zoneMessage.textContent = "Primero el pueblo. La colección local está en investigación; todavía no hay archivos publicados con permisos verificados.";
+    } else {
+      empty.textContent = "No encontramos algo con esas palabras en este estante. Probá una palabra más sencilla o elegí otro lugar.";
+      zoneMessage.textContent = zone === "todos" ? "Estás viendo todos los estantes, ordenados desde lo más cercano hacia lo más amplio." : "Estante elegido: "+zoneLabels[zone]+".";
+    }
+    list.querySelectorAll("[data-ver]").forEach(button => button.addEventListener("click", () => {
+      const item = resources.find(entry => entry.id === button.dataset.ver);
+      if (item) modalView(item);
     }));
-    updateDoorCounts();
   }
-  function updateDoorCounts() {
-    document.querySelectorAll("[data-categoria]").forEach(door => {
-      const total = resources.filter(item => item.categoria === door.dataset.categoria).length;
-      const status = door.querySelector(".estado");
-      if (status) status.innerHTML = '<i></i> '+total+(total === 1 ? " recurso en la caja" : " recursos en la caja");
+  document.querySelectorAll("[data-zona]").forEach(button => button.addEventListener("click", () => {
+    zone = button.dataset.zona;
+    document.querySelectorAll("[data-zona]").forEach(other => {
+      const active = other === button;
+      other.classList.toggle("activa",active);
+      other.setAttribute("aria-pressed",String(active));
     });
-  }
-  document.querySelectorAll("[data-categoria]").forEach(door => {
-    const name = door.dataset.categoria;
-    door.setAttribute("role","button"); door.setAttribute("tabindex","0");
-    door.setAttribute("aria-label","Explorar la puerta "+categoryName(name));
-    door.addEventListener("click", () => setCategory(name));
-    door.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setCategory(name); } });
-  });
-  function setCategory(value) {
-    category = value;
-    filterButtons.forEach(button => { const active = button.dataset.filtro === value; button.classList.toggle("activo",active); button.setAttribute("aria-pressed",String(active)); });
-    onlySaved = false; render(); $("#recursos").scrollIntoView({behavior:"smooth",block:"start"});
-  }
-  filterButtons.forEach(button => button.addEventListener("click", () => setCategory(button.dataset.filtro)));
-  accessButtons.forEach(button => button.addEventListener("click", () => {
-    access = button.dataset.acceso;
-    accessButtons.forEach(other => { const active = other === button; other.classList.toggle("activo",active); other.setAttribute("aria-pressed",String(active)); });
-    onlySaved = false; render();
+    render();
+    $("#recursos").scrollIntoView({behavior:"smooth",block:"start"});
   }));
   form.addEventListener("submit", event => {
-    event.preventDefault(); query = input.value.trim(); category = "todos"; onlySaved = false;
-    filterButtons.forEach(button => { const active = button.dataset.filtro === "todos"; button.classList.toggle("activo",active); button.setAttribute("aria-pressed",String(active)); });
-    render(); $("#recursos").scrollIntoView({behavior:"smooth",block:"start"});
+    event.preventDefault(); query = input.value.trim(); render();
+    $("#recursos").scrollIntoView({behavior:"smooth",block:"start"});
   });
-  input.addEventListener("input", () => { if (!input.value.trim()) { query = ""; render(); } });
-  savedButton.addEventListener("click", () => { onlySaved = !onlySaved; render(); $("#recursos").scrollIntoView({behavior:"smooth",block:"start"}); });
-  clearButton.addEventListener("click", () => {
-    input.value = ""; query = ""; category = "todos"; access = "todos"; onlySaved = false;
-    filterButtons.forEach(button => { const active = button.dataset.filtro === "todos"; button.classList.toggle("activo",active); button.setAttribute("aria-pressed",String(active)); });
-    accessButtons.forEach(button => { const active = button.dataset.acceso === "todos"; button.classList.toggle("activo",active); button.setAttribute("aria-pressed",String(active)); });
-    render(); input.focus();
+  input.addEventListener("input", () => {
+    if (!input.value.trim()) { query = ""; render(); }
   });
-
-  // Controles de lectura para que cada persona pueda elegir un tamaño cómodo.
-  let textScale = 1;
-  document.querySelectorAll("[data-texto]").forEach(button => button.addEventListener("click", () => {
-    const value = button.dataset.texto;
-    textScale = value === "normal" ? 1 : Math.max(.9, Math.min(1.35, textScale + (value === "mas" ? .1 : -.1)));
-    document.documentElement.style.setProperty("--escala-lectura", String(textScale));
-    document.body.classList.toggle("lectura-ampliada", textScale > 1);
-  }));
+  $("#mostrar-todo").addEventListener("click", () => {
+    zone = "todos"; query = ""; input.value = "";
+    document.querySelectorAll("[data-zona]").forEach(button => {
+      const active = button.dataset.zona === "todos";
+      button.classList.toggle("activa",active); button.setAttribute("aria-pressed",String(active));
+    });
+    render();
+  });
+  $("#cerrar-vista").addEventListener("click", () => modal.close ? modal.close() : modal.removeAttribute("open"));
+  modal.addEventListener("click", event => {
+    if (event.target === modal) modal.close();
+  });
   const copyButton = $("#copiar-alias"), alias = $("#alias-ruma"), copyMessage = $("#mensaje-alias");
-  if (copyButton && alias) copyButton.addEventListener("click", async () => {
-    const value = alias.textContent.trim();
+  copyButton.addEventListener("click", async () => {
     try {
-      if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(value);
+      if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(alias.textContent.trim());
       else {
-        const field = document.createElement("textarea"); field.value = value; field.setAttribute("readonly","");
-        field.style.position = "absolute"; field.style.left = "-9999px"; document.body.appendChild(field); field.select();
+        const field = document.createElement("textarea"); field.value = alias.textContent.trim(); field.setAttribute("readonly","");
+        field.style.position = "fixed"; field.style.opacity = "0"; document.body.appendChild(field); field.select();
         const copied = document.execCommand("copy"); field.remove(); if (!copied) throw new Error("No se pudo copiar");
       }
       copyMessage.textContent = "Alias copiado. ¡Gracias por acompañar!";
