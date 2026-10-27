@@ -58,7 +58,7 @@
       '<div class="recurso-cuerpo"><p class="recurso-lugar">'+escapeHtml(item.alcance || "Alcance general")+'</p>'+
       '<h3>'+escapeHtml(item.titulo)+'</h3><p class="recurso-descripcion">'+escapeHtml(item.descripcion)+'</p>'+
       '<div class="recurso-acciones"><button class="accion-ver" type="button" data-ver="'+escapeHtml(item.id)+'">Ver</button>'+
-      '<a class="accion-descargar" href="'+escapeHtml(actionTarget(item))+'" target="_blank" rel="noopener noreferrer">'+"Descargar"+'</a></div>'+
+      '<a class="accion-descargar" href="'+escapeHtml(actionTarget(item))+'" target="_blank" rel="noopener noreferrer" '+(direct ? 'download' : '')+'>Descargar</a></div>'+
       (direct ? '' : '<p class="nota-fuente">La descarga se ofrece desde la fuente oficial.</p>')+
       '</div></article>';
   }
@@ -72,7 +72,7 @@
       '<div><dt>Licencia</dt><dd>'+escapeHtml(item.licencia || "Consultar la fuente original")+'</dd></div></dl>'+
       '<p class="nota-licencia">'+escapeHtml(item.estadoLegal || item.nota || "Revisá la ficha original para conocer las condiciones de uso.")+'</p>'+
       '<p class="modal-fuente">Fuente: <a href="'+escapeHtml(safeUrl(item.fuente))+'" target="_blank" rel="noopener noreferrer">consultar la ficha original ↗</a></p>'+
-      (direct ? '<a class="accion-descargar modal-descargar" href="'+escapeHtml(actionTarget(item))+'" target="_blank" rel="noopener noreferrer">Descargar</a>' : '<p class="nota-fuente">Este material se obtiene desde la fuente oficial.</p>')+
+      (direct ? '<a class="accion-descargar modal-descargar" href="'+escapeHtml(actionTarget(item))+'" target="_blank" rel="noopener noreferrer" download>Descargar</a>' : '<p class="nota-fuente">Este material se obtiene desde la fuente oficial.</p>')+
       '</div></div>';
     if (typeof modal.showModal === "function") modal.showModal();
     else modal.setAttribute("open","");
