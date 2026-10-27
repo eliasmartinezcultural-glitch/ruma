@@ -1,53 +1,56 @@
 # RUMA
 
-**RUMA ES ACCESO.** Encontrar algo útil, lindo o interesante debería ser sencillo.
+**RUMA ES ACCESO.** Encontrá algo útil, lindo o necesario. Miralo, llevalo y seguí con tu día.
 
-RUMA es una biblioteca-curaduría: no crea los recursos que reúne. Los busca, verifica, organiza y acerca a las personas, respetando siempre la autoría y las condiciones de uso.
+RUMA es una biblioteca-curaduría: no crea los recursos que reúne. Los busca, revisa, ordena y acerca, respetando la autoría y las condiciones de uso.
 
-## Ley mundial de acceso
+## Ley mundial
 
-- Reconocer a cada creador y conservar la procedencia de cada recurso.
-- No confundir gratuidad con permiso de redistribución.
-- Ofrecer acceso directo solo cuando las condiciones lo permitan.
-- Cuando la licencia no esté clara o no permita alojar una copia, enlazar la fuente oficial.
-- Seleccionar materiales que aporten valor real a personas de San Patricio del Chañar, Neuquén, Patagonia, Argentina y el mundo hispanohablante.
-- Evitar enlaces inventados, descargas dudosas, registros innecesarios y recorridos confusos.
-- No llenar el catálogo por cantidad: cada recurso debe merecer estar en la caja.
+**Ley de salida libre:** quien llega a RUMA debe poder encontrar lo que necesita, verlo, descargarlo si corresponde y marcharse sin fricción. RUMA no busca retener visitas ni crear hábito de permanencia.
 
-## Las cuatro puertas
+- La interfaz pública es simple y amable para personas con conocimientos tecnológicos básicos.
+- Cada tarjeta tiene dos acciones principales: **Ver** y **Descargar**.
+- Cada recurso tiene una vista previa real o, si no está disponible, una vista previa descriptiva claramente identificada.
+- El detalle conserva autoría, fuente, licencia y condiciones de uso.
+- No confundimos gratuidad con permiso de redistribución.
+- No inventamos archivos, licencias, autores, ubicaciones ni enlaces.
+- La colaboración con el alias `ocarina.guitarra` es voluntaria y nunca desbloquea contenido.
+- No hay cuentas, scroll infinito, reproducción automática, notificaciones, rachas ni muros de pago.
 
-1. **Aprender:** libros, materiales educativos, guías y saberes.
-2. **Trabajar:** recursos para emprendimientos, oficios y tareas prácticas.
-3. **Explorar:** mapas, historia, territorio, naturaleza y cultura.
-4. **Disfrutar:** lecturas, arte y hallazgos que hacen bien.
+## Orden de la biblioteca
 
-## Estado de la refundación
+1. San Patricio del Chañar.
+2. Neuquén.
+3. Patagonia.
+4. Argentina.
+5. América Latina y mundo hispanohablante.
 
-- Catálogo ampliado a 19 recursos seleccionados, con créditos, fuente, licencia y notas de uso.
-- Enlaces directos para archivos cuya ficha identifica CC0 o dominio público y para imágenes bajo licencias que permiten compartir, respetando sus condiciones.
-- Enlaces a fuentes oficiales para colecciones educativas con condiciones que requieren atención adicional.
-- Búsqueda local por título, tema, formato, alcance, creador y licencia.
-- Filtros por las cuatro puertas y por forma de acceso.
-- Guardados locales en el dispositivo, sin cuentas ni servidor.
-- Diseño adaptable, controles para agrandar la lectura y cartel permanente de colaboración voluntaria.
-- Cada ficha muestra una vista previa real cuando está disponible; si no, una portada orientativa que no se hace pasar por el archivo original.
-- Una acción principal por recurso: abre el archivo permitido o la fuente oficial; créditos y condiciones quedan visibles y fáciles de consultar.
-- Guía para principiantes con pasos breves y preguntas frecuentes: cómo usar la búsqueda, qué hacer al abrir archivos, guardar/imprimir y qué significa colaborar.
-- Nueva regla mundial: la amabilidad es obligatoria; nadie debe sentirse perdido, apurado o excluido. La donación nunca condiciona el acceso.
-- Nueva capa editorial y documento maestro de curaduría.
+Cada registro tiene un campo `zona` para mantener el orden geográfico. El estante de San Patricio del Chañar explica honestamente que la investigación continúa hasta encontrar recursos locales con procedencia y permisos comprobables. No se presenta un recurso de otra localidad como si fuera de Chañar.
 
-## Manuales de trabajo
+## Catálogo actual
 
-- [Ley Mundial de Acceso y sistema de curaduría](investigacion/ley-mundial-de-acceso.md)
-- [Primera capa de investigación](investigacion/primera-capa.md)
+La primera capa contiene **19 recursos**: fotografías, mapas y materiales educativos y literarios de fuentes oficiales. Es una base en crecimiento, no una cobertura completa. Cada recurso debe merecer su lugar en la biblioteca.
 
-## Archivos principales
+## Cómo funciona el sitio
 
-- `index.html`: estructura y contenido de la página.
-- `styles.css`: diseño general adaptable.
-- `catalogo.css`: tarjetas, filtros y estructura editorial del catálogo.
-- `recursos.js`: catálogo documental.
-- `app.js`: búsqueda, filtros, guardados y navegación de categorías.
-- `investigacion/`: registros de fuentes, licencias, decisiones y próximas búsquedas.
+- `index.html`: portada sencilla, búsqueda, estantes geográficos, biblioteca y colaboración voluntaria.
+- `styles.css`: diseño adaptable, legible y accesible en teléfono, tableta y computadora.
+- `catalogo.css`: estilos base del catálogo.
+- `recursos.js`: catálogo documental con ubicación, autoría, licencia, fuente y acceso.
+- `app.js`: búsqueda, orden geográfico, vista de detalle y acciones Ver / Descargar.
+- `investigacion/ley-mundial-de-acceso.md`: ley editorial y criterios de curaduría.
+- `investigacion/arquitectura-biblioteca.md`: arquitectura de la biblioteca, modelo documental, controles de calidad y plan de investigación.
 
-La web no tiene backend ni base de datos. El catálogo vive en archivos estáticos y los favoritos se guardan localmente en el navegador de cada visitante. El catálogo es una primera capa: cada enlace debe probarse periódicamente y las licencias deben revisarse antes de redistribuir materiales.
+La web es estática: no tiene cuentas, backend ni base de datos. No se necesita registro para usarla.
+
+## Qué significa “Descargar”
+
+- Cuando la fuente permite el acceso directo, el botón conduce al archivo original.
+- Cuando el material se ofrece en una biblioteca o institución, el botón conduce a esa fuente oficial. La tarjeta lo aclara.
+- Si el navegador muestra una imagen en lugar de guardarla automáticamente, puede ser necesario usar la opción Guardar imagen del dispositivo.
+
+## Regla de publicación
+
+No se incorpora un archivo como descarga aprobada hasta comprobar la ficha original, autoría, licencia o fundamento de dominio público, URL, contexto y vista previa. Si algo no está claro, queda en investigación o se enlaza a la fuente oficial sin fingir que RUMA tiene permiso para redistribuir una copia.
+
+**La medida de éxito no es cuánto tiempo se queda alguien. Es si encuentra algo valioso, lo obtiene con claridad y puede seguir con su día.**

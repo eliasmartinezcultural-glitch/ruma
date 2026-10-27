@@ -3,174 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4efe6">
-  <meta name="description" content="RUMA ES ACCESO: recursos útiles, lindos e interesantes, con autoría y licencias claras, reunidos para encontrar y obtener sin dar mil vueltas.">
-  <title>RUMA ES ACCESO — Una caja de recursos que valen la pena</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#f5f0e7">
+  <meta name="description" content="RUMA es una biblioteca de recursos útiles, lindos y necesarios. Buscá, mirá la vista previa y llevate lo que necesitás. Acceso libre.">
+  <title>RUMA — Encontrá algo bueno y llevátelo</title>
   <link rel="stylesheet" href="catalogo.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="barra">
-    <a class="marca" href="#inicio" aria-label="RUMA, inicio"><span class="marca-simbolo">r.</span><span>RUMA<small>UNA BIBLIOTECA PARA TODOS</small></span></a>
-    <nav aria-label="Navegación principal">
-      <a href="#colecciones">Las puertas</a>
-      <a href="#recursos">Recursos</a>
-      <a href="#como-usar">Cómo usar</a>
-      <a href="#regla">Nuestra regla</a>
-    </nav>
+    <a class="marca" href="#inicio" aria-label="RUMA, inicio"><span class="marca-simbolo">r.</span><span>RUMA<small>UNA BIBLIOTECA ABIERTA</small></span></a>
+    <a class="enlace-ayuda" href="#como-usar">¿Cómo funciona?</a>
   </header>
 
   <main id="inicio">
-    <section class="hero">
-      <div class="hero-texto">
-        <p class="ceja"><span class="punto"></span> LA LEY MUNDIAL DE RUMA</p>
-        <h1>RUMA es acceso.<em>Encontrar algo bueno debería ser sencillo.</em></h1>
-        <p class="bajada">Una caja de recursos útiles, lindos e interesantes que ya existen. Los buscamos, cuidamos sus créditos y acercamos la forma más sencilla de llegar a ellos.</p>
-        <a class="boton-principal" href="#recursos">Explorar recursos <span aria-hidden="true">↓</span></a>
-        <p class="nota-hero">Sin costo para explorar · Sin cuentas · Sin vueltas</p>
-        <div class="control-lectura" role="group" aria-label="Tamaño de letra"><span>¿Querés letras más grandes?</span><button type="button" data-texto="menos" aria-label="Achicar letra">A−</button><button type="button" data-texto="mas" aria-label="Agrandar letra">A+</button><button type="button" data-texto="normal">Letra normal</button></div>
+    <section class="inicio-simple">
+      <div class="inicio-texto">
+        <p class="ceja">RUMA ES ACCESO LIBRE</p>
+        <h1>Encontrá algo bueno.<br><em>Y llevátelo.</em></h1>
+        <p class="bajada">Cosas útiles, lindas o necesarias, reunidas en un solo lugar. Mirá qué son, elegí y guardalas en tu teléfono o computadora.</p>
+        <p class="promesa-simple"><span>✓</span> Sin cuenta <span>✓</span> Sin pago obligatorio <span>✓</span> Sin vueltas</p>
       </div>
-      <div class="hero-dibujo" aria-label="Ilustración decorativa de una casita, libros y una planta">
-        <div class="sol"></div><div class="nube nube-a"></div><div class="nube nube-b"></div>
-        <div class="paisaje"></div>
-        <div class="casita"><div class="techo"></div><div class="pared"><div class="ventana"></div><div class="puerta"></div></div></div>
-        <div class="libros"><i></i><i></i><i></i></div>
-        <div class="maceta"><span class="hoja hoja-a"></span><span class="hoja hoja-b"></span><span class="hoja hoja-c"></span><b></b></div>
-        <span class="estrellita estrella-a">✳</span><span class="estrellita estrella-b">✦</span>
-        <p class="dibujo-pie">Un rinconcito para descubrir.</p>
-      </div>
+      <div class="ilustracion-caja" aria-hidden="true"><span>♡</span><div class="caja-libros"><i></i><i></i><i></i></div><p>Un lugar para encontrar<br>y llevarte algo valioso.</p></div>
     </section>
 
     <section class="buscador-seccion" aria-labelledby="titulo-busqueda">
       <div class="buscador-cabecera">
-        <p class="ceja">TU BÚSQUEDA EMPIEZA ACÁ</p>
-        <h2 id="titulo-busqueda">¿Qué te gustaría encontrar?</h2>
-        <p>Escribí una idea, un tema o algo que necesitás.</p>
+        <p class="ceja">EMPEZÁ POR LO QUE NECESITÁS</p>
+        <h2 id="titulo-busqueda">¿Qué estás buscando?</h2>
+        <p>Puede ser una palabra sencilla: cuentos, mapa, huerta, dibujo…</p>
       </div>
       <form id="form-busqueda" class="buscador" role="search">
-        <span aria-hidden="true">⌕</span>
         <label class="solo-lectores" for="consulta">Buscar en RUMA</label>
-        <input id="consulta" name="consulta" type="search" placeholder="Ej.: cuentos, mapas patagónicos, huerta, ilustraciones…" autocomplete="off">
+        <input id="consulta" name="consulta" type="search" placeholder="Escribí acá…" autocomplete="off">
         <button type="submit">Buscar</button>
       </form>
-      <div id="resultado-busqueda" class="resultado" aria-live="polite">Buscá por tema, lugar, formato o creador. No hace falta saber el nombre exacto del archivo.</div>
+      <p id="resultado-busqueda" class="resultado" aria-live="polite">Podés buscar o elegir una región más abajo.</p>
     </section>
 
-    <section class="colecciones" id="colecciones">
+    <section class="estantes" aria-labelledby="titulo-estantes">
       <div class="seccion-titulo">
-        <div><p class="ceja">CUATRO PUERTAS, MUCHOS CAMINOS</p><h2>¿Por dónde empezamos?</h2></div>
-        <span class="contador">01 — 04</span>
+        <div><p class="ceja">ORDENAMOS CERCA, DESPUÉS MÁS LEJOS</p><h2 id="titulo-estantes">Explorá por lugar</h2></div>
       </div>
-      <div class="puertas">
-        <article class="puerta puerta-aprender" data-categoria="aprender" data-palabras="aprender estudiar educación libros lectura cursos escuela estudiantes docentes conocimiento">
-          <div class="puerta-icono" aria-hidden="true">✳</div><span class="numero">PUERTA 01</span>
-          <h3>Aprender</h3><p>Libros, materiales educativos, guías de estudio y saberes para descubrir.</p>
-          <span class="estado"><i></i> 2 recursos iniciales</span>
-        </article>
-        <article class="puerta puerta-trabajar" data-categoria="trabajar" data-palabras="trabajar emprendimientos emprendedores oficios herramientas negocios trámites trabajo proyectos">
-          <div class="puerta-icono" aria-hidden="true">↗</div><span class="numero">PUERTA 02</span>
-          <h3>Trabajar</h3><p>Herramientas prácticas para emprender, organizarse y resolver cosas.</p>
-          <span class="estado"><i></i> 1 recurso inicial</span>
-        </article>
-        <article class="puerta puerta-explorar" data-categoria="explorar" data-palabras="explorar mapas territorio neuquen patagonia argentina latinoamerica historia naturaleza turismo cultura datos">
-          <div class="puerta-icono" aria-hidden="true">⌁</div><span class="numero">PUERTA 03</span>
-          <h3>Explorar</h3><p>Mapas, historia, territorio, naturaleza y curiosidades del mundo.</p>
-          <span class="estado"><i></i> 2 recursos iniciales</span>
-        </article>
-        <article class="puerta puerta-disfrutar" data-categoria="disfrutar" data-palabras="disfrutar cuentos arte dibujos musica lectura ocio creatividad belleza cultura">
-          <div class="puerta-icono" aria-hidden="true">♡</div><span class="numero">PUERTA 04</span>
-          <h3>Disfrutar</h3><p>Lecturas, arte, ideas lindas y hallazgos para regalarse un momento.</p>
-          <span class="estado"><i></i> Colección en preparación</span>
-        </article>
+      <p class="texto-estantes">Primero nuestro pueblo. Después la provincia, la Patagonia y el país. Así se encuentra lo cercano antes de salir a explorar el mundo.</p>
+      <div class="zonas" role="group" aria-label="Elegir región">
+        <button type="button" class="zona activa" data-zona="todos" aria-pressed="true"><span>⌂</span><strong>Todo RUMA</strong><small>Todos los estantes</small></button>
+        <button type="button" class="zona" data-zona="chanar" aria-pressed="false"><span>♡</span><strong>San Patricio del Chañar</strong><small>Lo más cercano</small></button>
+        <button type="button" class="zona" data-zona="neuquen" aria-pressed="false"><span>✳</span><strong>Neuquén</strong><small>La provincia</small></button>
+        <button type="button" class="zona" data-zona="patagonia" aria-pressed="false"><span>⌁</span><strong>Patagonia</strong><small>Nuestra región</small></button>
+        <button type="button" class="zona" data-zona="argentina" aria-pressed="false"><span>◇</span><strong>Argentina</strong><small>Todo el país</small></button>
+        <button type="button" class="zona" data-zona="hispanoamerica" aria-pressed="false"><span>◎</span><strong>América y mundo hispano</strong><small>Más allá de casa</small></button>
       </div>
-      <p id="sin-coincidencias" class="sin-coincidencias" hidden>No encontramos una puerta relacionada con esa búsqueda. Probá con otra palabra o explorá las cuatro categorías.</p>
-      <button id="ver-todo" class="boton-texto" type="button" hidden>Ver las cuatro puertas</button>
+      <p id="mensaje-zona" class="mensaje-zona" aria-live="polite">Estás viendo todos los estantes, empezando por los recursos más cercanos.</p>
     </section>
-
 
     <section class="catalogo" id="recursos" aria-labelledby="titulo-recursos">
       <div class="seccion-titulo">
-        <div><p class="ceja">HALLAZGOS CON PROCEDENCIA Y LICENCIA</p><h2 id="titulo-recursos">Abrí la caja.</h2></div>
-        <span class="contador" id="contador-recursos">09 recursos</span>
+        <div><p class="ceja">MIRÁ, ELEGÍ, LLEVÁTELO</p><h2 id="titulo-recursos">La biblioteca</h2></div>
+        <span class="contador" id="contador-recursos">19 recursos</span>
       </div>
-      <p class="catalogo-intro">Cada ficha te cuenta qué es, quién lo creó, qué licencia declara y cómo obtenerlo. Si no podemos alojar el archivo, te acercamos a su fuente original.</p>
-      <div class="filtros-recursos" role="group" aria-label="Filtrar recursos por categoría">
-        <button type="button" class="filtro activo" data-filtro="todos" aria-pressed="true">Todos</button>
-        <button type="button" class="filtro" data-filtro="aprender" aria-pressed="false">Aprender</button>
-        <button type="button" class="filtro" data-filtro="trabajar" aria-pressed="false">Trabajar</button>
-        <button type="button" class="filtro" data-filtro="explorar" aria-pressed="false">Explorar</button>
-        <button type="button" class="filtro" data-filtro="disfrutar" aria-pressed="false">Disfrutar</button>
-      </div>
-      <div class="filtros-acceso" role="group" aria-label="Filtrar por forma de acceso">
-        <span>Cómo querés acceder:</span>
-        <button type="button" class="filtro activo" data-acceso="todos" aria-pressed="true">Todo</button>
-        <button type="button" class="filtro" data-acceso="directo" aria-pressed="false">Descarga directa</button>
-        <button type="button" class="filtro" data-acceso="fuente" aria-pressed="false">Fuente original</button>
-        <button type="button" id="ver-guardados" class="filtro guardados" aria-pressed="false">♡ Mis guardados (0)</button>
-        <button type="button" id="limpiar-busqueda" class="filtro limpiar">Limpiar filtros</button>
-      </div>
+      <p class="catalogo-intro">Cada tarjeta te muestra de qué se trata. Tocá <strong>Ver</strong> para mirar la ficha o <strong>Descargar</strong> para llevarte el archivo o llegar al lugar oficial que lo ofrece.</p>
       <div id="lista-recursos" class="lista-recursos" aria-live="polite"></div>
-      <p id="sin-recursos" class="sin-recursos" hidden>No encontramos recursos para esa búsqueda. Probá otra palabra o elegí otra puerta.</p>
-      <p class="nota-catalogo">La licencia se revisa por recurso. “Descarga directa” significa que el archivo se abre desde su ubicación original. “Fuente original” significa que te llevamos a la institución o creador para obtenerlo allí. Los guardados quedan en este dispositivo; no se crea una cuenta.</p>
+      <p id="sin-recursos" class="sin-recursos" hidden>No encontramos algo con esas palabras en este estante. Probá una palabra más sencilla o elegí otro lugar.</p>
+      <button id="mostrar-todo" class="boton-texto" type="button" hidden>Volver a ver toda la biblioteca</button>
     </section>
 
-
-    <section class="ayuda-amable" id="como-usar" aria-labelledby="titulo-ayuda">
-      <div class="seccion-titulo"><div><p class="ceja">SIN APURO, PASO A PASO</p><h2 id="titulo-ayuda">Usar RUMA es fácil.</h2></div><span class="contador">GUÍA CORTITA</span></div>
-      <div class="ayuda-pasos">
-        <article><span>1</span><div><h3>Elegí algo</h3><p>Buscá una palabra o abrí una de las cuatro puertas. También podés mirar todo sin buscar nada.</p></div></article>
-        <article><span>2</span><div><h3>Mirá la vista previa</h3><p>La imagen te ayuda a reconocer el recurso. Si dice “vista previa orientativa”, es una presentación de RUMA, no el archivo original.</p></div></article>
-        <article><span>3</span><div><h3>Tocá “Ver y obtener”</h3><p>Se abrirá el archivo o la página oficial que lo ofrece. No necesitás crear una cuenta en RUMA.</p></div></article>
+    <section class="como-usar" id="como-usar" aria-labelledby="titulo-como">
+      <p class="ceja">ASÍ DE FÁCIL</p><h2 id="titulo-como">Tres pasos y listo.</h2>
+      <div class="pasos-simples">
+        <article><span>1</span><div><h3>Buscá o elegí</h3><p>Escribí lo que necesitás o elegí un lugar.</p></div></article>
+        <article><span>2</span><div><h3>Mirá antes</h3><p>La vista previa te ayuda a saber qué vas a abrir.</p></div></article>
+        <article><span>3</span><div><h3>Ver o descargar</h3><p>Elegí uno de los dos botones. Y listo, ya podés seguir con tu día.</p></div></article>
       </div>
-      <div class="ayuda-preguntas">
-        <h3>Si te queda alguna duda</h3>
-        <details><summary>¿Tengo que pagar o colaborar?</summary><p>No. RUMA es de acceso libre. El alias <strong>ocarina.guitarra</strong> es una invitación voluntaria para quien desee ayudar, nunca una condición.</p></details>
-        <details><summary>¿Por qué algunos botones me llevan a otra página?</summary><p>Porque ciertos materiales pertenecen a una biblioteca o institución. Te acercamos a su fuente original cuando no corresponde copiar el archivo en RUMA o cuando la fuente ofrece mejor información.</p></details>
-        <details><summary>¿Cómo guardo o imprimo?</summary><p>Si se abre una imagen, podés guardarla desde las opciones del navegador. Si se abre un PDF, buscá el símbolo de descarga o de impresora dentro del visor. En cada equipo los botones pueden verse un poco distintos.</p></details>
-        <details><summary>¿Y si algo no abre?</summary><p>Puede que la fuente haya cambiado. RUMA no te va a pedir datos ni pagos para “desbloquearlo”. Volvé a la búsqueda y probá otro recurso.</p></details>
-      </div>
+      <p class="frase-libre">No tenés que quedarte. RUMA está para ayudarte y dejarte seguir.</p>
     </section>
 
-    <section class="metodo" id="metodo" aria-labelledby="titulo-metodo">
-      <div class="metodo-cabecera">
-        <p class="ceja">EL TRABAJO QUE RUMA HACE POR VOS</p>
-        <h2 id="titulo-metodo">La caja es simple.<br><em>La búsqueda, no.</em></h2>
-        <p>Detrás de cada hallazgo hay un trabajo de biblioteca: buscar, revisar, describir y comprobar cómo se puede compartir.</p>
-      </div>
-      <div class="metodo-pasos">
-        <article><span>01</span><h3>Encontramos</h3><p>Investigamos fuentes locales, provinciales, argentinas y del mundo hispanohablante.</p></article>
-        <article><span>02</span><h3>Elegimos</h3><p>Priorizamos utilidad real, calidad, belleza, claridad y valor cultural.</p></article>
-        <article><span>03</span><h3>Reconocemos</h3><p>Conservamos autoría, procedencia, licencia y condiciones de uso.</p></article>
-        <article><span>04</span><h3>Acercamos</h3><p>Facilitamos la descarga cuando corresponde o abrimos el camino a la fuente original.</p></article>
-      </div>
-      <div class="semillas">
-        <div><p class="ceja">INVESTIGACIÓN EN MARCHA</p><h3>También sabemos cuándo esperar.</h3><p>Si encontramos algo valioso pero no podemos confirmar su licencia, no lo disfrazamos de descarga libre. Lo dejamos en revisión hasta saber cómo compartirlo correctamente.</p></div>
-        <a class="boton-secundario" href="investigacion/primera-capa.md" target="_blank" rel="noopener noreferrer">Ver el cuaderno de investigación ↗</a>
-      </div>
-    </section>
-
-    <section class="regla" id="regla">
-      <div class="regla-ilustracion" aria-hidden="true"><div class="circulo"></div><span>R</span><i>✳</i></div>
-      <div class="regla-texto"><p class="ceja">LA REGLA MUNDIAL DE RUMA</p><h2>RUMA es acceso.<br><em>No creamos los recursos. Los reunimos.</em></h2><p>Buscamos en fuentes locales, provinciales, regionales, nacionales y de todo el mundo hispanohablante. Reconocemos a quienes crean, respetamos las licencias y hacemos más sencillo llegar a lo que vale la pena.</p>
-        <div class="principios"><span><b>01</b> Reunir</span><span><b>02</b> Filtrar</span><span><b>03</b> Ordenar</span><span><b>04</b> Facilitar</span></div>
-      </div>
-    </section>
-
-    <section class="compromiso">
-      <span class="ramita" aria-hidden="true">❧</span>
-      <p>Gratis no siempre significa que se pueda volver a publicar.</p>
-      <h2>Valor, confianza y respeto.</h2>
-      <p class="compromiso-texto">Cuando un recurso permita descarga directa, la acercaremos desde RUMA. Si tiene condiciones de uso, te llevaremos a su fuente oficial. Sin engaños ni enlaces inventados.</p>
-      <div class="regla-amabilidad"><span aria-hidden="true">♡</span><div><p class="ceja">NUEVA REGLA MUNDIAL</p><h3>La amabilidad es obligatoria.</h3><p>Nadie debe sentirse perdido, apurado o excluido. Cada recurso tendrá una vista previa clara y una sola acción principal para verlo y obtenerlo. Colaborar con RUMA será siempre voluntario; el acceso nunca dependerá de una donación.</p></div></div>
+    <section class="regla-final" aria-labelledby="titulo-regla">
+      <span aria-hidden="true">♡</span>
+      <div><p class="ceja">LA LEY MUNDIAL DE RUMA</p><h2 id="titulo-regla">Venís, encontrás, te lo llevás y seguís.</h2><p>Acceso libre, respeto por quienes crean y ninguna presión para donar. La amabilidad es obligatoria; quedarse en la página, no.</p></div>
     </section>
   </main>
 
   <footer class="pie">
-    <a class="marca marca-pie" href="#inicio"><span class="marca-simbolo">r.</span><span>RUMA<small>HECHO CON CARIÑO</small></span></a>
-    <p>Un rinconcito de recursos que valen la pena.</p>
-    <a href="#inicio" class="volver">Volver arriba ↑</a>
+    <a class="marca marca-pie" href="#inicio"><span class="marca-simbolo">r.</span><span>RUMA<small>ACCESO LIBRE, SIEMPRE</small></span></a>
+    <p>Hecho con cariño. Ordenado con cuidado.</p>
+    <a class="volver" href="#inicio">Volver al inicio ↑</a>
   </footer>
-  <aside class="colaboracion-fija" aria-label="Colaboración voluntaria con RUMA"><div class="colaboracion-corazon" aria-hidden="true">♡</div><div class="colaboracion-texto"><strong>¿Te gusta RUMA?</strong><span>Podés colaborar si querés. El acceso es libre y seguirá siéndolo.</span></div><div class="colaboracion-alias"><span>Alias</span><strong id="alias-ruma">ocarina.guitarra</strong></div><button type="button" id="copiar-alias" class="boton-copiar">Copiar alias</button><span id="mensaje-alias" class="mensaje-alias" aria-live="polite"></span></aside>
+
+  <aside class="colaboracion-fija" aria-label="Colaboración voluntaria con RUMA">
+    <span class="colaboracion-corazon" aria-hidden="true">♡</span>
+    <div class="colaboracion-texto"><strong>¿Querés ayudar a que RUMA siga?</strong><span>Solo si querés. Todo el contenido sigue siendo de acceso libre.</span></div>
+    <div class="colaboracion-alias"><span>Alias para colaborar</span><strong id="alias-ruma">ocarina.guitarra</strong></div>
+    <button type="button" id="copiar-alias" class="boton-copiar">Copiar alias</button>
+    <span id="mensaje-alias" class="mensaje-alias" aria-live="polite"></span>
+  </aside>
+
+  <dialog id="vista-recurso" class="modal-recurso" aria-labelledby="modal-titulo">
+    <div class="modal-cabecera"><p class="ceja">VISTA DEL RECURSO</p><button type="button" id="cerrar-vista" class="cerrar-modal" aria-label="Cerrar vista">Cerrar ✕</button></div>
+    <div id="modal-contenido"></div>
+  </dialog>
   <script src="recursos.js"></script>
   <script src="app.js"></script>
 </body>

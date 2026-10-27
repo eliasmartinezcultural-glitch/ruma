@@ -1,113 +1,218 @@
-:root{color-scheme:light;--fondo:#f5f0e7;--papel:#fffdf8;--tinta:#303e34;--suave:#72786c;--verde:#71876b;--linea:#e6dfd2;--terracota:#c98265;--amarillo:#e8c779;--lavanda:#dcd9e8}
+/* RUMA · hoja de estilos principal, consolidada para mantener el sitio simple y fácil de mantener. */
+:root{color-scheme:light;--fondo:#f5f0e7;--papel:#fffdf8;--tinta:#303e34;--suave:#72786c;--verde:#71876b;--linea:#e6dfd2;--terracota:#c98265;--amarillo:#e8c779;--lavanda:#dcd9e8;--escala-lectura:1}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{margin:0;background:var(--fondo);color:var(--tinta);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6}
-a{color:inherit;text-decoration:none}
-.barra{height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,6vw,90px);border-bottom:1px solid #e8e0d3;background:#f8f4ec}
-.marca{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:800;letter-spacing:.12em;line-height:1.15}
-.marca small{display:block;margin-top:5px;font-size:8px;letter-spacing:.16em;font-weight:600;color:var(--suave)}
-.marca-simbolo{display:grid;place-items:center;width:40px;height:40px;background:var(--tinta);color:#fff8e9;border-radius:14px 14px 14px 4px;font-family:Georgia,serif;font-size:25px;font-weight:400;letter-spacing:0}
-nav{display:flex;gap:30px;font-size:13px;color:#5d685d}nav a:hover,.volver:hover{color:var(--terracota)}
-main{max-width:1240px;margin:auto;padding:0 clamp(20px,5vw,68px)}
-.hero{display:grid;grid-template-columns:1.04fr .96fr;gap:32px;align-items:center;padding:70px 0 66px;min-height:510px}
-.hero-texto{padding:12px 0}.ceja{font-size:10px;font-weight:800;letter-spacing:.16em;color:var(--verde);margin:0 0 18px}
-.punto{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--terracota);margin:0 8px 1px 0}
-h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:500}
-h1{font-size:clamp(42px,5.2vw,70px);line-height:1.02;letter-spacing:-.045em;margin-bottom:23px;max-width:620px}h1 em,h2 em{font-weight:400;color:var(--verde)}
-.bajada{max-width:500px;color:#687064;font-size:16px;line-height:1.85;margin-bottom:28px}
-.boton-principal{display:inline-flex;align-items:center;gap:26px;background:var(--tinta);color:#fffaf0;padding:14px 20px;border-radius:6px;font-size:13px;font-weight:700;transition:transform .2s,background .2s}.boton-principal:hover{transform:translateY(-2px);background:#4c6551}
-.nota-hero{font-size:10px;color:#858579;margin:14px 0 0}
-.hero-dibujo{position:relative;height:365px;border-radius:48% 48% 8px 8px;background:#e8e6d7;overflow:hidden;isolation:isolate}
-.sol{position:absolute;width:85px;height:85px;right:19%;top:47px;border-radius:50%;background:#e8c779}
-.nube{position:absolute;height:13px;width:57px;border-radius:20px;background:#f8f3e8;opacity:.8}.nube:before,.nube:after{content:"";position:absolute;background:inherit;border-radius:50%;bottom:0}.nube:before{width:22px;height:22px;left:10px}.nube:after{width:30px;height:29px;left:25px}.nube-a{left:12%;top:80px}.nube-b{right:8%;top:125px;transform:scale(.7)}
-.paisaje{position:absolute;bottom:-65px;left:-10%;width:120%;height:195px;border-radius:50% 50% 0 0;background:#b9c5a7}.paisaje:after{content:"";position:absolute;left:25%;top:-22px;width:100%;height:160px;border-radius:50%;background:#d0d4b9}
-.casita{position:absolute;z-index:2;bottom:76px;left:35%;width:142px;height:137px}.pared{position:absolute;bottom:0;left:9px;right:9px;height:93px;background:#f8e9cd;border:2px solid #b88769;border-radius:2px}.techo{position:absolute;z-index:2;top:0;left:0;width:142px;height:76px;background:#b97860;clip-path:polygon(50% 0,100% 65%,94% 72%,50% 18%,6% 72%,0 65%)}
-.ventana{position:absolute;top:20px;left:17px;width:31px;height:31px;border:3px solid #8d9a7d;background:#d8e1d2;border-radius:3px}.ventana:after{content:"";position:absolute;left:12px;top:0;height:100%;border-left:2px solid #8d9a7d}.puerta{position:absolute;right:15px;bottom:0;width:33px;height:53px;background:#9d7359;border-radius:15px 15px 0 0}
-.libros{position:absolute;z-index:4;bottom:37px;left:18%;display:flex;align-items:end;transform:rotate(-5deg)}.libros i{display:block;width:21px;height:60px;background:#c98265;border:2px solid #f5e6d2;border-radius:3px 3px 0 0}.libros i:nth-child(2){height:75px;background:#73886e}.libros i:nth-child(3){height:50px;background:#d8b765}
-.maceta{position:absolute;z-index:4;bottom:31px;right:16%;width:40px;height:36px}.maceta b{position:absolute;bottom:0;left:4px;width:32px;height:27px;background:#c98265;clip-path:polygon(0 0,100% 0,82% 100%,18% 100%)}.hoja{position:absolute;z-index:2;bottom:25px;left:19px;width:17px;height:31px;background:#71876b;border-radius:100% 0 100% 0;transform-origin:bottom}.hoja-a{transform:rotate(-43deg)}.hoja-b{transform:rotate(8deg);height:39px;left:17px}.hoja-c{transform:rotate(47deg);left:20px;height:24px}
-.estrellita{position:absolute;z-index:4;color:#f8f2e4}.estrella-a{top:65px;left:23%;font-size:25px}.estrella-b{top:160px;right:13%;font-size:16px}.dibujo-pie{position:absolute;z-index:5;bottom:6px;left:0;right:0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#4f604d;font-size:13px}
-.buscador-seccion{padding:52px 20px 62px;background:#eae9dd;border-radius:10px;text-align:center;margin-bottom:72px}
-.buscador-cabecera .ceja{margin-bottom:10px}.buscador-cabecera h2,.seccion-titulo h2{font-size:clamp(29px,3.5vw,42px);letter-spacing:-.025em;margin-bottom:7px}.buscador-cabecera>p:last-child{font-size:13px;color:var(--suave);margin-bottom:24px}
-.buscador{display:flex;align-items:center;gap:12px;max-width:680px;margin:auto;padding:7px 7px 7px 17px;background:var(--papel);border:1px solid #dcdacb;border-radius:7px;text-align:left}.buscador>span{font-size:29px;color:#829078;line-height:1}.buscador input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--tinta);font:14px Arial,sans-serif;padding:10px 0}.buscador input:focus-visible{outline:2px solid #8b9c82;outline-offset:4px;border-radius:2px}.buscador button{border:0;border-radius:4px;background:var(--verde);color:white;font-size:12px;font-weight:700;padding:13px 21px;cursor:pointer}.buscador button:hover{background:#526b52}.resultado{max-width:650px;margin:14px auto 0;color:#72776b;font-size:11px;min-height:18px}
-.colecciones{padding:0 0 75px}.seccion-titulo{display:flex;justify-content:space-between;align-items:end;margin-bottom:26px}.seccion-titulo .ceja{margin-bottom:9px}.seccion-titulo h2{margin-bottom:0}.contador{font-size:10px;letter-spacing:.13em;color:#969587;padding-bottom:8px}
-.puertas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.puerta{position:relative;min-height:252px;padding:23px 19px 20px;border-radius:7px;border:1px solid #e5dfd3;background:var(--papel);transition:transform .2s,border-color .2s}.puerta:hover{transform:translateY(-4px);border-color:#b7c0aa}.puerta-icono{width:43px;height:43px;display:grid;place-items:center;border-radius:14px 14px 14px 4px;font-size:25px;margin-bottom:20px}.puerta-aprender .puerta-icono{background:#eee2c7;color:#a47d3e}.puerta-trabajar .puerta-icono{background:#dfe7d8;color:#5b7858}.puerta-explorar .puerta-icono{background:#e3e0ee;color:#7b7599}.puerta-disfrutar .puerta-icono{background:#f1ded4;color:#b46f56}.numero{font-size:9px;font-weight:700;letter-spacing:.13em;color:#8a8b7e}.puerta h3{font-size:27px;margin:5px 0 8px}.puerta p{font-size:12px;line-height:1.7;color:#74776c;min-height:61px;margin-bottom:16px}.estado{display:flex;align-items:center;gap:7px;font-size:9px;color:#85877a}.estado i{width:6px;height:6px;border-radius:50%;background:#c9a35d;display:inline-block}
-.sin-coincidencias{margin:22px 0 0;padding:15px;background:#eeeadf;border-radius:5px;font-size:13px;color:#626c5e}.boton-texto{margin-top:14px;background:transparent;border:0;border-bottom:1px solid var(--verde);color:var(--tinta);font-size:12px;padding:5px 0;cursor:pointer}
-.regla{display:grid;grid-template-columns:.75fr 1.25fr;gap:50px;align-items:center;padding:54px clamp(20px,5vw,65px);background:#e4e7d9;border-radius:10px;margin-bottom:65px}.regla-ilustracion{position:relative;width:210px;height:210px;display:grid;place-items:center;justify-self:center;border-radius:50%;background:#d0d8c3;color:#fdf8ed;font-family:Georgia,serif;font-size:90px}.regla-ilustracion .circulo{position:absolute;inset:17px;border:1px solid #f7f3e7;border-radius:50%}.regla-ilustracion i{position:absolute;top:15px;right:10px;font-size:30px;color:#b47c61;font-style:normal}.regla-texto .ceja{margin-bottom:12px}.regla-texto h2{font-size:clamp(32px,4vw,47px);line-height:1.12;letter-spacing:-.03em;margin-bottom:16px}.regla-texto>p:not(.ceja){font-size:13px;line-height:1.8;color:#687061;max-width:550px}.principios{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}.principios span{padding:8px 11px;background:#f5f2e9;border-radius:4px;font-size:11px}.principios b{color:var(--verde);font-size:9px;margin-right:6px}
-.compromiso{text-align:center;max-width:620px;margin:0 auto 72px}.ramita{font-family:Georgia,serif;font-size:38px;color:var(--terracota)}.compromiso>p:not(.compromiso-texto){font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#858678;margin:12px 0 5px}.compromiso h2{font-size:35px;margin-bottom:10px}.compromiso-texto{font-size:13px;color:#74776c;line-height:1.85}
-.pie{border-top:1px solid var(--linea);padding:25px clamp(20px,6vw,90px);display:flex;align-items:center;justify-content:space-between;gap:20px;background:#f8f4ec}.marca-pie .marca-simbolo{width:32px;height:32px;font-size:20px}.marca-pie{font-size:14px}.marca-pie small{font-size:7px}.pie>p,.volver{font-size:11px;color:#7b7e71;margin:0}.solo-lectores{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-[hidden]{display:none!important}
-@media(max-width:850px){.hero{grid-template-columns:1fr 1fr;gap:20px;padding:52px 0}.hero-dibujo{height:310px}.casita{transform:scale(.83);transform-origin:bottom left;left:31%}.puertas{grid-template-columns:repeat(2,minmax(0,1fr))}.puerta{min-height:225px}.puerta p{min-height:42px}.regla{gap:25px;padding:40px 28px}}
-@media(max-width:600px){.barra{height:70px;padding:0 18px}nav{gap:14px;font-size:11px}.marca{font-size:15px}.marca-simbolo{width:35px;height:35px}.marca small{font-size:7px}.hero{grid-template-columns:1fr;padding:45px 0 38px;gap:28px}.hero-texto{padding:0}h1{font-size:clamp(43px,12vw,60px)}.bajada{font-size:14px}.hero-dibujo{height:285px;margin:0 4px}.casita{left:35%;bottom:63px;transform:scale(.78)}.libros{left:14%;bottom:28px;transform:scale(.8) rotate(-5deg);transform-origin:bottom left}.maceta{right:12%;bottom:23px}.buscador-seccion{padding:38px 15px 35px;margin-bottom:52px}.buscador-cabecera h2{font-size:30px}.buscador{gap:8px;padding-left:12px}.buscador input{font-size:12px}.buscador button{padding:12px 13px}.colecciones{padding-bottom:52px}.seccion-titulo{align-items:end}.seccion-titulo h2{font-size:31px}.contador{font-size:9px}.puertas{gap:10px}.puerta{padding:17px 14px;min-height:235px}.puerta-icono{width:38px;height:38px;margin-bottom:14px}.puerta h3{font-size:25px}.puerta p{font-size:11px;min-height:66px}.estado{font-size:8px}.regla{grid-template-columns:1fr;gap:24px;padding:34px 22px;margin-bottom:52px}.regla-ilustracion{width:145px;height:145px;font-size:65px}.regla-ilustracion .circulo{inset:12px}.regla-texto h2{font-size:37px}.principios{gap:6px}.principios span{font-size:10px;padding:7px 9px}.compromiso{margin-bottom:48px}.compromiso h2{font-size:31px}.pie{padding:23px 18px;flex-wrap:wrap}.pie>p{order:3;width:100%;margin-top:4px}.volver{margin-left:auto}}
-@media(max-width:360px){nav{gap:9px;font-size:10px}.puerta{padding:14px 11px}.puerta h3{font-size:22px}.puerta p{font-size:10px}.estado{font-size:7px}.contador{display:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
-
-
-/* RUMA: accesibilidad cotidiana, colaboración voluntaria y diseño amable en cualquier pantalla. */
-:focus-visible{outline:3px solid #a98146;outline-offset:3px}
+body{margin:0;background:var(--fondo);color:var(--tinta);font-family:Arial,Helvetica,sans-serif;font-size:18px;line-height:1.65}
+a{color:inherit}
+button,input{font:inherit}
 button,a{touch-action:manipulation}
-button{font-family:inherit}
-.control-lectura{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:18px;color:#687064;font-size:12px}
-.control-lectura span{margin-right:3px}
-.control-lectura button{min-height:40px;min-width:42px;padding:8px 11px;border:1px solid #d7d9cb;border-radius:6px;background:#fffdf8;color:#354438;font-size:13px;cursor:pointer}
-.control-lectura button:hover{background:#e4e8dc}
-body{zoom:var(--escala-lectura,1);padding-bottom:96px}
-.regla-amabilidad{display:flex;align-items:flex-start;gap:17px;margin-top:28px;padding:22px;background:#fffaf1;border:1px solid #e4ddcf;border-radius:9px}
-.regla-amabilidad>span{display:grid;place-items:center;flex:0 0 46px;height:46px;border-radius:50%;background:#f1dfd5;color:#9b674f;font-size:26px}
-.regla-amabilidad .ceja{margin:0 0 7px}
-.regla-amabilidad h3{font-size:27px;line-height:1.15;margin:0 0 9px}
-.regla-amabilidad p:last-child{font-size:14px;line-height:1.8;color:#687064;margin:0}
-.colaboracion-fija{position:fixed;z-index:1000;left:0;right:0;bottom:0;display:flex;align-items:center;gap:14px;padding:12px clamp(14px,4vw,52px);background:#fffaf0;border-top:1px solid #ded6c7;box-shadow:0 -5px 24px rgba(49,60,47,.09);color:#354438}
-.colaboracion-corazon{display:grid;place-items:center;flex:0 0 38px;height:38px;border-radius:13px 13px 13px 4px;background:#f1dfd5;color:#a46c54;font-size:24px}
-.colaboracion-texto{display:flex;flex:1;min-width:150px;flex-direction:column;gap:2px}
-.colaboracion-texto strong{font:19px/1.2 Georgia,serif}
-.colaboracion-texto span{font-size:11px;line-height:1.4;color:#687064}
+.ceja{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#78816e;margin:0 0 12px}
+.marca{display:inline-flex;align-items:center;gap:10px;color:#354438;text-decoration:none;font-size:18px;font-weight:800;letter-spacing:.07em;line-height:1.2}
+.marca small{display:block;font-size:9px;font-weight:600;letter-spacing:.1em;color:#7b806f;margin-top:4px}
+.marca-simbolo{display:grid;place-items:center;width:42px;height:42px;border-radius:15px 15px 15px 4px;background:#71876b;color:#fffaf0;font:28px Georgia,serif}
+.barra{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #e5dfd3;background:rgba(250,247,239,.88)}
+.enlace-ayuda{color:#52664d}
+.seccion-titulo{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:16px}
+.contador{display:inline-flex;align-items:center;justify-content:center;border:1px solid #ddd9cc;border-radius:999px;padding:5px 11px;color:#697263;background:#faf7ef;font-size:12px}
+.solo-lectores{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.pie{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;border-top:1px solid #e1dacd;background:#f0ebe1}
+.pie>p{margin:0;color:#697263}
+.volver{text-decoration:underline;text-underline-offset:4px;font-size:14px}
+.marca-pie .marca-simbolo{width:36px;height:36px;font-size:23px}
+[hidden]{display:none!important}
+/* LEY MUNDIAL RUMA · primero la persona, después la tecnología. */
+:root{--escala-lectura:1}
+html{scroll-behavior:smooth;scroll-padding-top:22px}
+body{font-size:18px;line-height:1.65;padding-bottom:102px;zoom:1}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #987342;outline-offset:3px}
+button,a{touch-action:manipulation}
+.barra{min-height:78px;padding:14px clamp(18px,5vw,76px)}
+.enlace-ayuda{font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:5px}
+.inicio-simple{max-width:1220px;margin:0 auto;padding:clamp(34px,7vw,90px) clamp(18px,5vw,76px) 46px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(240px,.8fr);gap:clamp(24px,6vw,85px);align-items:center}
+.inicio-texto{max-width:700px}
+.inicio-simple h1{font:clamp(42px,6.3vw,76px)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:16px 0 22px}
+.inicio-simple h1 em{display:block;color:#71876b;font-weight:400}
+.inicio-simple .bajada{max-width:620px;font-size:clamp(18px,2vw,21px);line-height:1.7;color:#626b5f}
+.promesa-simple{display:flex;gap:9px;flex-wrap:wrap;align-items:center;font-size:14px;color:#586a53;margin-top:25px}
+.promesa-simple span{font-weight:800;color:#71876b}
+.ilustracion-caja{min-height:300px;border-radius:46% 46% 12px 12px;background:#e9e9dc;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;text-align:center;padding:25px}
+.ilustracion-caja:before,.ilustracion-caja:after{content:"";position:absolute;border-radius:50%;background:#d9dfcd;width:240px;height:240px;bottom:-130px}
+.ilustracion-caja:after{width:180px;height:180px;left:-70px;bottom:-100px;background:#e6d9ca}
+.ilustracion-caja>span{font:72px Georgia,serif;color:#71876b;position:relative;z-index:1}
+.caja-libros{display:flex;align-items:flex-end;gap:6px;height:88px;position:relative;z-index:1}
+.caja-libros i{display:block;width:44px;border-radius:5px 5px 2px 2px;background:#a5b397;height:72px;border:1px solid rgba(60,75,57,.13)}
+.caja-libros i:nth-child(2){height:88px;background:#d8a98d}
+.caja-libros i:nth-child(3){height:62px;background:#c9c4dc}
+.ilustracion-caja p{position:relative;z-index:1;color:#4f604a;font:19px/1.45 Georgia,serif;margin:17px 0 0}
+.buscador-seccion{max-width:1040px;margin:0 auto;padding:30px clamp(18px,5vw,60px) 45px}
+.buscador-cabecera h2,.seccion-titulo h2,.como-usar h2{font:clamp(30px,4vw,43px)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.025em;margin:7px 0 8px}
+.buscador-cabecera>p:last-child{font-size:16px;color:#6d7468;margin:0 0 20px}
+.buscador{display:flex;gap:10px;background:#fffdf8;border:1px solid #d9d9cc;border-radius:10px;padding:8px;box-shadow:0 5px 22px rgba(50,60,45,.05)}
+.buscador>span{display:none}
+.buscador input{min-width:0;flex:1;border:0;background:transparent;padding:12px 14px;font:inherit;font-size:18px;color:#303e34}
+.buscador button{min-height:52px;border:0;border-radius:7px;padding:11px 25px;background:#354438;color:#fffdf8;font:inherit;font-size:17px;font-weight:700;cursor:pointer}
+.resultado{font-size:14px;color:#697263;margin:12px 0 0}
+.estantes{max-width:1220px;margin:0 auto;padding:32px clamp(18px,5vw,76px) 54px}
+.texto-estantes{max-width:750px;color:#697263;font-size:16px;margin:4px 0 22px}
+.zonas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.zona{display:grid;grid-template-columns:46px 1fr;grid-template-rows:auto auto;align-items:center;column-gap:13px;min-height:91px;text-align:left;padding:15px;background:#fffdf8;border:1px solid #e3ded2;border-radius:9px;color:#354438;cursor:pointer}
+.zona>span{grid-row:1/3;display:grid;place-items:center;width:44px;height:44px;border-radius:15px 15px 15px 4px;background:#e6e9dd;font-size:25px;color:#586c52}
+.zona strong{font-size:17px;line-height:1.25}
+.zona small{font-size:13px;color:#75796d;line-height:1.4}
+.zona:hover,.zona.activa{border-color:#9aa98d;background:#f2f4ed}
+.zona.activa>span{background:#dce5d5}
+.mensaje-zona{font-size:14px;color:#697263;margin:15px 0 0}
+.catalogo{max-width:1220px;margin:0 auto;padding:36px clamp(18px,5vw,76px) 62px}
+.catalogo .seccion-titulo{align-items:end}
+.catalogo-intro{font-size:16px;max-width:760px;margin:10px 0 25px}
+.contador{font-size:13px;white-space:nowrap}
+.lista-recursos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.recurso-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;background:#fffdf8;border:1px solid #e3ded2;border-radius:10px;box-shadow:0 4px 16px rgba(48,62,52,.035)}
+.zona-vista{display:block;position:relative;width:100%;border:0;border-radius:0;padding:0;overflow:hidden;background:transparent;cursor:pointer}
+.recurso-preview{height:215px;min-height:215px;display:grid;place-items:center;position:relative;background:#e8e7db;overflow:hidden}
+.recurso-preview img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;padding:0}
+.etiqueta-vista{position:absolute;left:10px;bottom:10px;padding:4px 9px;border-radius:5px;background:rgba(255,253,248,.94);color:#40503e;font-size:11px;font-weight:700}
+.portada-recurso{height:215px;min-height:215px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px;color:#40503e;background:#e8e7db}
+.portada-recurso strong{max-width:280px;font:23px/1.2 Georgia,serif;font-weight:500}
+.portada-recurso small{font-size:10px;letter-spacing:.08em;color:#687362}
+.portada-recurso p{max-width:270px;font-size:12px;line-height:1.45;margin:2px 0 0;color:#65705f}
+.portada-icono{display:grid;place-items:center;width:40px;height:40px;border-radius:13px 13px 13px 4px;background:#fffaf0;color:#6d8265;font-size:25px}
+.portada-aprender{background:#eee4d0}.portada-trabajar{background:#e0e9db}.portada-explorar{background:#e4e1ef}.portada-disfrutar{background:#f1dfd5}
+.recurso-cuerpo{padding:19px;display:flex;flex:1;flex-direction:column;align-items:stretch;gap:0}
+.recurso-lugar{font-size:12px;line-height:1.4;text-transform:uppercase;letter-spacing:.06em;font-weight:700;color:#77806d;margin:0 0 8px}
+.recurso-cuerpo h3{font:24px/1.22 Georgia,serif;letter-spacing:-.015em;margin:0 0 10px}
+.recurso-descripcion{font-size:15px;line-height:1.6;color:#697263;margin:0 0 18px;flex:1}
+.recurso-acciones{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:auto}
+.accion-ver,.accion-descargar{display:flex;align-items:center;justify-content:center;text-align:center;min-height:49px;padding:10px 12px;border-radius:6px;font:inherit;font-size:16px;font-weight:700;text-decoration:none;cursor:pointer}
+.accion-ver{background:#f6f2e9;border:1px solid #dcd7c9;color:#354438}
+.accion-descargar{background:#354438;border:1px solid #354438;color:#fffdf8}
+.accion-ver:hover{background:#ece9df}
+.accion-descargar:hover{background:#526750}
+.nota-fuente{font-size:12px;line-height:1.5;color:#6c7466;margin:10px 0 0}
+.sin-recursos{padding:24px;background:#fffaf1;border:1px solid #e5dfd3;border-radius:9px;font-size:16px;line-height:1.7;color:#606a5d}
+.boton-texto{margin-top:15px;min-height:44px;padding:8px 14px;border:1px solid #d6d7c8;background:#fffdf8;border-radius:6px;font:inherit;cursor:pointer}
+.como-usar{max-width:1120px;margin:0 auto;padding:45px clamp(18px,5vw,65px) 55px}
+.como-usar h2{margin-bottom:25px}
+.pasos-simples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.pasos-simples article{display:flex;gap:13px;align-items:flex-start;background:#fffdf8;border:1px solid #e3ded2;border-radius:9px;padding:19px}
+.pasos-simples article>span{display:grid;place-items:center;flex:0 0 39px;height:39px;border-radius:50%;background:#e0e8d9;color:#425840;font-size:18px;font-weight:800}
+.pasos-simples h3{font:21px/1.25 Georgia,serif;margin:1px 0 7px}
+.pasos-simples p{font-size:14px;line-height:1.6;color:#697263;margin:0}
+.frase-libre{font:italic 20px/1.45 Georgia,serif;color:#65745f;margin:24px 0 0}
+.regla-final{max-width:1060px;margin:0 auto 55px;padding:30px clamp(18px,5vw,38px);display:flex;gap:20px;align-items:flex-start;background:#e8e9dd;border-radius:10px}
+.regla-final>span{display:grid;place-items:center;flex:0 0 49px;height:49px;background:#fffaf0;border-radius:16px 16px 16px 5px;color:#71876b;font:32px Georgia,serif}
+.regla-final h2{font:clamp(25px,3.5vw,36px)/1.2 Georgia,serif;margin:4px 0 10px}
+.regla-final p:last-child{font-size:16px;line-height:1.7;color:#626c5d;margin:0;max-width:790px}
+.pie{padding:30px clamp(18px,5vw,76px) 125px;gap:20px}
+.pie>p{font-size:14px}
+.colaboracion-fija{display:flex;align-items:center;gap:13px;padding:10px clamp(12px,4vw,42px);min-height:78px;background:#fffaf0;border-top:1px solid #ded6c7;box-shadow:0 -5px 24px rgba(49,60,47,.09)}
+.colaboracion-corazon{display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:13px 13px 13px 4px;background:#f1dfd5;color:#a46c54;font-size:25px}
+.colaboracion-texto{display:flex;flex:1;min-width:150px;flex-direction:column;gap:1px}
+.colaboracion-texto strong{font:18px/1.2 Georgia,serif}
+.colaboracion-texto span{font-size:12px;line-height:1.35;color:#687064}
 .colaboracion-alias{display:flex;flex-direction:column;gap:1px;padding:0 14px;border-left:1px solid #e4ddcf}
-.colaboracion-alias span{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#7c806f}
-.colaboracion-alias strong{font-size:14px;letter-spacing:.02em}
-.boton-copiar{min-height:44px;border:0;border-radius:6px;background:#354438;color:#fffaf0;padding:10px 17px;font-weight:700;font-size:12px;cursor:pointer}
-.boton-copiar:hover{background:#506650}
-.mensaje-alias{min-width:0;max-width:180px;font-size:10px;line-height:1.3;color:#526b4f}
-@media(max-width:760px){
-  body{padding-bottom:150px}
-  .barra{height:auto;min-height:72px;padding:12px 18px;gap:14px;align-items:flex-start}
-  nav{justify-content:flex-end;flex-wrap:wrap;gap:8px 13px;font-size:12px;padding-top:7px}
-  .marca{font-size:15px}
-  .marca-simbolo{width:36px;height:36px}
-  .control-lectura{font-size:13px}
-  .colaboracion-fija{display:grid;grid-template-columns:38px 1fr auto;gap:8px 10px;padding:10px 12px}
-  .colaboracion-corazon{grid-row:1}
-  .colaboracion-texto{grid-column:2/4;grid-row:1}
-  .colaboracion-texto strong{font-size:17px}
-  .colaboracion-texto span{font-size:10px}
-  .colaboracion-alias{grid-column:1/3;grid-row:2;border-left:0;padding:0 0 0 2px}
-  .colaboracion-alias span{font-size:8px}
-  .colaboracion-alias strong{font-size:13px}
-  .boton-copiar{grid-column:3;grid-row:2;min-height:42px;padding:8px 12px}
-  .mensaje-alias{grid-column:1/4;max-width:none;font-size:10px}
+.colaboracion-alias span{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#7c806f}
+.colaboracion-alias strong{font-size:15px;letter-spacing:.02em}
+.boton-copiar{min-height:45px;border:0;border-radius:6px;background:#354438;color:#fffaf0;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer}
+.mensaje-alias{font-size:11px;line-height:1.3;color:#526b4f}
+.modal-recurso{width:min(900px,calc(100% - 24px));max-height:90vh;overflow:auto;padding:clamp(16px,3vw,28px);border:1px solid #ddd6c8;border-radius:12px;background:#fffdf8;color:#303e34;box-shadow:0 20px 70px rgba(25,35,25,.25)}
+.modal-recurso::backdrop{background:rgba(37,45,36,.62)}
+.modal-cabecera{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.modal-cabecera .ceja{margin:0}
+.cerrar-modal{min-height:43px;border:1px solid #d9d7cb;border-radius:6px;background:#f6f2e9;color:#354438;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer}
+.modal-ficha{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:25px;align-items:start}
+.preview-grande,.portada-grande{height:330px;min-height:260px;border-radius:8px}
+.preview-grande img{object-fit:contain;background:#e8e7db}
+.portada-grande{height:330px}
+.modal-detalles h2{font:clamp(26px,4vw,36px)/1.2 Georgia,serif;margin:6px 0 12px}
+.modal-detalles>p{font-size:15px;line-height:1.7}
+.modal-detalles dl{margin:18px 0}
+.modal-detalles dl>div{padding:9px 0;border-top:1px solid #e7e2d7}
+.modal-detalles dt{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#74796b;font-weight:700}
+.modal-detalles dd{margin:2px 0 0;font-size:14px;line-height:1.55}
+.nota-licencia{background:#f5f0e7;padding:12px;border-radius:6px;font-size:13px!important}
+.modal-fuente{font-size:13px!important}
+.modal-fuente a{text-decoration:underline;text-underline-offset:3px}
+.modal-descargar{margin-top:15px}
+@media(max-width:900px){
+ .lista-recursos{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .inicio-simple{grid-template-columns:minmax(0,1fr) minmax(210px,.7fr)}
+ .zonas{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .colaboracion-texto span{max-width:340px}
 }
-@media(max-width:430px){
-  .barra{flex-direction:column;align-items:stretch}
-  nav{justify-content:space-between;padding-top:0}
-  .hero{padding-top:42px}
-  .regla-amabilidad{padding:16px;gap:12px}
-  .regla-amabilidad>span{flex-basis:38px;height:38px}
-  .regla-amabilidad h3{font-size:23px}
-  .regla-amabilidad p:last-child{font-size:13px}
-  .colaboracion-fija{gap:7px 9px}
+@media(max-width:650px){
+ body{font-size:18px;padding-bottom:145px}
+ .barra{min-height:67px;padding:12px 16px}
+ .marca small{font-size:9px}
+ .inicio-simple{grid-template-columns:1fr;padding:40px 18px 26px;gap:22px}
+ .inicio-simple h1{font-size:clamp(42px,12vw,60px)}
+ .ilustracion-caja{min-height:180px;border-radius:24px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;column-gap:10px;padding:15px}
+ .ilustracion-caja>span{grid-column:1;grid-row:1/3;font-size:58px}
+ .caja-libros{grid-column:2;grid-row:1;height:60px}
+ .caja-libros i{height:52px;width:28px}
+ .caja-libros i:nth-child(2){height:60px}
+ .caja-libros i:nth-child(3){height:45px}
+ .ilustracion-caja p{grid-column:2;grid-row:2;font-size:15px;margin:4px 0}
+ .buscador-seccion{padding:26px 18px 34px}
+ .buscador{gap:6px}
+ .buscador input{font-size:17px;padding:10px 9px}
+ .buscador button{min-height:48px;padding:8px 16px;font-size:15px}
+ .estantes,.catalogo,.como-usar{padding-left:18px;padding-right:18px}
+ .zonas{grid-template-columns:1fr;gap:9px}
+ .zona{min-height:76px;padding:12px}
+ .lista-recursos{grid-template-columns:1fr;gap:15px}
+ .recurso-card{display:grid;grid-template-columns:minmax(105px,34%) minmax(0,1fr)}
+ .zona-vista{height:100%;min-height:190px}
+ .recurso-preview,.portada-recurso{height:100%;min-height:190px}
+ .recurso-preview img{height:100%;min-height:190px;object-fit:cover}
+ .portada-recurso{padding:10px;gap:6px}
+ .portada-recurso strong{font-size:17px}
+ .portada-recurso p{display:none}
+ .portada-icono{width:32px;height:32px;font-size:19px}
+ .etiqueta-vista{left:5px;bottom:6px;padding:3px 5px;font-size:11px}
+ .recurso-cuerpo{padding:13px 11px}
+ .recurso-cuerpo h3{font-size:20px}
+ .recurso-descripcion{font-size:13px;line-height:1.5;margin-bottom:12px}
+ .recurso-lugar{font-size:12px}
+ .recurso-acciones{gap:6px}
+ .accion-ver,.accion-descargar{min-height:43px;padding:7px 6px;font-size:14px}
+ .nota-fuente{font-size:12px}
+ .pasos-simples{grid-template-columns:1fr}
+ .pasos-simples article{padding:15px}
+ .regla-final{margin:0 14px 35px;padding:21px 17px;gap:12px}
+ .regla-final>span{flex-basis:38px;height:38px;font-size:24px}
+ .regla-final p:last-child{font-size:14px}
+ .pie{padding:25px 18px 170px;gap:12px}
+ .colaboracion-fija{display:grid;grid-template-columns:34px 1fr auto;gap:7px 9px;padding:9px 11px;min-height:132px}
+ .colaboracion-corazon{grid-row:1;grid-column:1;width:34px;height:34px;font-size:21px}
+ .colaboracion-texto{grid-column:2/4;grid-row:1;min-width:0}
+ .colaboracion-texto strong{font-size:16px}
+ .colaboracion-texto span{font-size:11px}
+ .colaboracion-alias{grid-column:1/3;grid-row:2;border:0;padding:0 0 0 1px}
+ .colaboracion-alias span{font-size:10px}
+ .colaboracion-alias strong{font-size:13px}
+ .boton-copiar{grid-column:3;grid-row:2;min-height:40px;padding:7px 10px;font-size:12px}
+ .mensaje-alias{grid-column:1/4;grid-row:3;font-size:11px;min-height:12px}
+ .modal-ficha{grid-template-columns:1fr;gap:16px}
+ .preview-grande,.portada-grande{height:240px;min-height:220px}
+ .modal-detalles h2{font-size:28px}
+}
+@media(max-width:380px){
+ .recurso-card{grid-template-columns:98px minmax(0,1fr)}
+ .recurso-cuerpo{padding:11px 9px}
+ .recurso-cuerpo h3{font-size:18px}
+ .recurso-descripcion{font-size:12px}
+ .accion-ver,.accion-descargar{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
 
-/* Ayuda breve y amable, pensada para quien usa RUMA por primera vez. */
-.ayuda-amable{padding:12px 0 70px}
-.ayuda-pasos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:22px}
-.ayuda-pasos article{display:flex;gap:14px;align-items:flex-start;padding:21px;background:#fffdf8;border:1px solid #e5dfd3;border-radius:8px}
-.ayuda-pasos article>span{display:grid;place-items:center;flex:0 0 38px;height:38px;border-radius:50%;background:#dfe7d8;color:#425840;font-weight:800}
-.ayuda-pasos h3{font-size:22px;line-height:1.2;margin:2px 0 8px}
-.ayuda-pasos p{font-size:13px;line-height:1.75;color:#6d7468;margin:0}
-.ayuda-preguntas{padding:25px clamp(16px,4vw,32px);border-radius:9px;background:#e9e9dc}
-.ayuda-preguntas>h3{font-size:25px;margin:0 0 10px}
-.ayuda-preguntas details{border-top:1px solid #d5d8c8;padding:13px 0}
-.ayuda-preguntas summary{cursor:pointer;list-style-position:outside;font-size:14px;font-weight:700;color:#3f5140;padding:4px 0;min-height:32px}
-.ayuda-preguntas details p{font-size:13px;line-height:1.8;color:#636d60;margin:8px 0 0;max-width:850px}
-@media(max-width:760px){.ayuda-pasos{grid-template-columns:1fr}.ayuda-pasos article{padding:17px}.ayuda-pasos h3{font-size:21px}.ayuda-preguntas{padding:19px}.ayuda-preguntas summary{font-size:14px}}
+/* Los estantes hacen visible el orden de la biblioteca, sin añadir pasos. */
+.grupo-zona{padding:28px 0 8px;border-top:1px solid #e2ddcf;margin-top:18px}
+.grupo-zona:first-child{border-top:0;margin-top:0}
+.grupo-cabecera{margin-bottom:17px}
+.grupo-cabecera .ceja{margin-bottom:5px}
+.grupo-cabecera h3{font:clamp(26px,3.4vw,36px)/1.2 Georgia,serif;margin:0 0 5px;letter-spacing:-.02em}
+.grupo-cabecera>p:last-child{font-size:14px;line-height:1.55;color:#6c7466;margin:0;max-width:650px}
+.grupo-recursos{margin-top:0}
+.estante-vacio{max-width:780px;padding:17px 19px;border-radius:8px;background:#f0ece2;color:#697263;font-size:14px;line-height:1.7}
+@media(max-width:650px){.grupo-zona{padding-top:24px;margin-top:13px}.grupo-cabecera{margin-bottom:12px}.grupo-cabecera h3{font-size:28px}}
