@@ -84,7 +84,24 @@
       const haystack = norm([item.titulo,item.descripcion,item.categoria,item.alcance,item.formato,item.creador,item.licencia,item.estadoLegal,item.nota,...(item.etiquetas || [])].join(" "));
       return terms.every(term => haystack.includes(term));
     }).sort((a,b) => zoneRank[region(a)] - zoneRank[region(b)] || String(a.titulo).localeCompare(String(b.titulo),"es"));
-    list.innerHTML = found.map(card).join("");
+    if (zone === "todos" && found.length) {
+      const notes = {
+        chanar: "La búsqueda local sigue abierta. Publicaremos recursos cuando la procedencia y los permisos estén comprobados.",
+        neuquen: "Recursos de la provincia.",
+        patagonia: "Materiales de la región patagónica.",
+        argentina: "Recursos de alcance nacional.",
+        hispanoamerica: "Colecciones y materiales del mundo hispanohablante."
+      };
+      list.innerHTML = ["chanar","neuquen","patagonia","argentina","hispanoamerica"].map(key => {
+        const entries = found.filter(item => region(item) === key);
+        if (!entries.length && key !== "chanar") return "";
+        return '<section class="grupo-zona grupo-'+key+'"><div class="grupo-cabecera"><p class="ceja">ESTANTE '+String(zoneRank[key]+1).padStart(2,"0")+'</p><h3>'+escapeHtml(zoneLabels[key])+'</h3><p>'+escapeHtml(notes[key])+'</p></div>'+
+          (entries.length ? '<div class="lista-recursos grupo-recursos">'+entries.map(card).join("")+'</div>' : '<p class="estante-vacio">Todavía no hay recursos locales publicados. Preferimos verificar primero y no inventar archivos ni permisos.</p>')+
+          '</section>';
+      }).join("");
+    } else {
+      list.innerHTML = found.map(card).join("");
+    }
     count.textContent = found.length + (found.length === 1 ? " recurso" : " recursos");
     empty.hidden = found.length > 0;
     $("#mostrar-todo").hidden = zone === "todos" && !query;
