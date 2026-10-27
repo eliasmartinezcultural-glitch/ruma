@@ -100,7 +100,7 @@ window.RUMA_RECURSOS = [
 ,
   {
     id: "seguimos-leyendo-educar",
-    zona: "argentina",
+    zona: "hispanoamerica",
     titulo: "Seguimos leyendo: biblioteca de libros digitales abiertos",
     descripcion: "Una gran colección en español con novelas, cuentos, poesía y teatro para leer, descargar y explorar. Incluye clásicos y literatura argentina.",
     categoria: "disfrutar",
@@ -161,7 +161,7 @@ window.RUMA_RECURSOS = [
 ,
   {
     id: "educlasicos-educar",
-    zona: "argentina",
+    zona: "hispanoamerica",
     titulo: "Educlásicos: clásicos de la literatura universal",
     descripcion: "Una colección de más de cien títulos clásicos, con novelas, teatro, ensayos, poemas y cuentos para leer en línea o descargar desde Educ.ar.",
     categoria: "disfrutar",
