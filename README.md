@@ -20,7 +20,7 @@ La colección de esta versión contiene **26 recursos reales**:
 - Catálogo nacional de clásicos universales.
 - Biblioteca digital Libros y Casas.
 - Biblioteca digital del Archivo General de la Nación.
-- Informe 2024 de espacios culturales del Neuquén y portal de datos abiertos relacionado (incluye la base CSV de 2025).
+- Informe provincial de espacios culturales con relevamiento 2024–2025 y portal de datos abiertos relacionado (incluye la base CSV de 2025).
 
 Los botones de los PDF llevan directamente al archivo original. Los demás llevan a la colección o ficha institucional correspondiente. El catálogo de datos de espacios culturales declara licencia Creative Commons Atribución 4.0; la cartografía de Neuquén tiene restricciones de republicación y por eso no se copia dentro de RUMA.
 
