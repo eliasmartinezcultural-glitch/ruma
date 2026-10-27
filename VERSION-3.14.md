@@ -170,3 +170,18 @@ Esta enmienda amplía la Ley Editorial de RUMA sin reemplazar la versión base n
 
 ### La promesa
 RUMA es una vidriera cuidada y una puerta de acceso: ayuda a descubrir buenas obras y las acerca a las personas, respetando a quienes las crearon. La facilidad de acceso nunca justifica quitar créditos ni vulnerar permisos.
+
+
+## Ampliación de contenidos y vidriera de libros · 27 de octubre de 2026
+
+Se incorporaron diez materiales imprimibles originales alojados dentro del repositorio:
+- Horario escolar y registro de hábitos.
+- Rutina de limpieza semanal, presupuesto mensual y ficha para conservar recetas familiares.
+- Marcapáginas botánicos, lámina para colorear de fauna patagónica y tarjetas de agradecimiento.
+- Dos cuentos breves originales: *El viento y la semilla* y *La luz de la ventana*.
+
+También se agregaron ocho fichas de vidriera hacia colecciones externas de lectura y aprendizaje: clásicos universales, novelas, cuentos clásicos y autores argentinos de Argentina.gob.ar; Genio Maligno; Biblioteca Nacional; Educ.ar; y StoryWeaver.
+
+**Estado del catálogo tras esta ampliación:** 40 fichas: 32 archivos SVG imprimibles locales y 8 fichas que llevan a colecciones externas. Las fichas externas se identifican visualmente como vidrieras y ofrecen una acción de apertura, no un botón de descarga que prometa algo que RUMA no aloja. Las descargas de esas colecciones se hacen en su sitio original, respetando sus condiciones.
+
+Los materiales nuevos son SVG imprimibles, no PDF. El siguiente control necesario es probar la versión publicada en GitHub Pages y revisar el diseño en un navegador real.
