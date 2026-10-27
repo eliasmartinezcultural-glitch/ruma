@@ -97,10 +97,10 @@ footer strong{color:var(--ink)}
 <div class="promises" aria-label="Lo que ofrece RUMA"><div class="promise">Gratis para todos<span>No hay pagos obligatorios.</span></div><div class="promise">Fácil de usar<span>Botones claros y letra legible.</span></div><div class="promise">Descarga directa<span>Los archivos se obtienen desde RUMA.</span></div></div>
 
 <section id="archivos">
-<div class="section-heading"><div class="eyebrow">Elige con tranquilidad</div><h2>Archivos para llevarte</h2><p>Acabamos de abrir el estante de lectura con dos cuentos clásicos completos de Horacio Quiroga. Cada ficha muestra una muestra real, la autoría y el estado de derechos, con descarga directa.</p></div>
+<div class="section-heading"><div class="eyebrow">Elegí con tranquilidad</div><h2>Archivos para llevarte</h2><p>Acabamos de abrir el estante de lectura con dos cuentos clásicos completos de Horacio Quiroga. Cada ficha muestra una muestra real, la autoría y el estado de derechos, con descarga directa.</p></div>
 <div class="catalog-tools">
 <input class="search" id="search" type="search" placeholder="Escribí qué estás buscando…" aria-label="Buscar en los archivos">
-<div class="filters" role="group" aria-label="Filtrar archivos"><button class="filter" data-category="todo" aria-pressed="true">Todos</button><button class="filter" data-category="leer" aria-pressed="false">📚 Lecturas</button><button class="filter" data-category="aprender" aria-pressed="false">🌱 Aprender</button><button class="filter" data-category="crear" aria-pressed="false">🎨 Crear</button></div>
+<div class="filters" role="group" aria-label="Filtrar archivos"><button class="filter" data-category="todo" aria-pressed="true">Todos</button><button class="filter" data-category="leer" aria-pressed="false">📚 Lecturas</button></div>
 </div>
 <div class="count" id="count" aria-live="polite">Estamos preparando los primeros archivos.</div>
 <div class="catalog" id="catalog">
@@ -146,7 +146,12 @@ function render(){
  count.textContent=shown.length===0?'No hay archivos en esta búsqueda.':shown.length+(shown.length===1?' archivo listo para descargar':' archivos listos para descargar');
  catalog.innerHTML='';
  if(!shown.length){
-  const empty=document.createElement('div');empty.className='empty';empty.innerHTML='<div class="empty-icon" aria-hidden="true">🧺</div><h3>Estamos preparando la primera selección</h3><p>Queremos ofrecerte archivos completos, bonitos y útiles, con una vista previa real y descarga directa. Preferimos esperar y hacerlo bien antes que mostrarte algo incompleto o mandarte a otra página.</p>';catalog.appendChild(empty);return;
+  const empty=document.createElement('div');empty.className='empty';
+  if(resources.length===0){empty.innerHTML='<div class="empty-icon" aria-hidden="true">🧺</div><h3>Estamos preparando los primeros archivos</h3><p>Queremos ofrecerte obras completas, con una muestra real y descarga directa. Preferimos esperar y hacerlo bien antes que mandarte a otra página.</p>';}
+  else{empty.innerHTML='<div class="empty-icon" aria-hidden="true">🔎</div><h3>No encontramos ese título</h3><p>Probá con otra palabra o volvé a ver todos los archivos.</p><button class="btn btn-main" id="show-all" type="button">Ver todos los archivos</button>';}
+  catalog.appendChild(empty);
+  const reset=document.getElementById('show-all');if(reset)reset.addEventListener('click',()=>{search.value='';activeCategory='todo';document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.category==='todo')));render();});
+  return;
  }
  shown.forEach(item=>{
   const card=document.createElement('article');card.className='item';
