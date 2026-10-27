@@ -44,3 +44,5 @@ footer{padding:22px 20px 20px;border-top:1px solid var(--line);background:#f4eee
 .resource-actions:has(> a:only-child){grid-template-columns:1fr}
 .resource-actions:has(> a:only-child) .view-button{min-height:42px;border-color:var(--green);background:var(--green);color:white}
 .resource-actions:has(> a:only-child) .view-button:hover{background:var(--green-dark)}
+
+.resource-local-preview{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px;background:linear-gradient(145deg,#f1eadc,#e7eddf);overflow:hidden}.resource-artwork{display:block;width:min(100%,220px);height:260px;object-fit:contain;filter:drop-shadow(0 5px 8px #34432d14);background:#fffdf7;border-radius:5px}.resource-local-preview .source-label{max-width:100%;font-size:9px;font-weight:850;letter-spacing:.5px;line-height:1.4;text-align:center;color:var(--green-dark)}
