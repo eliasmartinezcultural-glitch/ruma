@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f1e5">
+<meta name="description" content="RUMA: un rincón abierto de obras, archivos y cosas bonitas, útiles y gratuitas para compartir.">
+<title>RUMA — Un rincón para compartir</title>
+<style>
+:root{--paper:#fbf7ee;--ink:#34443a;--muted:#6e786d;--green:#42664e;--green2:#dce8d7;--pink:#f2dfd8;--yellow:#f4e8b8;--blue:#dce9eb;--line:#e7e0d3;--white:#fffdf8;--shadow:0 12px 32px #45543b12}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(1080px,calc(100% - 32px));margin:auto}.top{padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none}.brand-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:16px;background:var(--green);color:#fff;font-size:25px}.brand-name{font-weight:850;font-size:1.35rem;letter-spacing:.13em}.brand-sub{font-size:.76rem;color:var(--muted);display:block;letter-spacing:0}.pill{border:1px solid #d9dfd0;border-radius:999px;padding:8px 13px;color:var(--green);font-size:.85rem;font-weight:700;background:#ffffff80}.hero{position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(125deg,#e4ecd9 0%,#f5e9c9 62%,#f4ddd5 100%);padding:clamp(28px,6vw,66px);min-height:340px;display:flex;align-items:center;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-45px;bottom:-105px;background:#ffffff45;border:1px solid #ffffff85}.hero-copy{position:relative;z-index:1;max-width:650px}.eyebrow{text-transform:uppercase;font-size:.76rem;letter-spacing:.15em;font-weight:800;color:var(--green)}h1{font-family:Georgia,serif;font-size:clamp(2.55rem,7vw,5.2rem);font-weight:500;letter-spacing:-.045em;line-height:.99;margin:15px 0 20px;max-width:650px}h1 em{font-weight:500;color:#54785a}.hero p{font-size:clamp(1rem,2vw,1.18rem);max-width:540px;color:#4e5c4e;margin:0 0 24px}.actions{display:flex;flex-wrap:wrap;gap:10px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 18px;font-weight:800;text-decoration:none}.btn-main{background:var(--green);color:white}.btn-light{background:#fffaf0;color:var(--green);border:1px solid #d9dfd0}.section{padding:54px 0 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:20px}.section h2{font-family:Georgia,serif;font-weight:500;font-size:clamp(1.8rem,4vw,2.55rem);line-height:1.1;margin:5px 0}.section-head p{margin:0;color:var(--muted);max-width:470px}.doors{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.door{min-height:174px;border:1px solid #e8e0d2;border-radius:22px;padding:20px;text-align:left;background:var(--white);color:var(--ink);transition:transform .18s,border-color .18s;box-shadow:0 5px 18px #45543b08}.door:hover,.door.active{transform:translateY(-3px);border-color:#8ba88b}.door.active{outline:2px solid #8ba88b;outline-offset:1px}.door-icon{font-size:2rem;display:block;margin-bottom:13px}.door strong{display:block;font-size:1.05rem;margin-bottom:4px}.door span:last-child{display:block;color:var(--muted);font-size:.88rem}.searchbar{display:flex;gap:10px;margin:22px 0 12px}.searchbar input{min-width:0;flex:1;border:1px solid #ddd8cb;border-radius:15px;padding:14px 16px;background:#fffdf8;color:var(--ink);outline-color:#8ba88b}.searchbar button{border:0;border-radius:15px;background:var(--green);color:white;padding:0 19px;font-weight:800}.empty{background:#fffdf8;border:1px dashed #d6d8c9;border-radius:24px;padding:28px;text-align:center}.empty-icon{font-size:2.3rem}.empty h3{font-family:Georgia,serif;font-size:1.45rem;font-weight:500;margin:8px 0}.empty p{max-width:570px;margin:0 auto;color:var(--muted)}.note{font-size:.84rem;color:var(--muted);margin-top:12px}.kind{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{border-radius:24px;padding:25px;background:var(--white);border:1px solid var(--line)}.panel.soft-pink{background:var(--pink);border-color:#eed8d0}.panel.soft-blue{background:var(--blue);border-color:#d2e3e4}.panel h3{font-family:Georgia,serif;font-size:1.6rem;font-weight:500;margin:7px 0}.panel p{margin:0;color:#59675c}.alias{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:17px}.alias-code{font-weight:850;letter-spacing:.03em;background:#fffdf7;border:1px solid #e4d9c8;padding:10px 13px;border-radius:12px}.small-btn{border:1px solid #d4d8c9;border-radius:12px;background:#fffdf7;color:var(--green);padding:10px 13px;font-weight:800}.copy-status{font-size:.85rem;color:var(--green);min-height:1.3em;margin-top:8px}.laws{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.law{display:flex;gap:14px;background:#fffdf8;border:1px solid var(--line);border-radius:18px;padding:17px}.law-num{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:var(--green2);font-weight:850;color:var(--green)}.law strong{display:block;margin-bottom:3px}.law p{margin:0;color:var(--muted);font-size:.92rem}.footer{margin-top:56px;padding:28px 0 36px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:.88rem}.footer strong{color:var(--ink)}.tiny{font-size:.78rem;color:var(--muted)}@media(max-width:760px){.doors{grid-template-columns:repeat(2,1fr)}.door{min-height:150px;padding:17px}.kind{grid-template-columns:1fr}.laws{grid-template-columns:1fr}.section{padding-top:42px}.section-head{display:block}.section-head p{margin-top:8px}.hero{min-height:0}.top .pill{display:none}}@media(max-width:390px){.wrap{width:calc(100% - 22px)}.doors{gap:9px}.door{padding:14px}.searchbar{gap:7px}.searchbar button{padding:0 13px}.brand-name{font-size:1.15rem}}
+</style>
+</head>
+<body>
+<header class="wrap top">
+<a class="brand" href="#" aria-label="RUMA, inicio"><span class="brand-mark" aria-hidden="true">⌂</span><span><span class="brand-name">RUMA</span><span class="brand-sub">un rincón para compartir</span></span></a>
+<span class="pill">☼ Libre y para todos</span>
+</header>
+<main class="wrap">
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-copy">
+<div class="eyebrow">Una biblioteca abierta · un gesto de generosidad</div>
+<h1 id="hero-title">Hay cosas lindas que merecen <em>compartirse.</em></h1>
+<p>Libros, mapas, ideas, materiales para aprender y pequeñas maravillas que alguien encontró y dejó acá para vos. Entrá, mirá y llevate lo que te sirva.</p>
+<div class="actions"><a class="btn btn-main" href="#explorar">Explorar RUMA <span aria-hidden="true">↓</span></a><a class="btn btn-light" href="#cajita">Conocer la cajita ♡</a></div>
+</div>
+</section>
+<section class="section" id="explorar">
+<div class="section-head"><div><div class="eyebrow">Elegí tu camino</div><h2>¿Qué te gustaría encontrar?</h2></div><p>Cuatro puertas sencillas para llegar a cosas que valen la pena, sin perderte en un catálogo interminable.</p></div>
+<div class="doors" role="group" aria-label="Categorías de RUMA">
+<button class="door active" data-category="todo" aria-pressed="true"><span class="door-icon">🍂</span><strong>Un poco de todo</strong><span>Curiosidades y hallazgos</span></button>
+<button class="door" data-category="leer" aria-pressed="false"><span class="door-icon">📚</span><strong>Leer y descubrir</strong><span>Libros, cuentos y lecturas</span></button>
+<button class="door" data-category="aprender" aria-pressed="false"><span class="door-icon">🌱</span><strong>Aprender</strong><span>Guías, fichas y recursos</span></button>
+<button class="door" data-category="crear" aria-pressed="false"><span class="door-icon">✂️</span><strong>Crear cosas lindas</strong><span>Postales, láminas y mapas</span></button>
+</div>
+<form class="searchbar" id="search-form" role="search"><input id="search" type="search" placeholder="Buscá una palabra o tema…" aria-label="Buscar en RUMA"><button type="submit">Buscar</button></form>
+<div class="empty" aria-live="polite"><div class="empty-icon">🧺</div><h3 id="empty-title">Estamos preparando los primeros hallazgos</h3><p id="empty-copy">RUMA acaba de abrir sus puertas. Estamos seleccionando obras auténticas, bonitas y útiles que podamos mostrar y ofrecer legalmente. Preferimos esperar por algo bueno antes que llenar este rincón con cualquier cosa.</p><p class="note" id="result-note">Todavía no hay obras publicadas. No hay descargas ficticias ni enlaces que prometan algo que no existe.</p></div>
+</section>
+<section class="section kind" id="cajita">
+<div class="panel soft-pink"><div class="eyebrow">La cajita de agradecimiento</div><h3>Si te hizo bien, podés dejar un poquito.</h3><p>RUMA es gratuito. Si encontraste algo que te sirvió y está a tu alcance, podés colaborar con un aporte voluntario. Si no, llevate lo que necesites con la misma tranquilidad.</p><div class="alias"><span class="alias-code" id="alias">ocarina.guitarra</span><button class="small-btn" id="copy-alias" type="button">Copiar alias</button></div><div class="tiny">A nombre de Elías Martínez · Donar es opcional.</div><div class="copy-status" id="copy-status" role="status" aria-live="polite"></div></div>
+<div class="panel soft-blue"><div class="eyebrow">La promesa de RUMA</div><h3>Un rincón que queda abierto.</h3><p>No hace falta pedir permiso, crear una cuenta ni esperar a que alguien atienda. La idea es que puedas entrar a cualquier hora, encontrar algo valioso y seguir tu camino. RUMA no vende las obras que reúne: respeta a sus autores y las condiciones de cada material.</p></div>
+</section>
+<section class="section" id="leyes">
+<div class="section-head"><div><div class="eyebrow">Las reglas que nos cuidan</div><h2>Leyes mundiales de RUMA</h2></div><p>Estas reglas guían cada búsqueda, cada archivo y cada decisión del proyecto.</p></div>
+<div class="laws">
+<article class="law"><span class="law-num">1</span><div><strong>Generosidad sin condiciones</strong><p>Todo acceso es gratuito. Nunca se exige dinero ni se esconde lo mejor detrás de una donación.</p></div></article>
+<article class="law"><span class="law-num">2</span><div><strong>Calidad antes que cantidad</strong><p>Solo entra lo bonito, útil, necesario, educativo, cultural o verdaderamente interesante.</p></div></article>
+<article class="law"><span class="law-num">3</span><div><strong>Obras auténticas</strong><p>No inventamos recursos para rellenar. Mostramos materiales reales, completos y fieles a su origen.</p></div></article>
+<article class="law"><span class="law-num">4</span><div><strong>Ver antes de obtener</strong><p>Cada material publicado debe tener una vista previa honesta y acceso claro al archivo.</p></div></article>
+<article class="law"><span class="law-num">5</span><div><strong>Acceso sencillo</strong><p>Sin cuentas, contraseñas, pagos obligatorios ni cadenas innecesarias de enlaces.</p></div></article>
+<article class="law"><span class="law-num">6</span><div><strong>Respeto por la autoría</strong><p>Respetamos licencias y creadores. Solo alojamos archivos cuando la redistribución está permitida.</p></div></article>
+<article class="law"><span class="law-num">7</span><div><strong>Buscar con profundidad</strong><p>Primero Chañar y la región; luego Argentina y el mundo hispanohablante. Cada incorporación debe merecer su lugar.</p></div></article>
+<article class="law"><span class="law-num">8</span><div><strong>La cajita es voluntaria</strong><p>El aporte es agradecimiento, nunca el precio de entrada. Cada persona decide sin presión.</p></div></article>
+<article class="law"><span class="law-num">9</span><div><strong>Disponible sin que estemos</strong><p>RUMA debe poder usarse de forma autónoma, sin que su creador tenga que estar presente.</p></div></article>
+<article class="law"><span class="law-num">10</span><div><strong>Cuidar lo que compartimos</strong><p>Revisamos la utilidad, la procedencia, la vista previa y el funcionamiento antes de publicar.</p></div></article>
+</div>
+</section>
+</main>
+<footer class="wrap footer"><div><strong>RUMA</strong> · Un rincón para compartir.<br><span>Hecho con cariño para que las cosas buenas circulen.</span></div><div>Gratis para todos · Aporte voluntario<br><span class="tiny">Una iniciativa independiente.</span></div></footer>
+<script>
+(function(){
+const buttons=[...document.querySelectorAll('.door')];
+const title=document.getElementById('empty-title');
+const copy=document.getElementById('empty-copy');
+const note=document.getElementById('result-note');
+const input=document.getElementById('search');
+const descriptions={
+todo:['Estamos preparando los primeros hallazgos','RUMA acaba de abrir sus puertas. Estamos seleccionando obras auténticas, bonitas y útiles que podamos mostrar y ofrecer legalmente. Preferimos esperar por algo bueno antes que llenar este rincón con cualquier cosa.'],
+leer:['Todavía no hay lecturas publicadas','Estamos buscando libros, cuentos y lecturas que podamos compartir respetando a sus autores y sus licencias.'],
+aprender:['Todavía no hay recursos educativos publicados','Estamos seleccionando guías, fichas y materiales de aprendizaje completos, útiles y con permiso de distribución.'],
+crear:['Todavía no hay materiales creativos publicados','Estamos buscando mapas, postales, láminas y otras cosas lindas que podamos mostrar y compartir legalmente.']
+};
+let category='todo';
+function update(){
+const q=input.value.trim();
+const d=descriptions[category]||descriptions.todo;
+title.textContent=q?'Todavía no encontramos obras publicadas':'';
+title.textContent=q?'No hay resultados publicados para esa búsqueda':d[0];
+copy.textContent=q?'Probá con otra palabra o volvé más adelante. RUMA solo mostrará materiales reales cuando hayan sido revisados y estén listos.':d[1];
+note.textContent=q?'La colección todavía está en preparación; no inventamos resultados.':'Todavía no hay obras publicadas. No hay descargas ficticias ni enlaces que prometan algo que no existe.';
+}
+buttons.forEach(b=>b.addEventListener('click',()=>{
+category=b.dataset.category;
+buttons.forEach(x=>{const active=x===b;x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active));});
+update();
+}));
+document.getElementById('search-form').addEventListener('submit',e=>{e.preventDefault();update();});
+input.addEventListener('input',update);
+document.getElementById('copy-alias').addEventListener('click',async()=>{
+const status=document.getElementById('copy-status');
+try{await navigator.clipboard.writeText(document.getElementById('alias').textContent);status.textContent='Alias copiado. Gracias por el gesto ♡';}
+catch(e){status.textContent='Podés seleccionar y copiar el alias: ocarina.guitarra';}
+});
+})();
+</script>
+</body>
+</html>
