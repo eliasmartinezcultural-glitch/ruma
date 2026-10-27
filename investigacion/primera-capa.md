@@ -110,3 +110,18 @@
 - **Descartado:** no cumple la regla de acceso o no aporta valor suficiente.
 
 Este documento es un registro de investigación vivo. Debe actualizarse a medida que cada recurso se prueba, se verifica y se incorpora o descarta.
+
+
+## Revisión de experiencia pública — Ley de Salida Libre
+
+La interfaz pública se reorganizó como una biblioteca de paso. La regla ahora es: **llegar → buscar → previsualizar → ver o descargar → salir libremente**.
+
+- Cada tarjeta ofrece solo dos acciones principales: Ver y Descargar.
+- Los estantes se ordenan por el campo controlado `zona`: San Patricio del Chañar, Neuquén, Patagonia, Argentina, mundo hispanohablante.
+- Cada recurso debe tener una vista previa real o una presentación descriptiva marcada como tal.
+- La ficha de detalle conserva autoría, fuente, licencia, formato y condiciones de uso.
+- La colaboración con `ocarina.guitarra` es voluntaria y no desbloquea contenido.
+- No se diseñan mecanismos para retener a las personas.
+- La colección de San Patricio del Chañar permanece como prioridad de investigación; hasta ahora no hay en el catálogo público un recurso de esa localidad con alcance y permisos suficientemente documentados. No se debe llenar ese estante con material de otros lugares.
+
+La arquitectura completa, el modelo de metadatos, el control de calidad y las prioridades territoriales se encuentran en [arquitectura de biblioteca](arquitectura-biblioteca.md).
