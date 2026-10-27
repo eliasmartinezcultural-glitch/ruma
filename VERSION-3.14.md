@@ -109,4 +109,4 @@ La portada se organiza en cinco puertas amplias, pensadas para que cualquier vec
 4. **Para decorar:** dibujos, láminas, tarjetas, postales y materiales imprimibles cuya licencia o permiso pueda comprobarse.
 5. **Mapas e historia:** territorio, cartografía, archivos y memoria regional.
 
-El catálogo inicial se amplía a 44 entradas, con prioridad a materiales que puedan ayudar a vecinos de San Patricio del Chañar. Los recursos de terceros se presentan como enlaces a sus fuentes oficiales; no se presume que todo lo gratuito se pueda volver a publicar. En cada archivo se deben respetar las condiciones específicas de su licencia.
+El catálogo inicial se amplía a 47 entradas, con prioridad a materiales que puedan ayudar a vecinos de San Patricio del Chañar. Los recursos de terceros se presentan como enlaces a sus fuentes oficiales; no se presume que todo lo gratuito se pueda volver a publicar. En cada archivo se deben respetar las condiciones específicas de su licencia.
