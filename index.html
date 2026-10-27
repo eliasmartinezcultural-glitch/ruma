@@ -3,76 +3,68 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f2e8">
-  <meta name="description" content="RUMA reúne recursos reales, gratuitos y útiles: libros, mapas, estudio e historia. Desde San Patricio del Chañar hacia el mundo hispanohablante.">
-  <title>RUMA — Encontrá lo que te sirve</title>
+  <meta name="theme-color" content="#f8f5ed">
+  <meta name="description" content="RUMA te ayuda a encontrar libros, mapas, materiales para estudiar y recursos útiles de fuentes confiables. Gratis y fácil de usar.">
+  <title>RUMA — Encontrá algo bueno</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
   <header class="site-header" id="inicio">
-    <a class="brand" href="#inicio" aria-label="RUMA, inicio">
-      <span class="brand-mark" aria-hidden="true">r.</span>
-      <span class="brand-words">RUMA <small>RECURSOS QUE ACERCAN</small></span>
-    </a>
-    <nav class="header-nav" aria-label="Navegación principal">
-      <a href="#puertas">Explorar</a><a href="#estantes">Biblioteca</a><a href="#nuestra-idea">Qué es RUMA</a>
-    </nav>
-    <a class="header-cta" href="#buscar">Encontrar algo <span aria-hidden="true">↘</span></a>
+    <a class="brand" href="#inicio" aria-label="RUMA, inicio"><span class="brand-mark" aria-hidden="true">r.</span><span class="brand-words">RUMA <small>RUMA ES ACCESO</small></span></a>
+    <nav class="header-nav" aria-label="Navegación principal"><a href="#puertas">Explorar</a><a href="#estantes">Recursos</a><a href="#nuestra-idea">Cómo funciona</a></nav>
+    <a class="header-cta" href="#buscar">Buscar algo <span aria-hidden="true">⌕</span></a>
   </header>
 
   <main id="contenido">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="live-dot"></span> UNA BIBLIOTECA ABIERTA, SIN VUELTAS</p>
-        <h1 id="hero-title">Del Chañar<br>al <em>mundo.</em></h1>
-        <p class="hero-lede">Libros, mapas, materiales para estudiar y tesoros de la memoria. Cosas reales que ya existen, reunidas en un solo lugar para que encontrarlas sea más fácil.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#puertas">Explorar RUMA <span aria-hidden="true">↓</span></a><span class="free-note"><span aria-hidden="true">♡</span> Gratis para todos. Sin cuentas.</span></div>
-        <div class="hero-proof"><span class="proof-icon">✳</span><span><strong>RUMA ES ACCESO.</strong> No fabricamos archivos: te acercamos a los originales y respetamos a quienes los hicieron.</span></div>
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> UN LUGAR PARA ENCONTRAR COSAS ÚTILES</p>
+        <h1 id="hero-title">¡Hola!<br><em>¿Qué buscás?</em></h1>
+        <p class="hero-lede">Libros para leer, cosas para estudiar, mapas y materiales que pueden servirte en la vida diaria. Los reunimos acá para que no tengas que dar tantas vueltas.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#puertas">Ver qué hay <span aria-hidden="true">↓</span></a><span class="free-note">♡ Gratis. Sin registrarte.</span></div>
+        <p class="hero-note"><strong>Somos un puente.</strong> Cuidamos la fuente y damos crédito a quienes hicieron cada recurso.</p>
       </div>
-      <div class="hero-art" aria-label="Ilustración decorativa de libros, mate y plantas">
-        <div class="art-sun"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-        <div class="art-book book-back"><span></span></div><div class="art-book book-middle"><span></span></div><div class="art-book book-front"><span>R</span><small>cosas que<br>valen la pena</small></div>
-        <div class="art-mate"><span class="mate-straw"></span><span class="mate-leaves">✳</span></div>
-        <div class="art-sprig sprig-left"><i></i><i></i><i></i><b></b></div><div class="art-sprig sprig-right"><i></i><i></i><i></i><b></b></div>
-        <span class="art-caption">un mundo de cosas por descubrir</span>
+      <div class="hero-art" role="img" aria-label="Ilustración cálida de libros, una taza de mate y una planta">
+        <div class="art-sun"></div><div class="art-book book-back"></div><div class="art-book book-middle"></div><div class="art-book book-front"><span>R</span><small>algo bueno<br>para encontrar</small></div>
+        <div class="art-mate"><span class="mate-straw"></span><span class="mate-leaves">✳</span></div><div class="art-plant"><i></i><i></i><i></i></div>
+        <span class="art-caption">De acá, para todos.</span>
       </div>
-      <div class="hero-ribbon"><span>01</span> Primero, lo cercano <span class="ribbon-line"></span> Después, todo lo que merezca llegar</div>
     </section>
 
     <section class="doors-section" id="puertas" aria-labelledby="doors-title">
-      <div class="section-heading"><div><p class="section-kicker">ELEGÍ UNA PUERTA</p><h2 id="doors-title">¿Qué viniste a buscar?</h2></div><p>No hace falta saber el nombre exacto. Empezá por lo que necesitás y te ayudamos a encontrar el camino.</p></div>
+      <div class="section-heading"><div><p class="section-kicker">EMPEZÁ POR ACÁ</p><h2 id="doors-title">¿Qué te gustaría encontrar?</h2></div><p>No necesitás saber el nombre exacto. Elegí lo que más se parece a lo que buscás.</p></div>
       <div class="doors-grid">
-        <button class="door-card door-reading" type="button" data-filter="Lectura"><span class="door-number">01 / LEER</span><span class="door-illustration" aria-hidden="true"><span class="door-book book-a"></span><span class="door-book book-b"></span><span class="door-book book-c"></span><span class="door-spark">✳</span></span><span class="door-title">Libros y lectura</span><span class="door-description">Novelas, cuentos, poesía y libros para disfrutar.</span><span class="door-go">Entrar a esta colección <b>↗</b></span></button>
-        <button class="door-card door-maps" type="button" data-filter="Mapas"><span class="door-number">02 / UBICARSE</span><span class="door-illustration" aria-hidden="true"><span class="map-fold fold-a"></span><span class="map-fold fold-b"></span><span class="map-pin">●</span><span class="map-path"></span></span><span class="door-title">Mapas y territorio</span><span class="door-description">Mapas, cartografía y lugares para explorar.</span><span class="door-go">Explorar mapas <b>↗</b></span></button>
-        <button class="door-card door-study" type="button" data-filter="Estudio"><span class="door-number">03 / APRENDER</span><span class="door-illustration" aria-hidden="true"><span class="study-sheet sheet-a"></span><span class="study-sheet sheet-b"></span><span class="study-pencil"></span><span class="study-star">✳</span></span><span class="door-title">Estudiar y aprender</span><span class="door-description">Materiales educativos para estudiantes y docentes.</span><span class="door-go">Ver materiales <b>↗</b></span></button>
-        <button class="door-card door-history" type="button" data-filter="Historia"><span class="door-number">04 / RECORDAR</span><span class="door-illustration" aria-hidden="true"><span class="archive-folder folder-a"></span><span class="archive-folder folder-b"></span><span class="archive-seal">✳</span></span><span class="door-title">Historia y archivos</span><span class="door-description">Documentos, memoria y datos para conocer mejor.</span><span class="door-go">Abrir los archivos <b>↗</b></span></button>
+        <button class="door-card door-reading" type="button" data-filter="Lectura"><span class="door-illustration" aria-hidden="true">📚</span><span class="door-title">Quiero leer</span><span class="door-description">Cuentos, novelas, poesía y libros para disfrutar.</span><span class="door-go">Ver libros <b>↗</b></span></button>
+        <button class="door-card door-maps" type="button" data-filter="Mapas"><span class="door-illustration" aria-hidden="true">🗺️</span><span class="door-title">Quiero conocer lugares</span><span class="door-description">Mapas de Neuquén, Argentina y otros territorios.</span><span class="door-go">Ver mapas <b>↗</b></span></button>
+        <button class="door-card door-study" type="button" data-filter="Estudio"><span class="door-illustration" aria-hidden="true">✏️</span><span class="door-title">Necesito estudiar</span><span class="door-description">Materiales para estudiantes, familias y docentes.</span><span class="door-go">Aprender <b>↗</b></span></button>
+        <button class="door-card door-history" type="button" data-filter="Historia"><span class="door-illustration" aria-hidden="true">🧺</span><span class="door-title">Busco historia y datos</span><span class="door-description">Archivos, documentos y memoria de nuestros lugares.</span><span class="door-go">Descubrir <b>↗</b></span></button>
       </div>
     </section>
 
     <section class="search-panel" id="buscar" aria-labelledby="search-title">
-      <div class="search-intro"><span class="search-badge">⌕</span><div><p class="section-kicker">¿TENÉS ALGO EN MENTE?</p><h2 id="search-title">Busquemos juntos.</h2><p>Probá con un tema, un título o una palabra sencilla.</p></div></div>
-      <form id="search-form" role="search"><label class="sr-only" for="search">Buscar recursos</label><input id="search" type="search" placeholder="Ej.: cuentos, Neuquén, mapa, poesía…" autocomplete="off"><button class="button button-primary" type="submit">Buscar <span aria-hidden="true">↗</span></button></form>
-      <div class="quick-links" aria-label="Búsquedas sugeridas"><button type="button" data-query="Martín Fierro">Martín Fierro</button><button type="button" data-query="Neuquén">Neuquén</button><button type="button" data-query="estudiantes">Para estudiar</button><button type="button" data-query="naturaleza">Naturaleza</button><button type="button" data-query="historia">Historia</button></div>
+      <div class="search-intro"><span class="search-badge" aria-hidden="true">⌕</span><div><p class="section-kicker">¿TENÉS UNA IDEA?</p><h2 id="search-title">Buscá con tus palabras.</h2><p>Una palabra alcanza para empezar.</p></div></div>
+      <form id="search-form" role="search"><label class="sr-only" for="search">¿Qué querés buscar?</label><input id="search" type="search" placeholder="Ej.: cuentos, Neuquén, escuela…" autocomplete="off"><button class="button button-primary" type="submit">Buscar</button></form>
+      <div class="quick-links" aria-label="Ideas para buscar"><span>Podés probar:</span><button type="button" data-query="Martín Fierro">Martín Fierro</button><button type="button" data-query="Neuquén">Neuquén</button><button type="button" data-query="estudiantes">Estudiar</button><button type="button" data-query="historia">Historia</button></div>
     </section>
 
     <section class="shelves" id="estantes" aria-labelledby="shelves-title">
-      <div class="shelves-heading"><div><p class="section-kicker">LA COLECCIÓN RUMA</p><h2 id="shelves-title">Cosas buenas, bien encontradas.</h2></div><p>Arrancamos cerca de casa y seguimos hacia Argentina y el mundo hispanohablante. Cada recurso indica quién lo publica y de dónde viene.</p></div>
-      <div class="catalog-toolbar"><p class="search-count" id="result-count" aria-live="polite">Una colección de recursos reales, elegidos con cuidado.</p><button type="button" class="clear-link" id="clear-search">Mostrar todo ↺</button></div>
-      <nav class="filters" aria-label="Filtrar por categoría"><button type="button" class="filter active" data-filter="Todos" aria-pressed="true">Todo</button><button type="button" class="filter" data-filter="Lectura" aria-pressed="false">Libros y lectura</button><button type="button" class="filter" data-filter="Mapas" aria-pressed="false">Mapas</button><button type="button" class="filter" data-filter="Estudio" aria-pressed="false">Estudio</button><button type="button" class="filter" data-filter="Historia" aria-pressed="false">Historia y archivos</button></nav>
+      <div class="shelves-heading"><div><p class="section-kicker">PARA EXPLORAR CON CALMA</p><h2 id="shelves-title">Recursos que valen la pena.</h2></div><p>Cada ficha te cuenta qué es y de dónde viene. Mirá antes de abrir y elegí lo que te sirva.</p></div>
+      <div class="catalog-toolbar"><p class="search-count" id="result-count" aria-live="polite">Recursos elegidos con cuidado.</p><button type="button" class="clear-link" id="clear-search">Ver todo ↺</button></div>
+      <nav class="filters" aria-label="Filtrar recursos"><button type="button" class="filter active" data-filter="Todos" aria-pressed="true">Todo</button><button type="button" class="filter" data-filter="Lectura" aria-pressed="false">Libros</button><button type="button" class="filter" data-filter="Mapas" aria-pressed="false">Mapas</button><button type="button" class="filter" data-filter="Estudio" aria-pressed="false">Estudio</button><button type="button" class="filter" data-filter="Historia" aria-pressed="false">Historia y archivos</button></nav>
       <div class="resource-grid" id="resource-grid"></div>
-      <div class="empty-state" id="no-results" hidden><span aria-hidden="true">🌱</span><h3>Esta vez no apareció.</h3><p>Probá con otra palabra o volvé a ver toda la colección.</p><button type="button" class="button button-soft" id="empty-reset">Ver todos los recursos</button></div>
-      <div class="curation-note"><span class="curation-flower" aria-hidden="true">✿</span><div><strong>Acá no se suma por sumar.</strong><p>Revisamos la fuente, la utilidad y el acceso antes de incorporar algo. Si no podemos comprobarlo, no lo presentamos como seguro.</p></div></div>
+      <div class="empty-state" id="no-results" hidden><span aria-hidden="true">🌱</span><h3>No encontramos eso todavía.</h3><p>Probá otra palabra o mirá todos los recursos.</p><button type="button" class="button button-soft" id="empty-reset">Ver todos</button></div>
+      <div class="curation-note"><span class="curation-flower" aria-hidden="true">♡</span><div><strong>Preferimos hacerlo bien.</strong><p>Sumamos recursos reales, útiles y con una fuente identificable. No llenamos la página por llenar.</p></div></div>
     </section>
 
-    <section class="manifesto" id="nuestra-idea"><div class="manifesto-mark">R<span>♡</span></div><div><p class="section-kicker">LA IDEA DETRÁS DE RUMA</p><h2>Encontrar no debería ser tan difícil.</h2><p>Hay libros, mapas, documentos y materiales excelentes repartidos por cientos de páginas. RUMA los reúne y te ahorra vueltas. El contenido pertenece a sus autores e instituciones: nosotros ponemos el puente, la organización y el cuidado.</p><div class="manifesto-values"><span>✳ Fuentes reales</span><span>✳ Acceso sencillo</span><span>✳ Respeto por la autoría</span></div></div></section>
+    <section class="manifesto" id="nuestra-idea"><div class="manifesto-mark" aria-hidden="true">R♡</div><div><p class="section-kicker">¿QUÉ ES RUMA?</p><h2>Encontrar algo útil debería ser fácil.</h2><p>Hay cosas buenísimas escondidas en muchas páginas. RUMA te ayuda a encontrarlas en un mismo lugar. Respetamos a sus autores y te acercamos al material original, con la menor cantidad de pasos posible.</p><div class="manifesto-values"><span>✓ Fuentes identificables</span><span>✓ Sin cuenta ni pago</span><span>✓ Crédito a sus autores</span></div></div></section>
 
-    <section class="support" aria-labelledby="support-title"><div class="support-doodle" aria-hidden="true">☕</div><div class="support-copy"><p class="section-kicker">SI QUERÉS DAR UNA MANO</p><h2 id="support-title">Convidá un mate.</h2><p>RUMA es gratis y seguirá siendo para todos. La colaboración es voluntaria: no desbloquea nada ni da privilegios.</p></div><div class="donation-card"><span>Alias para colaborar</span><strong id="donation-alias">ocarina.guitarra</strong><small>A nombre de Elías Martínez</small><button type="button" class="button button-soft" id="copy-alias">Copiar alias</button><span id="copy-message" class="copy-message" aria-live="polite"></span></div></section>
+    <section class="support" aria-labelledby="support-title"><div class="support-doodle" aria-hidden="true">☕</div><div class="support-copy"><p class="section-kicker">APOYO VOLUNTARIO</p><h2 id="support-title">¿Convidás un mate?</h2><p>RUMA es gratis para todos. Si querés ayudar a sostenerlo, podés colaborar; nunca es obligatorio.</p></div><div class="donation-card"><span>Alias para colaborar</span><strong id="donation-alias">ocarina.guitarra</strong><small>A nombre de Elías Martínez</small><button type="button" class="button button-soft" id="copy-alias">Copiar alias</button><span id="copy-message" class="copy-message" aria-live="polite"></span></div></section>
   </main>
 
-  <footer class="site-footer"><a class="footer-brand" href="#inicio"><span class="footer-mark">r.</span> RUMA</a><p>De San Patricio del Chañar hacia el mundo, con los pies en la tierra.</p><div class="footer-bottom"><span>Hecho con cariño · Recursos reales · Acceso para todos</span><a href="#inicio">Volver arriba ↑</a></div></footer>
+  <footer class="site-footer"><a class="footer-brand" href="#inicio"><span class="footer-mark">r.</span> RUMA</a><p>Desde San Patricio del Chañar, para quien lo necesite.</p><div class="footer-bottom"><span>Hecho con cariño · RUMA ES ACCESO</span><a href="#inicio">Volver al inicio ↑</a></div></footer>
 
-  <dialog class="resource-dialog" id="resource-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><div><p class="section-kicker">UNA MIRADA ANTES DE ABRIR</p><h2 id="dialog-title">Vista previa del recurso</h2></div><button type="button" class="dialog-close" id="close-resource" aria-label="Cerrar vista previa">×</button></div><div class="dialog-body" id="dialog-body"></div><div class="dialog-actions"><a class="button button-primary" id="obtain-resource" href="#" target="_blank" rel="noopener noreferrer">Obtener recurso ↗</a><span class="dialog-source-note">Se abre desde su fuente original.</span></div></dialog>
+  <dialog class="resource-dialog" id="resource-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><div><p class="section-kicker">ANTES DE ABRIR</p><h2 id="dialog-title">Conocé este recurso</h2></div><button type="button" class="dialog-close" id="close-resource" aria-label="Cerrar vista previa">×</button></div><div class="dialog-body" id="dialog-body"></div><div class="dialog-actions"><a class="button button-primary" id="obtain-resource" href="#" target="_blank" rel="noopener noreferrer">Abrir recurso ↗</a><span class="dialog-source-note">Vas a la fuente original.</span></div></dialog>
   <script src="app.js"></script>
 </body>
 </html>
