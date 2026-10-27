@@ -23,6 +23,7 @@ La colección de esta versión contiene **30 recursos reales**:
 - Servicios digitales de la Biblioteca Nacional Mariano Moreno, con objetos digitales de dominio público.
 - Catálogo público y gratuito de la Biblioteca Nacional de Maestros.
 - Boletín Oficial del Neuquén, para localizar publicaciones y normas oficiales provinciales y municipales.
+- Referencia oficial a la norma que aprueba el Plan Estratégico para el Desarrollo Sustentable de San Patricio del Chañar.
 - Informe provincial de espacios culturales con relevamiento 2024–2025 y portal de datos abiertos relacionado (incluye la base CSV de 2025).
 
 Los botones de los PDF llevan directamente al archivo original. Los demás llevan a la colección o ficha institucional correspondiente. El catálogo de datos de espacios culturales declara licencia Creative Commons Atribución 4.0; la cartografía de Neuquén tiene restricciones de republicación y por eso no se copia dentro de RUMA.
@@ -48,7 +49,7 @@ Los botones de los PDF llevan directamente al archivo original. Los demás lleva
 
 ## Pendiente de verificación
 
-- Probar cada enlace en teléfono y computadora.
+- Probar cada enlace y las interacciones en teléfono y computadora. La sintaxis JavaScript del catálogo fue validada; aún falta la prueba visual y funcional en navegador.
 - Revisar periódicamente las imágenes de portada remotas, que se muestran desde la fuente institucional original.
 - Confirmar que GitHub Pages publique esta versión y revisar el diseño final.
 - Seguir ampliando con archivos concretos, reales y legalmente accesibles.
