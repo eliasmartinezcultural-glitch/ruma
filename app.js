@@ -53,6 +53,9 @@
     {title:"Arte e imágenes de dominio público del Smithsonian",author:"Smithsonian Institution",description:"Colección digital de imágenes y objetos disponibles bajo Smithsonian Open Access, con archivos CC0 identificados. Ideal para explorar ilustraciones, naturaleza, historia y arte; verificá que cada elemento tenga la etiqueta de acceso abierto.",category:"Para decorar",icon:"🦋",format:"Colección de imágenes descargables",source:"Smithsonian Institution · Open Access / CC0 en elementos identificados",url:"https://www.si.edu/openaccess",tags:"decorar imprimir láminas arte naturaleza ilustraciones historia imágenes libres CC0"},
     {title:"Obras de arte de libre uso del Metropolitan Museum",author:"The Metropolitan Museum of Art",description:"Obras de su colección identificadas como Open Access, descargables y reutilizables bajo CC0. Buscá motivos florales, paisajes, animales y arte para imprimir o inspirarte.",category:"Para decorar",icon:"🌷",format:"Colección de obras e imágenes",source:"The Metropolitan Museum of Art · Open Access / CC0 en obras identificadas",url:"https://www.metmuseum.org/about-the-met/policies-and-documents/open-access",tags:"decorar flores paisajes arte láminas imágenes imprimir cuadros dominio público CC0"},
     {title:"Imágenes de arte y cultura de Getty Open Content",author:"Getty",description:"Colección de imágenes digitales de obras que Getty identifica como de dominio público y disponibles para uso libre. Comprobá el estado de cada imagen en su ficha antes de reutilizarla.",category:"Para decorar",icon:"🖼️",format:"Colección de imágenes digitales",source:"Getty · Open Content",url:"https://www.getty.edu/about/whatwedo/opencontent.html",tags:"decorar arte cultura láminas cuadros imágenes históricas imprimir libre dominio público"}
+    {title:"Cuadernillo de actividades para leer y jugar en familia",author:"Secretaría de Educación · Argentina",description:"Material educativo descargable con propuestas para compartir en familia. Abrí el PDF original y elegí imprimir las páginas que necesites.",category:"Para estudiar",icon:"🧩",format:"PDF · descarga directa e imprimible",source:"Argentina.gob.ar · Plan Nacional de Alfabetización",url:"https://www.argentina.gob.ar/sites/default/files/cuadernillodeactividades_web.pdf",tags:"imprimir imprimible descargar PDF actividades familia lectura juego educación niños primaria cuadernillo"},
+    {title:"Cuadernillo de continuidad pedagógica · Quinto año",author:"Dirección Provincial de Educación Primaria",description:"Cuadernillo gratuito para quinto año de primaria con Prácticas del Lenguaje y Matemática. Se enlaza el documento original de la fuente educativa.",category:"Para estudiar",icon:"✏️",format:"PDF · descarga directa e imprimible",source:"Educ.ar · archivo educativo original",url:"https://backend.educ.ar/refactor_resource/get-attachment/50379?disposition=inline",tags:"imprimir imprimible descargar PDF primaria quinto año lenguaje matemática cuadernillo escuela"},
+    {title:"Recursos educativos para imprimir y descargar",author:"Educ.ar · Secretaría de Educación",description:"Catálogo oficial para encontrar libros electrónicos, cuadernillos y actividades. La ficha permite explorar materiales por nivel, tema y formato.",category:"Para estudiar",icon:"📚",format:"Catálogo de materiales descargables",source:"Educ.ar · portal educativo oficial",url:"https://www.educ.ar/recursos",tags:"imprimir imprimible descargar PDF actividades libros cuadernillos primaria secundaria ciencias lengua matemática"}
   ];
 
   const grid = document.getElementById("resource-grid");
@@ -71,16 +74,71 @@
   function normalize(value) {
     return value.toLocaleLowerCase("es").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
+  const categoryOrder = ["Lecturas", "Para estudiar", "Recursos útiles", "Para decorar", "Mapas e historia"];
+  function shelfFor(resource) {
+    const text = normalize([resource.title, resource.tags, resource.description].join(" "));
+    const rules = {
+      "Lecturas": [
+        ["Cuentos y narrativa", /cuento|novela|relato|narrativa|gauchesca|ficcion/],
+        ["Poesía y teatro", /poesia|poema|teatro|dramatic|obra teatral/],
+        ["Ensayos, memoria y clásicos", /ensayo|memoria|autobiografia|viaje|clasico|historia/],
+        ["Bibliotecas y colecciones", /biblioteca|coleccion|libros digitales|catalogo/]
+      ],
+      "Para estudiar": [
+        ["Actividades y cuadernillos", /actividad|cuadernillo|ejercicio|imprimible|imprimir|primaria|secundaria/],
+        ["Ciencias y conocimiento", /ciencia|biologia|matematica|lengua|educacion|pedagog|aprendiz/],
+        ["Herramientas para aprender", /recurso|docente|estudiar|escuela|alfabetizacion/]
+      ],
+      "Recursos útiles": [
+        ["Trámites y servicios", /tramite|contacto|municip|servicio|turno|document/],
+        ["Emprender y trabajar", /emprend|negocio|gestion|habilidades|economia/],
+        ["Guías para la vida diaria", /guia|herramienta|ayuda|informacion|datos/]
+      ],
+      "Para decorar": [
+        ["Láminas, dibujos e ilustraciones", /ilustracion|clipart|dibujo|imagen|lamina|open access|open content/],
+        ["Arte, cuadros y fotografías", /arte|cuadro|museo|fotografia|pintura|paisaje/],
+        ["Tarjetas y materiales para imprimir", /tarjeta|imprimir|imprimible|decorar|sticker|postal/]
+      ],
+      "Mapas e historia": [
+        ["Mapas y cartografía", /mapa|cartograf|geograf|visor|sig|mapoteca/],
+        ["Historia y patrimonio", /historia|archivo|patrimonio|documento|memoria/],
+        ["Territorio y cultura local", /neuquen|territorio|cultural|region|espacios culturales|chanar/]
+      ]
+    };
+    const options = rules[resource.category] || [];
+    return (options.find(([, pattern]) => pattern.test(text)) || [resource.category + " · otros"])[0];
+  }
+  function accessLabel(resource) {
+    if (/PDF.*(descarga directa|imprimible)/i.test(resource.format)) return "PDF · descargar e imprimir";
+    if (/^PDF\b/i.test(resource.format)) return "PDF · archivo original";
+    if (/descargable|imágenes|imagenes/i.test(resource.format)) return "Material descargable";
+    return "Colección o sitio original";
+  }
+  function isPrintable(resource) {
+    return /PDF/i.test(resource.format) || /descargable/i.test(resource.format) && /mapa|imagen|obra|ilustracion|ilustración/i.test(resource.format + " " + resource.description);
+  }
   function matches(resource) {
     const categoryMatch = activeFilter === "Todos" || resource.category === activeFilter;
-    const text = normalize([resource.title, resource.author, resource.description, resource.category, resource.source, resource.tags].join(" "));
+    const text = normalize([resource.title, resource.author, resource.description, resource.category, resource.source, resource.tags, shelfFor(resource), accessLabel(resource)].join(" "));
     const words = normalize(searchTerm).trim().split(/\s+/).filter(Boolean);
     return categoryMatch && words.every(word => text.includes(word));
   }
   function render() {
-    const visible = resources.filter(matches);
+    const visible = resources.filter(matches).sort((a,b) => {
+      const categoryDiff = categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
+      return categoryDiff || shelfFor(a).localeCompare(shelfFor(b), "es") || a.title.localeCompare(b.title, "es");
+    });
     grid.replaceChildren();
+    let currentGroup = "";
     visible.forEach(resource => {
+      const groupName = (activeFilter === "Todos" ? resource.category + " · " : "") + shelfFor(resource);
+      if (groupName !== currentGroup) {
+        currentGroup = groupName;
+        const heading = document.createElement("h3");
+        heading.className = "shelf-divider";
+        heading.textContent = groupName;
+        grid.append(heading);
+      }
       const article = document.createElement("article");
       article.className = "resource-card";
 
@@ -145,7 +203,10 @@
       format.textContent = resource.format;
       const source = document.createElement("span");
       source.textContent = resource.source;
-      meta.append(format, source);
+      const access = document.createElement("span");
+      access.className = "access-label";
+      access.textContent = accessLabel(resource);
+      meta.append(format, source, access);
 
       const actions = document.createElement("div");
       actions.className = "resource-card-actions";
@@ -216,7 +277,7 @@
 
     const details = document.createElement("dl");
     details.className = "preview-details";
-    [[ "Categoría", resource.category ], [ "Formato", resource.format ], [ "Fuente original", resource.source ]].forEach(([labelText, valueText]) => {
+    [[ "Categoría", resource.category ], [ "Estante", shelfFor(resource) ], [ "Formato", resource.format ], [ "Acceso", accessLabel(resource) ], [ "Fuente original", resource.source ]].forEach(([labelText, valueText]) => {
       const wrapper = document.createElement("div");
       const dt = document.createElement("dt");
       dt.textContent = labelText;
