@@ -1,0 +1,31 @@
+name: Vaciar RUMA por completo
+
+on:
+  push:
+    paths:
+      - ".github/workflows/vaciar-ruma.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  vaciar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el repositorio completo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Eliminar todo el contenido versionado sin borrar el repositorio ni su historial
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -r --ignore-unmatch .
+          if git diff --cached --quiet; then
+            echo "El repositorio ya estaba vacío."
+            exit 0
+          fi
+          git commit -m "Vaciar por completo RUMA para comenzar desde cero"
+          git push origin HEAD:main
