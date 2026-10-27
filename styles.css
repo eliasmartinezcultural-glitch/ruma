@@ -168,14 +168,14 @@ button,a{touch-action:manipulation}
  .portada-recurso strong{font-size:17px}
  .portada-recurso p{display:none}
  .portada-icono{width:32px;height:32px;font-size:19px}
- .etiqueta-vista{left:5px;bottom:6px;padding:3px 5px;font-size:9px}
+ .etiqueta-vista{left:5px;bottom:6px;padding:3px 5px;font-size:11px}
  .recurso-cuerpo{padding:13px 11px}
  .recurso-cuerpo h3{font-size:20px}
  .recurso-descripcion{font-size:13px;line-height:1.5;margin-bottom:12px}
- .recurso-lugar{font-size:10px}
+ .recurso-lugar{font-size:12px}
  .recurso-acciones{gap:6px}
  .accion-ver,.accion-descargar{min-height:43px;padding:7px 6px;font-size:14px}
- .nota-fuente{font-size:10px}
+ .nota-fuente{font-size:12px}
  .pasos-simples{grid-template-columns:1fr}
  .pasos-simples article{padding:15px}
  .regla-final{margin:0 14px 35px;padding:21px 17px;gap:12px}
@@ -186,12 +186,12 @@ button,a{touch-action:manipulation}
  .colaboracion-corazon{grid-row:1;grid-column:1;width:34px;height:34px;font-size:21px}
  .colaboracion-texto{grid-column:2/4;grid-row:1;min-width:0}
  .colaboracion-texto strong{font-size:16px}
- .colaboracion-texto span{font-size:10px}
+ .colaboracion-texto span{font-size:11px}
  .colaboracion-alias{grid-column:1/3;grid-row:2;border:0;padding:0 0 0 1px}
- .colaboracion-alias span{font-size:8px}
+ .colaboracion-alias span{font-size:10px}
  .colaboracion-alias strong{font-size:13px}
  .boton-copiar{grid-column:3;grid-row:2;min-height:40px;padding:7px 10px;font-size:12px}
- .mensaje-alias{grid-column:1/4;grid-row:3;font-size:10px;min-height:12px}
+ .mensaje-alias{grid-column:1/4;grid-row:3;font-size:11px;min-height:12px}
  .modal-ficha{grid-template-columns:1fr;gap:16px}
  .preview-grande,.portada-grande{height:240px;min-height:220px}
  .modal-detalles h2{font-size:28px}
