@@ -230,3 +230,51 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   html{scroll-behavior:auto}
   *,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+
+
+/* RUMA 3.14 · capa visual editorial y portadas originales */
+.resource-grid{align-items:stretch;gap:22px}
+.resource-card{position:relative;overflow:hidden;border:1px solid #e4ddce;border-radius:22px;background:var(--white);box-shadow:0 5px 18px #3c46340a;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.resource-card:hover{transform:translateY(-4px);border-color:#c7d5c0;box-shadow:0 18px 36px #3c46341a}
+.resource-cover{height:184px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#e9e5d6,#f4e6d8);border-bottom:1px solid #e7dfd1}
+.resource-cover.has-cover{background:#f1eee7;padding:13px 12px 10px}
+.resource-cover-image{display:block;width:auto;height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 5px 7px #34382b1a);transition:transform .35s ease}
+.resource-card:hover .resource-cover-image{transform:scale(1.035) rotate(-.5deg)}
+.resource-cover--generic{background:radial-gradient(circle at 78% 18%,#f3e1b5 0 12%,transparent 12.5%),linear-gradient(135deg,#e8eddf,#f5e9d8 62%,#efddce)}
+.resource-cover--generic::before{content:"";position:absolute;width:170px;height:170px;border:1px solid #456a5033;border-radius:50%;left:calc(50% - 85px);top:7px}
+.resource-cover--generic::after{content:"";position:absolute;width:125px;height:125px;border:1px solid #456a5020;border-radius:50%;left:calc(50% - 62px);top:29px}
+.resource-cover-symbol{position:relative;z-index:1;display:grid;place-items:center;width:82px;height:82px;border-radius:28px 28px 28px 10px;background:#fffdf8c9;border:1px solid #ffffffd9;color:var(--green-dark);font-size:40px;box-shadow:0 8px 25px #31543c12}
+.resource-cover-label{position:absolute;bottom:14px;left:16px;z-index:2;padding:5px 10px;border:1px solid #456a5020;border-radius:999px;background:#fffdf8d9;color:var(--green-dark);font-size:10px;font-weight:850;letter-spacing:1.25px;text-transform:uppercase}
+.resource-card .card-top{padding:16px 18px 0}
+.resource-card h3{padding:0 18px;margin:10px 0 7px;font-size:20px;line-height:1.24;letter-spacing:-.45px;text-wrap:balance}
+.resource-card .source,.resource-card>p{margin-left:18px;margin-right:18px}
+.resource-card .source{font-size:12px;line-height:1.45}
+.resource-card p:not(.source){font-size:14px;line-height:1.6}
+.resource-card .button{margin:8px 18px 19px;min-height:45px;width:calc(100% - 36px);border-radius:12px}
+.category-label{border:1px solid #e2e7da;background:#f0f3e9;color:#456a50;padding:5px 9px;border-radius:999px;font-size:10px;font-weight:850;letter-spacing:.6px}
+.resource-icon{display:none}
+.filters{gap:9px}
+.filters .filter{border:1px solid #ded8c9;border-radius:999px;background:#fffdf8;color:#596255;padding:10px 15px;font-weight:700;transition:background .16s ease,color .16s ease,border-color .16s ease}
+.filters .filter.active{background:var(--green);border-color:var(--green);color:#fff}
+.filters .filter:focus-visible,.button:focus-visible,.quick-links button:focus-visible,.header-nav a:focus-visible{outline:3px solid #d5a85c;outline-offset:3px}
+.search-panel{border:1px solid #e7dfcf;border-radius:28px;box-shadow:0 15px 40px #3c463409}
+.quick-links button{border:1px solid #e4ddce;background:#fffdf8;border-radius:999px;padding:9px 13px;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.quick-links button:hover{transform:translateY(-2px);border-color:#b9c9b0;background:#f5f7f0}
+.community,.support{border-radius:26px}
+.donation-card{border:1px solid #e2d7c4;box-shadow:0 9px 24px #4d50340c}
+.site-footer{border-top:1px solid #e3ddcf}
+@media(max-width:700px){
+  .resource-grid{gap:15px}
+  .resource-cover{height:155px}
+  .resource-cover.has-cover{padding:10px}
+  .resource-card .card-top{padding:13px 14px 0}
+  .resource-card h3{padding:0 14px;font-size:18px}
+  .resource-card .source,.resource-card>p{margin-left:14px;margin-right:14px}
+  .resource-card .button{margin:8px 14px 15px;width:calc(100% - 28px)}
+  .filters{overflow-x:auto;flex-wrap:nowrap;padding:3px 0 8px}
+  .filters .filter{flex:0 0 auto;white-space:nowrap}
+}
+@media(prefers-reduced-motion:reduce){
+  .resource-card,.resource-cover-image,.filters .filter,.quick-links button,.button{transition:none}
+  .resource-card:hover,.quick-links button:hover,.button:hover{transform:none}
+}
