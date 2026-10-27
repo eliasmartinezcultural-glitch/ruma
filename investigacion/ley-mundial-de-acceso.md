@@ -11,6 +11,7 @@ RUMA no se atribuye la autoría de las obras. Su aporte es la investigación, cu
 
 ## 2. Principios obligatorios
 
+0. **La amabilidad es obligatoria.** Nadie debe sentirse perdido, apurado, confundido o excluido. La experiencia debe ser simple, legible y acogedora de principio a fin.
 1. Cada ficha conduce a un archivo o a una fuente legítima.
 2. Se conservan autoría, título, institución, procedencia y licencia siempre que estén disponibles.
 3. La licencia se verifica por recurso, no por portal.
@@ -22,7 +23,11 @@ RUMA no se atribuye la autoría de las obras. Su aporte es la investigación, cu
 9. Se revisan también privacidad, imagen de personas, marcas y derechos de terceros cuando corresponda.
 10. Calidad antes que cantidad: cada recurso debe merecer su lugar.
 11. La experiencia de frente debe ser simple, amable, accesible y sin cuentas obligatorias.
-12. Los enlaces y licencias se revisan periódicamente.
+12. Cada recurso debe mostrar una vista previa fiel cuando sea posible; si solo se puede mostrar una portada orientativa, debe estar identificada como tal y nunca fingir ser el archivo original.
+13. Cada ficha tendrá una única acción principal para ver y obtener el recurso: archivo directo cuando los permisos y la URL lo permitan, o fuente oficial cuando no corresponda alojar o enlazar el archivo directamente. Los créditos, la licencia y las condiciones seguirán visibles en lenguaje claro.
+14. La colaboración económica es voluntaria y nunca es una condición para buscar, ver, guardar ni obtener recursos.
+15. El sitio debe funcionar en teléfonos, tabletas y computadoras; ofrecer controles táctiles cómodos, navegación con teclado, foco visible y lectura ampliable.
+16. Los enlaces y licencias se revisan periódicamente.
 
 ## 3. Política práctica de licencias
 
@@ -149,3 +154,50 @@ El acceso abierto o gratuito no prueba por sí solo que RUMA pueda redistribuir 
 Para cada nuevo hallazgo: encontrar ficha original → probar archivo → registrar autoría y licencia → revisar condiciones de compartir y adaptar → evaluar calidad y utilidad → puntuar → asignar estado editorial → incorporar solo si cumple las reglas → comprobar que la ficha y el enlace funcionen → anotar fecha y motivo de cambios.
 
 **RUMA ES ACCESO.** No se trata de tener más enlaces: se trata de ayudar a que las personas encuentren, entiendan y obtengan algo que realmente les aporte valor, sin borrar a quien lo creó.
+
+
+## 11. Regla mundial de amabilidad
+
+**La amabilidad es obligatoria, de la primera pantalla a la última.**
+
+- Una persona no debería necesitar conocimientos digitales para orientarse.
+- Los textos explican qué es el recurso y qué ocurrirá al tocar el botón.
+- Cada ficha presenta una vista previa real cuando está disponible. Si se muestra una portada ilustrativa, se la llama “vista previa orientativa”.
+- Cada ficha tiene una sola acción principal: “Ver y obtener archivo” o “Ver y obtener en la fuente”. El destino se explica antes de abrirlo; la acción no debe fingir una descarga cuando en realidad abre una colección.
+- Autoría, licencia y procedencia están a la vista o a un toque sencillo, con explicaciones breves.
+- Los botones tienen tamaño cómodo, contraste suficiente, foco visible y se pueden usar con teclado o pantalla táctil.
+- Se puede agrandar la lectura. El diseño se adapta a pantallas pequeñas y grandes.
+- La interfaz no usa urgencia, culpa, presión, anuncios engañosos ni mensajes que avergüencen.
+- La colaboración mediante el alias **ocarina.guitarra** es voluntaria. Ninguna donación desbloquea contenido ni mejora el acceso.
+- Si algo no funciona o no se sabe, RUMA lo dice con honestidad y ofrece un camino comprensible.
+
+## 12. Ampliación del catálogo: cinco fotografías de Patagonia y Neuquén
+
+### 10. Paisaje patagónico: Laguna La Zeta
+Autora: Azulcasita. Fuente: https://commons.wikimedia.org/wiki/File:Paisaje_patag%C3%B3nico.jpg  
+Licencia: CC BY-SA 4.0. Archivo: JPG, 4608 × 3072. Acceso directo al archivo original. La fotografía representa la Laguna La Zeta, Esquel, Chubut; no es una imagen de San Patricio del Chañar.
+
+### 11. Otoño en Neuquén: paseo junto al río
+Autor: RAMIREZ HECTOR EO. Fuente: https://commons.wikimedia.org/wiki/File:Oto%C3%B1o_en_neuquen.jpg  
+Licencia: CC BY-SA 4.0. Archivo: JPG, 720 × 1560. Acceso directo. La descripción no precisa una ubicación exacta; no se inventa una.
+
+### 12. Las Ovejas: paisaje del norte neuquino
+Autor: Kkkr (Wikivoyage Shared). Fuente: https://commons.wikimedia.org/wiki/File:LasOvejas.jpg  
+Licencia seleccionada para la ficha: CC BY-SA 3.0; la ficha original indica otras licencias disponibles. Archivo: JPG, 800 × 600. Acceso directo. Resolución moderada; no recomendar para grandes ampliaciones.
+
+### 13. Bajada del Rahue: camino a Aluminé
+Autora: Mayra HQ. Fuente: https://commons.wikimedia.org/wiki/File:Bajada_del_Rahue-_Neuqu%C3%A9n.jpg  
+Licencia: CC BY-SA 4.0. Archivo: JPG, 4608 × 3456. Acceso directo. Es una fotografía de paisaje; no representa una guía vial ni el estado actual del camino.
+
+### 14. Río Pulmarí: agua y bosque neuquino
+Autor: Patricio.lorente. Fuente: https://commons.wikimedia.org/wiki/File:R%C3%ADo_Pulmari.jpg  
+Licencia: CC BY-SA 4.0. Archivo: JPG, 4160 × 3120. Acceso directo.
+
+Fuentes verificadas para estas fichas:
+- https://commons.wikimedia.org/wiki/File:Paisaje_patag%C3%B3nico.jpg
+- https://commons.wikimedia.org/wiki/File:Oto%C3%B1o_en_neuquen.jpg
+- https://commons.wikimedia.org/wiki/File:LasOvejas.jpg
+- https://commons.wikimedia.org/wiki/File:Bajada_del_Rahue-_Neuqu%C3%A9n.jpg
+- https://commons.wikimedia.org/wiki/File:R%C3%ADo_Pulmari.jpg
+
+En todos los casos, al reutilizar una imagen hay que dar crédito al autor, enlazar la licencia y declarar los cambios; si se adapta la obra, respetar la condición CompartirIgual. La ficha original de Commons sigue siendo la referencia legal de cada archivo.
