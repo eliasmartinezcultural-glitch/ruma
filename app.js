@@ -57,11 +57,11 @@
   function card(item) {
     const direct = item.modoAcceso === "directo" && Boolean(item.descarga);
     return '<article class="recurso-card" data-id="'+escapeHtml(item.id)+'">'+
-      '<button class="zona-vista" type="button" data-ver="'+escapeHtml(item.id)+'" aria-label="Ver vista previa de '+escapeHtml(item.titulo)+'">'+cover(item)+'</button>'+
+      '<div class="zona-vista">'+cover(item)+'</div>'+
       '<div class="recurso-cuerpo"><p class="recurso-lugar">'+escapeHtml(item.alcance || "Alcance general")+'</p>'+
       '<h3>'+escapeHtml(item.titulo)+'</h3><p class="recurso-descripcion">'+escapeHtml(item.descripcion)+'</p>'+
       '<div class="recurso-acciones"><button class="accion-ver" type="button" data-ver="'+escapeHtml(item.id)+'">Ver</button>'+
-      '<a class="accion-descargar" href="'+escapeHtml(actionTarget(item))+'" target="_blank" rel="noopener noreferrer">'+(direct ? "Descargar" : "Descargar ↗")+'</a></div>'+
+      '<a class="accion-descargar" href="'+escapeHtml(actionTarget(item))+'" target="_blank" rel="noopener noreferrer">'+"Descargar"+'</a></div>'+
       (direct ? '' : '<p class="nota-fuente">La descarga se ofrece desde la fuente oficial.</p>')+
       '</div></article>';
   }
