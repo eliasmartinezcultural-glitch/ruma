@@ -146,3 +146,27 @@ Se reorganizaron los archivos en carpetas temáticas reales dentro de `archivos/
 Los materiales nuevos incluyen tabla de multiplicar completa, ficha de vocabulario, menú semanal, lista de compras, plan familiar ante emergencias, seguimiento de plantas, postales y entrevista de memoria comunitaria. Todos están alojados localmente y las fichas se ordenan por categoría y título.
 
 Esta ampliación sigue la enmienda de simplicidad: el buscador y las categorías deben ayudar a encontrar; la vista previa debe mostrar el archivo real; «Descargar» debe entregar ese archivo directamente; el cartelito de colaboración debe seguir siendo pequeño y opcional. La publicación visual y las descargas en GitHub Pages siguen pendientes de prueba en navegador real.
+
+
+## Enmienda editorial · RUMA como vidriera de creadores · 27 de octubre de 2026
+
+Esta enmienda amplía la Ley Editorial de RUMA sin reemplazar la versión base ni su identidad.
+
+**RUMA reúne obras propias y trabajos terminados de otras personas.** La biblioteca puede incluir planificadores, mapas, cuentos, libros, láminas, guías, materiales educativos, papelería, archivos culturales y otros recursos que merezcan ser descubiertos.
+
+### Nuestro papel
+- Buscar y descubrir obras valiosas.
+- Seleccionar con criterio: calidad, utilidad, belleza, interés y claridad.
+- Presentarlas con una descripción honesta, una vista previa cuando sea posible y créditos visibles.
+- Dar visibilidad a sus creadores y facilitar que las personas encuentren el material adecuado.
+- No atribuirnos la autoría ni alterar la obra de forma que confunda sobre quién la creó.
+
+### Regla de publicación
+- **Alojamiento y descarga dentro de RUMA:** únicamente obras propias, de dominio público o con licencia/permiso que autorice expresamente la redistribución y el alojamiento.
+- **Obras sin permiso de redistribución:** pueden aparecer como ficha de descubrimiento si la presentación respeta los derechos aplicables; el acceso debe llevar a la página oficial del creador o titular. No copiar el archivo a RUMA.
+- Registrar, siempre que se pueda verificar, autoría, fuente original, licencia o permiso y condiciones de uso.
+- No suponer que algo puede republicarse solo porque se encuentra gratis en internet.
+- No inventar obras, autores, permisos ni licencias. No llenar el catálogo con material mediocre para aumentar la cantidad.
+
+### La promesa
+RUMA es una vidriera cuidada y una puerta de acceso: ayuda a descubrir buenas obras y las acerca a las personas, respetando a quienes las crearon. La facilidad de acceso nunca justifica quitar créditos ni vulnerar permisos.
