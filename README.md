@@ -4,12 +4,12 @@
 
 ## Primera vidriera curada
 
-El catálogo actual contiene **23 fichas seleccionadas** en cinco puertas:
+El catálogo actual contiene **46 fichas seleccionadas** en cinco puertas:
 - **Lecturas:** clásicos de la literatura argentina en PDF y bibliotecas digitales.
-- **Para estudiar:** cuadernillos de prevención de incendios, fauna nativa y actividades escolares.
+- **Para estudiar:** portales educativos provinciales y nacionales, cuadernillos, recursos de ciencia, ambiente y actividades escolares.
 - **Recursos útiles:** guías sobre ciberestafas y reducción del desperdicio de alimentos.
 - **Para decorar:** láminas y afiches de biodiversidad y naturaleza.
-- **Mapas e historia:** mapas escolares de Neuquén y Río Negro, mapoteca y mapa de Parques Nacionales, recursos sobre el bosque de pewen.
+- **Mapas e historia:** mapas escolares de Neuquén y Río Negro, herramientas para crear mapas, recursos patrimoniales y materiales sobre el bosque de pewen.
 
 ## Qué hace cada ficha
 
