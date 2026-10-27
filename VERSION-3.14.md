@@ -131,3 +131,18 @@ RUMA debe sentirse como una página sencilla, apacible, amable y comunitaria. La
 - El catálogo actual contiene 14 archivos locales. Los archivos SVG se identifican como SVG imprimibles, no como PDF.
 
 La prioridad no es mostrar más opciones ni más controles: es que una persona pueda entrar, entender y llevarse un material con facilidad. Esta enmienda reemplaza las instrucciones anteriores de mantener enlaces externos como forma habitual de acceso al catálogo.
+
+
+### Ampliación de la biblioteca y orden físico · 27 de octubre de 2026
+
+Se reorganizaron los archivos en carpetas temáticas reales dentro de `archivos/`, se actualizaron las rutas del catálogo y se retiraron los duplicados antiguos. El catálogo contiene ahora 22 archivos SVG imprimibles:
+
+- `archivos/lecturas/`
+- `archivos/estudio/`
+- `archivos/utiles/`
+- `archivos/decoracion/`
+- `archivos/mapas-historia/`
+
+Los materiales nuevos incluyen tabla de multiplicar completa, ficha de vocabulario, menú semanal, lista de compras, plan familiar ante emergencias, seguimiento de plantas, postales y entrevista de memoria comunitaria. Todos están alojados localmente y las fichas se ordenan por categoría y título.
+
+Esta ampliación sigue la enmienda de simplicidad: el buscador y las categorías deben ayudar a encontrar; la vista previa debe mostrar el archivo real; «Descargar» debe entregar ese archivo directamente; el cartelito de colaboración debe seguir siendo pequeño y opcional. La publicación visual y las descargas en GitHub Pages siguen pendientes de prueba en navegador real.
