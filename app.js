@@ -25,6 +25,7 @@
   const empty = document.getElementById("no-results");
   const categoryButtons = [...document.querySelectorAll("[data-category]")];
   let category = "Todos";
+  categoryButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.category === category)));
 
   function normalize(value) {
     return value.toLocaleLowerCase("es").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
