@@ -83,7 +83,19 @@
     </section>
   </main>
 
-  <footer class="site-footer"><a class="footer-brand" href="#inicio">RUMA <span>CHAÑAR</span></a><p>Un rinconcito de recursos útiles para San Patricio del Chañar.</p><p class="footer-small">Los enlaces llevan a sus fuentes originales. La información puede cambiar; confirmá los datos importantes con la institución correspondiente.</p><a class="back-top" href="#inicio">Volver arriba ↑</a></footer>
+  <footer class="site-footer"><a class="footer-brand" href="#inicio">RUMA <span>CHAÑAR</span></a><p>Un rinconcito de recursos útiles para San Patricio del Chañar.</p><p class="footer-small">Las fichas se leen y descargan dentro de RUMA. Son guías originales y no sustituyen documentos oficiales íntegros. La información puede cambiar.</p><a class="back-top" href="#inicio">Volver arriba ↑</a></footer>
+  <dialog class="resource-dialog" id="resource-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-head">
+      <div><span class="section-kicker">ENCONTRADO EN RUMA</span><h2 id="dialog-title">Tu recurso</h2></div>
+      <button type="button" class="dialog-close" id="close-resource" aria-label="Cerrar ficha">×</button>
+    </div>
+    <div class="dialog-body" id="dialog-body"></div>
+    <div class="dialog-actions">
+      <button type="button" class="button button-primary" id="download-resource">Descargar esta ficha</button>
+      <button type="button" class="button button-soft" id="copy-resource" hidden>Copiar dato</button>
+      <span class="copy-message" id="resource-copy-message" aria-live="polite"></span>
+    </div>
+  </dialog>
   <script src="app.js"></script>
 </body>
 </html>
