@@ -11,13 +11,17 @@
 - Diseño adaptable a celulares, pantallas pequeñas y computadoras.
 
 ## Archivos ordenados por tema
-- `archivos/lecturas/`: cuentos y poemas originales de RUMA.
-- `archivos/estudio/`: planificador, registro de lectura, tabla de multiplicar y ficha de vocabulario.
-- `archivos/utiles/`: gastos del hogar, ficha para emprender, cartelera, contactos, menú semanal, lista de compras, plan familiar de emergencia y cuidados de plantas.
-- `archivos/decoracion/`: tarjeta, lámina botánica, separadores, etiquetas de huerta y postales.
+- `archivos/lecturas/`: cuentos y poemas originales de RUMA, más cuentos breves imprimibles.
+- `archivos/estudio/`: planificador semanal, horario escolar, registro de lectura y hábitos, tabla de multiplicar y ficha de vocabulario.
+- `archivos/utiles/`: gastos y presupuesto del hogar, ficha para emprender, cartelera, contactos, menú semanal, lista de compras, limpieza semanal, receta familiar, plan de emergencia y cuidados de plantas.
+- `archivos/decoracion/`: tarjetas, láminas botánicas y de fauna patagónica, marcapáginas, separadores, etiquetas de huerta y postales.
 - `archivos/mapas-historia/`: mapa comunitario, árbol de memoria familiar y entrevista para guardar historias locales.
 
-El catálogo actual ofrece **22 archivos SVG imprimibles**, alojados dentro de este repositorio. Son SVG, no PDF; pueden abrirse en el navegador y guardarse o imprimirse. Las plantillas son materiales de RUMA. Las lecturas y diseños marcados como originales fueron creados para este proyecto.
+El catálogo ampliado reúne **40 fichas**: **32 materiales locales imprimibles en SVG** (no son PDF) y **8 vidrieras de colecciones externas** que llevan a fuentes oficiales o bibliotecas de origen. Los SVG se pueden abrir en el navegador y guardar o imprimir. Los cuentos y diseños marcados como originales fueron creados para este proyecto. Las fichas externas no prometen descarga desde RUMA: la descarga se realiza en la fuente original y se deben respetar las condiciones de cada obra.
+
+## Vidriera de lecturas y bibliotecas
+
+Se incorporaron accesos de descubrimiento a colecciones públicas: clásicos universales, novelas, cuentos y autores argentinos de Argentina.gob.ar; Genio Maligno; Biblioteca Nacional; Educ.ar; y StoryWeaver. Las fichas identifican estas entradas como fuentes externas y usan una acción de apertura, no un botón de descarga engañoso. Las obras alojadas por terceros no se copian a RUMA: cada fuente conserva sus condiciones, atribuciones y licencias.
 
 ## Donación voluntaria
 El cartelito fijo «Convidar un mate» lleva al apartado de colaboración. Alias: `ocarina.guitarra`, a nombre de Elías Martínez. La colaboración es opcional y nunca condiciona el acceso.
