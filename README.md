@@ -6,7 +6,7 @@
 - Una portada tranquila y cinco puertas claras: **Lecturas**, **Para estudiar**, **Recursos útiles**, **Para decorar**, **Mapas e historia**.
 - Buscador simple que entiende mayúsculas y tildes.
 - Fichas con vista previa real y solo dos acciones: **Ver** y **Descargar**.
-- Sin cuentas, sin pagos, sin ventanas emergentes, sin enlaces externos para obtener materiales.
+- Sin cuentas, sin pagos ni ventanas emergentes. Los archivos alojados en RUMA se descargan aquí; las obras de terceros sin permiso de redistribución llevan a su fuente original.
 - Catálogo ordenado por categoría y nombre para que la gente encuentre lo que busca.
 - Diseño adaptable a celulares, pantallas pequeñas y computadoras.
 
