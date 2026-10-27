@@ -150,4 +150,24 @@ window.RUMA_RECURSOS = [
     nota: "La ficha identifica el tema como pingüino de Magallanes. No implica que la foto represente una localidad concreta de Neuquén."
   }
 
+,
+  {
+    id: "educlasicos-educar",
+    titulo: "Educlásicos: clásicos de la literatura universal",
+    descripcion: "Una colección de más de cien títulos clásicos, con novelas, teatro, ensayos, poemas y cuentos para leer en línea o descargar desde Educ.ar.",
+    categoria: "disfrutar",
+    etiquetas: ["literatura", "clasicos", "libros", "novelas", "poesia", "teatro", "ensayo", "lectura", "estudiantes", "docentes"],
+    alcance: "Argentina y mundo hispanohablante",
+    formato: "Colección de libros digitales",
+    creador: "Educ.ar y autores de las obras",
+    licencia: "Creative Commons BY-NC-SA (versión no indicada en la ficha)",
+    licenciaUrl: "https://www.educ.ar/recursos/150051/educlasicos",
+    fuente: "https://www.educ.ar/recursos/150051/educlasicos",
+    descarga: null,
+    modoAcceso: "fuente",
+    estadoLegal: "La ficha oficial declara BY-NC-SA sin especificar versión en el resumen consultado. Para redistribuir una obra individual, revisar su ficha y condiciones particulares.",
+    puntaje: 88,
+    nota: "Una puerta de entrada a la literatura clásica. RUMA no reemplaza la biblioteca original: te lleva a la colección y conserva su atribución."
+  }
+
 ];
