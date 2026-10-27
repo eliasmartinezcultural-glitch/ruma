@@ -178,7 +178,7 @@
       const preview = document.createElement("button");
       preview.type = "button";
       preview.className = "preview-button";
-      preview.textContent = "Vista previa";
+      preview.textContent = "Ver";
       preview.setAttribute("aria-label", "Ver vista previa de " + resource.title);
       preview.addEventListener("click", () => showPreview(resource));
       const obtain = document.createElement("a");
