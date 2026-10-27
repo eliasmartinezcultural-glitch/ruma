@@ -1,6 +1,6 @@
-# RUMA — biblioteca de contenidos reales
+# RUMA — biblioteca visual de recursos reales
 
-RUMA busca, selecciona y cataloga materiales que ya existen. No redacta fichas de relleno, no fabrica archivos y no se atribuye contenidos ajenos.
+RUMA busca, selecciona y cataloga materiales que ya existen. Su punto de partida es San Patricio del Chañar; su horizonte es Neuquén, Argentina y el mundo hispanohablante. No redacta fichas de relleno, no fabrica archivos y no se atribuye contenidos ajenos.
 
 ## Regla central: acceso en un clic
 
@@ -8,7 +8,7 @@ RUMA busca, selecciona y cataloga materiales que ya existen. No redacta fichas d
 - Si el archivo original se ofrece legalmente en PDF u otro formato, el botón abre ese archivo directamente.
 - Si el material está en un catálogo o portal y no tiene un enlace directo fiable, el botón abre la fuente original.
 - No alojamos copias de terceros sin licencia abierta, dominio público o autorización.
-- La vista previa es el propio archivo original cuando el navegador puede abrirlo; los PDF pueden verse en el navegador y descargarse desde allí.
+- Cada tarjeta ofrece una vista previa dentro de RUMA con portada auténtica cuando existe, descripción, formato, autoría y fuente. Para PDF, intenta mostrar el archivo original dentro de la ficha; si el servidor lo impide, el botón Obtener abre el original.
 - No sumar elementos solo para aumentar el número: se comprueban los enlaces y la utilidad.
 
 ## Catálogo incorporado
@@ -32,7 +32,9 @@ Los botones de los PDF llevan directamente al archivo original. Los demás lleva
 
 - Curaduría útil, verificable y respetuosa de autores y licencias.
 - Buscar materiales locales primero y ampliar a Neuquén, Argentina y el ámbito hispanohablante.
-- Diseño accesible, buscador simple y filtros claros.
+- Diseño visual organizado en cuatro puertas temáticas: Libros y lectura, Mapas y territorio, Estudiar y aprender, Historia y archivos.
+- Vista previa en una ficha emergente y un botón claro «Obtener» por recurso.
+- Buscador simple, filtros, diseño adaptable a móvil y computadora.
 - Sin cuentas, base de datos ni servidor propio: HTML, CSS y JavaScript estáticos, preparados para GitHub Pages.
 - Donación voluntaria: alias `ocarina.guitarra`, a nombre de Elías Martínez. Donar no desbloquea recursos.
 
