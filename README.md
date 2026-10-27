@@ -1,37 +1,42 @@
-# RUMA — un rincón comunitario para encontrar y descargar
+# RUMA — una vidriera para encontrar recursos valiosos
 
-**RUMA ES ACCESO.** Una biblioteca digital pequeña, apacible y gratuita. La persona entra, elige una categoría o escribe una palabra, reconoce el material por su vista previa y lo descarga directamente desde RUMA.
+**RUMA ES ACCESO.** RUMA busca, selecciona y ordena materiales reales, terminados y útiles para acercarlos a la gente. La prioridad inicial es Argentina y la Patagonia, sin cerrar la puerta al mundo hispanohablante.
 
-## La experiencia
-- Una portada tranquila y cinco puertas claras: **Lecturas**, **Para estudiar**, **Recursos útiles**, **Para decorar**, **Mapas e historia**.
-- Buscador simple que entiende mayúsculas y tildes.
-- Fichas con vista previa real y solo dos acciones: **Ver** y **Descargar**.
-- Sin cuentas, sin pagos ni ventanas emergentes. Los archivos alojados en RUMA se descargan aquí; las obras de terceros sin permiso de redistribución llevan a su fuente original.
-- Catálogo ordenado por categoría y nombre para que la gente encuentre lo que busca.
-- Diseño adaptable a celulares, pantallas pequeñas y computadoras.
+## Primera vidriera curada
 
-## Archivos ordenados por tema
-- `archivos/lecturas/`: cuentos y poemas originales de RUMA, más cuentos breves imprimibles.
-- `archivos/estudio/`: planificador semanal, horario escolar, registro de lectura y hábitos, tabla de multiplicar y ficha de vocabulario.
-- `archivos/utiles/`: gastos y presupuesto del hogar, ficha para emprender, cartelera, contactos, menú semanal, lista de compras, limpieza semanal, receta familiar, plan de emergencia y cuidados de plantas.
-- `archivos/decoracion/`: tarjetas, láminas botánicas y de fauna patagónica, marcapáginas, separadores, etiquetas de huerta y postales.
-- `archivos/mapas-historia/`: mapa comunitario, árbol de memoria familiar y entrevista para guardar historias locales.
+El catálogo actual contiene **23 fichas seleccionadas** en cinco puertas:
+- **Lecturas:** clásicos de la literatura argentina en PDF y bibliotecas digitales.
+- **Para estudiar:** cuadernillos de prevención de incendios, fauna nativa y actividades escolares.
+- **Recursos útiles:** guías sobre ciberestafas y reducción del desperdicio de alimentos.
+- **Para decorar:** láminas y afiches de biodiversidad y naturaleza.
+- **Mapas e historia:** mapas escolares de Neuquén y Río Negro, mapoteca y mapa de Parques Nacionales, recursos sobre el bosque de pewen.
 
-El catálogo ampliado reúne **40 fichas**: **32 materiales locales imprimibles en SVG** (no son PDF) y **8 vidrieras de colecciones externas** que llevan a fuentes oficiales o bibliotecas de origen. Los SVG se pueden abrir en el navegador y guardar o imprimir. Los cuentos y diseños marcados como originales fueron creados para este proyecto. Las fichas externas no prometen descarga desde RUMA: la descarga se realiza en la fuente original y se deben respetar las condiciones de cada obra.
+## Qué hace cada ficha
 
-## Vidriera de lecturas y bibliotecas
+Cada ficha identifica el material, su autor u organismo, formato, una descripción práctica y un acceso claro. Cuando la URL es un PDF directo, el botón abre ese documento en la fuente original; en otros casos, abre el catálogo oficial donde se elige o descarga el material.
 
-Se incorporaron accesos de descubrimiento a colecciones públicas: clásicos universales, novelas, cuentos y autores argentinos de Argentina.gob.ar; Genio Maligno; Biblioteca Nacional; Educ.ar; y StoryWeaver. Las fichas identifican estas entradas como fuentes externas y usan una acción de apertura, no un botón de descarga engañoso. Las obras alojadas por terceros no se copian a RUMA: cada fuente conserva sus condiciones, atribuciones y licencias.
+**Importante:** esta primera fase es una vidriera de acceso, no una biblioteca que ya aloja todos esos archivos. No se copian archivos de terceros sin verificar sus derechos. En particular, que una descarga sea gratuita no significa automáticamente que esté permitido republicarla.
 
-## Donación voluntaria
-El cartelito fijo «Convidar un mate» lleva al apartado de colaboración. Alias: `ocarina.guitarra`, a nombre de Elías Martínez. La colaboración es opcional y nunca condiciona el acceso.
+## Criterios de selección
 
-## RUMA también es una vidriera para creadores
-RUMA reúne tanto materiales propios como obras terminadas de otras personas: planificadores, mapas, cuentos, libros, láminas, guías, recursos educativos, papelería y cualquier creación que tenga valor real. Nuestro trabajo es descubrir, seleccionar, describir, ordenar y ayudar a que cada obra llegue a su público; no atribuirnos su autoría.
+1. Priorizar archivos terminados, completos y concretos; evitar fichas vacías o enlaces genéricos que no aportan valor.
+2. Preferir fuentes oficiales, bibliotecas reconocidas, obras de dominio público y materiales con licencias claras.
+3. Identificar autoría, institución, formato y fuente.
+4. No inventar licencias, permisos ni disponibilidad.
+5. Alojar dentro de RUMA únicamente materiales cuya licencia o autorización permita redistribución. Mantener la atribución y las condiciones de la licencia.
+6. Dar preferencia a contenidos locales y regionales, sin descuidar libros, mapas y recursos de utilidad general.
+7. Revisar periódicamente enlaces y disponibilidad; un enlace publicado hoy puede cambiar.
 
-Cada ficha debe identificar al creador y, cuando corresponda, la fuente y la licencia. Si la licencia o una autorización expresa permite alojar y redistribuir el archivo, podemos guardarlo dentro de RUMA para ofrecer **Ver** y **Descargar** directamente. Si no lo permite, mostramos la obra como vidriera y dirigimos a la página oficial del creador, sin copiar ni redistribuir el archivo. Un material gratuito no necesariamente puede republicarse.
+## Experiencia y accesibilidad
 
-No inventar autores, permisos, licencias ni disponibilidad. No sumar obras de relleno: cada material debe ser real, estar terminado, ser útil, bonito o interesante, y poder presentarse con honestidad.
+- Buscador que no distingue mayúsculas ni tildes.
+- Filtros por cinco categorías.
+- Fichas legibles en celular y computadora.
+- Sin cuenta, pago ni ventanas emergentes.
+- El cartelito fijo «Convidar un mate» lleva a la colaboración voluntaria. Alias: `ocarina.guitarra`, a nombre de Elías Martínez.
 
-## Control de calidad pendiente
-La comprobación del repositorio confirma la estructura y los archivos fuente; aún hay que probar la versión publicada en GitHub Pages en teléfonos y computadoras, incluida la descarga real desde cada navegador. Guardar un commit no demuestra por sí solo que Pages ya publicó la última versión.
+## Siguiente fase de RUMA
+
+La próxima tarea de curaduría es comprobar licencia por licencia y sumar al repositorio los archivos descargables que puedan redistribuirse legalmente, con su autoría y licencia visibles. Los demás seguirán en la vidriera con acceso directo a la fuente original.
+
+La comprobación del repositorio no equivale a una prueba visual completa de GitHub Pages. La publicación debe probarse en teléfonos y computadoras.
