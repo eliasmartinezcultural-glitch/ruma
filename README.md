@@ -23,7 +23,7 @@ RUMA es una biblioteca-curaduría: no crea los recursos que reúne. Los busca, v
 
 ## Estado de la refundación
 
-- Catálogo ampliado a 14 recursos seleccionados, con créditos, fuente, licencia y notas de uso.
+- Catálogo ampliado a 19 recursos seleccionados, con créditos, fuente, licencia y notas de uso.
 - Enlaces directos para archivos cuya ficha identifica CC0 o dominio público y para imágenes bajo licencias que permiten compartir, respetando sus condiciones.
 - Enlaces a fuentes oficiales para colecciones educativas con condiciones que requieren atención adicional.
 - Búsqueda local por título, tema, formato, alcance, creador y licencia.
@@ -32,6 +32,7 @@ RUMA es una biblioteca-curaduría: no crea los recursos que reúne. Los busca, v
 - Diseño adaptable, controles para agrandar la lectura y cartel permanente de colaboración voluntaria.
 - Cada ficha muestra una vista previa real cuando está disponible; si no, una portada orientativa que no se hace pasar por el archivo original.
 - Una acción principal por recurso: abre el archivo permitido o la fuente oficial; créditos y condiciones quedan visibles y fáciles de consultar.
+- Guía para principiantes con pasos breves y preguntas frecuentes: cómo usar la búsqueda, qué hacer al abrir archivos, guardar/imprimir y qué significa colaborar.
 - Nueva regla mundial: la amabilidad es obligatoria; nadie debe sentirse perdido, apurado o excluido. La donación nunca condiciona el acceso.
 - Nueva capa editorial y documento maestro de curaduría.
 
