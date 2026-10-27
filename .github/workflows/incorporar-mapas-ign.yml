@@ -1,0 +1,55 @@
+name: Incorporar mapas oficiales del IGN
+
+on:
+  push:
+    paths:
+      - ".github/workflows/incorporar-mapas-ign.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  incorporar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el repositorio
+        uses: actions/checkout@v4
+      - name: Descargar obras cartográficas originales con licencia abierta
+        run: |
+          mkdir -p archivos/obras/mapas-ign
+          curl -fL --retry 3 "https://www.ign.gob.ar/images/MapasWeb/NEUQUEN/NEUQUEN-POLITICO-WEB.jpg" -o archivos/obras/mapas-ign/neuquen-politico-ign.jpg
+          curl -fL --retry 3 "https://www.ign.gob.ar/descargas/mapas_mudos/jpg/Neuquen-Fisico_Politico-mudo_no3.jpg" -o archivos/obras/mapas-ign/neuquen-fisico-politico-mudo-ign.jpg
+          file archivos/obras/mapas-ign/*
+          test -s archivos/obras/mapas-ign/neuquen-politico-ign.jpg
+          test -s archivos/obras/mapas-ign/neuquen-fisico-politico-mudo-ign.jpg
+      - name: Registrar origen y licencia
+        run: |
+          cat > archivos/obras/mapas-ign/ORIGEN-LICENCIA.txt <<'EOF'
+          OBRAS CARTOGRÁFICAS ORIGINALES — INSTITUTO GEOGRÁFICO NACIONAL (ARGENTINA)
+
+          1. neuquen-politico-ign.jpg
+             Fuente oficial: https://www.ign.gob.ar/images/MapasWeb/NEUQUEN/NEUQUEN-POLITICO-WEB.jpg
+             Obra: mapa político de la provincia del Neuquén.
+          
+          2. neuquen-fisico-politico-mudo-ign.jpg
+             Fuente oficial: https://www.ign.gob.ar/descargas/mapas_mudos/jpg/Neuquen-Fisico_Politico-mudo_no3.jpg
+             Obra: mapa físico-político mudo de la provincia del Neuquén.
+          
+          Licencia indicada por el IGN para su sección de Mapas Escolares:
+          Creative Commons Atribución-CompartirIgual 4.0 Internacional (CC BY-SA 4.0).
+          Atribución: Instituto Geográfico Nacional de la República Argentina (IGN).
+          Se conservan los archivos originales sin modificación.
+          Referencia de licencia: https://www.ign.gob.ar/AreaServicios/Descargas/MapasEscolaresOld
+          EOF
+      - name: Guardar los archivos auténticos en RUMA
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archivos/obras/mapas-ign/
+          if git diff --cached --quiet; then
+            echo "Los archivos ya estaban incorporados."
+          else
+            git commit -m "Incorporar mapas oficiales del IGN con atribución y licencia"
+            git push
+          fi
