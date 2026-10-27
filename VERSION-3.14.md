@@ -91,10 +91,22 @@ Si no aporta valor, no se suma por llenar espacio. Mejor una colección pequeña
 
 ### 4. Experiencia que debemos proteger
 
-- Mantener las cuatro puertas actuales como entrada sencilla, y permitir que el catálogo crezca con nuevas temáticas sin perder claridad.
+- Mantener cinco categorías generales como entrada sencilla: Lecturas, Para estudiar, Recursos útiles, Para decorar, Mapas e historia, y permitir que el catálogo crezca con nuevas temáticas sin perder claridad.
 - Diseñar para teléfonos, pantallas pequeñas, conexión lenta, impresión y personas con poca experiencia digital.
 - Cada tarjeta debe explicar en lenguaje simple qué es el recurso y para quién puede servir; mostrar una vista previa real cuando esté disponible.
 - Evitar cuentas, pagos obligatorios, publicidad invasiva y cadenas innecesarias de páginas.
 - La donación voluntaria nunca condiciona el acceso.
 
 **Mandato editorial permanente:** buscar con amplitud, verificar con cuidado, acreditar a los creadores y acercar cada recurso a la persona que lo necesita. RUMA no crea barreras: tiende puentes.
+
+### Aplicación de las categorías generales · octubre de 2026
+
+La portada se organiza en cinco puertas amplias, pensadas para que cualquier vecino entienda dónde empezar:
+
+1. **Lecturas:** libros, cuentos, novelas, poesía e historietas.
+2. **Para estudiar:** materiales escolares, mapas didácticos, ciencias, historia y apoyo docente.
+3. **Recursos útiles:** trámites y contactos locales, herramientas cotidianas, guías y recursos para emprender.
+4. **Para decorar:** dibujos, láminas, tarjetas, postales y materiales imprimibles cuya licencia o permiso pueda comprobarse.
+5. **Mapas e historia:** territorio, cartografía, archivos y memoria regional.
+
+El catálogo inicial se amplía a 44 entradas, con prioridad a materiales que puedan ayudar a vecinos de San Patricio del Chañar. Los recursos de terceros se presentan como enlaces a sus fuentes oficiales; no se presume que todo lo gratuito se pueda volver a publicar. En cada archivo se deben respetar las condiciones específicas de su licencia.
