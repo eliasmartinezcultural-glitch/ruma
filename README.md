@@ -1,32 +1,34 @@
 # RUMA — recursos para ver y descargar dentro de RUMA
 
-**RUMA ES ACCESO.** El catálogo solo admite materiales que se puedan previsualizar y descargar directamente desde este sitio, sin enviar a otras páginas.
+**RUMA ES ACCESO.** La biblioteca no compite por cantidad. Publica únicamente materiales concretos que la persona pueda ver antes y descargar directamente desde RUMA, sin cadenas de enlaces ni páginas externas.
 
-## Biblioteca inicial: cinco archivos locales
+## Catálogo actual: 10 archivos locales
 
-- **Lecturas:** registro de lectura.
-- **Para estudiar:** tabla de multiplicar.
-- **Recursos útiles:** planificador semanal.
-- **Para decorar:** stickers originales de la Patagonia y póster para cuidar la naturaleza.
+Todos son diseños originales de RUMA en SVG, alojados en `archivos/descargas/`. Cada tarjeta muestra el propio archivo como vista previa y permite descargarlo desde el sitio. Están preparados para imprimir en A4.
 
-Los diez archivos iniciales son diseños originales en SVG alojados en `archivos/descargas/`. Cada ficha muestra una vista previa del propio archivo y un botón de descarga local. Se pueden imprimir en A4 y ampliar sin perder nitidez.
+- **Lecturas:** registro de lectura y señaladores.
+- **Para estudiar:** tabla de multiplicar, rutina diaria, stickers para cuadernos y abecedario.
+- **Recursos útiles:** planificador semanal y planificador de comidas.
+- **Para decorar:** stickers de la Patagonia y póster para cuidar la naturaleza.
 
-## Regla de incorporación
+## Regla estricta para sumar un recurso
 
-1. Debe existir un archivo descargable dentro del repositorio.
-2. La vista previa debe representar ese mismo archivo.
-3. El botón descarga desde RUMA y no abre otro sitio.
-4. Los archivos de terceros solo se incorporan cuando la licencia o autorización permite redistribución, conservando atribución y licencia.
-5. No se admiten fichas que sean únicamente enlaces, botones de búsqueda o páginas externas.
+Se publica solo si cumple **todos** estos puntos:
 
-## Experiencia
+1. El archivo completo está alojado dentro de RUMA.
+2. La vista previa muestra el mismo material que se va a descargar.
+3. El botón descarga ese archivo directamente desde RUMA.
+4. Si es de terceros, existe permiso verificable para redistribuirlo y se conserva la atribución y licencia correspondiente.
+5. El material tiene utilidad y calidad suficientes para merecer un lugar en la colección.
 
-- Buscador que no distingue mayúsculas ni tildes.
-- Filtros por categoría.
-- Vista previa visual en cada tarjeta.
-- Descarga local, sin cuenta ni pago.
-- Colaboración voluntaria: alias `ocarina.guitarra`, a nombre de Elías Martínez.
+**No se publica** una ficha que solo lleve a otro sitio, un recurso que no podamos alojar legalmente, una descarga dudosa ni un elemento de relleno. Que algo sea gratuito en otra web no significa que podamos copiarlo y republicarlo.
 
-## Próximos pasos
+La cantidad no es un objetivo. Si después de revisar una categoría solo hay uno, dos o ningún recurso que supere el filtro, se queda así hasta encontrar material válido.
 
-Investigar y sumar archivos concretos que puedan redistribuirse legalmente: obras de dominio público verificadas, mapas con licencias compatibles, fichas, láminas y materiales abiertos. No confundir acceso gratuito con permiso para republicar.
+## Cómo funciona
+
+- Búsqueda sencilla y filtros por categoría.
+- Vista previa antes de descargar.
+- Descarga local sin cuenta ni pago.
+- Colaboración opcional: alias `ocarina.guitarra`, a nombre de Elías Martínez. La donación no condiciona el acceso.
+
