@@ -1,8 +1,8 @@
 (() => {
   "use strict";
 
-  // Catálogo curado: prioriza archivos completos de fuentes públicas.
-  // Los PDF externos se abren en su archivo original; no se presentan como alojados en RUMA.
+  // Regla de publicación: solo archivos alojados en RUMA, con vista previa y descarga local.
+  // Si falta el archivo, la vista previa o el permiso de redistribución, no se publica la ficha.
   const resources = [
     {title:"Planificador semanal",author:"RUMA · diseño original",description:"Organizá tus días, anotá prioridades y marcá lo importante.",category:"Recursos útiles",icon:"🗓️",format:"SVG imprimible · A4",url:"./archivos/descargas/planificador-semanal.svg",download:true,tags:"Planificador semanal Organizá tus días, anotá prioridades y marcá lo importante. imprimir descargar"},
     {title:"Tabla de multiplicar",author:"RUMA · diseño original",description:"Tabla del 1 al 10, grande y clara para consultar e imprimir.",category:"Para estudiar",icon:"✖️",format:"SVG imprimible · A4",url:"./archivos/descargas/tabla-multiplicar.svg",download:true,tags:"Tabla de multiplicar Tabla del 1 al 10, grande y clara para consultar e imprimir. imprimir descargar"},
