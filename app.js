@@ -114,19 +114,21 @@
   }
   function updateDoorCounts() {
     document.querySelectorAll("[data-categoria]").forEach(door => {
-      const name = door.dataset.categoria;
-      const total = resources.filter(item => item.categoria === name).length;
+      const total = resources.filter(item => item.categoria === door.dataset.categoria).length;
       const status = door.querySelector(".estado");
       if (status) status.innerHTML = '<i></i> '+total+(total === 1 ? " recurso en la caja" : " recursos en la caja");
-      door.setAttribute("role","button");
-      door.setAttribute("tabindex","0");
-      door.setAttribute("aria-label","Explorar la puerta "+categoryName(name));
-      door.addEventListener("click", () => setCategory(name));
-      door.addEventListener("keydown", event => {
-        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setCategory(name); }
-      });
     });
   }
+  document.querySelectorAll("[data-categoria]").forEach(door => {
+    const name = door.dataset.categoria;
+    door.setAttribute("role","button");
+    door.setAttribute("tabindex","0");
+    door.setAttribute("aria-label","Explorar la puerta "+categoryName(name));
+    door.addEventListener("click", () => setCategory(name));
+    door.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setCategory(name); }
+    });
+  });
   function setCategory(value) {
     category = value;
     filterButtons.forEach(button => {
