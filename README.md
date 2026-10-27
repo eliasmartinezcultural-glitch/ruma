@@ -1,60 +1,26 @@
-# RUMA — biblioteca visual de recursos reales
+# RUMA — biblioteca comunitaria de archivos locales
 
-RUMA busca, selecciona y cataloga materiales que ya existen. Su punto de partida es San Patricio del Chañar; su horizonte es Neuquén, Argentina y el mundo hispanohablante. No redacta fichas de relleno, no fabrica archivos y no se atribuye contenidos ajenos.
+**Ley Mundial de RUMA: TODO SE DESCARGA EN RUMA.**
 
-## Regla central: acceso en un clic
+RUMA es un lugar amable, apacible y comunitario para encontrar cosas útiles. Los archivos que ofrece el catálogo están guardados dentro de este repositorio y se descargan desde la propia página. No hay cadenas de enlaces a portales externos para obtener los materiales.
 
-- Cada tarjeta debe identificar un material real y su autor o institución.
-- Si el archivo original se ofrece legalmente en PDF u otro formato, el botón abre ese archivo directamente.
-- Si el material está en un catálogo o portal y no tiene un enlace directo fiable, el botón abre la fuente original.
-- No alojamos copias de terceros sin licencia abierta, dominio público o autorización.
-- Cada tarjeta ofrece una vista previa dentro de RUMA con portada auténtica cuando existe, descripción, formato, autoría y fuente. Para PDF, intenta mostrar el archivo original dentro de la ficha; si el servidor lo impide, el botón Obtener abre el original.
-- No sumar elementos solo para aumentar el número: se comprueban los enlaces y la utilidad.
+## Reglas que no se negocian
+- Todo recurso visible debe corresponder a un archivo almacenado dentro de RUMA.
+- Cada ficha ofrece dos acciones simples: **Ver** y **Descargar**.
+- No se muestran enlaces externos como destino de recursos.
+- Se publica contenido propio o material cuyo almacenamiento y redistribución esté permitido; se identifica la procedencia cuando corresponde.
+- El uso es gratuito. El cartelito de donación con alias `ocarina.guitarra` es pequeño, visible durante la navegación y completamente opcional.
+- Donar no desbloquea contenido, no cambia el trato y no es condición para usar RUMA.
+- La experiencia debe ser serena, clara, accesible en celular y computadora, y amigable para personas con poca experiencia digital.
 
-## Catálogo incorporado
+## Catálogo local
+Los materiales imprimibles actuales están guardados en `archivos/` y se agrupan en cinco categorías: Lecturas, Para estudiar, Recursos útiles, Para decorar, Mapas e historia. Incluyen lecturas breves, planificadores, registros de lectura y gastos, fichas para emprender, cartelera comunitaria, agenda de contactos, tarjetas, láminas, separadores, etiquetas de huerta, plantilla de mapa comunitario y árbol de memoria familiar.
 
-La colección de esta versión contiene **50 recursos**:
-- Quince libros en PDF de literatura argentina y clásica publicados por el Gobierno de la Provincia de Buenos Aires; las fichas incluyen portadas originales del catálogo oficial cuando están disponibles.
-- Recursos de utilidad cotidiana de San Patricio del Chañar: trámites municipales, contactos institucionales, desarrollo económico local y guía municipal de lugares de interés.
-- Recursos para decorar e imprimir: Openclipart (CC0/dominio público según su política), Smithsonian Open Access, obras Open Access del Metropolitan Museum y Getty Open Content; Wikimedia Commons también se enlaza como colección donde hay que revisar la licencia individual de cada archivo.
-- Herramientas para emprendedores: guía descargable y recursos de formación del Estado nacional.
-- Tres accesos a mapas y cartografía oficial del Neuquén: colección Mapas Neuquinos de COPADE, visor SIG y Mapoteca Digital; además, el mapa cultural nacional de SInCA.
-- Recursos pedagógicos del Ministerio de Educación del Neuquén, catálogo Educ.ar y cuadernillos PDF oficiales con acceso directo para descargar e imprimir.
-- Catálogo nacional de clásicos universales.
-- Biblioteca digital Libros y Casas.
-- Biblioteca digital del Archivo General de la Nación.
-- Servicios digitales de la Biblioteca Nacional Mariano Moreno, con objetos digitales de dominio público.
-- Catálogo público y gratuito de la Biblioteca Nacional de Maestros.
-- Boletín Oficial del Neuquén, para localizar publicaciones y normas oficiales provinciales y municipales.
-- Referencia oficial a la norma que aprueba el Plan Estratégico para el Desarrollo Sustentable de San Patricio del Chañar.
-- Informe provincial de espacios culturales con relevamiento 2024–2025 y portal de datos abiertos relacionado (incluye la base CSV de 2025).
+Los archivos SVG se pueden abrir, guardar e imprimir. La página usa HTML, CSS y JavaScript estáticos, sin cuentas ni base de datos.
 
-Los botones de los PDF llevan directamente al archivo original. Los demás llevan a la colección o ficha institucional correspondiente. El catálogo de datos de espacios culturales declara licencia Creative Commons Atribución 4.0; la cartografía de Neuquén tiene restricciones de republicación y por eso no se copia dentro de RUMA. Openclipart declara usar CC0 para sus ilustraciones; en Wikimedia Commons la licencia debe comprobarse en cada archivo. Los portales municipales y demás colecciones se enlazan como fuentes, sin copiar sus contenidos.
+## Cuidado de los materiales
+No se incorporan copias de terceros sin permiso, dominio público o licencia compatible. Si un recurso no puede almacenarse legalmente dentro de RUMA, no se ofrece como recurso del catálogo. La prioridad es el acceso real, no llenar la biblioteca con enlaces.
 
-## Principios
-
-- Curaduría útil, verificable y respetuosa de autores y licencias.
-- Buscar materiales locales primero y ampliar a Neuquén, Argentina y el ámbito hispanohablante.
-- Diseño visual organizado en cinco categorías generales: Lecturas, Para estudiar, Recursos útiles, Para decorar, Mapas e historia.
-- Vista previa en una ficha emergente y un botón claro «Obtener» por recurso.
-- Buscador simple, filtros por categoría y por tipo de acceso (imprimibles o descarga directa), diseño adaptable a móvil y computadora. Los resultados se ordenan como estantes de biblioteca: primero categoría general, luego subcolección y título. Cada ficha distingue PDF/descarga directa de portales y colecciones.
-- Sin cuentas, base de datos ni servidor propio: HTML, CSS y JavaScript estáticos, preparados para GitHub Pages.
-- Donación voluntaria: alias `ocarina.guitarra`, a nombre de Elías Martínez. Donar no desbloquea recursos.
-
-## Fuentes de referencia
-
-- Gobierno de la Provincia de Buenos Aires — libros digitales: https://gba.gob.ar/lecturas/libros_digitales
-- Mapoteca Digital del Neuquén: https://dpc.neuquen.gov.ar/Mapa
-- Recursos pedagógicos del Neuquén: https://educaciondigital.neuquen.gov.ar/recursos-pedagogicos/
-- Educ.ar: https://www.educ.ar/recursos
-- Clásicos universales: https://www.argentina.gob.ar/educacion/materiales-didacticos/clasicos-universales
-- Biblioteca digital Libros y Casas: https://librosycasas.cultura.gob.ar/libros/
-- Archivo General de la Nación: https://www.argentina.gob.ar/interior/archivo-general-de-la-nacion/biblioteca-digital
-- Informe de espacios culturales del Neuquén: https://portaldatosabiertos.neuquen.gov.ar/dataset/9f0b080d-9ce2-4fe8-bb58-c6423d46e3de/resource/791d0735-46cc-4b38-af7c-7a4212c1a314/download/analisis-de-los-espacios-culturales-del-neuquen.-odafyc-primer-semestre-2025-.pdf
-
-## Pendiente de verificación
-
-- Probar cada enlace y las interacciones en teléfono y computadora. La sintaxis JavaScript del catálogo fue validada; aún falta la prueba visual y funcional en navegador.
-- Revisar periódicamente las imágenes de portada remotas, que se muestran desde la fuente institucional original.
-- Confirmar que GitHub Pages publique esta versión y revisar el diseño final.
-- Seguir ampliando con archivos concretos, reales y legalmente accesibles. Las etiquetas de impresión se usan solo cuando el formato permite imprimir; los materiales de terceros se obtienen desde su fuente original.
+## Pendiente de control
+- Verificar visualmente el botón Descargar y la vista previa en navegadores de teléfono y computadora.
+- Confirmar que GitHub Pages publique la versión actual.
