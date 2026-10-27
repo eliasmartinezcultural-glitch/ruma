@@ -117,7 +117,7 @@
       if (item.external) {
         view.target = "_blank";
         view.rel = "noopener noreferrer";
-        view.textContent = "Abrir biblioteca ↗";
+        view.textContent = item.externalLabel || "Abrir biblioteca ↗";
         view.setAttribute("aria-label", "Abrir " + item.title + " en su sitio original");
         actions.append(view);
       } else {
