@@ -43,3 +43,11 @@ main{max-width:1120px;margin:auto;padding:0 24px}
 .access-filters .filter{background:#fffdf8;border-style:dashed}
 .access-filters .filter.active{background:#496c59;border-color:#496c59;color:#fff}
 .shelf-divider{scroll-margin-top:18px}
+
+/* Pequeño recordatorio comunitario, siempre visible y nunca obligatorio */
+.community-donation{position:fixed;right:14px;bottom:14px;z-index:50;display:flex;align-items:center;gap:7px;padding:10px 14px;border:1px solid #d7dfd1;border-radius:999px;background:rgba(255,253,247,.96);box-shadow:0 5px 22px rgba(60,70,50,.12);color:#49634d;text-decoration:none;font-size:12px;font-weight:700;backdrop-filter:blur(8px)}
+.community-donation span:first-child{font-size:18px;color:#bd8d91}
+.community-donation:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(60,70,50,.16)}
+.resource-card-actions .obtain-button{font-size:13px}
+.resource-cover-image{object-fit:contain;background:#fcfaf5}
+@media(max-width:600px){.community-donation{right:9px;bottom:9px;padding:9px 12px;font-size:11px}.community-donation span:first-child{font-size:16px}}
