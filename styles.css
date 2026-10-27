@@ -38,3 +38,8 @@ main{max-width:1120px;margin:auto;padding:0 24px}
 .shelf-divider{grid-column:1/-1;margin:20px 0 2px;padding:0 0 9px;border-bottom:1px solid var(--line);font-family:var(--font-display,Georgia,serif);font-size:clamp(17px,2vw,22px);font-weight:600;color:var(--ink)}
 .shelf-divider:first-child{margin-top:4px}
 .resource-meta .access-label{font-weight:700;color:#496c59}
+
+.access-filters{margin-top:-6px;padding-top:0}
+.access-filters .filter{background:#fffdf8;border-style:dashed}
+.access-filters .filter.active{background:#496c59;border-color:#496c59;color:#fff}
+.shelf-divider{scroll-margin-top:18px}
