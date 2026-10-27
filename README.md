@@ -1,26 +1,25 @@
-# RUMA — biblioteca comunitaria de archivos locales
+# RUMA — un rincón comunitario para encontrar y descargar
 
-**Ley Mundial de RUMA: TODO SE DESCARGA EN RUMA.**
+**RUMA ES ACCESO.** Una biblioteca pequeña, tranquila y gratuita. La persona entra, elige una categoría, ve el material y lo descarga desde RUMA, sin registrarse ni pasar por páginas intermedias.
 
-RUMA es un lugar amable, apacible y comunitario para encontrar cosas útiles. Los archivos que ofrece el catálogo están guardados dentro de este repositorio y se descargan desde la propia página. No hay cadenas de enlaces a portales externos para obtener los materiales.
+## Cómo funciona
+- Cinco puertas claras: Lecturas, Para estudiar, Recursos útiles, Para decorar, Mapas e historia.
+- Un buscador sencillo, opcional.
+- Cada material muestra una vista previa y solo dos acciones: **Ver** y **Descargar**.
+- Todos los archivos del catálogo se guardan dentro de este repositorio, en la carpeta `archivos/`.
+- No hay filtros técnicos duplicados, ventanas modales ni enlaces externos para conseguir los archivos.
+- El sitio funciona con HTML, CSS y JavaScript estáticos; no necesita cuentas ni base de datos.
 
-## Reglas que no se negocian
-- Todo recurso visible debe corresponder a un archivo almacenado dentro de RUMA.
-- Cada ficha ofrece dos acciones simples: **Ver** y **Descargar**.
-- No se muestran enlaces externos como destino de recursos.
-- Se publica contenido propio o material cuyo almacenamiento y redistribución esté permitido; se identifica la procedencia cuando corresponde.
-- El uso es gratuito. El cartelito de donación con alias `ocarina.guitarra` es pequeño, visible durante la navegación y completamente opcional.
-- Donar no desbloquea contenido, no cambia el trato y no es condición para usar RUMA.
-- La experiencia debe ser serena, clara, accesible en celular y computadora, y amigable para personas con poca experiencia digital.
+## Donación voluntaria
+El pequeño cartel fijo «Convidar un mate» lleva al apartado de colaboración. Alias: `ocarina.guitarra`, a nombre de Elías Martínez. La donación es opcional y nunca condiciona el acceso.
 
-## Catálogo local
-Los materiales imprimibles actuales están guardados en `archivos/` y se agrupan en cinco categorías: Lecturas, Para estudiar, Recursos útiles, Para decorar, Mapas e historia. Incluyen lecturas breves, planificadores, registros de lectura y gastos, fichas para emprender, cartelera comunitaria, agenda de contactos, tarjetas, láminas, separadores, etiquetas de huerta, plantilla de mapa comunitario y árbol de memoria familiar.
+## Materiales locales actuales
+Hay 14 archivos SVG imprimibles: dos lecturas originales, un planificador semanal, un registro de lectura, una hoja de gastos del hogar, una ficha para emprender, una cartelera comunitaria, una agenda de contactos, una tarjeta, una lámina botánica, separadores de libros, etiquetas para huerta, una plantilla de mapa comunitario y un árbol de memoria familiar.
 
-Los archivos SVG se pueden abrir, guardar e imprimir. La página usa HTML, CSS y JavaScript estáticos, sin cuentas ni base de datos.
+Los SVG son archivos vectoriales que pueden abrirse en el navegador y guardarse o imprimirse. No se presentan como PDF.
 
-## Cuidado de los materiales
-No se incorporan copias de terceros sin permiso, dominio público o licencia compatible. Si un recurso no puede almacenarse legalmente dentro de RUMA, no se ofrece como recurso del catálogo. La prioridad es el acceso real, no llenar la biblioteca con enlaces.
+## Regla de publicación
+Solo incorporar contenido propio o material cuya licencia o permiso permita alojarlo y compartirlo. No copiar archivos de terceros sin autorización. La página no debe prometer una descarga local si el archivo no está realmente guardado dentro del repositorio.
 
-## Pendiente de control
-- Verificar visualmente el botón Descargar y la vista previa en navegadores de teléfono y computadora.
-- Confirmar que GitHub Pages publique la versión actual.
+## Control pendiente
+Los archivos y las rutas locales deben comprobarse en la versión publicada de GitHub Pages, además de probar la descarga en teléfonos y computadoras. La edición del repositorio por sí sola no confirma que la publicación ya esté actualizada.
