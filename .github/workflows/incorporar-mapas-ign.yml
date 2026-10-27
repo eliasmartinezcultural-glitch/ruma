@@ -1,4 +1,5 @@
 name: Incorporar mapas oficiales del IGN
+# Descarga inicial de archivos cartográficos oficiales bajo licencia abierta.
 
 on:
   push:
