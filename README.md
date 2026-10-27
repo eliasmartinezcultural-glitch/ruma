@@ -1,25 +1,29 @@
 # RUMA — un rincón comunitario para encontrar y descargar
 
-**RUMA ES ACCESO.** Una biblioteca pequeña, tranquila y gratuita. La persona entra, elige una categoría, ve el material y lo descarga desde RUMA, sin registrarse ni pasar por páginas intermedias.
+**RUMA ES ACCESO.** Una biblioteca digital pequeña, apacible y gratuita. La persona entra, elige una categoría o escribe una palabra, reconoce el material por su vista previa y lo descarga directamente desde RUMA.
 
-## Cómo funciona
-- Cinco puertas claras: Lecturas, Para estudiar, Recursos útiles, Para decorar, Mapas e historia.
-- Un buscador sencillo, opcional.
-- Cada material muestra una vista previa y solo dos acciones: **Ver** y **Descargar**.
-- Todos los archivos del catálogo se guardan dentro de este repositorio, en la carpeta `archivos/`.
-- No hay filtros técnicos duplicados, ventanas modales ni enlaces externos para conseguir los archivos.
-- El sitio funciona con HTML, CSS y JavaScript estáticos; no necesita cuentas ni base de datos.
+## La experiencia
+- Una portada tranquila y cinco puertas claras: **Lecturas**, **Para estudiar**, **Recursos útiles**, **Para decorar**, **Mapas e historia**.
+- Buscador simple que entiende mayúsculas y tildes.
+- Fichas con vista previa real y solo dos acciones: **Ver** y **Descargar**.
+- Sin cuentas, sin pagos, sin ventanas emergentes, sin enlaces externos para obtener materiales.
+- Catálogo ordenado por categoría y nombre para que la gente encuentre lo que busca.
+- Diseño adaptable a celulares, pantallas pequeñas y computadoras.
+
+## Archivos ordenados por tema
+- `archivos/lecturas/`: cuentos y poemas originales de RUMA.
+- `archivos/estudio/`: planificador, registro de lectura, tabla de multiplicar y ficha de vocabulario.
+- `archivos/utiles/`: gastos del hogar, ficha para emprender, cartelera, contactos, menú semanal, lista de compras, plan familiar de emergencia y cuidados de plantas.
+- `archivos/decoracion/`: tarjeta, lámina botánica, separadores, etiquetas de huerta y postales.
+- `archivos/mapas-historia/`: mapa comunitario, árbol de memoria familiar y entrevista para guardar historias locales.
+
+El catálogo actual ofrece **22 archivos SVG imprimibles**, alojados dentro de este repositorio. Son SVG, no PDF; pueden abrirse en el navegador y guardarse o imprimirse. Las plantillas son materiales de RUMA. Las lecturas y diseños marcados como originales fueron creados para este proyecto.
 
 ## Donación voluntaria
-El pequeño cartel fijo «Convidar un mate» lleva al apartado de colaboración. Alias: `ocarina.guitarra`, a nombre de Elías Martínez. La donación es opcional y nunca condiciona el acceso.
+El cartelito fijo «Convidar un mate» lleva al apartado de colaboración. Alias: `ocarina.guitarra`, a nombre de Elías Martínez. La colaboración es opcional y nunca condiciona el acceso.
 
-## Materiales locales actuales
-Hay 14 archivos SVG imprimibles: dos lecturas originales, un planificador semanal, un registro de lectura, una hoja de gastos del hogar, una ficha para emprender, una cartelera comunitaria, una agenda de contactos, una tarjeta, una lámina botánica, separadores de libros, etiquetas para huerta, una plantilla de mapa comunitario y un árbol de memoria familiar.
+## Regla para ampliar la biblioteca
+Sumar materiales útiles y bien terminados, organizados en su carpeta temática. Solo alojar contenido propio o archivos cuya licencia o permiso permita redistribuirlos. No copiar material de terceros sin autorización y no anunciar como disponible ningún archivo que no esté realmente en RUMA.
 
-Los SVG son archivos vectoriales que pueden abrirse en el navegador y guardarse o imprimirse. No se presentan como PDF.
-
-## Regla de publicación
-Solo incorporar contenido propio o material cuya licencia o permiso permita alojarlo y compartirlo. No copiar archivos de terceros sin autorización. La página no debe prometer una descarga local si el archivo no está realmente guardado dentro del repositorio.
-
-## Control pendiente
-Los archivos y las rutas locales deben comprobarse en la versión publicada de GitHub Pages, además de probar la descarga en teléfonos y computadoras. La edición del repositorio por sí sola no confirma que la publicación ya esté actualizada.
+## Control de calidad pendiente
+La comprobación del repositorio confirma la estructura y los archivos fuente; aún hay que probar la versión publicada en GitHub Pages en teléfonos y computadoras, incluida la descarga real desde cada navegador. Guardar un commit no demuestra por sí solo que Pages ya publicó la última versión.
