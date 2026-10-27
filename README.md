@@ -2,55 +2,49 @@
 
 **RUMA ES ACCESO.** Encontrá algo útil, lindo o necesario. Miralo, llevalo y seguí con tu día.
 
-RUMA es una biblioteca-curaduría: no crea los recursos que reúne. Los busca, revisa, ordena y acerca, respetando la autoría y las condiciones de uso.
+RUMA reúne recursos creados por otras personas e instituciones. Los busca, revisa y ordena; no inventa archivos ni permisos.
 
-## Ley mundial
+## La ley mundial
 
-**Ley de salida libre:** quien llega a RUMA debe poder encontrar lo que necesita, verlo, descargarlo si corresponde y marcharse sin fricción. RUMA no busca retener visitas ni crear hábito de permanencia.
+- La persona llega, busca, ve o descarga y se va libremente.
+- Interfaz sencilla, sin cuentas ni pago obligatorio.
+- Cada tarjeta tiene solo dos acciones: **Ver** y **Descargar**.
+- Autoría, fuente, licencia y condiciones claras.
+- Colaboración voluntaria: `ocarina.guitarra`. Donar nunca desbloquea contenido.
 
-- La interfaz pública es simple y amable para personas con conocimientos tecnológicos básicos.
-- Cada tarjeta tiene dos acciones principales: **Ver** y **Descargar**.
-- Cada recurso tiene una vista previa real o, si no está disponible, una vista previa descriptiva claramente identificada.
-- El detalle conserva autoría, fuente, licencia y condiciones de uso.
-- No confundimos gratuidad con permiso de redistribución.
-- No inventamos archivos, licencias, autores, ubicaciones ni enlaces.
-- La colaboración con el alias `ocarina.guitarra` es voluntaria y nunca desbloquea contenido.
-- No hay cuentas, scroll infinito, reproducción automática, notificaciones, rachas ni muros de pago.
+## Orden principal
 
-## Orden de la biblioteca
+San Patricio del Chañar → Neuquén → Patagonia → Argentina → América Latina y mundo hispanohablante.
 
-1. San Patricio del Chañar.
-2. Neuquén.
-3. Patagonia.
-4. Argentina.
-5. América Latina y mundo hispanohablante.
+Dentro de cada lugar, la organización temática es amplia:
 
-Cada registro tiene un campo `zona` para mantener el orden geográfico. El estante de San Patricio del Chañar explica honestamente que la investigación continúa hasta encontrar recursos locales con procedencia y permisos comprobables. No se presenta un recurso de otra localidad como si fuera de Chañar.
+- Vida práctica y documentos públicos.
+- Trabajo y emprendimiento.
+- Mapas y territorio.
+- Naturaleza y ciencia.
+- Libros, cuentos y lectura.
+- Arte y materiales imprimibles.
+- Historia y comunidad.
+- Curiosidades y hallazgos útiles.
+
+El esquema completo y las prioridades están en [Orden temático](investigacion/orden-tematico.md).
 
 ## Catálogo actual
 
-La primera capa contiene **19 recursos**: fotografías, mapas y materiales educativos y literarios de fuentes oficiales. Es una base en crecimiento, no una cobertura completa. Cada recurso debe merecer su lugar en la biblioteca.
+La primera capa contiene **19 recursos**. Es un comienzo, no una biblioteca completa. El estante de San Patricio del Chañar seguirá vacío hasta encontrar materiales reales con procedencia y permisos comprobables; no se presentan recursos de otros lugares como si fueran locales.
 
-## Cómo funciona el sitio
+## Archivos del sitio
 
-- `index.html`: portada sencilla, búsqueda, estantes geográficos, biblioteca y colaboración voluntaria.
-- `styles.css`: diseño adaptable, legible y accesible en teléfono, tableta y computadora.
-- `catalogo.css`: estilos base del catálogo.
-- `recursos.js`: catálogo documental con ubicación, autoría, licencia, fuente y acceso.
-- `app.js`: búsqueda, orden geográfico, vista de detalle y acciones Ver / Descargar.
-- `investigacion/ley-mundial-de-acceso.md`: ley editorial y criterios de curaduría.
-- `investigacion/arquitectura-biblioteca.md`: arquitectura de la biblioteca, modelo documental, controles de calidad y plan de investigación.
+- `index.html`: portada y búsqueda.
+- `styles.css`: diseño adaptable.
+- `recursos.js`: fichas documentales.
+- `app.js`: búsqueda, estantes, vistas y acciones.
+- `investigacion/ley-mundial-de-acceso.md`: reglas de acceso.
+- `investigacion/arquitectura-biblioteca.md`: estructura documental.
+- `investigacion/orden-tematico.md`: categorías y prioridades.
 
-La web es estática: no tiene cuentas, backend ni base de datos. No se necesita registro para usarla.
+## Regla para publicar
 
-## Qué significa “Descargar”
+No basta con que algo sea gratis. Antes de publicarlo se comprueban autoría, fuente, licencia, enlace y vista previa. Si no se puede alojar una copia, se explica y se enlaza la fuente oficial.
 
-- Cuando la fuente permite el acceso directo, el botón conduce al archivo original.
-- Cuando el material se ofrece en una biblioteca o institución, el botón conduce a esa fuente oficial. La tarjeta lo aclara.
-- Si el navegador muestra una imagen en lugar de guardarla automáticamente, puede ser necesario usar la opción Guardar imagen del dispositivo.
-
-## Regla de publicación
-
-No se incorpora un archivo como descarga aprobada hasta comprobar la ficha original, autoría, licencia o fundamento de dominio público, URL, contexto y vista previa. Si algo no está claro, queda en investigación o se enlaza a la fuente oficial sin fingir que RUMA tiene permiso para redistribuir una copia.
-
-**La medida de éxito no es cuánto tiempo se queda alguien. Es si encuentra algo valioso, lo obtiene con claridad y puede seguir con su día.**
+**El éxito es que alguien encuentre algo valioso, se lo lleve y pueda seguir con su día.**
