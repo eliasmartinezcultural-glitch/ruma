@@ -97,14 +97,14 @@ footer strong{color:var(--ink)}
 <div class="promises" aria-label="Lo que ofrece RUMA"><div class="promise">Gratis para todos<span>No hay pagos obligatorios.</span></div><div class="promise">Fácil de usar<span>Botones claros y letra legible.</span></div><div class="promise">Descarga directa<span>Los archivos se obtienen desde RUMA.</span></div></div>
 
 <section id="archivos">
-<div class="section-heading"><div class="eyebrow">Elige con tranquilidad</div><h2>Archivos para llevarte</h2><p>Publicaremos solo obras completas de sus autores o creadores, con permiso comprobado para compartirlas. Cada archivo tendrá una vista previa real y un botón claro para descargarlo.</p></div>
+<div class="section-heading"><div class="eyebrow">Elige con tranquilidad</div><h2>Archivos para llevarte</h2><p>Acabamos de abrir el estante de lectura con dos cuentos clásicos completos de Horacio Quiroga. Cada ficha muestra una muestra real, la autoría y el estado de derechos, con descarga directa.</p></div>
 <div class="catalog-tools">
 <input class="search" id="search" type="search" placeholder="Escribí qué estás buscando…" aria-label="Buscar en los archivos">
 <div class="filters" role="group" aria-label="Filtrar archivos"><button class="filter" data-category="todo" aria-pressed="true">Todos</button><button class="filter" data-category="leer" aria-pressed="false">📚 Lecturas</button><button class="filter" data-category="aprender" aria-pressed="false">🌱 Aprender</button><button class="filter" data-category="crear" aria-pressed="false">🎨 Crear</button></div>
 </div>
 <div class="count" id="count" aria-live="polite">Estamos preparando los primeros archivos.</div>
 <div class="catalog" id="catalog">
-<div class="empty"><div class="empty-icon" aria-hidden="true">🧺</div><h3>Estamos preparando la primera selección</h3><p>Queremos ofrecerte archivos completos, bonitos y útiles, con una vista previa real y descarga directa. Preferimos esperar y hacerlo bien antes que mostrarte algo incompleto o mandarte a otra página.</p></div>
+<div class="empty"><div class="empty-icon" aria-hidden="true">🧺</div><h3>Estamos preparando esta selección</h3><p>Queremos ofrecerte archivos completos, bonitos y útiles, con una vista previa real y descarga directa. Preferimos esperar y hacerlo bien antes que mostrarte algo incompleto o mandarte a otra página.</p></div>
 </div>
 <div class="rule"><strong>La regla de RUMA:</strong> si el archivo no está listo, no tiene vista previa o no podemos compartirlo legalmente, no se publica. No hay enlaces externos para conseguir los materiales.</div>
 </section>
@@ -132,7 +132,10 @@ footer strong{color:var(--ink)}
 </main>
 <footer class="wrap"><div><strong>RUMA</strong> · Un rincón para compartir.<br>Hecho con cariño para que las cosas buenas circulen.</div><div>Gratis para todos · Aporte voluntario</div></footer>
 <script>
-const resources=[];
+const resources=[
+ {title:"A la deriva",description:"Un cuento intenso sobre un hombre herido en la selva y su lucha por llegar a destino. Literatura clásica del Río Paraná.",category:"leer",creator:"Horacio Quiroga",license:"Dominio público en Argentina",preview:"El hombre pisó algo blanduzco, y enseguida sintió la mordedura en el pie. Saltó adelante, y al volverse con un juramento vio una yararacusú que arrollada sobre sí misma, esperaba otro ataque.",file:"archivos/a-la-deriva-horacio-quiroga.txt",icon:"🛶",kind:"Cuento clásico"},
+ {title:"El almohadón de pluma",description:"Un relato inquietante de misterio y terror, publicado en los primeros años del siglo XX.",category:"leer",creator:"Horacio Quiroga",license:"Dominio público en Argentina",preview:"Su luna de miel fué un largo escalofrío. Rubia, angelical y tímida, el carácter duro de su marido heló sus soñadas niñerías de novia.",file:"archivos/el-almohadon-de-pluma-horacio-quiroga.txt",icon:"🪶",kind:"Cuento clásico"}
+];
 const catalog=document.getElementById('catalog');
 const search=document.getElementById('search');
 const count=document.getElementById('count');
@@ -140,20 +143,22 @@ let activeCategory='todo';
 function render(){
  const query=search.value.trim().toLocaleLowerCase();
  const shown=resources.filter(item=>(activeCategory==='todo'||item.category===activeCategory)&&(!query||(item.title+' '+item.description+' '+item.category).toLocaleLowerCase().includes(query)));
- count.textContent=shown.length===0?'Todavía no hay archivos publicados.':shown.length+(shown.length===1?' archivo disponible':' archivos disponibles');
+ count.textContent=shown.length===0?'No hay archivos en esta búsqueda.':shown.length+(shown.length===1?' archivo listo para descargar':' archivos listos para descargar');
  catalog.innerHTML='';
  if(!shown.length){
   const empty=document.createElement('div');empty.className='empty';empty.innerHTML='<div class="empty-icon" aria-hidden="true">🧺</div><h3>Estamos preparando la primera selección</h3><p>Queremos ofrecerte archivos completos, bonitos y útiles, con una vista previa real y descarga directa. Preferimos esperar y hacerlo bien antes que mostrarte algo incompleto o mandarte a otra página.</p>';catalog.appendChild(empty);return;
  }
  shown.forEach(item=>{
   const card=document.createElement('article');card.className='item';
-  const preview=document.createElement('div');preview.className='preview';preview.textContent=item.preview;
+  const preview=document.createElement('div');preview.className='preview';preview.textContent=item.icon;
   const body=document.createElement('div');body.className='item-body';
   const title=document.createElement('h3');title.textContent=item.title;
   const description=document.createElement('p');description.textContent=item.description;
-  const credit=document.createElement('div');credit.className='credit';credit.textContent='Creado por: '+item.creator+' · Licencia: '+item.license;
+  const previewDetails=document.createElement('details');previewDetails.className='real-preview';const summary=document.createElement('summary');summary.textContent='👀 Leer una muestra';const excerpt=document.createElement('div');excerpt.className='preview-text';excerpt.textContent='“'+item.preview+'”';previewDetails.append(summary,excerpt);
+  const credit=document.createElement('div');credit.className='credit';credit.textContent='Autor: '+item.creator+' · '+item.license;
+  const fileMeta=document.createElement('div');fileMeta.className='file-meta';fileMeta.textContent='Archivo de texto · obra completa';
   const link=document.createElement('a');link.className='btn btn-main download';link.href=item.file;link.setAttribute('download','');link.textContent='⬇ Descargar archivo';
-  body.append(title,description,credit,link);card.append(preview,body);catalog.appendChild(card);
+  body.append(title,description,previewDetails,credit,fileMeta,link);card.append(preview,body);catalog.appendChild(card);
  });
 }
 document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{
