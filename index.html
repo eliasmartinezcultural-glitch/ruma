@@ -1,46 +1,13 @@
 <!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f1e7">
-  <meta name="description" content="RUMA Chañar: recursos útiles y materiales para vecinos de San Patricio del Chañar.">
-  <title>RUMA Chañar — Un lugar para encontrar cosas útiles</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f1e7"><meta name="description" content="RUMA Chañar acerca información, documentos, mapas y recursos útiles para San Patricio del Chañar."><title>RUMA Chañar — Lo útil, más cerca</title><link rel="stylesheet" href="styles.css"></head>
 <body>
-  <header class="top"><a class="logo" href="#inicio" aria-label="RUMA Chañar, inicio"><span>r.</span><b>RUMA <small>CHAÑAR</small></b></a><span class="local">Hecho para nuestro pueblo</span></header>
-  <main id="inicio">
-    <section class="hero">
-      <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
-      <h1>Las cosas buenas<br><em>están más cerca.</em></h1>
-      <p>Un rinconcito para encontrar documentos, mapas, cuentos, guías, materiales para trabajar y pequeñas cosas útiles para la vida diaria en Chañar.</p>
-      <a class="primary" href="#temas">Explorar los temas ↓</a>
-    </section>
-    <section class="search-area" aria-labelledby="search-title">
-      <h2 id="search-title">¿Qué necesitás encontrar?</h2>
-      <form id="search-form"><label class="sr-only" for="search">Buscar en RUMA Chañar</label><input id="search" type="search" placeholder="Ej.: Carta Orgánica, mapa, cuento…" autocomplete="off"><button type="submit">Buscar</button></form>
-      <p id="search-message" aria-live="polite">Buscamos primero materiales relacionados con nuestro pueblo.</p>
-    </section>
-    <section id="temas" class="topics">
-      <p class="eyebrow">UNA PUERTA A LA VEZ</p><h2>¿Por dónde empezamos?</h2>
-      <p class="intro">Elegí un tema. La biblioteca se irá completando con materiales reales y fuentes comprobadas.</p>
-      <div class="topic-grid">
-        <button class="topic" data-topic="Documentos públicos"><span>🏛️</span><b>Documentos públicos</b><small>Carta Orgánica y normas municipales</small></button>
-        <button class="topic" data-topic="Mapas y territorio"><span>🗺️</span><b>Mapas y territorio</b><small>El pueblo, sus lugares y alrededores</small></button>
-        <button class="topic" data-topic="Historia y memoria"><span>📚</span><b>Historia y memoria</b><small>Historias, fotos y patrimonio local</small></button>
-        <button class="topic" data-topic="Vida cotidiana"><span>🧰</span><b>Vida cotidiana</b><small>Guías, trámites y datos útiles</small></button>
-        <button class="topic" data-topic="Trabajo y emprendimientos"><span>🪴</span><b>Trabajo y emprendimientos</b><small>Tablas, etiquetas y herramientas prácticas</small></button>
-        <button class="topic" data-topic="Naturaleza y biología"><span>🌿</span><b>Naturaleza y biología</b><small>Plantas, animales y láminas</small></button>
-        <button class="topic" data-topic="Libros y cuentos"><span>📖</span><b>Libros y cuentitos</b><small>Lecturas para chicos y grandes</small></button>
-        <button class="topic" data-topic="Cosas lindas para imprimir"><span>✂️</span><b>Cosas lindas</b><small>Postales, tarjetas y etiquetas</small></button>
-        <button class="topic" data-topic="Curiosidades"><span>✨</span><b>Curiosidades</b><small>Pequeños hallazgos que valen la pena</small></button>
-      </div>
-      <div class="empty" id="empty-state"><span>♡</span><h3>Empezamos por Chañar, de verdad.</h3><p>Este estante todavía está vacío. Primero vamos a localizar materiales auténticos, comprobar de dónde vienen y revisar cómo pueden compartirse. No vamos a inventar documentos ni permisos para llenar la página.</p></div>
-    </section>
-    <section class="promise"><span>♡</span><div><h2>RUMA es acceso.</h2><p>Sin cuentas, sin vueltas y sin obligación de donar. Venís, encontrás lo que necesitás y seguís con tu día.</p></div></section>
-  </main>
-  <footer><b>RUMA CHAÑAR</b><p>Una biblioteca abierta para San Patricio del Chañar.</p><p class="small">Colaboración voluntaria: <strong>ocarina.guitarra</strong>. Todo el contenido sigue siendo libre de acceder.</p></footer>
-  <script src="app.js"></script>
-</body>
-</html>
+<header class="top" id="inicio"><a class="logo" href="#inicio" aria-label="RUMA Chañar, inicio"><span>r.</span><b>RUMA <small>CHAÑAR</small></b></a><a class="header-link" href="#como-funciona">¿Qué es RUMA?</a></header>
+<main>
+<section class="hero"><p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p><h1>Lo que necesitás,<br><em>más cerca.</em></h1><p class="hero-copy">Información, mapas, documentos y recursos útiles para vivir, aprender y trabajar en nuestro pueblo. Sin vueltas. Sin cuenta. Sin pagar para entrar.</p><a class="primary" href="#buscar">Encontrar algo útil <span aria-hidden="true">↓</span></a><div class="hero-note"><span aria-hidden="true">♡</span> Un rinconcito abierto para vecinos de a pie, estudiantes, familias, adultos mayores y emprendedores.</div></section>
+<section class="search-area" id="buscar" aria-labelledby="search-title"><div class="section-heading"><p class="eyebrow">BUSCADOR SENCILLO</p><h2 id="search-title">¿Qué estás buscando?</h2><p>Escribí una palabra o elegí un tema. Los botones te llevan directo a la fuente.</p></div><form id="search-form" role="search"><label class="sr-only" for="search">Buscar recursos de San Patricio del Chañar</label><input id="search" type="search" placeholder="Ej.: carta orgánica, mapa, teléfono…" autocomplete="off"><button type="submit">Buscar</button></form><div class="quick-search" aria-label="Búsquedas frecuentes"><button type="button" data-query="carta orgánica">Carta Orgánica</button><button type="button" data-query="mapa">Mapa</button><button type="button" data-query="contacto municipio">Contacto municipal</button><button type="button" data-query="historia naturaleza">Conocer Chañar</button></div><p id="result-count" class="result-count" aria-live="polite">Cargando recursos verificados…</p></section>
+<section class="catalogue" aria-labelledby="catalogue-title"><div class="catalogue-heading"><div><p class="eyebrow">ESTANTES ABIERTOS</p><h2 id="catalogue-title">Un botón y estás ahí.</h2></div><p class="catalogue-intro">Empezamos con fuentes oficiales y materiales relacionados con Chañar. Cada ficha explica qué vas a encontrar antes de abrirla.</p></div>
+<nav class="filters" id="filters" aria-label="Filtrar por tema"><button type="button" class="filter active" data-filter="Todos" aria-pressed="true">Todo</button><button type="button" class="filter" data-filter="Documentos" aria-pressed="false">Documentos</button><button type="button" class="filter" data-filter="Mapas" aria-pressed="false">Mapas</button><button type="button" class="filter" data-filter="Conocer Chañar" aria-pressed="false">Conocer Chañar</button><button type="button" class="filter" data-filter="Vecinos" aria-pressed="false">Para vecinos</button><button type="button" class="filter" data-filter="Trabajo y estudio" aria-pressed="false">Trabajo y estudio</button></nav>
+<div class="resource-grid" id="resource-grid"></div><div class="no-results" id="no-results" hidden><span aria-hidden="true">🔎</span><h3>Todavía no encontramos eso en RUMA.</h3><p>Probá con otra palabra o elegí otro tema. No mostramos resultados inventados para llenar espacio.</p><button type="button" class="secondary" id="clear-search">Ver todos los recursos</button></div><p class="catalogue-note"><span aria-hidden="true">🌱</span> Esto es el comienzo. Sumaremos recursos cuando podamos comprobar su origen, utilidad y condiciones para compartirlos.</p></section>
+<section class="how" id="como-funciona"><div class="heart" aria-hidden="true">♡</div><div><p class="eyebrow">LA IDEA DE RUMA</p><h2>RUMA es acceso.</h2><p>Encontramos, ordenamos y acercamos recursos que ya existen. Respetamos a quienes los hicieron y enlazamos la fuente original cuando corresponde. Queremos que algo útil esté al alcance de un botón, incluso para quien no se lleva bien con la tecnología.</p></div></section>
+<section class="donation" aria-labelledby="donation-title"><div class="donation-icon" aria-hidden="true">☕</div><div><p class="eyebrow">SI TE SIRVIÓ</p><h2 id="donation-title">Podés convidar un mate.</h2><p>RUMA es gratis. Si encontraste algo que te ayudó y querés colaborar con su mantenimiento, podés hacerlo voluntariamente. Donar no desbloquea nada: todo el mundo accede igual.</p></div><div class="alias"><small>Alias para colaborar</small><strong>ocarina.guitarra</strong><small>A nombre de Elías Martínez</small><button type="button" id="copy-alias" class="secondary">Copiar alias</button><span id="copy-message" aria-live="polite"></span></div></section>
+</main><footer><b>RUMA CHAÑAR</b><p>Un puente a lo útil, hecho con cuidado para San Patricio del Chañar.</p><p class="footer-small">Los enlaces llevan a sus fuentes originales. Si encontrás un error o un recurso local que valga la pena, ayudanos a mejorar la biblioteca.</p></footer><script src="app.js"></script></body></html>
