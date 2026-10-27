@@ -110,3 +110,24 @@ La portada se organiza en cinco puertas amplias, pensadas para que cualquier vec
 5. **Mapas e historia:** territorio, cartografía, archivos y memoria regional.
 
 El catálogo inicial se amplía a 47 entradas, con prioridad a materiales que puedan ayudar a vecinos de San Patricio del Chañar. Los recursos de terceros se presentan como enlaces a sus fuentes oficiales; no se presume que todo lo gratuito se pueda volver a publicar. En cada archivo se deben respetar las condiciones específicas de su licencia.
+
+
+---
+
+## Enmienda posterior · 27 de octubre de 2026
+
+Esta enmienda conserva el registro histórico de la versión 3.14 y deja asentada la decisión posterior de Elías. Cuando una regla histórica contradiga esta enmienda, **prevalece esta enmienda**.
+
+### Norte vigente de la experiencia
+
+RUMA debe sentirse como una página sencilla, apacible, amable y comunitaria. La persona debe poder elegir una categoría, reconocer el material por su vista previa y descargarlo directamente desde RUMA.
+
+- Se simplifica la portada y se eliminan capas intermedias que no aportan valor.
+- Se quitan filtros duplicados, subestantes automáticos y ventanas emergentes innecesarias.
+- Cada ficha tiene dos acciones claras: **Ver** y **Descargar**.
+- El catálogo contiene únicamente archivos alojados dentro de RUMA y legalmente compartibles. No se envía al usuario a sitios externos para obtener los materiales.
+- Se conservan las cinco categorías generales.
+- El cartelito «Convidar un mate» queda discreto, fijo y voluntario. Nunca bloquea ni condiciona el acceso.
+- El catálogo actual contiene 14 archivos locales. Los archivos SVG se identifican como SVG imprimibles, no como PDF.
+
+La prioridad no es mostrar más opciones ni más controles: es que una persona pueda entrar, entender y llevarse un material con facilidad. Esta enmienda reemplaza las instrucciones anteriores de mantener enlaces externos como forma habitual de acceso al catálogo.
