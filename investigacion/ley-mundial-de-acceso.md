@@ -226,3 +226,35 @@ Autor: Aleperez1024. Fuente: https://commons.wikimedia.org/wiki/File:Rio_Neuqu%C
 Licencia: CC BY-SA 4.0. Archivo: JPG, 2608 × 1952. Acceso directo. La ficha ubica la fotografía en Huinganco.
 
 Las cinco fichas fueron incorporadas después de revisar la página original de cada archivo, autoría, licencia, resolución y contexto. La ficha de Wikimedia Commons sigue siendo la referencia principal; antes de reutilizar, leer las condiciones de la licencia y mantener atribución y enlace.
+
+
+## Regla Mundial añadida: la salida libre
+
+**RUMA no busca retener personas. RUMA busca resolver una necesidad.**
+
+El ciclo completo es: llegar → buscar o elegir → previsualizar → ver o descargar → salir libremente.
+
+No se diseñan bucles de entretenimiento, scroll infinito, cuentas obligatorias, recompensas por permanecer, notificaciones, reproducción automática, presión para donar ni muros de pago. No se mide el éxito por minutos en la página; se mide por la calidad, claridad, legalidad y facilidad para obtener el recurso.
+
+### Interfaz pública
+
+- La tarjeta tiene dos acciones principales y nada más: **Ver** y **Descargar**.
+- La vista previa debe representar el recurso con honestidad. Una portada editorial ilustrativa no se presenta como imagen del archivo original; se identifica como vista previa descriptiva.
+- El botón Ver abre la vista de detalle. El detalle explica autoría, fuente, licencia y contexto sin abrumar.
+- El botón Descargar abre el archivo directo cuando está permitido; si el material solo se obtiene en una plataforma oficial, abre esa fuente y la tarjeta lo avisa con palabras simples.
+- El cartel de colaboración con alias `ocarina.guitarra` siempre dice que es voluntario. Ningún recurso se bloquea por no donar.
+- Los controles deben ser cómodos en móvil y escritorio; los textos no deben ser pequeños ni depender solo del color.
+
+### Orden geográfico obligatorio
+
+1. San Patricio del Chañar.
+2. Neuquén.
+3. Patagonia.
+4. Argentina.
+5. América Latina y mundo hispanohablante.
+
+Cada recurso lleva el campo `zona` para que el orden no dependa de adivinar a partir del título. Si no hay materiales locales con permisos y procedencia verificables, el estante del Chañar explica que la investigación sigue en marcha; no se llena con contenido inventado ni se presenta un recurso de otro lugar como local.
+
+### Medida de éxito
+
+El éxito no es que alguien se quede más tiempo. El éxito es que encuentre algo útil, lindo o necesario, entienda qué es, pueda obtenerlo legalmente y se vaya satisfecho.
