@@ -96,7 +96,7 @@
     noResults.hidden=visible.length!==0;
     count.textContent=searchTerm||activeFilter!=="Todos"
       ? visible.length+(visible.length===1?" recurso encontrado":" recursos encontrados")
-      : "Tenemos 10 recursos elegidos para empezar.";
+      : "Tenemos una primera colección de recursos elegidos para empezar.";
   }
   function resetFilters(){
     activeFilter="Todos";
