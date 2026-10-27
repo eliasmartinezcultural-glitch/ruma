@@ -1,28 +1,35 @@
 # RUMA Chañar
 
-RUMA comienza de cero y se enfoca únicamente en **San Patricio del Chañar, Neuquén**.
+**RUMA es acceso.** Una biblioteca-curaduría sencilla que acerca información y recursos útiles para San Patricio del Chañar, Neuquén.
 
-## Propósito
+## Para quién
+Vecinos de a pie, estudiantes, familias, adultos mayores, docentes, emprendedores y personas que quieren conocer mejor el pueblo.
 
-Reunir y acercar recursos reales que ayuden a vecinos de a pie: documentos públicos, mapas, historia local, guías prácticas, herramientas para emprendedores, naturaleza y biología, libros, cuentos, materiales imprimibles y curiosidades.
+## Qué hace
+- Organiza recursos por temas y permite buscarlos con palabras sencillas.
+- Cada ficha explica qué contiene y tiene un botón directo a la fuente.
+- Prioriza fuentes municipales y provinciales identificables.
+- No pide cuenta, no cobra por entrar y no condiciona el acceso a una donación.
+- Enlaza documentos originales en lugar de volver a alojarlos sin autorización.
+- Advierte cuando un archivo es histórico o puede haber quedado desactualizado.
 
-## Reglas
+## Criterio editorial
+No se publican recursos inventados ni se atribuyen permisos que no se hayan comprobado. Antes de sumar material nuevo, verificar relación con San Patricio del Chañar, utilidad real, procedencia, fecha, autoría y condiciones de uso. Si un dato puede cambiar —teléfonos, horarios, trámites— indicar la fuente y recomendar confirmar vigencia.
 
-- No inventar recursos, documentos, enlaces ni permisos.
-- Comprobar la fuente, autoría y condiciones de uso antes de publicar.
-- No presentar material de otros lugares como si fuera de Chañar.
-- Mantener una página sencilla, accesible y útil desde el teléfono.
-- Sin cuentas, anuncios invasivos ni donación obligatoria.
-- La colaboración es voluntaria: `ocarina.guitarra`.
+## Catálogo inicial
+1. Carta Orgánica Municipal — Boletín Oficial de la Provincia del Neuquén.
+2. Mapoteca Digital — Dirección Provincial de Catastro.
+3. Página municipal sobre la localidad y su entorno.
+4. Página municipal con actividades y propuestas locales.
+5. Contacto municipal publicado en el portal oficial.
+6. Boletín Oficial Municipal de 2019, marcado como archivo histórico.
+7. Informes del municipio — Ministerio de Economía, Producción e Industria de Neuquén.
+8. Portal oficial municipal.
 
-## Estado inicial
+Los enlaces fueron identificados en fuentes oficiales. Revisar periódicamente que sigan funcionando y que la información continúe vigente. RUMA no reemplaza a las instituciones ni constituye asesoramiento legal, administrativo o de emergencia.
 
-El catálogo empieza vacío deliberadamente. Las categorías son puertas de organización, no afirmaciones de que ya existan materiales publicados. La primera búsqueda editorial será de fuentes locales y documentos públicos auténticos, incluida la Carta Orgánica municipal.
+## Donaciones
+La colaboración es voluntaria: ocarina.guitarra, a nombre de Elías Martínez. Donar no desbloquea funciones ni recursos.
 
-## Archivos
-
-- `index.html`: portada local.
-- `styles.css`: presentación adaptable.
-- `app.js`: búsqueda inicial y selección de temas.
-
-La historia anterior del repositorio permanece en GitHub, pero el nuevo sitio se reconstruye desde una base mínima.
+## Tecnología
+HTML, CSS y JavaScript estáticos. Sin cuentas, base de datos ni servidor propio. Diseñado para GitHub Pages, teléfonos y pantallas pequeñas.
