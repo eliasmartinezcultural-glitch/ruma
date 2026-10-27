@@ -7,12 +7,14 @@
   <meta name="description" content="RUMA reúne recursos gratuitos, útiles y valiosos para aprender, trabajar, explorar y disfrutar.">
   <title>RUMA — La biblioteca de las cosas que valen la pena</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="catalogo.css">
 </head>
 <body>
   <header class="barra">
     <a class="marca" href="#inicio" aria-label="RUMA, inicio"><span class="marca-simbolo">r.</span><span>RUMA<small>UNA BIBLIOTECA PARA TODOS</small></span></a>
     <nav aria-label="Navegación principal">
       <a href="#colecciones">Las puertas</a>
+      <a href="#recursos">Recursos</a>
       <a href="#regla">Nuestra regla</a>
     </nav>
   </header>
@@ -23,7 +25,7 @@
         <p class="ceja"><span class="punto"></span> UN RINCÓN DE COSAS QUE SUMAN</p>
         <h1>Encontrar algo bueno <em>debería ser sencillo.</em></h1>
         <p class="bajada">Una biblioteca viva de recursos gratuitos que ya existen: reunidos, revisados y ordenados para que llegues a lo que necesitás sin dar mil vueltas.</p>
-        <a class="boton-principal" href="#colecciones">Explorar las puertas <span aria-hidden="true">↓</span></a>
+        <a class="boton-principal" href="#recursos">Explorar recursos <span aria-hidden="true">↓</span></a>
         <p class="nota-hero">Sin costo para explorar · Sin cuentas · Sin vueltas</p>
       </div>
       <div class="hero-dibujo" aria-label="Ilustración decorativa de una casita, libros y una planta">
@@ -61,17 +63,17 @@
         <article class="puerta puerta-aprender" data-categoria="aprender" data-palabras="aprender estudiar educación libros lectura cursos escuela estudiantes docentes conocimiento">
           <div class="puerta-icono" aria-hidden="true">✳</div><span class="numero">PUERTA 01</span>
           <h3>Aprender</h3><p>Libros, materiales educativos, guías de estudio y saberes para descubrir.</p>
-          <span class="estado"><i></i> Colección en preparación</span>
+          <span class="estado"><i></i> 2 recursos iniciales</span>
         </article>
         <article class="puerta puerta-trabajar" data-categoria="trabajar" data-palabras="trabajar emprendimientos emprendedores oficios herramientas negocios trámites trabajo proyectos">
           <div class="puerta-icono" aria-hidden="true">↗</div><span class="numero">PUERTA 02</span>
           <h3>Trabajar</h3><p>Herramientas prácticas para emprender, organizarse y resolver cosas.</p>
-          <span class="estado"><i></i> Colección en preparación</span>
+          <span class="estado"><i></i> 1 recurso inicial</span>
         </article>
         <article class="puerta puerta-explorar" data-categoria="explorar" data-palabras="explorar mapas territorio neuquen patagonia argentina latinoamerica historia naturaleza turismo cultura datos">
           <div class="puerta-icono" aria-hidden="true">⌁</div><span class="numero">PUERTA 03</span>
           <h3>Explorar</h3><p>Mapas, historia, territorio, naturaleza y curiosidades del mundo.</p>
-          <span class="estado"><i></i> Colección en preparación</span>
+          <span class="estado"><i></i> 2 recursos iniciales</span>
         </article>
         <article class="puerta puerta-disfrutar" data-categoria="disfrutar" data-palabras="disfrutar cuentos arte dibujos musica lectura ocio creatividad belleza cultura">
           <div class="puerta-icono" aria-hidden="true">♡</div><span class="numero">PUERTA 04</span>
@@ -83,9 +85,28 @@
       <button id="ver-todo" class="boton-texto" type="button" hidden>Ver las cuatro puertas</button>
     </section>
 
+
+    <section class="catalogo" id="recursos" aria-labelledby="titulo-recursos">
+      <div class="seccion-titulo">
+        <div><p class="ceja">PRIMEROS HALLAZGOS VERIFICADOS</p><h2 id="titulo-recursos">La caja empieza a llenarse.</h2></div>
+        <span class="contador" id="contador-recursos">05 recursos</span>
+      </div>
+      <p class="catalogo-intro">Una primera selección pequeña y cuidada. Cada ficha explica quién creó el recurso, qué licencia tiene y cómo obtenerlo sin perder de vista la fuente original.</p>
+      <div class="filtros-recursos" role="group" aria-label="Filtrar recursos por categoría">
+        <button type="button" class="filtro activo" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" class="filtro" data-filtro="aprender" aria-pressed="false">Aprender</button>
+        <button type="button" class="filtro" data-filtro="trabajar" aria-pressed="false">Trabajar</button>
+        <button type="button" class="filtro" data-filtro="explorar" aria-pressed="false">Explorar</button>
+        <button type="button" class="filtro" data-filtro="disfrutar" aria-pressed="false">Disfrutar</button>
+      </div>
+      <div id="lista-recursos" class="lista-recursos" aria-live="polite"></div>
+      <p id="sin-recursos" class="sin-recursos" hidden>No encontramos recursos para esa búsqueda. Probá otra palabra o elegí otra puerta.</p>
+      <p class="nota-catalogo">La licencia se revisa por recurso. Si el botón lleva a una fuente oficial, RUMA no afirma que pueda alojar una copia propia.</p>
+    </section>
+
     <section class="regla" id="regla">
       <div class="regla-ilustracion" aria-hidden="true"><div class="circulo"></div><span>R</span><i>✳</i></div>
-      <div class="regla-texto"><p class="ceja">LA REGLA MUNDIAL DE RUMA</p><h2>No creamos los recursos.<br><em>Los reunimos.</em></h2><p>Buscamos en fuentes locales, provinciales, regionales, nacionales y latinoamericanas. Solo entra lo que aporta valor y merece ser encontrado.</p>
+      <div class="regla-texto"><p class="ceja">LA REGLA MUNDIAL DE RUMA</p><h2>RUMA es acceso.<br><em>No creamos los recursos. Los reunimos.</em></h2><p>Buscamos en fuentes locales, provinciales, regionales, nacionales y de todo el mundo hispanohablante. Reconocemos a quienes crean, respetamos las licencias y hacemos más sencillo llegar a lo que vale la pena.</p>
         <div class="principios"><span><b>01</b> Reunir</span><span><b>02</b> Filtrar</span><span><b>03</b> Ordenar</span><span><b>04</b> Facilitar</span></div>
       </div>
     </section>
@@ -103,6 +124,7 @@
     <p>Un rinconcito de recursos que valen la pena.</p>
     <a href="#inicio" class="volver">Volver arriba ↑</a>
   </footer>
+  <script src="recursos.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
