@@ -41,7 +41,11 @@
   const input = document.getElementById("search");
   const count = document.getElementById("result-count");
   const noResults = document.getElementById("no-results");
-  const filters = [...document.querySelectorAll("[data-filter]")];
+  const filters = [...document.querySelectorAll(".filter")];
+  const dialog = document.getElementById("resource-dialog");
+  const dialogBody = document.getElementById("dialog-body");
+  const dialogTitle = document.getElementById("dialog-title");
+  const obtainResource = document.getElementById("obtain-resource");
   let activeFilter = "Todos";
   let searchTerm = "";
 
@@ -60,8 +64,12 @@
     visible.forEach(resource => {
       const article = document.createElement("article");
       article.className = "resource-card";
+
       const visual = document.createElement("div");
       visual.className = resource.image ? "resource-cover has-cover" : "resource-cover resource-cover--generic";
+      visual.style.backgroundColor = ({
+        "Lectura":"#f0dfd0","Mapas":"#e1e8d9","Estudio":"#f0e5b8","Historia":"#e6dfed"
+      })[resource.category] || "#eee7d8";
       if (resource.image) {
         const cover = document.createElement("img");
         cover.className = "resource-cover-image";
@@ -75,62 +83,155 @@
           cover.remove();
           const fallback = document.createElement("span");
           fallback.className = "resource-cover-symbol";
-          fallback.setAttribute("aria-hidden", "true");
           fallback.textContent = resource.icon;
+          fallback.setAttribute("aria-hidden", "true");
           visual.append(fallback);
         }, { once: true });
         visual.append(cover);
       } else {
         const symbol = document.createElement("span");
         symbol.className = "resource-cover-symbol";
-        symbol.setAttribute("aria-hidden", "true");
         symbol.textContent = resource.icon;
+        symbol.setAttribute("aria-hidden", "true");
         const label = document.createElement("span");
         label.className = "resource-cover-label";
         label.textContent = resource.category;
         visual.append(symbol, label);
       }
 
+      const body = document.createElement("div");
+      body.className = "resource-card-content";
       const top = document.createElement("div");
       top.className = "card-top";
-      const icon = document.createElement("span");
-      icon.className = "resource-icon";
-      icon.setAttribute("aria-hidden", "true");
-      icon.textContent = resource.icon;
       const category = document.createElement("span");
       category.className = "category-label";
       category.textContent = resource.category;
-      top.append(icon, category);
+      const icon = document.createElement("span");
+      icon.textContent = resource.icon;
+      icon.setAttribute("aria-hidden", "true");
+      top.append(category, icon);
 
       const title = document.createElement("h3");
       title.textContent = resource.title;
       const author = document.createElement("p");
-      author.className = "source";
+      author.className = "resource-author";
       author.textContent = resource.author;
       const description = document.createElement("p");
+      description.className = "resource-description";
       description.textContent = resource.description;
-      const format = document.createElement("p");
-      format.className = "source";
+
+      const meta = document.createElement("div");
+      meta.className = "resource-meta";
+      const format = document.createElement("span");
       format.textContent = resource.format;
-      const source = document.createElement("p");
-      source.className = "source";
-      source.textContent = "Fuente: " + resource.source;
+      const source = document.createElement("span");
+      source.textContent = resource.source;
+      meta.append(format, source);
 
-      const link = document.createElement("a");
-      link.className = "button button-primary";
-      link.href = resource.url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = resource.format.startsWith("PDF") ? "Ver / descargar archivo ↗" : "Abrir recurso ↗";
-      link.setAttribute("aria-label", link.textContent + ": " + resource.title);
+      const actions = document.createElement("div");
+      actions.className = "resource-card-actions";
+      const preview = document.createElement("button");
+      preview.type = "button";
+      preview.className = "preview-button";
+      preview.textContent = "Vista previa";
+      preview.setAttribute("aria-label", "Ver vista previa de " + resource.title);
+      preview.addEventListener("click", () => showPreview(resource));
+      const obtain = document.createElement("a");
+      obtain.className = "obtain-button";
+      obtain.href = resource.url;
+      obtain.target = "_blank";
+      obtain.rel = "noopener noreferrer";
+      obtain.textContent = "Obtener ↗";
+      obtain.setAttribute("aria-label", "Obtener " + resource.title + " desde su fuente original");
+      actions.append(preview, obtain);
 
-      article.append(visual, top, title, author, description, format, source, link);
+      body.append(top, title, author, description, meta, actions);
+      article.append(visual, body);
       grid.append(article);
     });
     noResults.hidden = visible.length !== 0;
     count.textContent = searchTerm || activeFilter !== "Todos"
       ? visible.length + (visible.length === 1 ? " recurso encontrado" : " recursos encontrados")
-      : `${resources.length} recursos reales seleccionados. Cada botón abre el material o la fuente original.`;
+      : resources.length + " recursos seleccionados con cuidado. Mirá la vista previa antes de obtenerlos.";
+  }
+
+  function showPreview(resource) {
+    dialogTitle.textContent = resource.title;
+    dialogBody.replaceChildren();
+
+    const layout = document.createElement("div");
+    layout.className = "preview-layout";
+    const art = document.createElement("div");
+    art.className = "preview-art";
+    if (resource.image) {
+      const image = document.createElement("img");
+      image.src = resource.image;
+      image.alt = "Portada original de " + resource.title;
+      image.referrerPolicy = "no-referrer";
+      image.addEventListener("error", () => {
+        art.replaceChildren();
+        const fallback = document.createElement("span");
+        fallback.className = "resource-cover-symbol";
+        fallback.textContent = resource.icon;
+        art.append(fallback);
+      }, { once: true });
+      art.append(image);
+    } else {
+      const symbol = document.createElement("span");
+      symbol.className = "resource-cover-symbol";
+      symbol.textContent = resource.icon;
+      symbol.setAttribute("aria-hidden", "true");
+      art.append(symbol);
+    }
+
+    const info = document.createElement("div");
+    info.className = "preview-info";
+    const title = document.createElement("h3");
+    title.textContent = resource.title;
+    const author = document.createElement("p");
+    author.className = "preview-author";
+    author.textContent = resource.author;
+    const description = document.createElement("p");
+    description.className = "preview-description";
+    description.textContent = resource.description;
+
+    const details = document.createElement("dl");
+    details.className = "preview-details";
+    [[ "Categoría", resource.category ], [ "Formato", resource.format ], [ "Fuente original", resource.source ]].forEach(([labelText, valueText]) => {
+      const wrapper = document.createElement("div");
+      const dt = document.createElement("dt");
+      dt.textContent = labelText;
+      const dd = document.createElement("dd");
+      dd.textContent = valueText;
+      wrapper.append(dt, dd);
+      details.append(wrapper);
+    });
+    info.append(title, author, description, details);
+    layout.append(art, info);
+    dialogBody.append(layout);
+
+    if (/^PDF\b/i.test(resource.format)) {
+      const frame = document.createElement("iframe");
+      frame.className = "pdf-preview";
+      frame.src = resource.url;
+      frame.title = "Vista previa del PDF: " + resource.title;
+      frame.loading = "lazy";
+      frame.referrerPolicy = "no-referrer";
+      frame.setAttribute("allow", "fullscreen");
+      const hint = document.createElement("p");
+      hint.className = "preview-hint";
+      hint.textContent = "La vista del documento depende de que el sitio original permita mostrarlo aquí. Si no aparece, usá «Obtener recurso» para abrir el PDF original.";
+      dialogBody.append(frame, hint);
+    } else {
+      const hint = document.createElement("p");
+      hint.className = "preview-hint";
+      hint.textContent = "Esta ficha te muestra qué vas a encontrar y quién lo publica. «Obtener recurso» abre la colección o el documento oficial.";
+      dialogBody.append(hint);
+    }
+
+    obtainResource.href = resource.url;
+    obtainResource.setAttribute("aria-label", "Obtener " + resource.title + " desde " + resource.source);
+    if (!dialog.open) dialog.showModal();
   }
   function resetFilters() {
     activeFilter = "Todos";
@@ -140,7 +241,7 @@
       item.setAttribute("aria-pressed", String(active));
     });
   }
-  filters.forEach(button => button.addEventListener("click", () => {
+  function applyFilter(button) {
     activeFilter = button.dataset.filter;
     filters.forEach(item => {
       const active = item === button;
@@ -148,7 +249,27 @@
       item.setAttribute("aria-pressed", String(active));
     });
     render();
+  }
+  filters.forEach(button => button.addEventListener("click", () => applyFilter(button)));
+  document.querySelectorAll(".door-card[data-filter]").forEach(button => button.addEventListener("click", () => {
+    activeFilter = button.dataset.filter;
+    filters.forEach(item => {
+      const active = item.dataset.filter === activeFilter;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+    render();
+    document.getElementById("estantes").scrollIntoView({ behavior: "smooth", block: "start" });
   }));
+  document.getElementById("close-resource").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
+  document.addEventListener("keydown", event => { if (event.key === "Escape" && dialog.open) dialog.close(); });
+  document.getElementById("empty-reset").addEventListener("click", () => {
+    input.value = "";
+    searchTerm = "";
+    resetFilters();
+    render();
+  });
   form.addEventListener("submit", event => {
     event.preventDefault();
     searchTerm = input.value.trim();
