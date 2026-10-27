@@ -69,6 +69,7 @@
   const dialogTitle = document.getElementById("dialog-title");
   const obtainResource = document.getElementById("obtain-resource");
   let activeFilter = "Todos";
+  let activeAccessFilter = "Todos";
   let searchTerm = "";
 
   function normalize(value) {
@@ -121,7 +122,8 @@
     const categoryMatch = activeFilter === "Todos" || resource.category === activeFilter;
     const text = normalize([resource.title, resource.author, resource.description, resource.category, resource.source, resource.tags, shelfFor(resource), accessLabel(resource)].join(" "));
     const words = normalize(searchTerm).trim().split(/\s+/).filter(Boolean);
-    return categoryMatch && words.every(word => text.includes(word));
+    const accessMatch = activeAccessFilter === "Todos" || (activeAccessFilter === "imprimibles" && isPrintable(resource)) || (activeAccessFilter === "descarga" && /^PDF\\b/i.test(resource.format));
+    return categoryMatch && accessMatch && words.every(word => text.includes(word));
   }
   function render() {
     const visible = resources.filter(matches).sort((a,b) => {
@@ -230,7 +232,7 @@
       grid.append(article);
     });
     noResults.hidden = visible.length !== 0;
-    count.textContent = searchTerm || activeFilter !== "Todos"
+    count.textContent = searchTerm || activeFilter !== "Todos" || activeAccessFilter !== "Todos"
       ? visible.length + (visible.length === 1 ? " recurso encontrado" : " recursos encontrados")
       : resources.length + " recursos seleccionados con cuidado. Mirá la vista previa antes de obtenerlos.";
   }
@@ -315,6 +317,12 @@
   }
   function resetFilters() {
     activeFilter = "Todos";
+    activeAccessFilter = "Todos";
+    accessFilters.forEach(item => {
+      const active = item.dataset.accessFilter === "Todos";
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
     filters.forEach(item => {
       const active = item.dataset.filter === "Todos";
       item.classList.toggle("active", active);
@@ -331,6 +339,16 @@
     render();
   }
   filters.forEach(button => button.addEventListener("click", () => applyFilter(button)));
+  const accessFilters = [...document.querySelectorAll(".access-filter")];
+  accessFilters.forEach(button => button.addEventListener("click", () => {
+    activeAccessFilter = button.dataset.accessFilter;
+    accessFilters.forEach(item => {
+      const active = item === button;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+    render();
+  }));
   document.querySelectorAll(".door-card[data-filter]").forEach(button => button.addEventListener("click", () => {
     activeFilter = button.dataset.filter;
     filters.forEach(item => {
