@@ -15,7 +15,7 @@ RUMA busca, selecciona y cataloga materiales que ya existen. Su punto de partida
 
 La colección de esta versión contiene **30 recursos reales**:
 - Quince libros en PDF de literatura argentina y clásica publicados por el Gobierno de la Provincia de Buenos Aires; las fichas incluyen portadas originales del catálogo oficial cuando están disponibles.
-- Cuatro accesos a mapas y cartografía oficial del Neuquén, incluida la colección Mapas Neuquinos de COPADE y su visor SIG, más el mapa cultural nacional de SInCA.
+- Tres accesos a mapas y cartografía oficial del Neuquén: colección Mapas Neuquinos de COPADE, visor SIG y Mapoteca Digital; además, el mapa cultural nacional de SInCA.
 - Recursos pedagógicos del Ministerio de Educación del Neuquén y catálogo Educ.ar.
 - Catálogo nacional de clásicos universales.
 - Biblioteca digital Libros y Casas.
