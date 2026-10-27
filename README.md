@@ -37,7 +37,7 @@ Los botones de los PDF llevan directamente al archivo original. Los demás lleva
 - Buscar materiales locales primero y ampliar a Neuquén, Argentina y el ámbito hispanohablante.
 - Diseño visual organizado en cinco categorías generales: Lecturas, Para estudiar, Recursos útiles, Para decorar, Mapas e historia.
 - Vista previa en una ficha emergente y un botón claro «Obtener» por recurso.
-- Buscador simple, filtros, diseño adaptable a móvil y computadora. Los resultados se ordenan como estantes de biblioteca: primero categoría general, luego subcolección y título. Cada ficha distingue PDF/descarga directa de portales y colecciones.
+- Buscador simple, filtros por categoría y por tipo de acceso (imprimibles o descarga directa), diseño adaptable a móvil y computadora. Los resultados se ordenan como estantes de biblioteca: primero categoría general, luego subcolección y título. Cada ficha distingue PDF/descarga directa de portales y colecciones.
 - Sin cuentas, base de datos ni servidor propio: HTML, CSS y JavaScript estáticos, preparados para GitHub Pages.
 - Donación voluntaria: alias `ocarina.guitarra`, a nombre de Elías Martínez. Donar no desbloquea recursos.
 
