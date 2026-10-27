@@ -27,6 +27,7 @@
     catch (_) { return "#"; }
   }
   function region(item) {
+    if (["chanar","neuquen","patagonia","argentina","hispanoamerica"].includes(item.zona)) return item.zona;
     const place = norm([item.alcance,item.titulo,item.descripcion,...(item.etiquetas || [])].join(" "));
     if (place.includes("san patricio del chanar") || place.includes("san patricio del chañar") || place.includes("chañar")) return "chanar";
     if (place.includes("neuquen") || place.includes("alumine") || place.includes("zapala") || place.includes("huinganco") || place.includes("las ovejas") || place.includes("pulmari") || place.includes("rahue")) return "neuquen";
@@ -38,10 +39,6 @@
   function matchesZone(item) {
     if (zone === "todos") return true;
     const itemZone = region(item);
-    if (zone === "neuquen") return itemZone === "neuquen";
-    if (zone === "patagonia") return ["chanar","neuquen","patagonia"].includes(itemZone);
-    if (zone === "argentina") return ["chanar","neuquen","patagonia","argentina"].includes(itemZone);
-    if (zone === "hispanoamerica") return itemZone === "hispanoamerica" || itemZone === "argentina";
     return itemZone === zone;
   }
   function cover(item, large = false) {
