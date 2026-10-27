@@ -66,3 +66,32 @@
 @media(max-width:800px){.metodo-pasos{grid-template-columns:repeat(2,minmax(0,1fr))}.semillas{align-items:flex-start;flex-direction:column}.filtro.guardados{margin-left:0}}
 @media(max-width:600px){.metodo{padding:42px 0 50px}.metodo-pasos{gap:8px}.metodo-pasos article{padding:14px}.metodo-pasos h3{font-size:18px}.metodo-pasos p{font-size:11px}.filtros-acceso{gap:6px}.filtros-acceso>span{width:100%}.filtro.guardados{margin-left:0}.recurso-insignias{gap:5px}.tipo-acceso{font-size:8px}.semillas{padding:18px}.boton-secundario{width:100%;text-align:center}}
 @media(prefers-reduced-motion:reduce){.recurso-card{transition:none}.recurso-card:hover{transform:none}}
+
+
+/* Ley mundial de amabilidad: cada ficha muestra una vista previa y una acción principal. */
+.recurso-preview{position:relative;min-height:190px}
+.recurso-preview img{display:block;width:100%;height:100%;min-height:190px;object-fit:contain;padding:12px}
+.etiqueta-vista{position:absolute;left:10px;bottom:10px;padding:5px 9px;border-radius:999px;background:rgba(255,253,248,.94);color:#40503e;font-size:10px;font-weight:700}
+.portada-recurso{padding:22px;gap:12px;text-align:center;align-content:center;background:#e9e9dc;color:#3f5040}
+.portada-recurso strong{max-width:270px;font:24px/1.18 Georgia,serif;font-weight:500}
+.portada-recurso small{max-width:240px;font-size:9px;line-height:1.6;letter-spacing:.1em;color:#687362}
+.portada-icono{display:grid;place-items:center;width:52px;height:52px;border-radius:17px 17px 17px 5px;background:#fffaf0;color:#6d8265;font-size:30px}
+.portada-aprender{background:#eee4d0}.portada-trabajar{background:#e0e9db}.portada-explorar{background:#e4e1ef}.portada-disfrutar{background:#f1dfd5}
+.recurso-acciones{width:100%;align-items:stretch}
+.recurso-accion{min-height:46px;font-size:13px}
+.accion-principal{flex:1;text-align:center;padding:13px 15px}
+.recurso-accion.guardar{min-height:44px;padding:10px 12px}
+.recurso-detalles summary{min-height:36px;display:flex;align-items:center}
+.recurso-meta a{text-decoration:underline;text-underline-offset:3px}
+.recurso-meta a:focus-visible,.recurso-detalles summary:focus-visible{outline:3px solid #b7a16d;outline-offset:3px}
+@media(max-width:600px){
+  .recurso-card{display:flex}
+  .recurso-preview,.recurso-preview img{height:190px;min-height:190px}
+  .recurso-cuerpo{padding:18px}
+  .recurso-acciones{flex-direction:row;align-items:stretch}
+  .recurso-accion{font-size:12px}
+}
+@media(max-width:360px){
+  .recurso-acciones{flex-direction:column}
+  .recurso-accion{width:100%}
+}
