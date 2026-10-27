@@ -13,8 +13,11 @@ RUMA busca, selecciona y cataloga materiales que ya existen. Su punto de partida
 
 ## Catálogo incorporado
 
-La colección de esta versión contiene **30 recursos reales**:
+La colección de esta versión contiene **44 recursos**:
 - Quince libros en PDF de literatura argentina y clásica publicados por el Gobierno de la Provincia de Buenos Aires; las fichas incluyen portadas originales del catálogo oficial cuando están disponibles.
+- Recursos de utilidad cotidiana de San Patricio del Chañar: trámites municipales, contactos institucionales, desarrollo económico local y guía municipal de lugares de interés.
+- Recursos para decorar e imprimir: Openclipart (CC0/dominio público según su política) y Wikimedia Commons, con la obligación de revisar la licencia individual de cada archivo.
+- Herramientas para emprendedores: guía descargable y recursos de formación del Estado nacional.
 - Tres accesos a mapas y cartografía oficial del Neuquén: colección Mapas Neuquinos de COPADE, visor SIG y Mapoteca Digital; además, el mapa cultural nacional de SInCA.
 - Recursos pedagógicos del Ministerio de Educación del Neuquén y catálogo Educ.ar.
 - Catálogo nacional de clásicos universales.
@@ -26,13 +29,13 @@ La colección de esta versión contiene **30 recursos reales**:
 - Referencia oficial a la norma que aprueba el Plan Estratégico para el Desarrollo Sustentable de San Patricio del Chañar.
 - Informe provincial de espacios culturales con relevamiento 2024–2025 y portal de datos abiertos relacionado (incluye la base CSV de 2025).
 
-Los botones de los PDF llevan directamente al archivo original. Los demás llevan a la colección o ficha institucional correspondiente. El catálogo de datos de espacios culturales declara licencia Creative Commons Atribución 4.0; la cartografía de Neuquén tiene restricciones de republicación y por eso no se copia dentro de RUMA.
+Los botones de los PDF llevan directamente al archivo original. Los demás llevan a la colección o ficha institucional correspondiente. El catálogo de datos de espacios culturales declara licencia Creative Commons Atribución 4.0; la cartografía de Neuquén tiene restricciones de republicación y por eso no se copia dentro de RUMA. Openclipart declara usar CC0 para sus ilustraciones; en Wikimedia Commons la licencia debe comprobarse en cada archivo. Los portales municipales y demás colecciones se enlazan como fuentes, sin copiar sus contenidos.
 
 ## Principios
 
 - Curaduría útil, verificable y respetuosa de autores y licencias.
 - Buscar materiales locales primero y ampliar a Neuquén, Argentina y el ámbito hispanohablante.
-- Diseño visual organizado en cuatro puertas temáticas: Libros y lectura, Mapas y territorio, Estudiar y aprender, Historia y archivos.
+- Diseño visual organizado en cinco categorías generales: Lecturas, Para estudiar, Recursos útiles, Para decorar, Mapas e historia.
 - Vista previa en una ficha emergente y un botón claro «Obtener» por recurso.
 - Buscador simple, filtros, diseño adaptable a móvil y computadora.
 - Sin cuentas, base de datos ni servidor propio: HTML, CSS y JavaScript estáticos, preparados para GitHub Pages.
