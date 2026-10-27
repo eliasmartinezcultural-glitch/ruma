@@ -2,7 +2,7 @@
 window.RUMA_RECURSOS = [
   {
     id: "mapa-patagonia-wv",
-    vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Patagonia_WV_map.svg/960px-Patagonia_WV_map.svg.png",
+    vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Patagonia_WV_map.svg/960px-Patagonia_WV_map.svg.png?utm_campaign=index&utm_content=thumbnail&utm_source=commons.wikimedia.org",
     titulo: "Mapa regional de la Patagonia",
     descripcion: "Mapa de regiones de la Patagonia para orientarse y explorar cómo se representa el territorio patagónico.",
     categoria: "explorar",
@@ -21,7 +21,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "mapa-historico-patagonia",
-    vistaPrevia: "https://upload.wikimedia.org/wikipedia/commons/3/31/Map_of_Patagonia%2C_Argentina.jpg",
+    vistaPrevia: "https://upload.wikimedia.org/wikipedia/commons/3/31/Map_of_Patagonia%2C_Argentina.jpg?utm_campaign=index&utm_content=thumbnail_unscaled&utm_source=commons.wikimedia.org",
     titulo: "Mapa histórico de la Patagonia (1683–1719)",
     descripcion: "Una pieza cartográfica histórica para mirar cómo se representaba la región en mapas antiguos. Es un documento patrimonial, no un mapa actual para orientarse.",
     categoria: "explorar",
@@ -48,11 +48,11 @@ window.RUMA_RECURSOS = [
     formato: "Libro electrónico / cuadernillo",
     creador: "Educ.ar",
     licencia: "Creative Commons BY-NC-SA (Atribución-NoComercial-CompartirIgual)",
-    licenciaUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es",
+    licenciaUrl: "https://www.educ.ar/recursos/150077/aprender-ciencias-naturales-con-recursos-digitales",
     fuente: "https://www.educ.ar/recursos/150077/aprender-ciencias-naturales-con-recursos-digitales",
     descarga: null,
     modoAcceso: "fuente",
-    estadoLegal: "La ficha oficial declara BY-NC-SA; consultar y obtener el material desde Educ.ar. No alojar una copia sin revisar las condiciones de la edición.",
+    estadoLegal: "La ficha oficial declara BY-NC-SA, pero el texto consultado no especifica la versión. Obtener desde Educ.ar; no alojar copia hasta confirmar las condiciones exactas.",
     puntaje: 78,
     nota: "Uso no comercial; si se adapta y redistribuye, deben respetarse las condiciones de CompartirIgual."
   },
@@ -66,11 +66,11 @@ window.RUMA_RECURSOS = [
     formato: "Colección de materiales",
     creador: "Educ.ar",
     licencia: "Creative Commons BY-NC-SA (Atribución-NoComercial-CompartirIgual)",
-    licenciaUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es",
+    licenciaUrl: "https://www.educ.ar/recursos/150086/aprender-con-recursos-digitales",
     fuente: "https://www.educ.ar/recursos/150086/aprender-con-recursos-digitales",
     descarga: null,
     modoAcceso: "fuente",
-    estadoLegal: "La ficha oficial declara BY-NC-SA; los materiales se obtienen desde la fuente original.",
+    estadoLegal: "La ficha oficial declara BY-NC-SA; confirmar la versión y condiciones de cada material antes de alojar copias propias.",
     puntaje: 79,
     nota: "Colección útil para familias, estudiantes y docentes; revisar cada archivo asociado antes de redistribuirlo."
   },
