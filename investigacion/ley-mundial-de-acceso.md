@@ -67,7 +67,7 @@ La puntuación es editorial, nunca una certificación legal.
 - **Radar:** portal o hallazgo potencial, todavía no aprobado.
 - **Descartado:** poco valor, enlace roto, datos no confiables o permisos incompatibles.
 
-## 6. Catálogo público inicial: nueve recursos
+## 6. Catálogo público: 19 recursos curados en dos tandas
 
 ### 1. Mapa regional de la Patagonia
 Autor: Ypsilon from Finland. Fuente: https://commons.wikimedia.org/wiki/File:Patagonia_WV_map.svg  
@@ -201,3 +201,28 @@ Fuentes verificadas para estas fichas:
 - https://commons.wikimedia.org/wiki/File:R%C3%ADo_Pulmari.jpg
 
 En todos los casos, al reutilizar una imagen hay que dar crédito al autor, enlazar la licencia y declarar los cambios; si se adapta la obra, respetar la condición CompartirIgual. La ficha original de Commons sigue siendo la referencia legal de cada archivo.
+
+
+## 13. Segunda ampliación: mapas y naturaleza
+
+### 15. Mapa general de la Patagonia occidental
+Autoría indicada en Commons: Commons, a partir del mapa base enlazado en la ficha. Fuente: https://commons.wikimedia.org/wiki/File:Mapa_general_de_la_Patagonia.svg  
+Licencia: CC BY-SA 4.0. Archivo: SVG, 750 × 1041 píxeles nominales. Acceso directo. Mapa visual de referencia; no usar como carta vial ni como fuente de límites oficiales.
+
+### 16. Mapa de distribución del Senecio fistulosus
+Autor: Juan Ibarra Landaida. Fuente: https://commons.wikimedia.org/wiki/File:Distribuci%C3%B3n_G._Senecio_F._Argentina.jpg  
+Licencia: CC0 1.0. Archivo: JPG, 862 × 492. Acceso directo. Mapa de distribución botánica; no sustituye una guía actualizada de identificación en campo.
+
+### 17. Lago Aluminé: paisaje de Neuquén
+Autor: CarlosA.Barrio. Fuente: https://commons.wikimedia.org/wiki/File:Alumine_Neuquen.jpg  
+Licencia: CC BY-SA 4.0. Archivo: JPG, 1632 × 1224. Acceso directo. Comprobar tamaño antes de imprimir en gran formato.
+
+### 18. Sierra del Chachil desde la Ruta 40
+Autor: Dangelin5. Fuente: https://commons.wikimedia.org/wiki/File:Sierra_del_Chachil.JPG  
+Licencia: CC BY-SA 3.0. Archivo: JPG, 3872 × 2592. Acceso directo. La descripción ubica la vista cerca de Zapala; la imagen no informa sobre condiciones actuales de la ruta.
+
+### 19. Río Neuquén en otoño, Huinganco
+Autor: Aleperez1024. Fuente: https://commons.wikimedia.org/wiki/File:Rio_Neuqu%C3%A9n.jpg  
+Licencia: CC BY-SA 4.0. Archivo: JPG, 2608 × 1952. Acceso directo. La ficha ubica la fotografía en Huinganco.
+
+Las cinco fichas fueron incorporadas después de revisar la página original de cada archivo, autoría, licencia, resolución y contexto. La ficha de Wikimedia Commons sigue siendo la referencia principal; antes de reutilizar, leer las condiciones de la licencia y mantener atribución y enlace.
