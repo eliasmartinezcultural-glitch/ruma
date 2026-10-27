@@ -2,6 +2,7 @@
 window.RUMA_RECURSOS = [
   {
     id: "mapa-patagonia-wv",
+    vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Patagonia_WV_map.svg/960px-Patagonia_WV_map.svg.png",
     titulo: "Mapa regional de la Patagonia",
     descripcion: "Mapa de regiones de la Patagonia para orientarse y explorar cómo se representa el territorio patagónico.",
     categoria: "explorar",
@@ -20,6 +21,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "mapa-historico-patagonia",
+    vistaPrevia: "https://upload.wikimedia.org/wikipedia/commons/3/31/Map_of_Patagonia%2C_Argentina.jpg",
     titulo: "Mapa histórico de la Patagonia (1683–1719)",
     descripcion: "Una pieza cartográfica histórica para mirar cómo se representaba la región en mapas antiguos. Es un documento patrimonial, no un mapa actual para orientarse.",
     categoria: "explorar",
