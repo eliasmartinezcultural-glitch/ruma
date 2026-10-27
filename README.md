@@ -1,50 +1,28 @@
-# RUMA
+# RUMA Chañar
 
-**RUMA ES ACCESO.** Encontrá algo útil, lindo o necesario. Miralo, llevalo y seguí con tu día.
+RUMA comienza de cero y se enfoca únicamente en **San Patricio del Chañar, Neuquén**.
 
-RUMA reúne recursos creados por otras personas e instituciones. Los busca, revisa y ordena; no inventa archivos ni permisos.
+## Propósito
 
-## La ley mundial
+Reunir y acercar recursos reales que ayuden a vecinos de a pie: documentos públicos, mapas, historia local, guías prácticas, herramientas para emprendedores, naturaleza y biología, libros, cuentos, materiales imprimibles y curiosidades.
 
-- La persona llega, busca, ve o descarga y se va libremente.
-- Interfaz sencilla, sin cuentas ni pago obligatorio.
-- Cada tarjeta tiene solo dos acciones: **Ver** y **Descargar**.
-- Autoría, fuente, licencia y condiciones claras.
-- Colaboración voluntaria: `ocarina.guitarra`. Donar nunca desbloquea contenido.
+## Reglas
 
-## Orden principal
+- No inventar recursos, documentos, enlaces ni permisos.
+- Comprobar la fuente, autoría y condiciones de uso antes de publicar.
+- No presentar material de otros lugares como si fuera de Chañar.
+- Mantener una página sencilla, accesible y útil desde el teléfono.
+- Sin cuentas, anuncios invasivos ni donación obligatoria.
+- La colaboración es voluntaria: `ocarina.guitarra`.
 
-San Patricio del Chañar → Neuquén → Patagonia → Argentina → América Latina y mundo hispanohablante.
+## Estado inicial
 
-Dentro de cada lugar, la organización temática es amplia:
+El catálogo empieza vacío deliberadamente. Las categorías son puertas de organización, no afirmaciones de que ya existan materiales publicados. La primera búsqueda editorial será de fuentes locales y documentos públicos auténticos, incluida la Carta Orgánica municipal.
 
-- Vida práctica y documentos públicos.
-- Trabajo y emprendimiento.
-- Mapas y territorio.
-- Naturaleza y ciencia.
-- Libros, cuentos y lectura.
-- Arte y materiales imprimibles.
-- Historia y comunidad.
-- Curiosidades y hallazgos útiles.
+## Archivos
 
-El esquema completo y las prioridades están en [Orden temático](investigacion/orden-tematico.md).
+- `index.html`: portada local.
+- `styles.css`: presentación adaptable.
+- `app.js`: búsqueda inicial y selección de temas.
 
-## Catálogo actual
-
-La primera capa contiene **19 recursos**. Es un comienzo, no una biblioteca completa. El estante de San Patricio del Chañar seguirá vacío hasta encontrar materiales reales con procedencia y permisos comprobables; no se presentan recursos de otros lugares como si fueran locales.
-
-## Archivos del sitio
-
-- `index.html`: portada y búsqueda.
-- `styles.css`: diseño adaptable.
-- `recursos.js`: fichas documentales.
-- `app.js`: búsqueda, estantes, vistas y acciones.
-- `investigacion/ley-mundial-de-acceso.md`: reglas de acceso.
-- `investigacion/arquitectura-biblioteca.md`: estructura documental.
-- `investigacion/orden-tematico.md`: categorías y prioridades.
-
-## Regla para publicar
-
-No basta con que algo sea gratis. Antes de publicarlo se comprueban autoría, fuente, licencia, enlace y vista previa. Si no se puede alojar una copia, se explica y se enlaza la fuente oficial.
-
-**El éxito es que alguien encuentre algo valioso, se lo lleve y pueda seguir con su día.**
+La historia anterior del repositorio permanece en GitHub, pero el nuevo sitio se reconstruye desde una base mínima.
