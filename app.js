@@ -63,7 +63,7 @@
   const input = document.getElementById("search");
   const count = document.getElementById("result-count");
   const noResults = document.getElementById("no-results");
-  const filters = [...document.querySelectorAll(".filter")];
+  const filters = [...document.querySelectorAll(".filters:not(.access-filters) .filter")];
   const dialog = document.getElementById("resource-dialog");
   const dialogBody = document.getElementById("dialog-body");
   const dialogTitle = document.getElementById("dialog-title");
