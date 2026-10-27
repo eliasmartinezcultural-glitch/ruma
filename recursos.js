@@ -2,6 +2,7 @@
 window.RUMA_RECURSOS = [
   {
     id: "mapa-patagonia-wv",
+    zona: "patagonia",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Patagonia_WV_map.svg/960px-Patagonia_WV_map.svg.png?utm_campaign=index&utm_content=thumbnail&utm_source=commons.wikimedia.org",
     titulo: "Mapa regional de la Patagonia",
     descripcion: "Mapa de regiones de la Patagonia para orientarse y explorar cómo se representa el territorio patagónico.",
@@ -21,6 +22,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "mapa-historico-patagonia",
+    zona: "patagonia",
     vistaPrevia: "https://upload.wikimedia.org/wikipedia/commons/3/31/Map_of_Patagonia%2C_Argentina.jpg?utm_campaign=index&utm_content=thumbnail_unscaled&utm_source=commons.wikimedia.org",
     titulo: "Mapa histórico de la Patagonia (1683–1719)",
     descripcion: "Una pieza cartográfica histórica para mirar cómo se representaba la región en mapas antiguos. Es un documento patrimonial, no un mapa actual para orientarse.",
@@ -40,6 +42,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "educar-ciencias-naturales",
+    zona: "argentina",
     titulo: "Aprender Ciencias Naturales con recursos digitales",
     descripcion: "Cuadernillo con propuestas para integrar recursos digitales en el aprendizaje de Ciencias Naturales en la escuela primaria.",
     categoria: "aprender",
@@ -58,6 +61,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "educar-aprender-recursos",
+    zona: "argentina",
     titulo: "Aprender con recursos digitales",
     descripcion: "Colección de propuestas de actividades para Matemática, Lengua, Ciencias Naturales y Ciencias Sociales para primaria y secundaria.",
     categoria: "aprender",
@@ -76,6 +80,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "espacios-culturales-neuquen",
+    zona: "neuquen",
     titulo: "Espacios culturales de la provincia del Neuquén",
     descripcion: "Relevamiento provincial con un informe en PDF y una base de datos CSV de espacios culturales.",
     categoria: "trabajar",
@@ -95,6 +100,7 @@ window.RUMA_RECURSOS = [
 ,
   {
     id: "seguimos-leyendo-educar",
+    zona: "argentina",
     titulo: "Seguimos leyendo: biblioteca de libros digitales abiertos",
     descripcion: "Una gran colección en español con novelas, cuentos, poesía y teatro para leer, descargar y explorar. Incluye clásicos y literatura argentina.",
     categoria: "disfrutar",
@@ -113,6 +119,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "flora-patagonica-mala-espina",
+    zona: "patagonia",
     vistaPrevia: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Flora_Patagonica.JPG/960px-Flora_Patagonica.JPG",
     titulo: "Flora patagónica: fotografía de la mala espina",
     descripcion: "Fotografía de una planta patagónica identificada en la ficha como mala espina. Un pequeño punto de partida para observar la flora regional.",
@@ -132,6 +139,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "pinguino-magallanes-fotografia",
+    zona: "patagonia",
     vistaPrevia: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Patagonia_argentina.jpg/960px-Patagonia_argentina.jpg",
     titulo: "Pingüino de Magallanes: fotografía patagónica",
     descripcion: "Una fotografía de naturaleza con una imagen de gran tamaño, apta para observar detalles y usar en materiales propios respetando la licencia.",
@@ -153,6 +161,7 @@ window.RUMA_RECURSOS = [
 ,
   {
     id: "educlasicos-educar",
+    zona: "argentina",
     titulo: "Educlásicos: clásicos de la literatura universal",
     descripcion: "Una colección de más de cien títulos clásicos, con novelas, teatro, ensayos, poemas y cuentos para leer en línea o descargar desde Educ.ar.",
     categoria: "disfrutar",
@@ -173,6 +182,7 @@ window.RUMA_RECURSOS = [
 ,
   {
     id: "paisaje-patagonico-laguna-zeta",
+    zona: "patagonia",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Paisaje_patag%C3%B3nico.jpg/960px-Paisaje_patag%C3%B3nico.jpg",
     titulo: "Paisaje patagónico: Laguna La Zeta",
     descripcion: "Fotografía de la Laguna La Zeta, en Esquel, Chubut. Un paisaje para observar, estudiar o usar en proyectos creativos respetando los créditos.",
@@ -192,6 +202,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "otono-en-neuquen",
+    zona: "neuquen",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Oto%C3%B1o_en_neuquen.jpg/330px-Oto%C3%B1o_en_neuquen.jpg",
     titulo: "Otoño en Neuquén: paseo junto al río",
     descripcion: "Fotografía vertical de un paseo otoñal junto al río, publicada por su autor en Wikimedia Commons.",
@@ -211,6 +222,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "las-ovejas-neuquen-paisaje",
+    zona: "neuquen",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/LasOvejas.jpg/330px-LasOvejas.jpg",
     titulo: "Las Ovejas: paisaje del norte neuquino",
     descripcion: "Una fotografía de paisaje de Las Ovejas, Neuquén, para conocer visualmente el norte de la provincia.",
@@ -230,6 +242,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "bajada-del-rahue-neuquen",
+    zona: "neuquen",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Bajada_del_Rahue-_Neuqu%C3%A9n.jpg/960px-Bajada_del_Rahue-_Neuqu%C3%A9n.jpg",
     titulo: "Bajada del Rahue: camino a Aluminé",
     descripcion: "Fotografía amplia del paisaje y la ruta en la Bajada del Rahue, provincia de Neuquén.",
@@ -249,6 +262,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "rio-pulmari-neuquen",
+    zona: "neuquen",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/R%C3%ADo_Pulmari.jpg/960px-R%C3%ADo_Pulmari.jpg",
     titulo: "Río Pulmarí: agua y bosque neuquino",
     descripcion: "Fotografía del río Pulmarí en la provincia de Neuquén, un recurso visual para aprender y crear con respeto por su autoría.",
@@ -269,6 +283,7 @@ window.RUMA_RECURSOS = [
 ,
   {
     id: "mapa-general-patagonia-occidental",
+    zona: "patagonia",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Mapa_general_de_la_Patagonia.svg/500px-Mapa_general_de_la_Patagonia.svg.png",
     titulo: "Mapa general de la Patagonia occidental",
     descripcion: "Mapa visual de la Patagonia occidental para explorar el territorio y reconocer referencias geográficas. No es una carta vial.",
@@ -288,6 +303,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "distribucion-senecio-fistulosus",
+    zona: "argentina",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Distribuci%C3%B3n_G._Senecio_F._Argentina.jpg/330px-Distribuci%C3%B3n_G._Senecio_F._Argentina.jpg",
     titulo: "Mapa de distribución del Senecio fistulosus",
     descripcion: "Mapa sencillo que muestra una distribución geográfica publicada para la planta Senecio fistulosus en Argentina.",
@@ -307,6 +323,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "lago-alumine-neuquen",
+    zona: "neuquen",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Alumine_Neuquen.jpg/960px-Alumine_Neuquen.jpg",
     titulo: "Lago Aluminé: paisaje de Neuquén",
     descripcion: "Fotografía del lago Aluminé rodeado de vegetación y montañas, útil para conocer visualmente los paisajes de la provincia.",
@@ -326,6 +343,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "sierra-del-chachil",
+    zona: "neuquen",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Sierra_del_Chachil.JPG/960px-Sierra_del_Chachil.JPG",
     titulo: "Sierra del Chachil desde la Ruta 40",
     descripcion: "Fotografía de la Sierra del Chachil vista desde la Ruta Nacional 40, cerca de Zapala.",
@@ -345,6 +363,7 @@ window.RUMA_RECURSOS = [
   },
   {
     id: "rio-neuquen-huinganco-otono",
+    zona: "neuquen",
     vistaPrevia: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Rio_Neuqu%C3%A9n.jpg/960px-Rio_Neuqu%C3%A9n.jpg",
     titulo: "Río Neuquén en otoño, Huinganco",
     descripcion: "Fotografía del río Neuquén y los árboles otoñales en Huinganco, al norte de la provincia.",
