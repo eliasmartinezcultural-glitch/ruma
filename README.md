@@ -1,17 +1,23 @@
-# RUMA Chañar — versión comunitaria 1.0
+# RUMA — biblioteca digital comunitaria
+
+**Estado:** reactivación en rama de trabajo `reactivacion-octubre-2026`.
+
+RUMA reúne y organiza recursos útiles que ya existen, empezando por San Patricio del Chañar y ampliándose a Neuquén, Argentina y el ámbito hispanohablante. Su valor está en la búsqueda, la curaduría, las explicaciones claras y el acceso sencillo.
 
 **Lo útil, más cerca.** RUMA es una pequeña biblioteca-curaduría de información y recursos para San Patricio del Chañar, Neuquén.
 
-## Regla de la versión 1.0
+## Principios de RUMA
 
-- Mantener exactamente diez fichas hasta consolidar la experiencia.
+- Ampliar la colección de forma gradual, priorizando utilidad real y fuentes verificables.
 - Conservar el diseño, la identidad y la estructura base.
 - El acceso principal debe permanecer dentro de RUMA: abrir una ficha en un cuadro interno y descargar una copia de esa ficha sin navegar a otro sitio.
 - Las fichas son contenido original de orientación, no reproducciones íntegras de documentos o páginas externas.
 - No copiar ni alojar mapas, documentos o materiales de terceros sin comprobar permisos y condiciones de uso.
 - Las fuentes consultadas se identifican en cada ficha. Los datos de contacto pueden cambiar y deben verificarse antes de usarlos.
 
-## Los diez recursos de la edición 1.0
+## Colección inicial
+
+La colección contiene 18 fichas: las diez fichas locales originales y ocho puertas de entrada a recursos públicos de Neuquén y Argentina.
 
 1. Carta Orgánica Municipal: ficha explicativa, no texto legal íntegro.
 2. Mapa de San Patricio del Chañar: ficha de orientación; la imagen catastral consultada indica uso personal y no se republica.
@@ -28,7 +34,7 @@
 
 Cada ficha puede descargarse como archivo de texto desde el propio cuadro de RUMA. Es una ficha de orientación redactada para este proyecto; **no es el PDF íntegro ni una copia de la página oficial**. Esta distinción evita prometer una descarga que no se está ofreciendo y respeta las condiciones de uso conocidas.
 
-## Antes de sumar el recurso número once
+## Reglas antes de sumar recursos
 
 - Probar las diez fichas, descargas, buscador, filtros y accesibilidad móvil.
 - Verificar teléfonos, correos y datos sensibles.
@@ -42,3 +48,25 @@ Alias: `ocarina.guitarra`, a nombre de Elías Martínez. Donar no desbloquea fun
 ## Tecnología
 
 HTML, CSS y JavaScript estáticos. Sin cuentas, base de datos ni servidor propio. Preparado para GitHub Pages.
+
+
+## Fuentes incorporadas en la reactivación
+
+- Mapoteca Digital del Neuquén: https://dpc.neuquen.gov.ar/Mapa
+- Colección Mapas Neuquinos de COPADE: https://www.copade.gob.ar/coleccion-mapas-neuquinos/
+- Portal de Datos Abiertos del Neuquén: https://portaldatosabiertos.neuquen.gov.ar/
+- Recursos educativos Educ.ar: https://www.educ.ar/recursos
+- Servicios en línea de la Biblioteca Nacional: https://bn.gob.ar/biblioteca/servicios/online
+- Libros CONABIP: https://www.conabip.gob.ar/content/libros-conabip
+- Libros digitales de dominio público: https://gba.gob.ar/lecturas/libros_digitales
+- Ecosistema emprendedor argentino: https://www.argentina.gob.ar/economia/pymes-emprendedores-y-economia-del-conocimiento/ecosistema-emprendedor
+
+Las nuevas fichas enlazan directamente a la institución responsable. Eso no equivale a que RUMA aloje el archivo original. Antes de alojar una copia, debe verificarse licencia, dominio público o autorización expresa. En particular, la Mapoteca Digital de Neuquén indica límites de uso y prohíbe republicar sus mapas sin autorización.
+
+## Próxima etapa prioritaria
+
+1. Verificar los datos locales sensibles (teléfono y correo municipal) y actualizar sus fechas de revisión.
+2. Probar en móvil buscador, filtros, modal, descarga y botones de copiar.
+3. Identificar archivos concretos con permiso claro para alojarlos directamente en RUMA, con vista previa, autoría, licencia y botón único de descarga.
+4. Agregar fecha de revisión y tipo de acceso en cada ficha: descarga dentro de RUMA, descarga oficial o consulta externa.
+5. No publicar recursos por volumen: cada incorporación debe aportar valor y explicar sus permisos.
