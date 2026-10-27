@@ -14,32 +14,36 @@ RUMA es una biblioteca-curaduría: no crea los recursos que reúne. Los busca, v
 - Evitar enlaces inventados, descargas dudosas, registros innecesarios y recorridos confusos.
 - No llenar el catálogo por cantidad: cada recurso debe merecer estar en la caja.
 
-## Cuatro puertas iniciales
+## Las cuatro puertas
 
 1. **Aprender:** libros, materiales educativos, guías y saberes.
 2. **Trabajar:** recursos para emprendimientos, oficios y tareas prácticas.
 3. **Explorar:** mapas, historia, territorio, naturaleza y cultura.
 4. **Disfrutar:** lecturas, arte y hallazgos que hacen bien.
 
-## Estado de esta versión
+## Estado de la refundación
 
-- Catálogo inicial de 5 recursos candidatos.
-- 2 recursos cartográficos con enlaces directos a archivos cuyas fichas identifican CC0 o dominio público.
-- 3 recursos educativos/culturales enlazados a sus fuentes oficiales.
+- Catálogo de 9 recursos seleccionados, con créditos, fuente, licencia y notas de uso.
+- Enlaces directos para archivos cuya ficha identifica CC0 o dominio público y para imágenes bajo licencias que permiten compartir, respetando sus condiciones.
+- Enlaces a fuentes oficiales para colecciones educativas con condiciones que requieren atención adicional.
 - Búsqueda local por título, tema, formato, alcance, creador y licencia.
-- Filtros por las cuatro puertas.
-- Fichas con autoría, licencia, procedencia y notas de uso.
-- Registro editorial en `investigacion/primera-capa.md`.
+- Filtros por las cuatro puertas y por forma de acceso.
+- Guardados locales en el dispositivo, sin cuentas ni servidor.
+- Diseño adaptable y fichas ampliadas con contexto, etiquetas y condiciones.
+- Nueva capa editorial y documento maestro de curaduría.
 
-El catálogo es una primera capa curada, no una colección completa. Los recursos deben revisarse periódicamente y cualquier licencia ambigua se mantiene marcada como pendiente. La página no tiene servidor ni base de datos: el catálogo está en archivos JavaScript estáticos.
+## Manuales de trabajo
+
+- [Ley Mundial de Acceso y sistema de curaduría](investigacion/ley-mundial-de-acceso.md)
+- [Primera capa de investigación](investigacion/primera-capa.md)
 
 ## Archivos principales
 
 - `index.html`: estructura y contenido de la página.
 - `styles.css`: diseño general adaptable.
-- `catalogo.css`: tarjetas y filtros del catálogo.
-- `recursos.js`: datos del catálogo.
-- `app.js`: búsqueda y filtros en el navegador.
-- `investigacion/primera-capa.md`: fuentes, análisis y decisiones de curaduría.
+- `catalogo.css`: tarjetas, filtros y estructura editorial del catálogo.
+- `recursos.js`: catálogo documental.
+- `app.js`: búsqueda, filtros, guardados y navegación de categorías.
+- `investigacion/`: registros de fuentes, licencias, decisiones y próximas búsquedas.
 
-La versión anterior se conserva en `archive-before-reset-2026-10-24`.
+La web no tiene backend ni base de datos. El catálogo vive en archivos estáticos y los favoritos se guardan localmente en el navegador de cada visitante. El catálogo es una primera capa: cada enlace debe probarse periódicamente y las licencias deben revisarse antes de redistribuir materiales.

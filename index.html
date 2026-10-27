@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4efe6">
-  <meta name="description" content="RUMA reúne recursos gratuitos, útiles y valiosos para aprender, trabajar, explorar y disfrutar.">
-  <title>RUMA — La biblioteca de las cosas que valen la pena</title>
+  <meta name="description" content="RUMA ES ACCESO: recursos útiles, lindos e interesantes, con autoría y licencias claras, reunidos para encontrar y obtener sin dar mil vueltas.">
+  <title>RUMA ES ACCESO — Una caja de recursos que valen la pena</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="catalogo.css">
 </head>
@@ -22,9 +22,9 @@
   <main id="inicio">
     <section class="hero">
       <div class="hero-texto">
-        <p class="ceja"><span class="punto"></span> UN RINCÓN DE COSAS QUE SUMAN</p>
-        <h1>Encontrar algo bueno <em>debería ser sencillo.</em></h1>
-        <p class="bajada">Una biblioteca viva de recursos gratuitos que ya existen: reunidos, revisados y ordenados para que llegues a lo que necesitás sin dar mil vueltas.</p>
+        <p class="ceja"><span class="punto"></span> LA LEY MUNDIAL DE RUMA</p>
+        <h1>RUMA es acceso.<em>Encontrar algo bueno debería ser sencillo.</em></h1>
+        <p class="bajada">Una caja de recursos útiles, lindos e interesantes que ya existen. Los buscamos, cuidamos sus créditos y acercamos la forma más sencilla de llegar a ellos.</p>
         <a class="boton-principal" href="#recursos">Explorar recursos <span aria-hidden="true">↓</span></a>
         <p class="nota-hero">Sin costo para explorar · Sin cuentas · Sin vueltas</p>
       </div>
@@ -48,10 +48,10 @@
       <form id="form-busqueda" class="buscador" role="search">
         <span aria-hidden="true">⌕</span>
         <label class="solo-lectores" for="consulta">Buscar en RUMA</label>
-        <input id="consulta" name="consulta" type="search" placeholder="Ej.: mapas, estudiar, emprendimientos…" autocomplete="off">
+        <input id="consulta" name="consulta" type="search" placeholder="Ej.: cuentos, mapas patagónicos, huerta, ilustraciones…" autocomplete="off">
         <button type="submit">Buscar</button>
       </form>
-      <div id="resultado-busqueda" class="resultado" aria-live="polite">Estamos preparando la primera selección de recursos. Mientras tanto, podés conocer nuestras cuatro puertas.</div>
+      <div id="resultado-busqueda" class="resultado" aria-live="polite">Buscá por tema, lugar, formato o creador. No hace falta saber el nombre exacto del archivo.</div>
     </section>
 
     <section class="colecciones" id="colecciones">
@@ -88,10 +88,10 @@
 
     <section class="catalogo" id="recursos" aria-labelledby="titulo-recursos">
       <div class="seccion-titulo">
-        <div><p class="ceja">PRIMEROS HALLAZGOS VERIFICADOS</p><h2 id="titulo-recursos">La caja empieza a llenarse.</h2></div>
-        <span class="contador" id="contador-recursos">05 recursos</span>
+        <div><p class="ceja">HALLAZGOS CON PROCEDENCIA Y LICENCIA</p><h2 id="titulo-recursos">Abrí la caja.</h2></div>
+        <span class="contador" id="contador-recursos">09 recursos</span>
       </div>
-      <p class="catalogo-intro">Una primera selección pequeña y cuidada. Cada ficha explica quién creó el recurso, qué licencia tiene y cómo obtenerlo sin perder de vista la fuente original.</p>
+      <p class="catalogo-intro">Cada ficha te cuenta qué es, quién lo creó, qué licencia declara y cómo obtenerlo. Si no podemos alojar el archivo, te acercamos a su fuente original.</p>
       <div class="filtros-recursos" role="group" aria-label="Filtrar recursos por categoría">
         <button type="button" class="filtro activo" data-filtro="todos" aria-pressed="true">Todos</button>
         <button type="button" class="filtro" data-filtro="aprender" aria-pressed="false">Aprender</button>
@@ -99,9 +99,36 @@
         <button type="button" class="filtro" data-filtro="explorar" aria-pressed="false">Explorar</button>
         <button type="button" class="filtro" data-filtro="disfrutar" aria-pressed="false">Disfrutar</button>
       </div>
+      <div class="filtros-acceso" role="group" aria-label="Filtrar por forma de acceso">
+        <span>Cómo querés acceder:</span>
+        <button type="button" class="filtro activo" data-acceso="todos" aria-pressed="true">Todo</button>
+        <button type="button" class="filtro" data-acceso="directo" aria-pressed="false">Descarga directa</button>
+        <button type="button" class="filtro" data-acceso="fuente" aria-pressed="false">Fuente original</button>
+        <button type="button" id="ver-guardados" class="filtro guardados" aria-pressed="false">♡ Mis guardados (0)</button>
+        <button type="button" id="limpiar-busqueda" class="filtro limpiar">Limpiar filtros</button>
+      </div>
       <div id="lista-recursos" class="lista-recursos" aria-live="polite"></div>
       <p id="sin-recursos" class="sin-recursos" hidden>No encontramos recursos para esa búsqueda. Probá otra palabra o elegí otra puerta.</p>
-      <p class="nota-catalogo">La licencia se revisa por recurso. Si el botón lleva a una fuente oficial, RUMA no afirma que pueda alojar una copia propia.</p>
+      <p class="nota-catalogo">La licencia se revisa por recurso. “Descarga directa” significa que el archivo se abre desde su ubicación original. “Fuente original” significa que te llevamos a la institución o creador para obtenerlo allí. Los guardados quedan en este dispositivo; no se crea una cuenta.</p>
+    </section>
+
+
+    <section class="metodo" id="metodo" aria-labelledby="titulo-metodo">
+      <div class="metodo-cabecera">
+        <p class="ceja">EL TRABAJO QUE RUMA HACE POR VOS</p>
+        <h2 id="titulo-metodo">La caja es simple.<br><em>La búsqueda, no.</em></h2>
+        <p>Detrás de cada hallazgo hay un trabajo de biblioteca: buscar, revisar, describir y comprobar cómo se puede compartir.</p>
+      </div>
+      <div class="metodo-pasos">
+        <article><span>01</span><h3>Encontramos</h3><p>Investigamos fuentes locales, provinciales, argentinas y del mundo hispanohablante.</p></article>
+        <article><span>02</span><h3>Elegimos</h3><p>Priorizamos utilidad real, calidad, belleza, claridad y valor cultural.</p></article>
+        <article><span>03</span><h3>Reconocemos</h3><p>Conservamos autoría, procedencia, licencia y condiciones de uso.</p></article>
+        <article><span>04</span><h3>Acercamos</h3><p>Facilitamos la descarga cuando corresponde o abrimos el camino a la fuente original.</p></article>
+      </div>
+      <div class="semillas">
+        <div><p class="ceja">INVESTIGACIÓN EN MARCHA</p><h3>También sabemos cuándo esperar.</h3><p>Si encontramos algo valioso pero no podemos confirmar su licencia, no lo disfrazamos de descarga libre. Lo dejamos en revisión hasta saber cómo compartirlo correctamente.</p></div>
+        <a class="boton-secundario" href="investigacion/primera-capa.md" target="_blank" rel="noopener noreferrer">Ver el cuaderno de investigación ↗</a>
+      </div>
     </section>
 
     <section class="regla" id="regla">

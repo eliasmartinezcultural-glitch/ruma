@@ -92,4 +92,82 @@ window.RUMA_RECURSOS = [
     puntaje: 84,
     nota: "Muy pertinente para gestores culturales, artistas, instituciones y vecinos. El CSV puede requerir una aplicación para abrirlo."
   }
+,
+  {
+    id: "seguimos-leyendo-educar",
+    titulo: "Seguimos leyendo: biblioteca de libros digitales abiertos",
+    descripcion: "Una gran colección en español con novelas, cuentos, poesía y teatro para leer, descargar y explorar. Incluye clásicos y literatura argentina.",
+    categoria: "disfrutar",
+    etiquetas: ["libros", "literatura", "novelas", "cuentos", "poesia", "teatro", "lectura", "alfonsina storni", "lucio mansilla", "don segundo sombra"],
+    alcance: "Argentina y mundo hispanohablante",
+    formato: "Libros digitales / colección",
+    creador: "Educ.ar y autores de las obras",
+    licencia: "Creative Commons BY-NC-SA (versión no indicada en la ficha)",
+    licenciaUrl: "https://www.educ.ar/recursos/151395/seguimos-leyendo",
+    fuente: "https://www.educ.ar/recursos/151395/seguimos-leyendo",
+    descarga: null,
+    modoAcceso: "fuente",
+    estadoLegal: "La ficha de la colección declara BY-NC-SA; verificar la ficha de cada obra antes de republicar o redistribuir archivos individuales.",
+    puntaje: 91,
+    nota: "Ideal para encontrar literatura en español sin pagar. RUMA enlaza la colección original y mantiene visibles los créditos."
+  },
+  {
+    id: "flora-patagonica-mala-espina",
+    vistaPrevia: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Flora_Patagonica.JPG/960px-Flora_Patagonica.JPG",
+    titulo: "Flora patagónica: fotografía de la mala espina",
+    descripcion: "Fotografía de una planta patagónica identificada en la ficha como mala espina. Un pequeño punto de partida para observar la flora regional.",
+    categoria: "explorar",
+    etiquetas: ["patagonia", "flora", "plantas", "naturaleza", "fotografia", "botanica", "imprimir", "mala espina"],
+    alcance: "Patagonia",
+    formato: "JPG · 3344 × 2224 píxeles",
+    creador: "Colegionewlands",
+    licencia: "Creative Commons BY-SA 3.0",
+    licenciaUrl: "https://creativecommons.org/licenses/by-sa/3.0/deed.es",
+    fuente: "https://commons.wikimedia.org/wiki/File:Flora_Patagonica.JPG",
+    descarga: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Flora_Patagonica.JPG",
+    modoAcceso: "directo",
+    estadoLegal: "La ficha de Wikimedia Commons identifica CC BY-SA 3.0; atribuir al autor, enlazar licencia e indicar cambios si se modifica.",
+    puntaje: 83,
+    nota: "La identificación proviene de la descripción del archivo; no usar esta imagen por sí sola para identificar una planta en campo."
+  },
+  {
+    id: "pinguino-magallanes-fotografia",
+    vistaPrevia: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Patagonia_argentina.jpg/960px-Patagonia_argentina.jpg",
+    titulo: "Pingüino de Magallanes: fotografía patagónica",
+    descripcion: "Una fotografía de naturaleza con una imagen de gran tamaño, apta para observar detalles y usar en materiales propios respetando la licencia.",
+    categoria: "disfrutar",
+    etiquetas: ["patagonia", "fauna", "pinguino", "magallanes", "fotografia", "naturaleza", "animal", "imprimir"],
+    alcance: "Patagonia argentina",
+    formato: "JPG · 3444 × 4517 píxeles",
+    creador: "Ninna11",
+    licencia: "Creative Commons BY-SA 4.0",
+    licenciaUrl: "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+    fuente: "https://commons.wikimedia.org/wiki/File:Patagonia_argentina.jpg",
+    descarga: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Patagonia_argentina.jpg",
+    modoAcceso: "directo",
+    estadoLegal: "La ficha de Wikimedia Commons identifica CC BY-SA 4.0; conservar crédito, enlace de licencia e indicar modificaciones.",
+    puntaje: 81,
+    nota: "La ficha identifica el tema como pingüino de Magallanes. No implica que la foto represente una localidad concreta de Neuquén."
+  }
+
+,
+  {
+    id: "educlasicos-educar",
+    titulo: "Educlásicos: clásicos de la literatura universal",
+    descripcion: "Una colección de más de cien títulos clásicos, con novelas, teatro, ensayos, poemas y cuentos para leer en línea o descargar desde Educ.ar.",
+    categoria: "disfrutar",
+    etiquetas: ["literatura", "clasicos", "libros", "novelas", "poesia", "teatro", "ensayo", "lectura", "estudiantes", "docentes"],
+    alcance: "Argentina y mundo hispanohablante",
+    formato: "Colección de libros digitales",
+    creador: "Educ.ar y autores de las obras",
+    licencia: "Creative Commons BY-NC-SA (versión no indicada en la ficha)",
+    licenciaUrl: "https://www.educ.ar/recursos/150051/educlasicos",
+    fuente: "https://www.educ.ar/recursos/150051/educlasicos",
+    descarga: null,
+    modoAcceso: "fuente",
+    estadoLegal: "La ficha oficial declara BY-NC-SA sin especificar versión en el resumen consultado. Para redistribuir una obra individual, revisar su ficha y condiciones particulares.",
+    puntaje: 88,
+    nota: "Una puerta de entrada a la literatura clásica. RUMA no reemplaza la biblioteca original: te lleva a la colección y conserva su atribución."
+  }
+
 ];
