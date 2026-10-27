@@ -1,123 +1,182 @@
-// RUMA: búsqueda local del catálogo. No consulta servidores ni inventa resultados.
+/* RUMA · Catálogo estático, búsqueda local, filtros y favoritos guardados en este dispositivo. */
 (() => {
-  const form = document.querySelector("#form-busqueda");
-  const input = document.querySelector("#consulta");
-  const resultado = document.querySelector("#resultado-busqueda");
-  const lista = document.querySelector("#lista-recursos");
-  const sinRecursos = document.querySelector("#sin-recursos");
-  const contador = document.querySelector("#contador-recursos");
-  const filtros = [...document.querySelectorAll("[data-filtro]")];
-  const puertasSinCoincidencias = document.querySelector("#sin-coincidencias");
-  const verTodo = document.querySelector("#ver-todo");
-  const recursos = Array.isArray(window.RUMA_RECURSOS) ? window.RUMA_RECURSOS : [];
-  let filtroActual = "todos";
-  let consultaActual = "";
+  "use strict";
+  const $ = (selector) => document.querySelector(selector);
+  const form = $("#form-busqueda");
+  const input = $("#consulta");
+  const result = $("#resultado-busqueda");
+  const list = $("#lista-recursos");
+  const empty = $("#sin-recursos");
+  const count = $("#contador-recursos");
+  const filterButtons = [...document.querySelectorAll("[data-filtro]")];
+  const accessButtons = [...document.querySelectorAll("[data-acceso]")];
+  const savedButton = $("#ver-guardados");
+  const clearButton = $("#limpiar-busqueda");
+  const resources = Array.isArray(window.RUMA_RECURSOS) ? window.RUMA_RECURSOS : [];
+  const storageKey = "ruma-guardados-v1";
+  let category = "todos";
+  let access = "todos";
+  let query = "";
+  let onlySaved = false;
+  let saved = readSaved();
 
-  const escapar = (valor = "") => String(valor).replace(/[&<>"']/g, caracter => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-  })[caracter]);
-
-  const normalizar = (valor = "") => String(valor)
-    .toLocaleLowerCase("es")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-
-  function tarjeta(recurso) {
-    const imagen = recurso.vistaPrevia
-      ? '<div class="recurso-preview"><img src="' + escapar(recurso.vistaPrevia) + '" alt="Vista previa: ' + escapar(recurso.titulo) + '" loading="lazy"></div>'
-      : '<div class="recurso-preview sin-imagen" aria-hidden="true">r.</div>';
-    const accionPrincipal = recurso.modoAcceso === "directo" && recurso.descarga
-      ? '<a class="recurso-accion" href="' + escapar(recurso.descarga) + '" target="_blank" rel="noopener noreferrer">Abrir archivo ↗</a>'
-      : '<a class="recurso-accion" href="' + escapar(recurso.fuente) + '" target="_blank" rel="noopener noreferrer">Ir a fuente oficial ↗</a>';
-    const categoria = {aprender:"Aprender", trabajar:"Trabajar", explorar:"Explorar", disfrutar:"Disfrutar"}[recurso.categoria] || "Recurso";
-    const formato = recurso.formato ? '<p class="recurso-meta"><strong>Formato:</strong> ' + escapar(recurso.formato) + '</p>' : "";
-    const creador = recurso.creador ? '<p class="recurso-meta"><strong>Creado por:</strong> ' + escapar(recurso.creador) + '</p>' : "";
-    const licencia = recurso.licencia
-      ? '<p class="recurso-meta"><strong>Licencia:</strong> <a href="' + escapar(recurso.licenciaUrl || recurso.fuente) + '" target="_blank" rel="noopener noreferrer">' + escapar(recurso.licencia) + ' ↗</a></p>'
-      : '<p class="recurso-meta"><strong>Licencia:</strong> consultar la fuente original</p>';
-    return '<article class="recurso-card" data-recurso="' + escapar(recurso.id) + '">' +
-      imagen + '<div class="recurso-cuerpo">' +
-      '<span class="recurso-tipo">' + escapar(categoria) + ' · ' + escapar(recurso.alcance || "Mundo hispanohablante") + '</span>' +
-      '<h3>' + escapar(recurso.titulo) + '</h3>' +
-      '<p class="recurso-descripcion">' + escapar(recurso.descripcion) + '</p>' +
-      formato + creador + licencia +
-      '<p class="recurso-nota">' + escapar(recurso.nota || recurso.estadoLegal || "") + '</p>' +
-      '<div class="recurso-acciones">' + accionPrincipal +
-      '<a class="recurso-accion secundario" href="' + escapar(recurso.fuente) + '" target="_blank" rel="noopener noreferrer">Ver fuente y créditos ↗</a></div>' +
+  function readSaved() {
+    try {
+      const value = JSON.parse(localStorage.getItem(storageKey) || "[]");
+      return new Set(Array.isArray(value) ? value : []);
+    } catch (_) { return new Set(); }
+  }
+  function writeSaved() {
+    try { localStorage.setItem(storageKey, JSON.stringify([...saved])); } catch (_) {}
+  }
+  function escapeHtml(value = "") {
+    return String(value).replace(/[&<>"']/g, ch => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+    })[ch]);
+  }
+  function norm(value = "") {
+    return String(value).toLocaleLowerCase("es")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+  function categoryName(value) {
+    return ({aprender:"Aprender",trabajar:"Trabajar",explorar:"Explorar",disfrutar:"Disfrutar"})[value] || "Hallazgo";
+  }
+  function safeUrl(value) {
+    try {
+      const u = new URL(value, window.location.href);
+      return ["https:","http:"].includes(u.protocol) ? u.href : "#";
+    } catch (_) { return "#"; }
+  }
+  function card(item) {
+    const hasPreview = Boolean(item.vistaPrevia);
+    const preview = hasPreview
+      ? '<div class="recurso-preview"><img src="'+escapeHtml(safeUrl(item.vistaPrevia))+'" alt="Vista previa de '+escapeHtml(item.titulo)+'" loading="lazy"></div>'
+      : '<div class="recurso-preview sin-imagen" aria-hidden="true"><span>r.</span><small>UN HALLAZGO RUMA</small></div>';
+    const direct = item.modoAcceso === "directo" && item.descarga;
+    const accessLabel = direct ? "Archivo directo" : "Fuente oficial";
+    const mainAction = direct
+      ? '<a class="recurso-accion" href="'+escapeHtml(safeUrl(item.descarga))+'" target="_blank" rel="noopener noreferrer">Obtener archivo ↗</a>'
+      : '<a class="recurso-accion" href="'+escapeHtml(safeUrl(item.fuente))+'" target="_blank" rel="noopener noreferrer">Ir a la fuente ↗</a>';
+    const licenseHref = item.licenciaUrl || item.fuente;
+    const saveLabel = saved.has(item.id) ? "♥ Guardado" : "♡ Guardar";
+    const saveClass = saved.has(item.id) ? "recurso-accion guardar guardado" : "recurso-accion guardar secundario";
+    const terms = (item.etiquetas || []).slice(0,6).map(tag => '<span class="etiqueta">'+escapeHtml(tag)+'</span>').join("");
+    return '<article class="recurso-card" data-recurso="'+escapeHtml(item.id)+'">'+
+      preview+'<div class="recurso-cuerpo">'+
+      '<div class="recurso-insignias"><span class="recurso-tipo">'+escapeHtml(categoryName(item.categoria))+'</span><span class="tipo-acceso">'+escapeHtml(accessLabel)+'</span></div>'+
+      '<p class="recurso-alcance">'+escapeHtml(item.alcance || "Alcance por confirmar")+'</p>'+
+      '<h3>'+escapeHtml(item.titulo)+'</h3>'+
+      '<p class="recurso-descripcion">'+escapeHtml(item.descripcion)+'</p>'+
+      '<p class="recurso-meta"><strong>Formato:</strong> '+escapeHtml(item.formato || "Por confirmar")+'</p>'+
+      '<p class="recurso-meta"><strong>Creado por:</strong> '+escapeHtml(item.creador || "Autoría en revisión")+'</p>'+
+      '<p class="recurso-meta"><strong>Licencia:</strong> <a href="'+escapeHtml(safeUrl(licenseHref))+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(item.licencia || "Consultar ficha original")+' ↗</a></p>'+
+      '<details class="recurso-detalles"><summary>Qué conviene saber</summary><p>'+escapeHtml(item.nota || item.estadoLegal || "")+'</p><p class="estado-legal"><strong>Revisión:</strong> '+escapeHtml(item.estadoLegal || "Consultar la fuente antes de reutilizar")+'</p></details>'+
+      '<div class="etiquetas">'+terms+'</div>'+
+      '<div class="recurso-acciones">'+mainAction+
+      '<a class="recurso-accion secundario" href="'+escapeHtml(safeUrl(item.fuente))+'" target="_blank" rel="noopener noreferrer">Autoría y origen ↗</a>'+
+      '<button class="'+saveClass+'" type="button" data-guardar="'+escapeHtml(item.id)+'" aria-pressed="'+String(saved.has(item.id))+'">'+saveLabel+'</button></div>'+
       '</div></article>';
   }
-
-  function aplicarFiltros() {
-    const terminos = normalizar(consultaActual).split(/\s+/).filter(Boolean);
-    const encontrados = recursos.filter(recurso => {
-      const categoriaCoincide = filtroActual === "todos" || recurso.categoria === filtroActual;
-      const texto = normalizar([
-        recurso.titulo, recurso.descripcion, recurso.categoria, recurso.alcance,
-        recurso.formato, recurso.creador, recurso.licencia, ...(recurso.etiquetas || [])
-      ].join(" "));
-      const textoCoincide = !terminos.length || terminos.some(termino => texto.includes(termino));
-      return categoriaCoincide && textoCoincide;
-    });
-
-    lista.innerHTML = encontrados.map(tarjeta).join("");
-    sinRecursos.hidden = encontrados.length > 0;
-    contador.textContent = encontrados.length + (encontrados.length === 1 ? " recurso" : " recursos");
-    puertasSinCoincidencias.hidden = true;
-    verTodo.hidden = true;
-
-    if (!consultaActual && filtroActual === "todos") {
-      resultado.textContent = "Primera capa de la colección: " + recursos.length + " hallazgos documentados. La selección crecerá a medida que verifiquemos más archivos.";
-    } else if (encontrados.length) {
-      resultado.textContent = "Encontramos " + encontrados.length + (encontrados.length === 1 ? " recurso" : " recursos") + " en la selección actual.";
-    } else {
-      resultado.textContent = "Todavía no encontramos un recurso que coincida. La búsqueda continúa: probá con otra palabra.";
-    }
+  function matches(item) {
+    if (category !== "todos" && item.categoria !== category) return false;
+    if (access === "directo" && !(item.modoAcceso === "directo" && item.descarga)) return false;
+    if (access === "fuente" && item.modoAcceso !== "fuente") return false;
+    if (onlySaved && !saved.has(item.id)) return false;
+    const terms = norm(query).split(/\s+/).filter(Boolean);
+    if (!terms.length) return true;
+    const haystack = norm([
+      item.titulo,item.descripcion,item.categoria,item.alcance,item.formato,
+      item.creador,item.licencia,item.estadoLegal,item.nota,...(item.etiquetas || [])
+    ].join(" "));
+    return terms.every(term => haystack.includes(term));
   }
-
-  filtros.forEach(boton => {
-    boton.addEventListener("click", () => {
-      filtroActual = boton.dataset.filtro;
-      filtros.forEach(item => {
-        const activo = item === boton;
-        item.classList.toggle("activo", activo);
-        item.setAttribute("aria-pressed", String(activo));
+  function render() {
+    const found = resources.filter(matches);
+    list.innerHTML = found.map(card).join("");
+    empty.hidden = found.length > 0;
+    count.textContent = found.length + (found.length === 1 ? " recurso" : " recursos");
+    savedButton.setAttribute("aria-pressed", String(onlySaved));
+    savedButton.textContent = onlySaved ? "♥ Ver todos" : "♡ Mis guardados ("+saved.size+")";
+    if (onlySaved) result.textContent = found.length
+      ? "Tus hallazgos guardados en este dispositivo."
+      : "Todavía no guardaste recursos que coincidan con estos filtros.";
+    else if (query || category !== "todos" || access !== "todos") result.textContent = found.length
+      ? "Encontramos "+found.length+(found.length === 1 ? " recurso" : " recursos")+" que coinciden con tu búsqueda."
+      : "Todavía no encontramos algo que coincida. Probá otra palabra o elegí otra puerta.";
+    else result.textContent = "La caja reúne "+resources.length+" hallazgos seleccionados. Cada ficha conserva autoría, licencia y camino de acceso.";
+    list.querySelectorAll("[data-guardar]").forEach(button => button.addEventListener("click", () => {
+      const id = button.dataset.guardar;
+      if (saved.has(id)) saved.delete(id); else saved.add(id);
+      writeSaved();
+      render();
+    }));
+    updateDoorCounts();
+  }
+  function updateDoorCounts() {
+    document.querySelectorAll("[data-categoria]").forEach(door => {
+      const name = door.dataset.categoria;
+      const total = resources.filter(item => item.categoria === name).length;
+      const status = door.querySelector(".estado");
+      if (status) status.innerHTML = '<i></i> '+total+(total === 1 ? " recurso en la caja" : " recursos en la caja");
+      door.setAttribute("role","button");
+      door.setAttribute("tabindex","0");
+      door.setAttribute("aria-label","Explorar la puerta "+categoryName(name));
+      door.addEventListener("click", () => setCategory(name));
+      door.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setCategory(name); }
       });
-      aplicarFiltros();
     });
-  });
-
-  form.addEventListener("submit", evento => {
-    evento.preventDefault();
-    consultaActual = input.value.trim();
-    filtroActual = "todos";
-    filtros.forEach(item => {
-      const activo = item.dataset.filtro === "todos";
-      item.classList.toggle("activo", activo);
-      item.setAttribute("aria-pressed", String(activo));
+  }
+  function setCategory(value) {
+    category = value;
+    filterButtons.forEach(button => {
+      const active = button.dataset.filtro === value;
+      button.classList.toggle("activo", active);
+      button.setAttribute("aria-pressed", String(active));
     });
-    aplicarFiltros();
-    document.querySelector("#recursos").scrollIntoView({behavior:"smooth", block:"start"});
+    onlySaved = false;
+    render();
+    $("#recursos").scrollIntoView({behavior:"smooth",block:"start"});
+  }
+  filterButtons.forEach(button => button.addEventListener("click", () => setCategory(button.dataset.filtro)));
+  accessButtons.forEach(button => button.addEventListener("click", () => {
+    access = button.dataset.acceso;
+    accessButtons.forEach(other => {
+      const active = other === button;
+      other.classList.toggle("activo", active);
+      other.setAttribute("aria-pressed", String(active));
+    });
+    onlySaved = false;
+    render();
+  }));
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    query = input.value.trim();
+    category = "todos";
+    onlySaved = false;
+    filterButtons.forEach(button => {
+      const active = button.dataset.filtro === "todos";
+      button.classList.toggle("activo", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    render();
+    $("#recursos").scrollIntoView({behavior:"smooth",block:"start"});
   });
-
   input.addEventListener("input", () => {
-    if (!input.value.trim()) {
-      consultaActual = "";
-      aplicarFiltros();
-    }
+    if (!input.value.trim()) { query = ""; render(); }
   });
-
-  verTodo.addEventListener("click", () => {
-    input.value = "";
-    consultaActual = "";
-    filtroActual = "todos";
-    filtros.forEach(item => {
-      const activo = item.dataset.filtro === "todos";
-      item.classList.toggle("activo", activo);
-      item.setAttribute("aria-pressed", String(activo));
+  savedButton.addEventListener("click", () => { onlySaved = !onlySaved; render(); $("#recursos").scrollIntoView({behavior:"smooth",block:"start"}); });
+  clearButton.addEventListener("click", () => {
+    input.value = ""; query = ""; category = "todos"; access = "todos"; onlySaved = false;
+    filterButtons.forEach(button => {
+      const active = button.dataset.filtro === "todos";
+      button.classList.toggle("activo", active); button.setAttribute("aria-pressed",String(active));
     });
-    aplicarFiltros();
-    input.focus();
+    accessButtons.forEach(button => {
+      const active = button.dataset.acceso === "todos";
+      button.classList.toggle("activo",active); button.setAttribute("aria-pressed",String(active));
+    });
+    render(); input.focus();
   });
-
-  aplicarFiltros();
+  render();
 })();
