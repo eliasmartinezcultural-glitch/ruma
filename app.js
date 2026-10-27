@@ -1,49 +1,29 @@
 (() => {
   "use strict";
 
-  // Todos los recursos del catálogo apuntan a archivos guardados dentro de RUMA.
+  // Catálogo curado: prioriza archivos completos de fuentes públicas.
+  // Los PDF externos se abren en su archivo original; no se presentan como alojados en RUMA.
   const resources = [
-    {title:"El árbol del patio",author:"Lectura original de RUMA",description:"Un cuento breve sobre compartir el espacio y hacer lugar a quien llega.",category:"Lecturas",icon:"📖",format:"SVG imprimible",url:"archivos/lecturas/arbol-del-patio.svg",tags:"cuento lectura comunidad familia"},
-    {title:"Casa de viento",author:"Poema original de RUMA",description:"Un poema para leer despacio, compartir o regalar.",category:"Lecturas",icon:"🌬️",format:"SVG imprimible",url:"archivos/lecturas/casa-de-viento.svg",tags:"poesía poema Patagonia viento"},
-    {title:"Planificador semanal",author:"Plantilla de RUMA",description:"Organizá actividades, pendientes y momentos de descanso de toda la semana.",category:"Para estudiar",icon:"🗓️",format:"SVG imprimible",url:"archivos/estudio/planificador-semanal.svg",tags:"agenda semana organización estudio"},
-    {title:"Mi registro de lectura",author:"Plantilla de RUMA",description:"Anotá lo que leés, tus partes favoritas y recomendaciones para compartir.",category:"Para estudiar",icon:"📚",format:"SVG imprimible",url:"archivos/estudio/registro-de-lectura.svg",tags:"lectura escuela libro estudiantes"},
-    {title:"Registro de gastos del hogar",author:"Plantilla de RUMA",description:"Una hoja sencilla para ordenar entradas y gastos sin cuentas complicadas.",category:"Recursos útiles",icon:"🧾",format:"SVG imprimible",url:"archivos/utiles/gastos-del-hogar.svg",tags:"hogar gastos presupuesto economía"},
-    {title:"Ficha simple para emprender",author:"Plantilla de RUMA",description:"Ordená tu idea, a quién ayuda, sus costos y cómo querés ofrecerla.",category:"Recursos útiles",icon:"🧰",format:"SVG imprimible",url:"archivos/utiles/ficha-para-emprender.svg",tags:"emprender negocio costos precio trabajo"},
-    {title:"Cartelera comunitaria",author:"Plantilla de RUMA",description:"Un espacio para anunciar talleres, encuentros y actividades con datos verificados.",category:"Recursos útiles",icon:"📌",format:"SVG imprimible",url:"archivos/utiles/cartelera-comunitaria.svg",tags:"comunidad barrio eventos actividades talleres"},
-    {title:"Agenda de contactos importantes",author:"Plantilla de RUMA",description:"Completá con teléfonos verificados de tu familia, servicios y personas de confianza.",category:"Recursos útiles",icon:"☎️",format:"SVG imprimible",url:"archivos/utiles/contactos-importantes.svg",tags:"contactos teléfonos familia ayuda agenda"},
-    {title:"Tarjeta para regalar cariño",author:"Diseño original de RUMA",description:"Una tarjeta sencilla para escribir un mensaje y regalar a alguien querido.",category:"Para decorar",icon:"💌",format:"SVG imprimible",url:"archivos/decoracion/tarjeta-de-carino.svg",tags:"tarjeta regalo cariño imprimir"},
-    {title:"Lámina de flores patagónicas",author:"Ilustración original de RUMA",description:"Una lámina suave para decorar la casa, la escuela o el espacio de trabajo.",category:"Para decorar",icon:"🌸",format:"SVG imprimible",url:"archivos/decoracion/flores-patagonicas.svg",tags:"flores botánica lámina arte decoración"},
-    {title:"Separadores para libros",author:"Diseño de RUMA",description:"Tres separadores para recortar, usar en tus lecturas o regalar.",category:"Para decorar",icon:"🔖",format:"SVG imprimible",url:"archivos/decoracion/separadores-de-libros.svg",tags:"libros separadores lectura recortar"},
-    {title:"Etiquetas para huerta y jardín",author:"Plantilla de RUMA",description:"Etiquetas para identificar hierbas y plantas. Imprimí y recortá para tu huerta.",category:"Para decorar",icon:"🌱",format:"SVG imprimible",url:"archivos/decoracion/etiquetas-para-huerta.svg",tags:"huerta jardín plantas hierbas etiquetas"},
-    {title:"Mapa comunitario para completar",author:"Plantilla de RUMA",description:"Un plano en blanco para dibujar tu zona y señalar lugares con información verificada. No reemplaza un mapa oficial.",category:"Mapas e historia",icon:"🗺️",format:"SVG imprimible",url:"archivos/mapas-historia/mapa-comunitario.svg",tags:"mapa barrio comunidad lugares territorio"},
-    {title:"Árbol de memoria familiar",author:"Plantilla de RUMA",description:"Registrá nombres e historias de tu familia para conservar recuerdos y compartirlos.",category:"Mapas e historia",icon:"🌳",format:"SVG imprimible",url:"archivos/mapas-historia/arbol-de-memoria-familiar.svg",tags:"familia memoria historia árbol genealógico"},
-    {title:"Tabla de multiplicar",author:"Material original de RUMA",description:"Una hoja clara para practicar las tablas del 1 al 10.",category:"Para estudiar",icon:"✖️",format:"SVG imprimible",url:"archivos/estudio/tabla-de-multiplicar.svg",tags:"matemática matemáticas multiplicar tablas escuela"},
-    {title:"Ficha de palabras nuevas",author:"Material original de RUMA",description:"Aprendé vocabulario, practicá escritura y guardá palabras que quieras recordar.",category:"Para estudiar",icon:"✏️",format:"SVG imprimible",url:"archivos/estudio/ficha-de-palabras.svg",tags:"lengua palabras vocabulario escritura escuela"},
-    {title:"Menú sencillo de la semana",author:"Material original de RUMA",description:"Planificá comidas con lo que ya tenés en casa y anotá ideas para cada día.",category:"Recursos útiles",icon:"🥣",format:"SVG imprimible",url:"archivos/utiles/menu-semanal.svg",tags:"comida cocina menú comidas semana hogar"},
-    {title:"Lista de compras tranquila",author:"Material original de RUMA",description:"Separá las compras por rubro y marcá lo que ya conseguiste.",category:"Recursos útiles",icon:"🛒",format:"SVG imprimible",url:"archivos/utiles/lista-de-compras.svg",tags:"compras almacén supermercado lista hogar"},
-    {title:"Plan familiar ante emergencias",author:"Plantilla de RUMA",description:"Anotá un punto de encuentro y contactos de confianza. Completá con información oficial verificada.",category:"Recursos útiles",icon:"🧭",format:"SVG imprimible",url:"archivos/utiles/plan-familiar-ante-emergencias.svg",tags:"prevención familia emergencia preparación plan"},
-    {title:"Cuidados de mis plantas",author:"Material original de RUMA",description:"Llevá un registro simple del agua, el sol y los cambios que observás en tus plantas.",category:"Recursos útiles",icon:"🪴",format:"SVG imprimible",url:"archivos/utiles/cuidados-de-plantas.svg",tags:"plantas jardín huerta agua sol registro"},
-    {title:"Postales para compartir",author:"Diseño original de RUMA",description:"Cuatro postales suaves para imprimir, recortar y completar con tus propias palabras.",category:"Para decorar",icon:"💌",format:"SVG imprimible",url:"archivos/decoracion/postales-para-compartir.svg",tags:"postales tarjetas regalo mensajes cariño"},
-    {title:"Entrevista a alguien de la comunidad",author:"Plantilla de RUMA",description:"Preguntas para conservar recuerdos locales con respeto y permiso de quien comparte su historia.",category:"Mapas e historia",icon:"🎙️",format:"SVG imprimible",url:"archivos/mapas-historia/entrevista-a-un-mayor.svg",tags:"historia local memoria oral entrevista abuelos comunidad"},
-    {title:"Horario escolar",author:"Material original de RUMA",description:"Organizá materias, horarios y pendientes en una hoja para imprimir.",category:"Para estudiar",icon:"🗓️",format:"SVG imprimible",url:"archivos/estudio/horario-escolar.svg",tags:"escuela horario clases organización estudiantes"},
-    {title:"Mi registro de hábitos",author:"Material original de RUMA",description:"Marcá pequeños hábitos que querés cuidar, sin exigirte perfección.",category:"Para estudiar",icon:"🌱",format:"SVG imprimible",url:"archivos/estudio/seguimiento-habitos.svg",tags:"hábitos bienestar seguimiento rutina"},
-    {title:"Rutina de limpieza semanal",author:"Material original de RUMA",description:"Repartí tareas del hogar con calma y reconocé también tus momentos de descanso.",category:"Recursos útiles",icon:"🧹",format:"SVG imprimible",url:"archivos/utiles/limpieza-semanal.svg",tags:"limpieza casa hogar tareas semanal organización"},
-    {title:"Receta de la familia",author:"Material original de RUMA",description:"Guardá ingredientes, pasos y recuerdos de una receta querida.",category:"Recursos útiles",icon:"🍲",format:"SVG imprimible",url:"archivos/utiles/ficha-receta-familiar.svg",tags:"receta cocina familia tradición comida"},
-    {title:"Presupuesto mensual del hogar",author:"Material original de RUMA",description:"Anotá ingresos y gastos en una hoja simple, sin aplicaciones ni cuentas complicadas.",category:"Recursos útiles",icon:"🪙",format:"SVG imprimible",url:"archivos/utiles/presupuesto-mensual.svg",tags:"presupuesto gastos ahorro dinero hogar"},
-    {title:"Marcapáginas botánicos",author:"Diseño original de RUMA",description:"Tres marcapáginas para imprimir, recortar y regalar a quienes disfrutan leer.",category:"Para decorar",icon:"🔖",format:"SVG imprimible",url:"archivos/decoracion/marcapaginas-botanicos.svg",tags:"marcapáginas marcadores libros flores botánica"},
-    {title:"Lámina para colorear: fauna patagónica",author:"Ilustración original de RUMA",description:"Una lámina de trazos sencillos para colorear y conversar sobre animales de la Patagonia.",category:"Para decorar",icon:"🦊",format:"SVG imprimible",url:"archivos/decoracion/lamina-fauna-patagonica.svg",tags:"colorear dibujo animales fauna patagonia infantil"},
-    {title:"Tarjetas para dar las gracias",author:"Diseño original de RUMA",description:"Cuatro tarjetas para recortar, escribir un mensaje propio y compartir.",category:"Para decorar",icon:"💌",format:"SVG imprimible",url:"archivos/decoracion/tarjetas-gracias.svg",tags:"tarjetas gracias agradecimiento regalo"},
-    {title:"El viento y la semilla",author:"Cuento original de RUMA",description:"Un cuento breve sobre crecer sin apuro y encontrar un lugar donde echar raíces.",category:"Lecturas",icon:"🌱",format:"Cuento SVG imprimible",url:"archivos/lecturas/el-viento-y-la-semilla.svg",tags:"cuento infantil semilla viento crecer lectura"},
-    {title:"La luz de la ventana",author:"Cuento original de RUMA",description:"Un relato sobre pequeños gestos que pueden volver más cercana a una comunidad.",category:"Lecturas",icon:"🪟",format:"Cuento SVG imprimible",url:"archivos/lecturas/la-luz-de-la-ventana.svg",tags:"cuento comunidad solidaridad vecinos lectura"},
-    {title:"Clásicos universales para leer gratis",author:"Secretaría de Educación · Argentina.gob.ar",description:"Catálogo público con más de cien libros gratuitos: novelas, cuentos, teatro, poesía, ensayos y autores argentinos. La descarga se realiza en el sitio oficial.",category:"Lecturas",icon:"📚",format:"Biblioteca externa · gratuita",url:"https://www.argentina.gob.ar/educacion/materiales-didacticos/clasicos-universales",external:true,tags:"libros novelas cuentos poemas clásicos argentinos descargar"},
-    {title:"Genio Maligno · clásicos de dominio público",author:"Genio Maligno",description:"Biblioteca digital con clásicos en español para leer en línea o descargar en los formatos que ofrece su catálogo. Revisá las condiciones de cada obra.",category:"Lecturas",icon:"📖",format:"Biblioteca externa · gratuita",url:"https://geniomaligno.com.ar/",external:true,tags:"libros dominio público epub pdf clásicos lectura"},
-    {title:"Biblioteca Nacional · objetos digitales",author:"Biblioteca Nacional Mariano Moreno",description:"Buscá libros, revistas, fotografías, mapas, manuscritos, partituras y otros objetos digitalizados. La ficha de cada obra indica su forma de acceso.",category:"Mapas e historia",icon:"🏛️",format:"Colección institucional",url:"https://museo.bn.gov.ar/biblioteca/servicios/online",external:true,tags:"mapas historia fotografías archivos libros patrimonio Argentina"},
-    {title:"Educ.ar · recursos para aprender",author:"Portal Educ.ar",description:"Colecciones educativas, libros digitales, cuadernillos, textos y actividades para distintas edades y materias.",category:"Para estudiar",icon:"🎒",format:"Portal educativo",url:"https://www.educ.ar/recursos",external:true,tags:"educación escuela estudiantes libros actividades descargar"},
-    {title:"StoryWeaver · cuentos ilustrados",author:"Pratham Books · StoryWeaver",description:"Biblioteca de cuentos ilustrados con opciones de idioma y materiales publicados con licencias abiertas. Comprobá la licencia y la atribución de cada título.",category:"Lecturas",icon:"🌍",format:"Biblioteca externa · licencias por obra",url:"https://storyweaver.org.in/",external:true,tags:"cuentos infantiles ilustrados español lectura licencia abierta"},
-    {title:"Novelas clásicas para descargar",author:"Secretaría de Educación · Argentina.gob.ar",description:"Colección oficial con novelas como Alicia en el país de las maravillas, La isla del tesoro, Frankenstein y más. Descargas desde la página pública.",category:"Lecturas",icon:"📘",format:"Colección oficial · PDF",url:"https://www.argentina.gob.ar/educacion/materiales-didacticos/clasicos-universales/novelas",external:true,tags:"novelas clásicas aventura libros pdf Julio Verne Lewis Carroll"},
-    {title:"Cuentos clásicos para compartir",author:"Secretaría de Educación · Argentina.gob.ar",description:"Cuentos de Perrault, los hermanos Grimm, Oscar Wilde, Edgar Allan Poe y Horacio Quiroga, entre otros. Abrí la colección para ver sus descargas.",category:"Lecturas",icon:"🧚",format:"Colección oficial · PDF",url:"https://www.argentina.gob.ar/educacion/materiales-didacticos/clasicos-universales/cuentos",external:true,tags:"cuentos infantiles clásicos Quiroga Grimm Perrault Wilde"},
-    {title:"Autores argentinos y lecturas nacionales",author:"Secretaría de Educación · Argentina.gob.ar",description:"Selección pública con obras y antologías de autores argentinos. Revisá cada título y su información en la página oficial.",category:"Lecturas",icon:"🇦🇷",format:"Colección oficial · PDF",url:"https://www.argentina.gob.ar/educacion/materiales-didacticos/clasicos-universales/autores-argentinos",external:true,tags:"literatura argentina autores cuentos poesía libros PDF"}
+    {title:"El gaucho Martín Fierro",author:"José Hernández · edición digital: Provincia de Buenos Aires",description:"Poema fundamental de la literatura argentina. PDF completo, 77 páginas, ofrecido por el catálogo provincial de obras de dominio público.",category:"Lecturas",icon:"📖",format:"PDF · 77 páginas",url:"https://www.gba.gob.ar/sites/default/files/cultura/archivos/Martin_Fierro.pdf",external:true,externalLabel:"Abrir PDF ↗",tags:"martin fierro gauchesca literatura argentina poema gaucho"},
+    {title:"Fausto",author:"Estanislao del Campo · edición digital: Provincia de Buenos Aires",description:"Poema gauchesco humorístico que juega con el encuentro entre dos paisanos y la ópera. PDF completo, 56 páginas.",category:"Lecturas",icon:"📚",format:"PDF · 56 páginas",url:"https://www.gba.gob.ar/sites/default/files/cultura/archivos/FAUSTO-Estanislado_del_Campo.pdf",external:true,externalLabel:"Abrir PDF ↗",tags:"fausto poesia gauchesca literatura argentina humor"},
+    {title:"Cuentos de la selva",author:"Horacio Quiroga · edición digital: Provincia de Buenos Aires",description:"Cuentos protagonizados por animales y ambientados en la selva misionera. Un clásico para compartir entre generaciones. PDF completo, 62 páginas.",category:"Lecturas",icon:"🐢",format:"PDF · 62 páginas",url:"https://www.gba.gob.ar/sites/default/files/cultura/archivos/CUENTOS%20_DE_LA_SELVA.pdf",external:true,externalLabel:"Abrir PDF ↗",tags:"cuentos selva quiroga literatura infantil animales"},
+    {title:"Don Segundo Sombra",author:"Ricardo Güiraldes · edición digital: Provincia de Buenos Aires",description:"Novela sobre la vida rural y el aprendizaje de un joven junto a un resero. PDF completo, 173 páginas.",category:"Lecturas",icon:"🐎",format:"PDF · 173 páginas",url:"https://www.gba.gob.ar/sites/default/files/cultura/archivos/DON%20SEGUNDO%20SOMBRA.pdf",external:true,externalLabel:"Abrir PDF ↗",tags:"don segundo sombra gauchesca campo novela argentina"},
+    {title:"Abecedario de fauna nativa",author:"Administración de Parques Nacionales · SIB",description:"Lámina de una página para descubrir animales nativos a través de las letras. Un recurso breve para mirar, conversar e imprimir.",category:"Para estudiar",icon:"🦊",format:"PDF · 1 página",url:"https://www.sib.gob.ar/portal/wp-content/uploads/2019/05/Abecedario-ANIMALITOS-2011.pdf",external:true,externalLabel:"Abrir PDF ↗",tags:"fauna nativa abecedario animales lámina imprimir"},
+    {title:"Prevención de incendios · guía docente",author:"Servicio Nacional de Manejo del Fuego y organismos patagónicos",description:"Cuadernillo de 32 páginas para docentes de primaria: ambiente, ecorregiones, causas del fuego, prevención y cómo ayudar. Incluye referencias a Neuquén y la Patagonia.",category:"Para estudiar",icon:"🌲",format:"PDF · 32 páginas",url:"https://www.argentina.gob.ar/sites/default/files/2018/03/cartilla_para_docentes_de_escuelas_primarias_2023_-_prevencion_de_incendios_forestales_0_2.pdf",external:true,externalLabel:"Abrir PDF ↗",tags:"incendios prevención patagonia escuela docentes ambiente"},
+    {title:"Prevención de incendios · cuadernillo para estudiantes",author:"Servicio Nacional de Manejo del Fuego y organismos patagónicos",description:"Material educativo de 30 páginas para aprender sobre el fuego, el ambiente patagónico y las acciones de prevención.",category:"Para estudiar",icon:"🔥",format:"PDF · 30 páginas",url:"https://www.argentina.gob.ar/sites/default/files/2018/03/cuadernillo_alumnos_prevencion_patagonia.pdf",external:true,externalLabel:"Abrir PDF ↗",tags:"incendios prevención estudiantes patagonia cuadernillo escuela"},
+    {title:"El bosque de pewen",author:"Proyecto Pewen · Parque Nacional Lanín",description:"Boletín informativo sobre el bosque de pewen, especie emblemática de la cordillera neuquina. Recurso para acercarse a la naturaleza regional.",category:"Mapas e historia",icon:"🌳",format:"PDF oficial",url:"https://argentina.gob.ar/sites/default/files/el_bosque_de_pewen_-_boletin_informativo_ndeg1.pdf",external:true,externalLabel:"Abrir PDF ↗",tags:"pewen araucaria lanin neuquen bosque naturaleza"},
+    {title:"Actividades del vivero forestal escolar · Ruca Choroy",author:"Parque Nacional Lanín",description:"Cuadernillo de actividades vinculado al vivero forestal escolar de Ruca Choroy, en Neuquén. Una entrada regional para aprender haciendo.",category:"Para estudiar",icon:"🌱",format:"PDF oficial",url:"https://argentina.gob.ar/sites/default/files/pn_lanin_cuadernillo_ruca_choroy_.pdf",external:true,externalLabel:"Abrir PDF ↗",tags:"ruca choroy vivero forestal escuela lanin neuquen plantas"},
+    {title:"Mapas escolares de Neuquén y Río Negro",author:"Instituto Geográfico Nacional (IGN)",description:"Colección oficial de mapas mudos, físicos y políticos para imprimir en A4. Incluye las dos provincias vecinas y mapas de Argentina. Licencia CC BY-SA 4.0; respetá la atribución.",category:"Mapas e historia",icon:"🗺️",format:"Mapas para imprimir · licencia CC BY-SA 4.0",url:"https://www.ign.gob.ar/areaservicios/descargas/mapasescolares",external:true,externalLabel:"Elegir y descargar mapas ↗",tags:"mapa neuquen rio negro argentina provincias geografia escuela imprimir"},
+    {title:"Mapoteca de Argentina",author:"Educ.ar · Portal educativo",description:"Colección para explorar mapas de Argentina y trabajar geografía en la escuela. La ficha informa la licencia CC BY-NC-SA; consultá sus condiciones antes de redistribuir.",category:"Mapas e historia",icon:"🌎",format:"Colección educativa",url:"https://www.educ.ar/recursos/106269/mapoteca-mapas-gratis-de-la-argentina",external:true,externalLabel:"Explorar mapas ↗",tags:"mapoteca mapas argentina geografia historia educar"},
+    {title:"Libros digitales de dominio público",author:"Lecturas · Provincia de Buenos Aires",description:"Catálogo con obras argentinas de dominio público, con fichas individuales y enlaces PDF. Incluye Martín Fierro, Fausto, Cuentos de la selva y más.",category:"Lecturas",icon:"📚",format:"Biblioteca pública",url:"https://www.gba.gob.ar/lecturas/libros_digitales",external:true,externalLabel:"Elegir un libro ↗",tags:"libros digitales dominio publico literatura argentina pdf"},
+    {title:"Libros y Casas",author:"Secretaría de Cultura de la Nación",description:"Biblioteca digital con más de 150 títulos argentinos: ficción, libros ilustrados, historietas, manuales, historia y guías prácticas para la vida cotidiana.",category:"Lecturas",icon:"🏡",format:"Biblioteca digital gratuita",url:"https://librosycasas.cultura.gob.ar/libros/",external:true,externalLabel:"Explorar biblioteca ↗",tags:"libros cuentos historietas manuales derechos hogar cultura argentina"},
+    {title:"Lecturas digitales para las infancias y jóvenes",author:"Biblioteca Argentina · recopilación de fuentes",description:"Guía para encontrar libros infantiles y juveniles gratuitos en editoriales, bibliotecas y portales educativos. Cada descarga se realiza en la fuente que la ofrece.",category:"Lecturas",icon:"🧸",format:"Guía de bibliotecas",url:"https://biblioargentina.gob.ar/web/lecturas-digitales/",external:true,externalLabel:"Encontrar lecturas ↗",tags:"lectura infantil juvenil libros gratuitos editoriales"},
+    {title:"Biblioteca Nacional · objetos digitales",author:"Biblioteca Nacional Mariano Moreno",description:"Buscador de libros, revistas, fotografías, mapas, manuscritos, partituras y otros materiales digitalizados. Revisá la ficha de cada pieza para conocer su acceso y condiciones.",category:"Mapas e historia",icon:"🏛️",format:"Colección patrimonial",url:"https://museo.bn.gov.ar/biblioteca/servicios/online",external:true,externalLabel:"Buscar materiales ↗",tags:"biblioteca nacional mapas historia fotos manuscritos patrimonio"},
+    {title:"Clásicos universales gratuitos",author:"Secretaría de Educación · Argentina.gob.ar",description:"Colección pública de más de cien obras, con novelas, cuentos, teatro, poesía, ensayos y autores argentinos. La página permite elegir títulos y consultar sus PDF.",category:"Lecturas",icon:"📘",format:"Colección oficial · PDF",url:"https://www.argentina.gob.ar/educacion/materiales-didacticos/clasicos-universales",external:true,externalLabel:"Elegir una lectura ↗",tags:"clasicos novelas cuentos teatro poesia libros pdf"},
+    {title:"Genio Maligno · biblioteca de dominio público",author:"Genio Maligno",description:"Biblioteca digital con obras libres y legales para Argentina, en EPUB y PDF o lectura en línea, sin registro. Revisá los datos y la licencia indicados en cada obra.",category:"Lecturas",icon:"📖",format:"Biblioteca · EPUB y PDF",url:"https://geniomaligno.com.ar/",external:true,externalLabel:"Explorar libros ↗",tags:"dominio publico libros epub pdf clásicos literatura"},
+    {title:"StoryWeaver · cuentos ilustrados",author:"Pratham Books · StoryWeaver",description:"Biblioteca de cuentos ilustrados para distintas edades e idiomas. Comprobá la licencia de cada historia y las condiciones de descarga o reutilización.",category:"Lecturas",icon:"🌈",format:"Biblioteca de cuentos",url:"https://storyweaver.org.in/",external:true,externalLabel:"Explorar cuentos ↗",tags:"cuentos ilustrados infantil idiomas lectura licencia abierta"}
   ];
+
   const categoryOrder = ["Lecturas", "Para estudiar", "Recursos útiles", "Para decorar", "Mapas e historia"];
   resources.sort((a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category) || a.title.localeCompare(b.title, "es"));
 
@@ -73,28 +53,18 @@
       card.className = "resource-card";
 
       const preview = document.createElement("a");
-      preview.className = "resource-preview" + (item.external ? " resource-source-preview" : "");
+      preview.className = "resource-preview resource-source-preview";
       preview.href = item.url;
-      if (item.external) {
-        preview.target = "_blank";
-        preview.rel = "noopener noreferrer";
-        preview.setAttribute("aria-label", "Abrir la fuente oficial de " + item.title + " en una pestaña nueva");
-        const sourceMark = document.createElement("span");
-        sourceMark.className = "source-mark";
-        sourceMark.textContent = item.icon;
-        const sourceLabel = document.createElement("span");
-        sourceLabel.className = "source-label";
-        sourceLabel.textContent = "VIDRIERA RUMA · " + item.format;
-        preview.append(sourceMark, sourceLabel);
-      } else {
-        preview.setAttribute("aria-label", "Ver " + item.title + " en una pestaña nueva");
-        const image = document.createElement("img");
-        image.src = item.url;
-        image.alt = "Vista previa de " + item.title;
-        image.loading = "lazy";
-        image.decoding = "async";
-        preview.append(image);
-      }
+      preview.target = "_blank";
+      preview.rel = "noopener noreferrer";
+      preview.setAttribute("aria-label", "Abrir la fuente original de " + item.title + " en una pestaña nueva");
+      const sourceMark = document.createElement("span");
+      sourceMark.className = "source-mark";
+      sourceMark.textContent = item.icon;
+      const sourceLabel = document.createElement("span");
+      sourceLabel.className = "source-label";
+      sourceLabel.textContent = "VIDRIERA RUMA · " + item.format;
+      preview.append(sourceMark, sourceLabel);
 
       const content = document.createElement("div");
       content.className = "resource-content";
@@ -111,33 +81,21 @@
 
       const actions = document.createElement("div");
       actions.className = "resource-actions";
-      const view = document.createElement("a");
-      view.className = "view-button";
-      view.href = item.url;
-      if (item.external) {
-        view.target = "_blank";
-        view.rel = "noopener noreferrer";
-        view.textContent = item.externalLabel || "Abrir biblioteca ↗";
-        view.setAttribute("aria-label", "Abrir " + item.title + " en su sitio original");
-        actions.append(view);
-      } else {
-        view.target = "_blank";
-        view.rel = "noopener";
-        view.textContent = "Ver";
-        const download = document.createElement("a");
-        download.className = "download-button";
-        download.href = item.url;
-        download.setAttribute("download", item.url.split("/").pop());
-        download.textContent = "Descargar ↓";
-        actions.append(view, download);
-      }
+      const open = document.createElement("a");
+      open.className = "view-button";
+      open.href = item.url;
+      open.target = "_blank";
+      open.rel = "noopener noreferrer";
+      open.textContent = item.externalLabel || "Abrir fuente ↗";
+      open.setAttribute("aria-label", open.textContent.replace(" ↗", "") + ": " + item.title);
+      actions.append(open);
       content.append(label, title, description, author, actions);
       card.append(preview, content);
       grid.append(card);
     });
 
     empty.hidden = visible.length > 0;
-    count.textContent = visible.length + (visible.length === 1 ? " material disponible" : " materiales disponibles");
+    count.textContent = visible.length + (visible.length === 1 ? " recurso seleccionado" : " recursos seleccionados");
   }
 
   categoryButtons.forEach(button => button.addEventListener("click", () => {
