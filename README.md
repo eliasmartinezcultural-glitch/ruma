@@ -26,11 +26,12 @@ RUMA es una biblioteca comunitaria, mundial y gratuita de papelería digital. Re
 
 El archivo `fuentes-publicas.json` reúne fuentes de investigación y piezas candidatas. No es un catálogo de descargas: cada elemento debe pasar por verificación y alojamiento en RUMA antes de publicarse.
 
-Fuentes iniciales investigadas:
+Fuentes iniciales investigadas e incorporadas:
 
 - Library of Congress — Free to Use and Reuse: https://www.loc.gov/free-to-use/
 - New York Public Library — Digital Collections: https://digitalcollections.nypl.org/
 - Reusable Art: https://www.reusableart.com/
+- OpenMoji: https://github.com/hfg-gmuend/openmoji — primera colección incorporada: 18 gráficos SVG bajo CC BY-SA 4.0. Ver `CREDITOS-OPENMOJI.md`.
 
 ### Regla jurídica mundial
 
