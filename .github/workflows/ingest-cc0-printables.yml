@@ -1,5 +1,5 @@
 name: Incorporar imprimibles CC0
-# Descarga y guarda archivos CC0 dentro de RUMA; no publica enlaces externos.
+# Importa archivos listos de la fuente original, valida ZIP y PDF, y los guarda localmente.
 
 on:
   push:
@@ -18,31 +18,46 @@ jobs:
       - name: Obtener repositorio
         uses: actions/checkout@v4
 
-      - name: Descargar y validar colecciones CC0
+      - name: Descargar colecciones CC0
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p archivos/escolar previews/escolar /tmp/ruma-packs
+          mkdir -p /tmp/ruma-packs
+          curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/sudoku-puzzles/Sudoku.Puzzles.Easy.-.25.v1.0.0.zip" -o /tmp/ruma-packs/sudoku.zip
+          curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/crossword-puzzles/Crossword.Puzzle.15x15.v1.0.0.zip" -o /tmp/ruma-packs/crosswords.zip
+          curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/coloring-books/Quote.Coloring.Book.v1.0.0.zip" -o /tmp/ruma-packs/coloring.zip
+          curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/for-writers/Author.Interview.Sheet.v1.0.0.zip" -o /tmp/ruma-packs/author-sheets.zip
+          curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/Mazes/Mazes.v1.0.0.zip" -o /tmp/ruma-packs/mazes-30.zip
+          curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/Mazes/Mazes.2.v1.0.0.zip" -o /tmp/ruma-packs/mazes-15.zip
+          curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/for-readers/Vocabulary.Builder.v1.0.0.zip" -o /tmp/ruma-packs/vocabulary.zip
+          curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/word-puzzles/Word.Search.v1.0.0.zip" -o /tmp/ruma-packs/word-search.zip
+          curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/planners-productivity/Habit.Writing.Streak.Tracker.v1.0.0.zip" -o /tmp/ruma-packs/habit-tracker.zip
+          curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/planners-productivity/Weekly.Planner.2026.v1.0.0.zip" -o /tmp/ruma-packs/weekly-planner.zip
 
-          curl --fail --location --retry 3 \
-            "https://github.com/dead0eye/free-printable-resources/releases/download/sudoku-puzzles/Sudoku.Puzzles.Easy.-.25.v1.0.0.zip" \
-            --output /tmp/ruma-packs/sudoku.zip
-
-          curl --fail --location --retry 3 \
-            "https://github.com/dead0eye/free-printable-resources/releases/download/crossword-puzzles/Crossword.Puzzle.15x15.v1.0.0.zip" \
-            --output /tmp/ruma-packs/crosswords.zip
-
+      - name: Validar ZIP y extraer muestras PDF
+        shell: bash
+        run: |
+          set -euo pipefail
           python3 <<'PY'
           import json
           import zipfile
           from pathlib import Path
 
           packs = [
-              (Path("/tmp/ruma-packs/sudoku.zip"), Path("archivos/escolar/cc0-sudoku-facil-25.zip"), Path("previews/escolar/cc0-sudoku-muestra.pdf"), "Sudoku fácil"),
-              (Path("/tmp/ruma-packs/crosswords.zip"), Path("archivos/escolar/cc0-crucigramas-15x15.zip"), Path("previews/escolar/cc0-crucigramas-muestra.pdf"), "Crucigramas 15x15"),
+              ("/tmp/ruma-packs/sudoku.zip", "archivos/escolar/cc0-sudoku-facil-25.zip", "previews/escolar/cc0-sudoku-muestra.pdf", "Sudoku fácil"),
+              ("/tmp/ruma-packs/crosswords.zip", "archivos/escolar/cc0-crucigramas-15x15.zip", "previews/escolar/cc0-crucigramas-muestra.pdf", "Crucigramas 15x15"),
+              ("/tmp/ruma-packs/coloring.zip", "archivos/creativa/cc0-libro-colorear-20-citas.zip", "previews/creativa/cc0-colorear-muestra.pdf", "Libro para colorear · 20 citas"),
+              ("/tmp/ruma-packs/author-sheets.zip", "archivos/creativa/cc0-fichas-entrevista-autor.zip", "previews/creativa/cc0-entrevista-autor-muestra.pdf", "Fichas de entrevista a autores"),
+              ("/tmp/ruma-packs/mazes-30.zip", "archivos/infantil/cc0-laberintos-30.zip", "previews/infantil/cc0-laberintos-30-muestra.pdf", "Laberintos · colección de 30"),
+              ("/tmp/ruma-packs/mazes-15.zip", "archivos/infantil/cc0-laberintos-15-adicionales.zip", "previews/infantil/cc0-laberintos-15-muestra.pdf", "Laberintos · 15 adicionales"),
+              ("/tmp/ruma-packs/vocabulary.zip", "archivos/escolar/cc0-vocabulario-40-paginas.zip", "previews/escolar/cc0-vocabulario-muestra.pdf", "Vocabulario · 40 páginas"),
+              ("/tmp/ruma-packs/word-search.zip", "archivos/escolar/cc0-sopa-de-letras.zip", "previews/escolar/cc0-sopa-de-letras-muestra.pdf", "Sopa de letras · tres variantes"),
+              ("/tmp/ruma-packs/habit-tracker.zip", "archivos/personal/cc0-seguimiento-habitos-escritura.zip", "previews/personal/cc0-habitos-muestra.pdf", "Seguimiento de hábitos y escritura"),
+              ("/tmp/ruma-packs/weekly-planner.zip", "archivos/personal/cc0-planificador-semanal-oct-dic-2026.zip", "previews/personal/cc0-planificador-semanal-muestra.pdf", "Planificador semanal · octubre a diciembre 2026")
           ]
           manifest = []
-          for archive, destination, preview, title in packs:
+          for source, archive_path, preview_path, title in packs:
+              archive = Path(source)
               if not archive.exists() or archive.stat().st_size == 0:
                   raise SystemExit(f"Descarga vacía: {archive}")
               with zipfile.ZipFile(archive) as z:
@@ -56,9 +71,10 @@ jobs:
                           continue
                       if name.startswith("/") or ".." in Path(name).parts:
                           raise SystemExit(f"Ruta insegura en ZIP: {name}")
-                      if name.lower().endswith(".pdf"):
+                      suffix = Path(name).suffix.lower()
+                      if suffix == ".pdf":
                           pdf_names.append(info.filename)
-                      elif Path(name).suffix.lower() not in {".txt", ".md", ".license"}:
+                      elif suffix not in {".txt", ".md", ".license", ".json", ".csv"} and Path(name).name != ".DS_Store":
                           raise SystemExit(f"Tipo de archivo inesperado en ZIP: {name}")
                   if not pdf_names:
                       raise SystemExit(f"No se encontraron PDF en {archive}")
@@ -68,14 +84,16 @@ jobs:
                       raise SystemExit(f"PDF de muestra inválido: {pdf_names[0]}")
                   if len(sample) > 15_000_000:
                       raise SystemExit(f"PDF de muestra demasiado grande: {pdf_names[0]}")
+                  destination = Path(archive_path)
+                  preview = Path(preview_path)
                   destination.parent.mkdir(parents=True, exist_ok=True)
                   preview.parent.mkdir(parents=True, exist_ok=True)
                   destination.write_bytes(archive.read_bytes())
                   preview.write_bytes(sample)
                   manifest.append({
                       "title": title,
-                      "archive": str(destination),
-                      "preview": str(preview),
+                      "archive": archive_path,
+                      "preview": preview_path,
                       "pdf_count": len(pdf_names),
                       "sample": Path(pdf_names[0]).name,
                       "archive_bytes": destination.stat().st_size,
@@ -94,10 +112,10 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add archivos/escolar/ previews/escolar/
+          git add archivos/ previews/
           if git diff --cached --quiet; then
             echo "No hay archivos nuevos para guardar."
             exit 0
           fi
-          git commit -m "Incorporar packs de imprimibles CC0"
+          git commit -m "Ampliar biblioteca con imprimibles CC0"
           git push
