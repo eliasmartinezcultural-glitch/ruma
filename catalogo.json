@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "updated": "2026-10-29",
+  "principle": "Todo el contenido es gratuito. Los donativos son voluntarios y nunca condicionan el acceso.",
+  "categories": [
+    {
+      "id": "comercial",
+      "name": "Comercial"
+    },
+    {
+      "id": "escolar",
+      "name": "Escolar"
+    },
+    {
+      "id": "creativa",
+      "name": "Creativa"
+    },
+    {
+      "id": "personal",
+      "name": "Personal"
+    },
+    {
+      "id": "infantil",
+      "name": "Infantil"
+    },
+    {
+      "id": "decorativa",
+      "name": "Decorativa"
+    }
+  ],
+  "resources": []
+}
