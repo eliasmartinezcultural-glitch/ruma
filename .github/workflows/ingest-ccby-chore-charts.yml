@@ -1,4 +1,5 @@
 name: Incorporar organizadores CC BY 4.0
+# Se guardan muestras originales con licencia y atribución en cada ficha.
 # Agrupa muestras PDF originales con atribución visible y licencia indicada.
 
 on:
