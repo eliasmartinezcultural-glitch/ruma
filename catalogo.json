@@ -427,6 +427,54 @@
         "emprendimiento"
       ],
       "added": "2026-10-29"
+    },
+    {
+      "creator": "GetFreeEbooks · proyecto Free Printable Resources",
+      "license": "CC0 1.0 Universal · dominio público",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution": "Recurso de Free Printable Resources · GetFreeEbooks. Compartido bajo CC0 1.0; atribución no obligatoria.",
+      "added": "2026-10-29",
+      "id": "cc0-sudoku-facil-25",
+      "title": "Pack de 25 sudokus fáciles",
+      "description": "25 sudokus imprimibles de dificultad fácil, con cinco variantes: clásico 9×9, diagonal, killer, hyper y thermo. Incluye soluciones. Idioma: principalmente visual.",
+      "category": "escolar",
+      "source": "https://github.com/dead0eye/free-printable-resources/releases/tag/sudoku-puzzles",
+      "rightsNote": "El repositorio de origen declara que todo su contenido se publica bajo CC0 1.0. Este archivo procede del lanzamiento oficial Sudoku Puzzles v1.0.0; el repositorio incluye el texto legal CC0 y una FAQ que autoriza copia, modificación y redistribución.",
+      "file": "archivos/escolar/cc0-sudoku-facil-25.zip",
+      "preview": "previews/escolar/cc0-sudoku-muestra.pdf",
+      "icon": "🔢",
+      "tags": [
+        "sudoku",
+        "pasatiempos",
+        "lógica",
+        "imprimir",
+        "juegos",
+        "soluciones"
+      ]
+    },
+    {
+      "creator": "GetFreeEbooks · proyecto Free Printable Resources",
+      "license": "CC0 1.0 Universal · dominio público",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution": "Recurso de Free Printable Resources · GetFreeEbooks. Compartido bajo CC0 1.0; atribución no obligatoria.",
+      "added": "2026-10-29",
+      "id": "cc0-crucigramas-15x15",
+      "title": "Pack de 3 crucigramas 15×15",
+      "description": "Tres crucigramas imprimibles de tamaño 15×15 y dificultad media. Un recurso para ejercitar vocabulario y pasar el tiempo. El contenido está en inglés.",
+      "category": "escolar",
+      "source": "https://github.com/dead0eye/free-printable-resources/releases/tag/crossword-puzzles",
+      "rightsNote": "El repositorio de origen declara que todo su contenido se publica bajo CC0 1.0. Este archivo procede del lanzamiento oficial Crossword Puzzles v1.0.0; el repositorio incluye el texto legal CC0 y una FAQ que autoriza copia, modificación y redistribución.",
+      "file": "archivos/escolar/cc0-crucigramas-15x15.zip",
+      "preview": "previews/escolar/cc0-crucigramas-muestra.pdf",
+      "icon": "🧩",
+      "tags": [
+        "crucigramas",
+        "pasatiempos",
+        "vocabulario",
+        "imprimir",
+        "juegos",
+        "inglés"
+      ]
     }
   ],
   "engineVersion": "0.2.0",
