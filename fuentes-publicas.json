@@ -72,6 +72,23 @@
       "status": "Fuente incorporada: 18 archivos SVG publicados en RUMA",
       "rights_check": "Los gráficos de OpenMoji se publican bajo Creative Commons Atribución-CompartirIgual 4.0 (CC BY-SA 4.0). La licencia permite compartir y adaptar incluso con fines comerciales, con atribución y compartir-igual para adaptaciones. Se fija la versión 17.0.0 para mantener la procedencia estable.",
       "notes": "Atribución oficial: All emojis designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0. Cada archivo conserva su SVG original y su enlace de procedencia."
+    },
+    {
+      "id": "free-printable-resources-cc0",
+      "name": "Free Printable Resources · GetFreeEbooks",
+      "url": "https://github.com/dead0eye/free-printable-resources",
+      "type": "Colección de PDFs imprimibles",
+      "potential": [
+        "sudokus",
+        "crucigramas",
+        "juegos de palabras",
+        "agendas de lectura",
+        "planificadores",
+        "hojas de escritura"
+      ],
+      "status": "Fuente incorporada: dos packs descargables y dos vistas previas alojadas en RUMA",
+      "rights_check": "El repositorio declara CC0 1.0 para todo su contenido y contiene el texto legal CC0 y una FAQ que explica la autorización para copiar, modificar y redistribuir, incluso con fines comerciales. Revisar cada lanzamiento y contenido antes de incorporar nuevas colecciones.",
+      "notes": "Packs incorporados: Sudoku Puzzles v1.0.0 (25 sudokus fáciles, cinco variantes) y Crossword Puzzles v1.0.0 (3 crucigramas 15×15, inglés)."
     }
   ],
   "candidate_items": [
