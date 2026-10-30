@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "updated": "2026-10-29",
-  "principle": "Todo el contenido es gratuito. Los donativos son voluntarios y nunca condicionan el acceso.",
+  "principle": "Todo el contenido publicado es gratuito. Los donativos son voluntarios y nunca condicionan el acceso.",
   "categories": [
     {
       "id": "comercial",
@@ -28,5 +28,21 @@
       "name": "Decorativa"
     }
   ],
-  "resources": []
+  "resources": [],
+  "engineVersion": "0.2.0",
+  "resourceRequirements": [
+    "id",
+    "title",
+    "description",
+    "category",
+    "creator",
+    "license",
+    "licenseUrl",
+    "source",
+    "attribution",
+    "rightsNote",
+    "file",
+    "preview",
+    "added"
+  ]
 }
