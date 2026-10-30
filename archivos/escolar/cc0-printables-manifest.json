@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Sudoku fácil",
+    "archive": "archivos/escolar/cc0-sudoku-facil-25.zip",
+    "preview": "previews/escolar/cc0-sudoku-muestra.pdf",
+    "pdf_count": 1,
+    "sample": "sudoku_github_standard-diagonal-killer-hyper-thermo_easy_25puzzles_gh.pdf",
+    "archive_bytes": 463024,
+    "preview_bytes": 1584353
+  },
+  {
+    "title": "Crucigramas 15x15",
+    "archive": "archivos/escolar/cc0-crucigramas-15x15.zip",
+    "preview": "previews/escolar/cc0-crucigramas-muestra.pdf",
+    "pdf_count": 1,
+    "sample": "crossword_15x15_gh.pdf",
+    "archive_bytes": 194002,
+    "preview_bytes": 558678
+  }
+]\n
