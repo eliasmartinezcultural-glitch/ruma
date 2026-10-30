@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Organizadores para familias y chicos",
+    "archive": "archivos/infantil/ccby-organizadores-familiares.zip",
+    "preview": "previews/infantil/ccby-perrito-muestra.pdf",
+    "pdf_count": 3,
+    "files": [
+      "blue-puppy-adventure-chore-chart.pdf",
+      "creature-catcher-quest-chore-chart.pdf",
+      "kawaii-bow-ribbon-kiss-kitty-chore-chart.pdf"
+    ],
+    "archive_bytes": 268598,
+    "preview_bytes": 215597
+  },
+  {
+    "title": "Organizadores para estudio y trabajo",
+    "archive": "archivos/comercial/ccby-organizadores-trabajo.zip",
+    "preview": "previews/comercial/ccby-checklist-oficina-muestra.pdf",
+    "pdf_count": 3,
+    "files": [
+      "cobalt-daily-office-checklist.pdf",
+      "executive-navy-weekly-office-planner.pdf",
+      "espresso-monthly-duty-calendar.pdf"
+    ],
+    "archive_bytes": 290455,
+    "preview_bytes": 162929
+  }
+]
