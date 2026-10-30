@@ -3,182 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f7f1e8">
-<meta name="description" content="RUMA: una colección sencilla de obras completas, bonitas y útiles, listas para descargar gratis.">
-<title>RUMA — Un rincón para compartir</title>
+<meta name="theme-color" content="#f7f3e9">
+<meta name="description" content="RUMA: biblioteca comunitaria y gratuita de papelería digital para imprimir, guardar y compartir.">
+<title>RUMA — Papelería digital para compartir</title>
 <style>
-:root{--paper:#faf6ed;--ink:#2f4136;--muted:#58685c;--green:#315b40;--green-dark:#24462f;--mint:#e1eadb;--pink:#f4e0d8;--yellow:#f4e9c8;--blue:#e1edf0;--line:#dfdacd;--white:#fffdf8;--focus:#8556a4}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:16px}
-body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-a{color:inherit}
-button,input{font:inherit}
-button,a{touch-action:manipulation}
-button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
-.wrap{width:min(1050px,calc(100% - 28px));margin-inline:auto}
-header{padding:16px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand-icon{display:grid;place-items:center;background:var(--green);color:white;width:54px;height:54px;border-radius:18px;font-size:30px}
-.brand-name{display:block;font-size:1.6rem;line-height:1.1;font-weight:900;letter-spacing:.12em}
-.brand-line{display:block;font-size:.88rem;color:var(--muted)}
-.nav{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:11px 18px;border-radius:15px;text-decoration:none;font-weight:800;border:2px solid transparent}
-.btn-main{background:var(--green);color:white}
-.btn-main:hover{background:var(--green-dark)}
-.btn-soft{background:var(--white);border-color:var(--line);color:var(--green-dark)}
-.hero{background:linear-gradient(130deg,#e1eadb,#f5e9c9 62%,#f4e0d8);border-radius:28px;padding:clamp(24px,5vw,58px);position:relative;overflow:hidden}
-.hero-inner{max-width:730px;position:relative;z-index:1}
-.eyebrow{font-size:.8rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--green-dark)}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:1.12}
-h1{font-size:clamp(2.5rem,7vw,4.7rem);letter-spacing:-.04em;margin:12px 0 18px}
-h1 em{color:var(--green);font-weight:500}
-.hero p{font-size:1.12rem;max-width:650px;margin:0 0 22px}
-.hero-leaf{position:absolute;right:3%;bottom:-28px;font-size:clamp(6rem,17vw,12rem);opacity:.18;transform:rotate(-16deg);pointer-events:none}
-.promises{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-.promise{background:var(--white);border:1px solid var(--line);border-radius:17px;padding:16px;font-weight:750}
-.promise span{display:block;font-size:.9rem;color:var(--muted);font-weight:500}
-section{padding-top:42px}
-.section-heading{margin-bottom:18px}
-h2{font-size:clamp(1.9rem,4vw,2.6rem);margin:5px 0 9px}
-.section-heading p{margin:0;color:var(--muted);max-width:700px}
-.catalog-tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:18px 0}
-.search{flex:1;min-width:220px;min-height:54px;border:2px solid var(--line);border-radius:15px;padding:12px 16px;background:white;color:var(--ink)}
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.filter{min-height:46px;padding:9px 14px;border:2px solid var(--line);border-radius:14px;background:var(--white);color:var(--ink);font-weight:750}
-.filter[aria-pressed="true"]{background:var(--mint);border-color:#86a17f}
-.count{color:var(--muted);font-size:.95rem;margin:10px 0}
-.catalog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.item{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.preview{min-height:150px;display:grid;place-items:center;background:var(--mint);font-size:4rem}
-.item-body{padding:18px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;flex:1}
-.item h3{font-size:1.55rem;margin:0}
-.item p{margin:0;color:var(--muted)}
-.credit{background:#f0eee4;border-radius:10px;padding:9px 11px;font-size:.9rem;width:100%}
-.download{width:100%;margin-top:auto}
-.empty{background:var(--white);border:2px dashed #c9d1c2;border-radius:22px;padding:clamp(22px,4vw,40px);text-align:center;grid-column:1/-1}
-.empty-icon{font-size:3.5rem}
-.empty h3{font-size:1.8rem;margin:8px 0}
-.empty p{max-width:620px;margin:0 auto;color:var(--muted)}
-.rule{margin-top:18px;padding:15px 17px;background:var(--blue);border-radius:16px;font-size:.95rem}
-.gift{display:grid;grid-template-columns:1.15fr .85fr;gap:15px}
-.gift-card{border-radius:23px;padding:clamp(22px,4vw,34px);background:var(--pink);border:1px solid #ead2c9}
-.gift-card.secondary{background:var(--white);border-color:var(--line)}
-.gift-card h2{font-size:clamp(1.7rem,4vw,2.2rem)}
-.gift-card p{margin:0;color:#4f6054}
-.alias-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
-.alias{display:inline-block;background:var(--white);border:1px solid #dfd5c8;border-radius:12px;padding:12px 15px;font-weight:900;font-size:1.1rem}
-.copy{min-height:48px;border:2px solid #d4c9bc;background:var(--white);border-radius:12px;padding:10px 14px;font-weight:800;color:var(--green-dark)}
-.status{min-height:1.5em;font-size:.9rem;margin-top:8px;color:var(--green-dark)}
-.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.rule-card{display:flex;gap:12px;align-items:flex-start;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:15px}
-.rule-number{flex:0 0 34px;height:34px;border-radius:11px;display:grid;place-items:center;background:var(--mint);color:var(--green-dark);font-weight:900}
-.rule-card strong{display:block;line-height:1.3}
-.rule-card p{margin:5px 0 0;color:var(--muted);font-size:.95rem}
-footer{margin-top:44px;padding:25px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-footer strong{color:var(--ink)}
-@media(max-width:760px){.catalog{grid-template-columns:repeat(2,minmax(0,1fr))}.gift{grid-template-columns:1fr}.promises{grid-template-columns:1fr}.promise{padding:13px 15px}.hero-leaf{right:-12px;opacity:.12}}
-@media(max-width:520px){body{font-size:17px}.wrap{width:calc(100% - 20px)}header{align-items:flex-start}.brand-icon{width:46px;height:46px;font-size:25px;border-radius:14px}.brand-name{font-size:1.35rem}.brand-line{font-size:.78rem}.nav{flex-direction:column;gap:6px}.nav .btn{min-height:42px;padding:7px 10px;font-size:.9rem}.hero{border-radius:21px;padding:25px 20px}.hero p{font-size:1.05rem}.catalog{grid-template-columns:1fr}.preview{min-height:125px}.item-body{padding:17px}.catalog-tools{display:block}.search{width:100%;min-width:0;margin-bottom:10px}.filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.filter{width:100%;font-size:.92rem;padding:9px 7px}.rules{grid-template-columns:1fr}section{padding-top:34px}.gift-card{border-radius:19px}.alias-row{align-items:stretch}.alias{flex:1;text-align:center}.copy{width:100%}footer{margin-top:34px}}
+:root{--paper:#faf7ef;--ink:#35483b;--muted:#667268;--green:#365e45;--green2:#294a36;--mint:#e5eddf;--pink:#f5e4df;--yellow:#f5edcf;--blue:#e5eff0;--line:#e2ddcf;--white:#fffefa;--purple:#eee7f3;--focus:#8157a2}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:18px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}button,input{font:inherit}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.wrap{width:min(1120px,calc(100% - 28px));margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}.brand{display:flex;gap:11px;align-items:center;text-decoration:none}.logo{width:52px;height:52px;border-radius:17px;background:var(--green);color:white;display:grid;place-items:center;font-size:29px}.brand b{display:block;font-size:1.55rem;letter-spacing:.13em;line-height:1}.brand small{color:var(--muted)}.nav{display:flex;gap:9px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:46px;padding:10px 16px;border:2px solid transparent;border-radius:14px;text-decoration:none;font-weight:800;cursor:pointer}.primary{background:var(--green);color:white}.primary:hover{background:var(--green2)}.soft{background:var(--white);border-color:var(--line);color:var(--green2)}
+.hero{position:relative;overflow:hidden;border-radius:28px;padding:clamp(25px,5vw,58px);background:linear-gradient(125deg,#e5eddf 0%,#f5edcf 58%,#f5e4df 100%)}.hero-inner{max-width:760px;position:relative;z-index:1}.eyebrow{text-transform:uppercase;letter-spacing:.11em;font-size:.78rem;font-weight:850;color:var(--green)}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:1.12}h1{font-size:clamp(2.45rem,7vw,4.5rem);letter-spacing:-.04em;margin:12px 0 17px}h1 em{color:var(--green)}.hero p{font-size:1.1rem;max-width:690px;margin:0 0 21px}.hero-art{position:absolute;right:4%;bottom:-25px;font-size:clamp(7rem,18vw,13rem);opacity:.18;transform:rotate(-13deg);pointer-events:none}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:13px}.value{padding:15px 17px;border:1px solid var(--line);border-radius:16px;background:var(--white);font-weight:800}.value span{display:block;color:var(--muted);font-size:.9rem;font-weight:500}
+section{padding-top:42px}.heading{margin-bottom:18px}.heading h2{font-size:clamp(1.9rem,4vw,2.6rem);margin:5px 0 8px}.heading p{margin:0;color:var(--muted);max-width:720px}
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.door{display:flex;align-items:center;gap:13px;padding:17px;border-radius:18px;background:var(--white);border:1px solid var(--line);text-align:left;color:var(--ink);cursor:pointer;min-height:94px}.door:hover{transform:translateY(-2px);border-color:#aab99f}.door[aria-pressed="true"]{background:var(--mint);border-color:#8ca58b}.door-icon{flex:0 0 49px;height:49px;display:grid;place-items:center;border-radius:15px;background:var(--mint);font-size:1.7rem}.door:nth-child(2) .door-icon{background:var(--yellow)}.door:nth-child(3) .door-icon{background:var(--pink)}.door:nth-child(4) .door-icon{background:var(--blue)}.door:nth-child(5) .door-icon{background:var(--purple)}.door:nth-child(6) .door-icon{background:#eee8d9}.door strong{display:block;font-size:1.02rem}.door small{color:var(--muted);display:block;font-size:.86rem}
+.tools{display:flex;gap:11px;align-items:center;flex-wrap:wrap;margin:18px 0 10px}.search{flex:1;min-width:220px;min-height:52px;padding:11px 15px;border:2px solid var(--line);border-radius:14px;background:white;color:var(--ink)}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:2px solid var(--line);border-radius:13px;background:var(--white);padding:9px 13px;min-height:43px;font-weight:750;color:var(--ink);cursor:pointer}.filter[aria-pressed="true"]{background:var(--mint);border-color:#91a98c}.count{font-size:.92rem;color:var(--muted);margin:10px 0}.catalog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.resource{border:1px solid var(--line);background:var(--white);border-radius:19px;overflow:hidden;display:flex;flex-direction:column}.resource-art{min-height:158px;display:grid;place-items:center;background:var(--mint);font-size:3.8rem}.resource-body{padding:17px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;flex:1}.resource h3{font-size:1.45rem;margin:0}.resource p{margin:0;color:var(--muted)}.meta{background:#f0eee5;border-radius:10px;padding:9px 11px;font-size:.87rem;width:100%}.download{width:100%;margin-top:auto}.empty{grid-column:1/-1;padding:clamp(24px,4vw,40px);text-align:center;border:2px dashed #cbd3c4;border-radius:21px;background:var(--white)}.empty .symbol{font-size:3.3rem}.empty h3{font-size:1.8rem;margin:8px 0}.empty p{max-width:660px;margin:0 auto;color:var(--muted)}.note{margin-top:15px;background:var(--blue);padding:14px 16px;border-radius:15px;font-size:.93rem}
+.support{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.support-card{padding:clamp(21px,4vw,33px);border-radius:21px;background:var(--pink);border:1px solid #ead5ce}.support-card.alt{background:var(--white);border-color:var(--line)}.support-card h2{font-size:clamp(1.7rem,4vw,2.2rem);margin:8px 0}.support-card p{margin:0;color:#526257}.aliasrow{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:16px}.alias{padding:11px 14px;background:var(--white);border:1px solid #dfd4c8;border-radius:11px;font-size:1.08rem;font-weight:900}.copy{min-height:46px;padding:9px 13px;border-radius:11px;border:2px solid #d4c9bc;background:var(--white);font-weight:800;color:var(--green2);cursor:pointer}.status{min-height:1.4em;font-size:.9rem;color:var(--green2);margin-top:8px}
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.rule{display:flex;gap:11px;padding:14px;border:1px solid var(--line);border-radius:15px;background:var(--white)}.num{flex:0 0 33px;height:33px;display:grid;place-items:center;background:var(--mint);border-radius:10px;font-weight:900;color:var(--green2)}.rule strong{display:block}.rule p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+footer{margin-top:42px;padding:23px 0 32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}footer strong{color:var(--ink)}
+@media(max-width:760px){.doors{grid-template-columns:repeat(2,1fr)}.catalog{grid-template-columns:repeat(2,1fr)}.values{grid-template-columns:1fr}.support{grid-template-columns:1fr}.hero-art{right:-12px;opacity:.12}}
+@media(max-width:520px){body{font-size:16px}.wrap{width:calc(100% - 20px)}header{align-items:flex-start}.logo{width:45px;height:45px;font-size:25px}.brand b{font-size:1.32rem}.brand small{font-size:.78rem}.nav{flex-direction:column;gap:5px}.nav .btn{min-height:39px;padding:6px 10px;font-size:.88rem}.hero{border-radius:21px;padding:25px 19px}.hero p{font-size:1.02rem}.doors{grid-template-columns:1fr}.door{min-height:78px;padding:13px}.catalog{grid-template-columns:1fr}.resource-art{min-height:125px}.tools{display:block}.search{width:100%;margin-bottom:9px}.filters{display:grid;grid-template-columns:repeat(2,1fr)}.filter{width:100%;padding:8px 5px;font-size:.9rem}.rules{grid-template-columns:1fr}section{padding-top:34px}.aliasrow{align-items:stretch}.alias{flex:1;text-align:center}.copy{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
 <header class="wrap">
-<a class="brand" href="#inicio" aria-label="RUMA, volver al inicio"><span class="brand-icon" aria-hidden="true">⌂</span><span><span class="brand-name">RUMA</span><span class="brand-line">Un rincón para compartir</span></span></a>
-<nav class="nav" aria-label="Navegación principal"><a class="btn btn-soft" href="#archivos">Ver archivos</a><a class="btn btn-main" href="#colaborar">♡ Colaborar</a></nav>
+<a class="brand" href="#inicio" aria-label="RUMA, inicio"><span class="logo" aria-hidden="true">✿</span><span><b>RUMA</b><small>Papelería digital para compartir</small></span></a>
+<nav class="nav" aria-label="Navegación principal"><a class="btn soft" href="#colecciones">Explorar papelería</a><a class="btn primary" href="#colaborar">♡ Colaborar</a></nav>
 </header>
 <main class="wrap" id="inicio">
 <section class="hero" style="padding-top:32px">
-<div class="hero-inner"><div class="eyebrow">Una biblioteca abierta para todos</div>
-<h1>Las cosas buenas se disfrutan más cuando <em>se comparten.</em></h1>
-<p>Acá vas a encontrar obras completas, creadas por otras personas, elegidas con cariño y listas para descargar gratis. Mirá, elegí y llevate lo que te guste. No necesitás registrarte ni pagar.</p>
-<div class="nav"><a class="btn btn-main" href="#archivos">📚 Buscar un archivo</a><a class="btn btn-soft" href="#colaborar">💚 Dejar un aporte voluntario</a></div>
-</div><div class="hero-leaf" aria-hidden="true">🌿</div>
+<div class="hero-inner"><div class="eyebrow">Una biblioteca comunitaria y abierta</div>
+<h1>Un mundo de papeles bonitos para <em>usar y compartir.</em></h1>
+<p>RUMA reúne papelería digital útil, creativa y cuidada para la escuela, el trabajo, los emprendimientos y la vida cotidiana. Podés explorar, mirar cada material y descargarlo gratis. No necesitás registrarte ni pagar.</p>
+<div class="nav"><a class="btn primary" href="#colecciones">✿ Explorar colecciones</a><a class="btn soft" href="#colaborar">💚 Aportar voluntariamente</a></div></div><div class="hero-art" aria-hidden="true">✿</div>
 </section>
-<div class="promises" aria-label="Lo que ofrece RUMA"><div class="promise">Gratis para todos<span>No hay pagos obligatorios.</span></div><div class="promise">Fácil de usar<span>Botones claros y letra legible.</span></div><div class="promise">Descarga directa<span>Los archivos se obtienen desde RUMA.</span></div></div>
-
-<section id="archivos">
-<div class="section-heading"><div class="eyebrow">Elegí con tranquilidad</div><h2>Archivos para llevarte</h2><p>Acabamos de abrir el estante de lectura con dos cuentos clásicos completos de Horacio Quiroga. Cada ficha muestra una muestra real, la autoría y el estado de derechos, con descarga directa.</p></div>
-<div class="catalog-tools">
-<input class="search" id="search" type="search" placeholder="Escribí qué estás buscando…" aria-label="Buscar en los archivos">
-<div class="filters" role="group" aria-label="Filtrar archivos"><button class="filter" data-category="todo" aria-pressed="true">Todos</button><button class="filter" data-category="leer" aria-pressed="false">📚 Lecturas</button></div>
+<div class="values"><div class="value">Acceso libre<span>Todo disponible sin pagos obligatorios.</span></div><div class="value">Materiales cuidados<span>Calidad, utilidad y autoría reconocida.</span></div><div class="value">Descarga sencilla<span>Archivos alojados dentro de RUMA.</span></div></div>
+<section id="colecciones">
+<div class="heading"><div class="eyebrow">Encontrá tu rincón</div><h2>Explorá la papelería</h2><p>Elegí un mundo para empezar. Cada material tendrá una vista previa auténtica, información de su creador y una descarga directa.</p></div>
+<div class="doors" id="doors" role="group" aria-label="Categorías de papelería">
+<button class="door" data-category="comercial" aria-pressed="false"><span class="door-icon">🏷️</span><span><strong>Comercial</strong><small>Emprendimientos y negocios</small></span></button>
+<button class="door" data-category="escolar" aria-pressed="false"><span class="door-icon">✏️</span><span><strong>Escolar</strong><small>Estudio y organización</small></span></button>
+<button class="door" data-category="creativa" aria-pressed="false"><span class="door-icon">✂️</span><span><strong>Creativa</strong><small>Stickers, scrap y collage</small></span></button>
+<button class="door" data-category="personal" aria-pressed="false"><span class="door-icon">📔</span><span><strong>Personal</strong><small>Agendas, listas y cartas</small></span></button>
+<button class="door" data-category="infantil" aria-pressed="false"><span class="door-icon">🧸</span><span><strong>Infantil</strong><small>Juegos y actividades</small></span></button>
+<button class="door" data-category="decorativa" aria-pressed="false"><span class="door-icon">🌿</span><span><strong>Decorativa</strong><small>Láminas y papeles bonitos</small></span></button>
 </div>
-<div class="count" id="count" aria-live="polite">Estamos preparando los primeros archivos.</div>
-<div class="catalog" id="catalog">
-<div class="empty"><div class="empty-icon" aria-hidden="true">🧺</div><h3>Estamos preparando esta selección</h3><p>Queremos ofrecerte archivos completos, bonitos y útiles, con una vista previa real y descarga directa. Preferimos esperar y hacerlo bien antes que mostrarte algo incompleto o mandarte a otra página.</p></div>
-</div>
-<div class="rule"><strong>La regla de RUMA:</strong> si el archivo no está listo, no tiene vista previa o no podemos compartirlo legalmente, no se publica. No hay enlaces externos para conseguir los materiales.</div>
+<div class="tools"><input class="search" id="search" type="search" placeholder="Buscar por nombre o utilidad…" aria-label="Buscar materiales"><div class="filters" role="group" aria-label="Filtros"><button class="filter" data-filter="todo" aria-pressed="true">Todo RUMA</button><button class="filter" data-filter="recientes" aria-pressed="false">Novedades</button></div></div>
+<div class="count" id="count" aria-live="polite">Preparando la primera selección de papelería.</div>
+<div class="catalog" id="catalog"><div class="empty"><div class="symbol">🗂️</div><h3>Estamos armando los primeros estantes</h3><p>Preferimos incorporar pocos materiales excelentes antes que llenar RUMA con archivos incompletos, dudosos o que no aporten valor. Muy pronto cada colección tendrá materiales listos para mirar y descargar.</p></div></div>
+<div class="note"><strong>Compromiso RUMA:</strong> no publicamos archivos sin comprobar que estén completos, que su descarga funcione y que tengamos derecho a compartirlos. La descarga siempre estará dentro de RUMA; no te mandaremos a otra página para conseguir el archivo.</div>
 </section>
-
-<section id="colaborar">
-<div class="gift">
-<div class="gift-card"><div class="eyebrow">La cajita de agradecimiento</div><h2>¿Te gustaría colaborar?</h2><p>RUMA es gratuito y seguirá siendo gratuito. Si algo de acá te sirve y querés ayudar a que este rincón siga creciendo, podés dejar un aporte voluntario. Si hoy no podés o no querés, llevate lo que necesites con la misma alegría.</p><div class="alias-row"><span class="alias" id="alias">ocarina.guitarra</span><button class="copy" id="copy" type="button">Copiar alias</button></div><div class="status" id="copy-status" role="status" aria-live="polite"></div><p style="font-size:.9rem;margin-top:8px">Alias a nombre de Elías Martínez. Colaborar es totalmente opcional.</p></div>
-<div class="gift-card secondary"><div class="eyebrow">Un pequeño gesto</div><h2>Gracias por estar acá.</h2><p>RUMA es como una cajita que alguien dejó en el camino: podés llevarte algo sin explicar nada, sin registrarte y sin deber nada a cambio. Si algún día querés aportar, la cajita está disponible.</p></div>
-</div>
-</section>
-
-<section id="reglas">
-<div class="section-heading"><div class="eyebrow">Nuestra palabra</div><h2>Las reglas de RUMA</h2><p>Estas reglas cuidan a quienes comparten y a quienes vienen a buscar algo útil.</p></div>
+<section id="colaborar"><div class="support">
+<div class="support-card"><div class="eyebrow">La cajita de agradecimiento</div><h2>¿Querés ayudar a que RUMA crezca?</h2><p>Todo RUMA está disponible para todos. Si algo te sirve y te nace colaborar, podés dejar un donativo voluntario. Si hoy no podés o no querés, disfrutá los materiales con la misma alegría. Nunca hay que pagar para acceder.</p><div class="aliasrow"><span class="alias" id="alias">ocarina.guitarra</span><button class="copy" id="copy" type="button">Copiar alias</button></div><div class="status" id="status" role="status" aria-live="polite"></div><p style="font-size:.88rem;margin-top:7px">A nombre de Elías Martínez · Aporte totalmente opcional.</p></div>
+<div class="support-card alt"><div class="eyebrow">Un espacio compartido</div><h2>Las cosas buenas circulan.</h2><p>RUMA es una biblioteca abierta: podés llevarte algo sin registrarte, sin explicar nada y sin deber nada a cambio. También podés ayudar compartiendo el proyecto o acercando recursos con permisos claros.</p></div>
+</div></section>
+<section id="principios"><div class="heading"><div class="eyebrow">Nuestra palabra</div><h2>Las reglas de RUMA</h2><p>Una biblioteca generosa también tiene que ser responsable.</p></div>
 <div class="rules">
-<article class="rule-card"><span class="rule-number">1</span><div><strong>Todo es gratis</strong><p>Nunca se exige dinero, registro ni contraseña.</p></div></article>
-<article class="rule-card"><span class="rule-number">2</span><div><strong>Solo obras completas</strong><p>Publicamos materiales terminados creados por otras personas, no borradores ni relleno.</p></div></article>
-<article class="rule-card"><span class="rule-number">3</span><div><strong>Descarga dentro de RUMA</strong><p>El archivo se descarga directamente desde esta página, sin enlaces externos para obtenerlo.</p></div></article>
-<article class="rule-card"><span class="rule-number">4</span><div><strong>Vista previa verdadera</strong><p>Antes de descargar, podés ver el material real que vas a recibir.</p></div></article>
-<article class="rule-card"><span class="rule-number">5</span><div><strong>Respeto por los creadores</strong><p>Solo compartimos archivos cuando tenemos permiso o una licencia que permite redistribuirlos.</p></div></article>
-<article class="rule-card"><span class="rule-number">6</span><div><strong>Calidad antes que cantidad</strong><p>Preferimos pocos archivos excelentes antes que muchos materiales que no ayudan.</p></div></article>
-<article class="rule-card"><span class="rule-number">7</span><div><strong>Fácil para todos</strong><p>La página debe ser clara en celulares, computadoras y pantallas grandes o pequeñas.</p></div></article>
-<article class="rule-card"><span class="rule-number">8</span><div><strong>La colaboración es voluntaria</strong><p>La cajita es una invitación amable, nunca una condición para descargar.</p></div></article>
-</div>
-</section>
+<article class="rule"><span class="num">1</span><div><strong>Todo es gratuito</strong><p>Nunca se exige dinero, cuenta ni contraseña.</p></div></article>
+<article class="rule"><span class="num">2</span><div><strong>Calidad antes que cantidad</strong><p>Solo materiales terminados, claros, útiles y bien presentados.</p></div></article>
+<article class="rule"><span class="num">3</span><div><strong>Vista previa real</strong><p>Antes de descargar podés conocer el material que vas a recibir.</p></div></article>
+<article class="rule"><span class="num">4</span><div><strong>Descarga directa</strong><p>Los archivos se alojan en RUMA, sin cadenas de enlaces.</p></div></article>
+<article class="rule"><span class="num">5</span><div><strong>Respeto por los creadores</strong><p>Compartimos solo con permiso o licencias que permitan redistribuir.</p></div></article>
+<article class="rule"><span class="num">6</span><div><strong>Autoría transparente</strong><p>Indicamos quién creó el material y bajo qué condiciones se comparte.</p></div></article>
+<article class="rule"><span class="num">7</span><div><strong>Para todos los dispositivos</strong><p>Diseño legible, botones claros y uso sencillo en celular y computadora.</p></div></article>
+<article class="rule"><span class="num">8</span><div><strong>Donar nunca es obligatorio</strong><p>La colaboración es una invitación, jamás una condición de acceso.</p></div></article>
+</div></section>
 </main>
-<footer class="wrap"><div><strong>RUMA</strong> · Un rincón para compartir.<br>Hecho con cariño para que las cosas buenas circulen.</div><div>Gratis para todos · Aporte voluntario</div></footer>
+<footer class="wrap"><div><strong>RUMA</strong> · Papelería digital para compartir.<br>Hecho con cariño para que las cosas buenas circulen.</div><div>Acceso libre · Donativos voluntarios</div></footer>
 <script>
-const resources=[
- {title:"A la deriva",description:"Un cuento intenso sobre un hombre herido en la selva y su lucha por llegar a destino. Literatura clásica del Río Paraná.",category:"leer",creator:"Horacio Quiroga",license:"Dominio público en Argentina",preview:"El hombre pisó algo blanduzco, y enseguida sintió la mordedura en el pie. Saltó adelante, y al volverse con un juramento vio una yararacusú que arrollada sobre sí misma, esperaba otro ataque.",file:"archivos/a-la-deriva-horacio-quiroga.txt",icon:"🛶",kind:"Cuento clásico"},
- {title:"El almohadón de pluma",description:"Un relato inquietante de misterio y terror, publicado en los primeros años del siglo XX.",category:"leer",creator:"Horacio Quiroga",license:"Dominio público en Argentina",preview:"Su luna de miel fué un largo escalofrío. Rubia, angelical y tímida, el carácter duro de su marido heló sus soñadas niñerías de novia.",file:"archivos/el-almohadon-de-pluma-horacio-quiroga.txt",icon:"🪶",kind:"Cuento clásico"},
- {title:"La insolación",description:"Un cuento de calor extremo, señales inquietantes y la mirada de cinco perros en una chacra.",category:"leer",creator:"Horacio Quiroga",license:"Dominio público en Argentina · transcripción CC BY-SA 4.0",preview:"El cachorro Old salió por la puerta y atravesó el patio con paso recto y perezoso. Se detuvo en la linde del pasto, estiró al monte, entrecerrando los ojos, la nariz vibrátil, y se sentó tranquilo.",file:"archivos/la-insolacion-horacio-quiroga.txt",icon:"☀️",kind:"Cuento clásico"}
-];
-const catalog=document.getElementById('catalog');
-const search=document.getElementById('search');
-const count=document.getElementById('count');
-let activeCategory='todo';
+const catalog=document.getElementById('catalog'),search=document.getElementById('search'),count=document.getElementById('count');
+let resources=[],category='todo',filter='todo';
+const labels={comercial:'Comercial',escolar:'Escolar',creativa:'Creativa',personal:'Personal',infantil:'Infantil',decorativa:'Decorativa'};
+function emptyState(title,copy,symbol='🗂️'){const box=document.createElement('div');box.className='empty';const icon=document.createElement('div');icon.className='symbol';icon.textContent=symbol;const h=document.createElement('h3');h.textContent=title;const p=document.createElement('p');p.textContent=copy;box.append(icon,h,p);catalog.append(box);}
 function render(){
- const query=search.value.trim().toLocaleLowerCase();
- const shown=resources.filter(item=>(activeCategory==='todo'||item.category===activeCategory)&&(!query||(item.title+' '+item.description+' '+item.category).toLocaleLowerCase().includes(query)));
- count.textContent=shown.length===0?'No hay archivos en esta búsqueda.':shown.length+(shown.length===1?' archivo listo para descargar':' archivos listos para descargar');
- catalog.innerHTML='';
- if(!shown.length){
-  const empty=document.createElement('div');empty.className='empty';
-  if(resources.length===0){empty.innerHTML='<div class="empty-icon" aria-hidden="true">🧺</div><h3>Estamos preparando los primeros archivos</h3><p>Queremos ofrecerte obras completas, con una muestra real y descarga directa. Preferimos esperar y hacerlo bien antes que mandarte a otra página.</p>';}
-  else{empty.innerHTML='<div class="empty-icon" aria-hidden="true">🔎</div><h3>No encontramos ese título</h3><p>Probá con otra palabra o volvé a ver todos los archivos.</p><button class="btn btn-main" id="show-all" type="button">Ver todos los archivos</button>';}
-  catalog.appendChild(empty);
-  const reset=document.getElementById('show-all');if(reset)reset.addEventListener('click',()=>{search.value='';activeCategory='todo';document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.category==='todo')));render();});
-  return;
- }
- shown.forEach(item=>{
-  const card=document.createElement('article');card.className='item';
-  const preview=document.createElement('div');preview.className='preview';preview.textContent=item.icon;
-  const body=document.createElement('div');body.className='item-body';
-  const title=document.createElement('h3');title.textContent=item.title;
-  const description=document.createElement('p');description.textContent=item.description;
-  const previewDetails=document.createElement('details');previewDetails.className='real-preview';const summary=document.createElement('summary');summary.textContent='👀 Leer una muestra';const excerpt=document.createElement('div');excerpt.className='preview-text';excerpt.textContent='“'+item.preview+'”';previewDetails.append(summary,excerpt);
-  const credit=document.createElement('div');credit.className='credit';credit.textContent='Autor: '+item.creator+' · '+item.license;
-  const fileMeta=document.createElement('div');fileMeta.className='file-meta';fileMeta.textContent='Archivo de texto · obra completa';
-  const link=document.createElement('a');link.className='btn btn-main download';link.href=item.file;link.setAttribute('download','');link.textContent='⬇ Descargar archivo';
-  body.append(title,description,previewDetails,credit,fileMeta,link);card.append(preview,body);catalog.appendChild(card);
+ const q=search.value.trim().toLocaleLowerCase();
+ const list=resources.filter(r=>(category==='todo'||r.category===category)&&(!q||(r.title+' '+r.description+' '+(r.tags||[]).join(' ')).toLocaleLowerCase().includes(q)));
+ count.textContent=list.length?list.length+(list.length===1?' material disponible':' materiales disponibles'):'Todavía no hay materiales publicados en esta selección.';
+ catalog.replaceChildren();
+ if(!list.length){emptyState(resources.length?'No encontramos materiales con esa búsqueda':'Estamos preparando los primeros materiales',resources.length?'Probá con otra palabra o elegí otra colección.':'RUMA está cambiando sus estantes hacia la papelería digital. No vamos a mostrar archivos de relleno ni materiales que no podamos compartir legalmente.','🌷');return;}
+ list.forEach(r=>{
+  const card=document.createElement('article');card.className='resource';const art=document.createElement('div');art.className='resource-art';art.textContent=r.icon||'📄';
+  const body=document.createElement('div');body.className='resource-body';const title=document.createElement('h3');title.textContent=r.title;const desc=document.createElement('p');desc.textContent=r.description;
+  const meta=document.createElement('div');meta.className='meta';meta.textContent='Creación: '+r.creator+' · '+r.license;
+  const link=document.createElement('a');link.className='btn primary download';link.href=r.file;link.download='';link.textContent='⬇ Descargar gratis';
+  body.append(title,desc,meta,link);card.append(art,body);catalog.append(card);
  });
 }
-document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{
- activeCategory=button.dataset.category;
- document.querySelectorAll('.filter').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
- render();
-}));
+document.querySelectorAll('.door').forEach(b=>b.addEventListener('click',()=>{category=category===b.dataset.category?'todo':b.dataset.category;document.querySelectorAll('.door').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.category===category)));render();}));
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();}));
 search.addEventListener('input',render);
-document.getElementById('copy').addEventListener('click',async()=>{
- const status=document.getElementById('copy-status');
- try{await navigator.clipboard.writeText(document.getElementById('alias').textContent);status.textContent='¡Alias copiado! Gracias por tu generosidad.';}
- catch(error){status.textContent='Podés seleccionar el alias y copiarlo: ocarina.guitarra';}
-});
-render();
+document.getElementById('copy').addEventListener('click',async()=>{const s=document.getElementById('status');try{await navigator.clipboard.writeText(document.getElementById('alias').textContent);s.textContent='Alias copiado. ¡Gracias por tu generosidad!';}catch(e){s.textContent='Seleccioná y copiá el alias: ocarina.guitarra';}});
+fetch('catalogo.json').then(r=>{if(!r.ok)throw new Error('No se pudo leer el catálogo');return r.json();}).then(data=>{resources=Array.isArray(data.resources)?data.resources:[];render();}).catch(()=>{resources=[];render();});
 </script>
 </body>
 </html>
