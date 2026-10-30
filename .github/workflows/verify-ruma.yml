@@ -1,0 +1,41 @@
+name: Verificar motor y biblioteca RUMA
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "catalogo.json"
+      - "archivos/**"
+      - "previews/**"
+      - "scripts/verify_catalog.py"
+      - ".github/workflows/verify-ruma.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+
+      - name: Validar catálogo, licencias y archivos locales
+        run: python3 scripts/verify_catalog.py
+
+      - name: Extraer y comprobar sintaxis JavaScript
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          import re
+          from pathlib import Path
+          html = Path("index.html").read_text(encoding="utf-8")
+          match = re.search(r"<script>(.*?)</script>", html, re.S)
+          if not match:
+              raise SystemExit("No se encontró el JavaScript principal.")
+          Path("/tmp/ruma-inline.js").write_text(match.group(1), encoding="utf-8")
+          PY
+          node --check /tmp/ruma-inline.js
