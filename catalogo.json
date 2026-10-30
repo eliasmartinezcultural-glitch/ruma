@@ -776,6 +776,54 @@
         "escuela"
       ],
       "added": "2026-10-29"
+    },
+    {
+      "creator": "Flinkis · printablechorechart.com",
+      "license": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Chart template by Flinkis — printablechorechart.com. CC BY 4.0. Selección y agrupación de archivos originales sin modificar.",
+      "rightsNote": "La licencia del repositorio aplica CC BY 4.0 a sus plantillas y PDF: permite compartir y adaptar, incluso comercialmente, con atribución, enlace a la licencia e indicación de cambios. RUMA agrupa los PDF originales sin modificar su contenido.",
+      "source": "https://github.com/halallens-no/chore-chart-kit",
+      "added": "2026-10-29",
+      "id": "ccby-organizadores-familiares",
+      "title": "Pack de 3 organizadores para familias y chicos",
+      "description": "Tres planillas imprimibles para organizar tareas y rutinas: Blue Puppy Adventure, Creature Catcher Quest y Kawaii Bow Ribbon Kiss Kitty. Los originales están en formato US Letter; para imprimir en A4, elegir «ajustar a página».",
+      "category": "infantil",
+      "file": "archivos/infantil/ccby-organizadores-familiares.zip",
+      "preview": "previews/infantil/ccby-perrito-muestra.pdf",
+      "icon": "🐶",
+      "tags": [
+        "rutinas",
+        "tareas",
+        "familia",
+        "chicos",
+        "organización",
+        "recompensas"
+      ]
+    },
+    {
+      "creator": "Flinkis · printablechorechart.com",
+      "license": "Creative Commons Atribución 4.0 Internacional (CC BY 4.0)",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Chart template by Flinkis — printablechorechart.com. CC BY 4.0. Selección y agrupación de archivos originales sin modificar.",
+      "rightsNote": "La licencia del repositorio aplica CC BY 4.0 a sus plantillas y PDF: permite compartir y adaptar, incluso comercialmente, con atribución, enlace a la licencia e indicación de cambios. RUMA agrupa los PDF originales sin modificar su contenido.",
+      "source": "https://github.com/halallens-no/chore-chart-kit",
+      "added": "2026-10-29",
+      "id": "ccby-organizadores-trabajo",
+      "title": "Pack de 3 organizadores para estudio y trabajo",
+      "description": "Incluye checklist diario de oficina, planificador semanal y calendario mensual. Los originales están en formato US Letter; para imprimir en A4, elegir «ajustar a página».",
+      "category": "comercial",
+      "file": "archivos/comercial/ccby-organizadores-trabajo.zip",
+      "preview": "previews/comercial/ccby-checklist-oficina-muestra.pdf",
+      "icon": "📋",
+      "tags": [
+        "oficina",
+        "checklist",
+        "planificador",
+        "calendario",
+        "trabajo",
+        "organización"
+      ]
     }
   ],
   "engineVersion": "0.2.0",
