@@ -1,4 +1,5 @@
 name: Verificar motor y biblioteca RUMA
+# Impide publicar fichas rotas, rutas externas o errores de sintaxis.
 
 on:
   push:
