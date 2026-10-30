@@ -101,7 +101,7 @@ jobs:
                   })
                   print(f"VALIDADO: {title} · {len(pdf_names)} PDF · {destination.stat().st_size} bytes")
           Path("archivos/escolar/cc0-printables-manifest.json").write_text(
-              json.dumps(manifest, ensure_ascii=False, indent=2) + "\\n",
+              json.dumps(manifest, ensure_ascii=False, indent=2),
               encoding="utf-8"
           )
           PY
