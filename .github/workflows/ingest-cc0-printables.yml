@@ -33,6 +33,7 @@ jobs:
           curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/word-puzzles/Word.Search.v1.0.0.zip" -o /tmp/ruma-packs/word-search.zip
           curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/planners-productivity/Habit.Writing.Streak.Tracker.v1.0.0.zip" -o /tmp/ruma-packs/habit-tracker.zip
           curl --fail --location --retry 3 "https://github.com/dead0eye/free-printable-resources/releases/download/planners-productivity/Weekly.Planner.2026.v1.0.0.zip" -o /tmp/ruma-packs/weekly-planner.zip
+          curl --fail --location --retry 3 "https://github.com/domsson/tracedletters/archive/refs/heads/main.zip" -o /tmp/ruma-packs/tracedletters-source.zip
 
       - name: Validar ZIP y extraer muestras PDF
         shell: bash
@@ -100,6 +101,33 @@ jobs:
                       "preview_bytes": preview.stat().st_size
                   })
                   print(f"VALIDADO: {title} · {len(pdf_names)} PDF · {destination.stat().st_size} bytes")
+          source_archive = Path("/tmp/ruma-packs/tracedletters-source.zip")
+          with zipfile.ZipFile(source_archive) as source_zip:
+              letter_pdfs = sorted(name for name in source_zip.namelist() if "/pdf/" in name and name.lower().endswith(".pdf"))
+              if len(letter_pdfs) != 26:
+                  raise SystemExit(f"Se esperaban 26 fichas A-Z y se encontraron {len(letter_pdfs)}")
+              destination = Path("archivos/escolar/cc0-abecedario-trazos-a-z.zip")
+              preview = Path("previews/escolar/cc0-trazado-letra-a-muestra.pdf")
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              preview.parent.mkdir(parents=True, exist_ok=True)
+              with zipfile.ZipFile(destination, "w", compression=zipfile.ZIP_DEFLATED) as pack:
+                  for name in letter_pdfs:
+                      data = source_zip.read(name)
+                      if not data.startswith(b"%PDF-") or b"%%EOF" not in data[-2048:]:
+                          raise SystemExit(f"Ficha PDF inválida: {name}")
+                      pack.writestr(Path(name).name, data)
+              sample = source_zip.read(next(n for n in letter_pdfs if Path(n).name == "traced-letter-a.pdf"))
+              preview.write_bytes(sample)
+              manifest.append({
+                  "title": "Abecedario de trazos · A-Z",
+                  "archive": str(destination),
+                  "preview": str(preview),
+                  "pdf_count": len(letter_pdfs),
+                  "sample": "traced-letter-a.pdf",
+                  "archive_bytes": destination.stat().st_size,
+                  "preview_bytes": preview.stat().st_size
+              })
+              print(f"VALIDADO: Abecedario A-Z · {len(letter_pdfs)} PDF · {destination.stat().st_size} bytes")
           Path("archivos/escolar/cc0-printables-manifest.json").write_text(
               json.dumps(manifest, ensure_ascii=False, indent=2),
               encoding="utf-8"
