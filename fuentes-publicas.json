@@ -125,6 +125,15 @@
       "status": "Incorporado: dos PDF originales alojados en RUMA",
       "rights_check": "El repositorio contiene The Unlicense, una dedicación al dominio público para los archivos compartidos.",
       "notes": "Cuaderno de hasta 200 hojas numeradas y PDF separado de índice."
+    },
+    {
+      "id": "chore-chart-kit-ccby",
+      "name": "Chore Chart Kit · Flinkis",
+      "url": "https://github.com/halallens-no/chore-chart-kit",
+      "type": "Biblioteca de plantillas PDF para rutinas, tareas y organización",
+      "status": "Incorporado: dos packs con seis PDF originales y muestras alojadas en RUMA",
+      "rights_check": "El LICENSE del repositorio declara CC BY 4.0 para templates y samples. Permite redistribución y uso comercial con atribución, enlace a la licencia e indicación de cambios.",
+      "notes": "RUMA seleccionó y agrupó seis PDF originales sin modificar su contenido: tres organizadores para familias/chicos y tres para estudio/trabajo. Los PDF originales están en US Letter; imprimir en A4 con ajustar a página."
     }
   ],
   "candidate_items": [
