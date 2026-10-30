@@ -659,6 +659,123 @@
         "organización",
         "2026"
       ]
+    },
+    {
+      "id": "cc0-abecedario-trazos-a-z",
+      "title": "Abecedario para practicar trazos · A-Z",
+      "description": "Pack de 26 fichas PDF, una por letra, para practicar el trazado del alfabeto. Las letras están convertidas en trazos vectoriales; no requiere instalar fuentes.",
+      "category": "escolar",
+      "creator": "domsson · proyecto tracedletters",
+      "license": "CC0 1.0 Universal · dominio público",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://github.com/domsson/tracedletters",
+      "attribution": "Fichas creadas por domsson y compartidas bajo CC0 1.0; atribución no obligatoria.",
+      "rightsNote": "El repositorio incluye una licencia CC0 1.0 y el autor declara que las fichas pueden usarse libremente, incluso con fines comerciales. RUMA aloja un ZIP con los 26 PDF originales y una muestra individual.",
+      "file": "archivos/escolar/cc0-abecedario-trazos-a-z.zip",
+      "preview": "previews/escolar/cc0-trazado-letra-a-muestra.pdf",
+      "icon": "🔤",
+      "tags": [
+        "abecedario",
+        "letras",
+        "trazos",
+        "escritura",
+        "infantil",
+        "escuela"
+      ],
+      "added": "2026-10-29"
+    },
+    {
+      "id": "cc0-hoja-puntos-a4-5mm",
+      "title": "Hoja punteada A4 · cuadrícula de 5 mm",
+      "description": "Una hoja A4 limpia con puntos cada 5 mm. Útil para bullet journal, escritura, diagramas, dibujo y planificación.",
+      "category": "personal",
+      "creator": "Geri Borbas",
+      "license": "CC0 1.0 Universal · dominio público",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://github.com/Geri-Borbas/Dot_Grid_A4",
+      "attribution": "Diseño de Geri Borbas · CC0 1.0; atribución no obligatoria.",
+      "rightsNote": "El README y el archivo LICENSE del repositorio identifican expresamente la hoja PDF A4 de 5 mm como CC0 1.0.",
+      "file": "archivos/personal/hoja-puntos-a4-5mm.pdf",
+      "preview": "archivos/personal/hoja-puntos-a4-5mm.pdf",
+      "icon": "🔵",
+      "tags": [
+        "hoja",
+        "puntos",
+        "bullet journal",
+        "A4",
+        "planificación",
+        "dibujo"
+      ],
+      "added": "2026-10-29"
+    },
+    {
+      "id": "cc0-plantilla-tangram",
+      "title": "Tangram · plantilla imprimible",
+      "description": "Plantilla de tangram para imprimir, recortar y armar figuras con piezas geométricas. Ideal para juegos de lógica y actividades familiares.",
+      "category": "infantil",
+      "creator": "bricksphd",
+      "license": "CC0 1.0 Universal · dominio público",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://github.com/bricksphd/Free-Printable-Tangram",
+      "attribution": "Plantilla de bricksphd · CC0 1.0; atribución no obligatoria.",
+      "rightsNote": "El README del repositorio declara que la plantilla imprimible se comparte bajo CC0 1.0 y el repositorio incluye el texto legal correspondiente.",
+      "file": "archivos/infantil/plantilla-tangram-imprimible.pdf",
+      "preview": "archivos/infantil/plantilla-tangram-imprimible.pdf",
+      "icon": "🔺",
+      "tags": [
+        "tangram",
+        "geometría",
+        "rompecabezas",
+        "juego",
+        "infantil"
+      ],
+      "added": "2026-10-29"
+    },
+    {
+      "id": "unlicense-cuaderno-laboratorio-200",
+      "title": "Cuaderno de laboratorio · 200 hojas",
+      "description": "Cuaderno de laboratorio con hasta 200 hojas numeradas, listo para imprimir. Útil para prácticas, observaciones y proyectos de ciencias.",
+      "category": "escolar",
+      "creator": "cypnk · proyecto Lab Notebook",
+      "license": "The Unlicense · dedicación al dominio público",
+      "licenseUrl": "https://unlicense.org/",
+      "source": "https://github.com/cypnk/Lab-Notebook",
+      "attribution": "Cuaderno de cypnk · publicado bajo The Unlicense.",
+      "rightsNote": "El repositorio incluye The Unlicense y declara que los archivos PDF exportados están listos para imprimirse y pueden copiarse, modificarse y distribuirse con fines comerciales o no comerciales.",
+      "file": "archivos/escolar/cuaderno-laboratorio-200-hojas.pdf",
+      "preview": "archivos/escolar/cuaderno-laboratorio-200-hojas.pdf",
+      "icon": "🧪",
+      "tags": [
+        "laboratorio",
+        "ciencias",
+        "cuaderno",
+        "registro",
+        "escuela"
+      ],
+      "added": "2026-10-29"
+    },
+    {
+      "id": "unlicense-indice-cuaderno-laboratorio",
+      "title": "Índice para cuaderno de laboratorio",
+      "description": "Hojas de índice con numeración romana para acompañar el cuaderno de laboratorio y organizar registros y prácticas.",
+      "category": "escolar",
+      "creator": "cypnk · proyecto Lab Notebook",
+      "license": "The Unlicense · dedicación al dominio público",
+      "licenseUrl": "https://unlicense.org/",
+      "source": "https://github.com/cypnk/Lab-Notebook",
+      "attribution": "Índice de cypnk · publicado bajo The Unlicense.",
+      "rightsNote": "El repositorio incluye The Unlicense y ofrece el PDF de índice listo para imprimir como parte del conjunto de cuaderno de laboratorio.",
+      "file": "archivos/escolar/indice-cuaderno-laboratorio.pdf",
+      "preview": "archivos/escolar/indice-cuaderno-laboratorio.pdf",
+      "icon": "📑",
+      "tags": [
+        "índice",
+        "laboratorio",
+        "ciencias",
+        "organización",
+        "escuela"
+      ],
+      "added": "2026-10-29"
     }
   ],
   "engineVersion": "0.2.0",
