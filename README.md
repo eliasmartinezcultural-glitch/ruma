@@ -32,7 +32,7 @@ Fuentes iniciales investigadas e incorporadas:
 - New York Public Library — Digital Collections: https://digitalcollections.nypl.org/
 - Reusable Art: https://www.reusableart.com/
 - OpenMoji: https://github.com/hfg-gmuend/openmoji — colección incorporada: 18 gráficos SVG bajo CC BY-SA 4.0. Ver `CREDITOS-OPENMOJI.md`.
-- Free Printable Resources: diez packs de PDFs imprimibles bajo CC0 1.0 (sudokus, crucigramas, colorear, laberintos, vocabulario, sopas de letras, escritura y planificador). Los ZIP y sus muestras PDF están alojados dentro de RUMA.
+- Free Printable Resources: diez packs de PDFs imprimibles bajo CC0 1.0 (sudokus, crucigramas, colorear, laberintos, vocabulario, sopas de letras, escritura y planificador). Los ZIP y sus muestras PDF están alojados dentro de RUMA. Ver `CREDITOS-FREE-PRINTABLE-RESOURCES.md`.
 
 ### Regla jurídica mundial
 
