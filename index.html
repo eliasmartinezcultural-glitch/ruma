@@ -67,31 +67,63 @@ footer{margin-top:42px;padding:23px 0 32px;border-top:1px solid var(--line);disp
 <article class="rule"><span class="num">8</span><div><strong>Donar nunca es obligatorio</strong><p>La colaboración es una invitación, jamás una condición de acceso.</p></div></article>
 </div></section>
 </main>
+<div class="preview-layer" id="previewLayer" role="dialog" aria-modal="true" aria-labelledby="previewTitle"><div class="preview-panel"><div class="preview-head"><h2 id="previewTitle">Vista previa</h2><button class="preview-close" id="previewClose" type="button">Cerrar ✕</button></div><div class="preview-content" id="previewContent"></div><p class="preview-caption" id="previewCaption"></p></div></div>
 <footer class="wrap"><div><strong>RUMA</strong> · Papelería digital para compartir.<br>Hecho con cariño para que las cosas buenas circulen.</div><div>Acceso libre · Donativos voluntarios</div></footer>
 <script>
 const catalog=document.getElementById('catalog'),search=document.getElementById('search'),count=document.getElementById('count');
-let resources=[],category='todo',filter='todo';\nconst previewLayer=document.getElementById('previewLayer'),previewContent=document.getElementById('previewContent'),previewTitle=document.getElementById('previewTitle'),previewCaption=document.getElementById('previewCaption');\nfunction closePreview(){previewLayer.classList.remove('open');previewContent.replaceChildren();}document.getElementById('previewClose').addEventListener('click',closePreview);previewLayer.addEventListener('click',e=>{if(e.target===previewLayer)closePreview();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closePreview();});\nfunction showPreview(r){previewTitle.textContent=r.title;previewCaption.textContent=(r.creator||'Autoría no informada')+' · '+(r.license||'Licencia no informada')+(r.source?' · Fuente: '+r.source:'');previewContent.replaceChildren();const src=r.preview;if(src&&/\\.pdf($|[?#])/i.test(src)){const frame=document.createElement('iframe');frame.src=src+'#toolbar=1&navpanes=0';frame.title='Vista previa de '+r.title;previewContent.append(frame);}else if(src){const img=document.createElement('img');img.src=src;img.alt='Vista previa de '+r.title;previewContent.append(img);}else{const msg=document.createElement('p');msg.textContent='Este recurso todavía no tiene una vista previa verificada.';previewContent.append(msg);}previewLayer.classList.add('open');document.getElementById('previewClose').focus();}
-const labels={comercial:'Comercial',escolar:'Escolar',creativa:'Creativa',personal:'Personal',infantil:'Infantil',decorativa:'Decorativa'};
-function emptyState(title,copy,symbol='🗂️'){const box=document.createElement('div');box.className='empty';const icon=document.createElement('div');icon.className='symbol';icon.textContent=symbol;const h=document.createElement('h3');h.textContent=title;const p=document.createElement('p');p.textContent=copy;box.append(icon,h,p);catalog.append(box);}
+const previewLayer=document.getElementById('previewLayer'),previewContent=document.getElementById('previewContent'),previewTitle=document.getElementById('previewTitle'),previewCaption=document.getElementById('previewCaption');
+let resources=[],category='todo',filter='todo';
+function localAsset(path){return typeof path==='string'&&path.length>0&&!/^(https?:|data:|javascript:|\/\/)/i.test(path)&&!path.includes('..');}
+function validRecord(r){return r&&r.id&&r.title&&r.description&&r.category&&r.creator&&r.license&&localAsset(r.file)&&localAsset(r.preview)&&r.added;}
+function closePreview(){previewLayer.classList.remove('open');previewContent.replaceChildren();}
+function showPreview(r){
+ previewTitle.textContent=r.title;
+ previewCaption.textContent=r.creator+' · '+r.license+(r.source?' · Fuente: '+r.source:'');
+ previewContent.replaceChildren();
+ if(/\.pdf($|[?#])/i.test(r.preview)){const frame=document.createElement('iframe');frame.src=r.preview+'#toolbar=1&navpanes=0';frame.title='Vista previa de '+r.title;previewContent.append(frame);}
+ else{const img=document.createElement('img');img.src=r.preview;img.alt='Vista previa de '+r.title;previewContent.append(img);}
+ previewLayer.classList.add('open');document.getElementById('previewClose').focus();
+}
+document.getElementById('previewClose').addEventListener('click',closePreview);
+previewLayer.addEventListener('click',e=>{if(e.target===previewLayer)closePreview();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePreview();});
+function emptyState(title,copy,symbol='🗂️'){
+ const box=document.createElement('div');box.className='empty';
+ const icon=document.createElement('div');icon.className='symbol';icon.textContent=symbol;
+ const h=document.createElement('h3');h.textContent=title;
+ const p=document.createElement('p');p.textContent=copy;
+ box.append(icon,h,p);catalog.append(box);
+}
 function render(){
  const q=search.value.trim().toLocaleLowerCase();
- let list=resources.filter(r=>(category==='todo'||r.category===category)&&(!q||(r.title+' '+r.description+' '+(r.tags||[]).join(' ')).toLocaleLowerCase().includes(q)));\n if(filter==='recientes'){const cutoff=Date.now()-1000*60*60*24*45;list=list.filter(r=>r.added&&Date.parse(r.added)>=cutoff).sort((a,b)=>Date.parse(b.added)-Date.parse(a.added));}
+ let list=resources.filter(r=>(category==='todo'||r.category===category)&&(!q||(r.title+' '+r.description+' '+(r.tags||[]).join(' ')).toLocaleLowerCase().includes(q)));
+ if(filter==='recientes'){const cutoff=Date.now()-45*24*60*60*1000;list=list.filter(r=>Date.parse(r.added)>=cutoff).sort((a,b)=>Date.parse(b.added)-Date.parse(a.added));}
  count.textContent=list.length?list.length+(list.length===1?' material disponible':' materiales disponibles'):'Todavía no hay materiales publicados en esta selección.';
  catalog.replaceChildren();
- if(!list.length){emptyState(resources.length?'No encontramos materiales con esa búsqueda':'Estamos preparando los primeros materiales',resources.length?'Probá con otra palabra o elegí otra colección.':'RUMA está cambiando sus estantes hacia la papelería digital. No vamos a mostrar archivos de relleno ni materiales que no podamos compartir legalmente.','🌷');return;}
+ if(!list.length){emptyState(resources.length?'No encontramos materiales con esa búsqueda':'Estamos preparando los primeros materiales',resources.length?'Probá con otra palabra o elegí otra colección.':'No publicamos archivos incompletos, enlaces externos ni materiales sin permiso de distribución. Cada pieza aparecerá aquí cuando su archivo y su vista previa estén alojados y comprobados dentro de RUMA.','🌷');return;}
  list.forEach(r=>{
-  const card=document.createElement('article');card.className='resource';const art=document.createElement('div');art.className='resource-art';if(r.preview&&/\\.(png|jpe?g|webp|gif|svg)($|[?#])/i.test(r.preview)){const thumb=document.createElement('img');thumb.src=r.preview;thumb.alt='Vista previa de '+r.title;thumb.loading='lazy';art.append(thumb);}else{art.textContent=r.icon||'📄';}
-  const body=document.createElement('div');body.className='resource-body';const title=document.createElement('h3');title.textContent=r.title;const desc=document.createElement('p');desc.textContent=r.description;
+  const card=document.createElement('article');card.className='resource';
+  const art=document.createElement('div');art.className='resource-art';
+  if(/\.(png|jpe?g|webp|gif|svg)($|[?#])/i.test(r.preview)){const thumb=document.createElement('img');thumb.src=r.preview;thumb.alt='Vista previa de '+r.title;thumb.loading='lazy';art.append(thumb);}else{art.textContent=r.icon||'📄';}
+  const body=document.createElement('div');body.className='resource-body';
+  const title=document.createElement('h3');title.textContent=r.title;
+  const desc=document.createElement('p');desc.textContent=r.description;
   const meta=document.createElement('div');meta.className='meta';meta.textContent='Creación: '+r.creator+' · '+r.license;
-  const link=document.createElement('a');link.className='btn primary download';link.href=r.file;link.download='';link.textContent='⬇ Descargar gratis';
-  body.append(title,desc,meta,link);card.append(art,body);catalog.append(card);
+  const actions=document.createElement('div');actions.className='resource-actions';
+  const preview=document.createElement('button');preview.className='preview-btn';preview.type='button';preview.textContent='👁 Ver antes';preview.addEventListener('click',()=>showPreview(r));
+  const link=document.createElement('a');link.className='btn primary download';link.href=r.file;link.setAttribute('download','');link.textContent='⬇ Obtener gratis';
+  actions.append(preview,link);body.append(title,desc,meta,actions);card.append(art,body);catalog.append(card);
  });
 }
 document.querySelectorAll('.door').forEach(b=>b.addEventListener('click',()=>{category=category===b.dataset.category?'todo':b.dataset.category;document.querySelectorAll('.door').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.category===category)));render();}));
 document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();}));
 search.addEventListener('input',render);
-document.getElementById('copy').addEventListener('click',async()=>{const s=document.getElementById('status');try{await navigator.clipboard.writeText(document.getElementById('alias').textContent);s.textContent='Alias copiado. ¡Gracias por tu generosidad!';}catch(e){s.textContent='Seleccioná y copiá el alias: ocarina.guitarra';}});
-fetch('catalogo.json').then(r=>{if(!r.ok)throw new Error('No se pudo leer el catálogo');return r.json();}).then(data=>{resources=Array.isArray(data.resources)?data.resources:[];render();}).catch(()=>{resources=[];render();});
+document.getElementById('copy').addEventListener('click',async()=>{const status=document.getElementById('status');try{await navigator.clipboard.writeText(document.getElementById('alias').textContent);status.textContent='Alias copiado. ¡Gracias por tu generosidad!';}catch(e){status.textContent='Seleccioná y copiá el alias: ocarina.guitarra';}});
+fetch('catalogo.json').then(r=>{if(!r.ok)throw new Error('No se pudo leer el catálogo');return r.json();}).then(async data=>{
+ const candidates=Array.isArray(data.resources)?data.resources.filter(validRecord):[];
+ const checks=await Promise.all(candidates.map(async r=>{try{const [file,preview]=await Promise.all([fetch(r.file,{method:'HEAD'}),fetch(r.preview,{method:'HEAD'})]);return file.ok&&preview.ok?r:null;}catch(e){return null;}}));
+ resources=checks.filter(Boolean);render();
+}).catch(()=>{resources=[];render();});
 </script>
 </body>
 </html>
