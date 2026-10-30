@@ -74,7 +74,7 @@ const catalog=document.getElementById('catalog'),search=document.getElementById(
 const previewLayer=document.getElementById('previewLayer'),previewContent=document.getElementById('previewContent'),previewTitle=document.getElementById('previewTitle'),previewCaption=document.getElementById('previewCaption');
 let resources=[],category='todo',filter='todo';
 function localAsset(path){return typeof path==='string'&&path.length>0&&!/^(https?:|data:|javascript:|\/\/)/i.test(path)&&!path.includes('..');}
-function validRecord(r){return r&&r.id&&r.title&&r.description&&r.category&&r.creator&&r.license&&localAsset(r.file)&&localAsset(r.preview)&&r.added;}
+function validRecord(r){return r&&r.id&&r.title&&r.description&&['comercial','escolar','creativa','personal','infantil','decorativa'].includes(r.category)&&r.creator&&r.license&&r.licenseUrl&&r.source&&r.attribution&&r.rightsNote&&localAsset(r.file)&&localAsset(r.preview)&&r.added;}
 function closePreview(){previewLayer.classList.remove('open');previewContent.replaceChildren();}
 function showPreview(r){
  previewTitle.textContent=r.title;
