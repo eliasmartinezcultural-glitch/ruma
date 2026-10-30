@@ -28,7 +28,143 @@
       "name": "Decorativa"
     }
   ],
-  "resources": [],
+  "resources": [
+    {
+      "id": "openmoji-flor-en-flor",
+      "title": "Sticker vectorial · Flor amarilla",
+      "description": "Ilustración vectorial de una flor amarilla. Se puede ampliar o reducir sin perder nitidez; útil para decorar cuadernos, etiquetas y composiciones.",
+      "category": "creativa",
+      "creator": "OpenMoji · HfG Schwäbisch Gmünd y colaboradores",
+      "license": "Creative Commons Atribución-CompartirIgual 4.0 (CC BY-SA 4.0)",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://github.com/hfg-gmuend/openmoji/blob/17.0.0/color/svg/1F33C.svg",
+      "attribution": "All emojis designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0",
+      "rightsNote": "La documentación oficial de OpenMoji declara que sus gráficos se publican bajo CC BY-SA 4.0, licencia que permite compartir y adaptar incluso con fines comerciales, con atribución y obligación de compartir las adaptaciones bajo la misma licencia.",
+      "file": "archivos/creativa/openmoji-flor-en-flor.svg",
+      "preview": "archivos/creativa/openmoji-flor-en-flor.svg",
+      "icon": "✿",
+      "tags": [
+        "sticker",
+        "flor",
+        "amarillo",
+        "decoración"
+      ],
+      "added": "2026-10-29"
+    },
+    {
+      "id": "openmoji-hoja-verde",
+      "title": "Sticker vectorial · Hoja verde",
+      "description": "Hoja ilustrada en formato SVG. Recurso liviano para decorar papelería, apuntes, tarjetas y proyectos creativos.",
+      "category": "decorativa",
+      "creator": "OpenMoji · HfG Schwäbisch Gmünd y colaboradores",
+      "license": "Creative Commons Atribución-CompartirIgual 4.0 (CC BY-SA 4.0)",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://github.com/hfg-gmuend/openmoji/blob/17.0.0/color/svg/1F343.svg",
+      "attribution": "All emojis designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0",
+      "rightsNote": "La documentación oficial de OpenMoji declara que sus gráficos se publican bajo CC BY-SA 4.0, licencia que permite compartir y adaptar incluso con fines comerciales, con atribución y obligación de compartir las adaptaciones bajo la misma licencia.",
+      "file": "archivos/decorativa/openmoji-hoja-verde.svg",
+      "preview": "archivos/decorativa/openmoji-hoja-verde.svg",
+      "icon": "✿",
+      "tags": [
+        "sticker",
+        "hoja",
+        "naturaleza",
+        "verde"
+      ],
+      "added": "2026-10-29"
+    },
+    {
+      "id": "openmoji-rosa-roja",
+      "title": "Sticker vectorial · Rosa roja",
+      "description": "Rosa roja ilustrada en SVG. Se puede usar en cartas, postales, etiquetas y trabajos de collage.",
+      "category": "creativa",
+      "creator": "OpenMoji · HfG Schwäbisch Gmünd y colaboradores",
+      "license": "Creative Commons Atribución-CompartirIgual 4.0 (CC BY-SA 4.0)",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://github.com/hfg-gmuend/openmoji/blob/17.0.0/color/svg/1F339.svg",
+      "attribution": "All emojis designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0",
+      "rightsNote": "La documentación oficial de OpenMoji declara que sus gráficos se publican bajo CC BY-SA 4.0, licencia que permite compartir y adaptar incluso con fines comerciales, con atribución y obligación de compartir las adaptaciones bajo la misma licencia.",
+      "file": "archivos/creativa/openmoji-rosa-roja.svg",
+      "preview": "archivos/creativa/openmoji-rosa-roja.svg",
+      "icon": "✿",
+      "tags": [
+        "sticker",
+        "rosa",
+        "flor",
+        "rojo",
+        "postal"
+      ],
+      "added": "2026-10-29"
+    },
+    {
+      "id": "openmoji-cuaderno",
+      "title": "Sticker vectorial · Cuaderno",
+      "description": "Icono de cuaderno para señalizar materias, organizar apuntes, diseñar fichas y decorar agendas escolares.",
+      "category": "escolar",
+      "creator": "OpenMoji · HfG Schwäbisch Gmünd y colaboradores",
+      "license": "Creative Commons Atribución-CompartirIgual 4.0 (CC BY-SA 4.0)",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://github.com/hfg-gmuend/openmoji/blob/17.0.0/color/svg/1F4D3.svg",
+      "attribution": "All emojis designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0",
+      "rightsNote": "La documentación oficial de OpenMoji declara que sus gráficos se publican bajo CC BY-SA 4.0, licencia que permite compartir y adaptar incluso con fines comerciales, con atribución y obligación de compartir las adaptaciones bajo la misma licencia.",
+      "file": "archivos/escolar/openmoji-cuaderno.svg",
+      "preview": "archivos/escolar/openmoji-cuaderno.svg",
+      "icon": "✿",
+      "tags": [
+        "cuaderno",
+        "escuela",
+        "estudio",
+        "agenda",
+        "organización"
+      ],
+      "added": "2026-10-29"
+    },
+    {
+      "id": "openmoji-lapiz",
+      "title": "Sticker vectorial · Lápiz",
+      "description": "Icono de lápiz para horarios, fichas escolares, listas, planificadores y materiales de estudio.",
+      "category": "escolar",
+      "creator": "OpenMoji · HfG Schwäbisch Gmünd y colaboradores",
+      "license": "Creative Commons Atribución-CompartirIgual 4.0 (CC BY-SA 4.0)",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://github.com/hfg-gmuend/openmoji/blob/17.0.0/color/svg/270F.svg",
+      "attribution": "All emojis designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0",
+      "rightsNote": "La documentación oficial de OpenMoji declara que sus gráficos se publican bajo CC BY-SA 4.0, licencia que permite compartir y adaptar incluso con fines comerciales, con atribución y obligación de compartir las adaptaciones bajo la misma licencia.",
+      "file": "archivos/escolar/openmoji-lapiz.svg",
+      "preview": "archivos/escolar/openmoji-lapiz.svg",
+      "icon": "✿",
+      "tags": [
+        "lápiz",
+        "escuela",
+        "escritura",
+        "estudio"
+      ],
+      "added": "2026-10-29"
+    },
+    {
+      "id": "openmoji-marcador-de-libro",
+      "title": "Sticker vectorial · Marcador de libro",
+      "description": "Ilustración de un señalador para decorar lecturas, agendas, fichas de biblioteca y proyectos personales.",
+      "category": "personal",
+      "creator": "OpenMoji · HfG Schwäbisch Gmünd y colaboradores",
+      "license": "Creative Commons Atribución-CompartirIgual 4.0 (CC BY-SA 4.0)",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://github.com/hfg-gmuend/openmoji/blob/17.0.0/color/svg/1F516.svg",
+      "attribution": "All emojis designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0",
+      "rightsNote": "La documentación oficial de OpenMoji declara que sus gráficos se publican bajo CC BY-SA 4.0, licencia que permite compartir y adaptar incluso con fines comerciales, con atribución y obligación de compartir las adaptaciones bajo la misma licencia.",
+      "file": "archivos/personal/openmoji-marcador-de-libro.svg",
+      "preview": "archivos/personal/openmoji-marcador-de-libro.svg",
+      "icon": "✿",
+      "tags": [
+        "libro",
+        "señalador",
+        "lectura",
+        "marcador",
+        "agenda"
+      ],
+      "added": "2026-10-29"
+    }
+  ],
   "engineVersion": "0.2.0",
   "resourceRequirements": [
     "id",
