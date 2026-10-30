@@ -89,6 +89,42 @@
       "status": "Fuente incorporada: diez packs descargables, diez muestras PDF alojadas en RUMA",
       "rights_check": "El repositorio declara CC0 1.0 para todo su contenido y contiene el texto legal CC0 y una FAQ que explica la autorización para copiar, modificar y redistribuir, incluso con fines comerciales. Revisar cada lanzamiento y contenido antes de incorporar nuevas colecciones.",
       "notes": "Packs incorporados: 25 sudokus fáciles con cinco variantes; 3 crucigramas 15×15; libro para colorear con 20 citas; 10 fichas de entrevista a autores; 30 laberintos; 15 laberintos geométricos adicionales; cuaderno de vocabulario de 40 páginas; sopas de letras en tres variantes; cuatro formatos de seguimiento de hábitos y escritura; planificador semanal para octubre-diciembre de 2026. Los archivos ZIP originales y las muestras PDF se alojan dentro de RUMA."
+    },
+    {
+      "id": "tracedletters-cc0",
+      "name": "tracedletters · fichas de trazado A-Z",
+      "url": "https://github.com/domsson/tracedletters",
+      "type": "Colección de 26 PDF de escritura inicial",
+      "status": "Incorporado: ZIP con 26 PDF y muestra de la letra A",
+      "rights_check": "El repositorio contiene LICENSE CC0 1.0 y su README declara uso libre incluso comercial.",
+      "notes": "Una ficha PDF por letra A-Z; las letras se exportaron como trazos vectoriales y no requieren instalar fuentes."
+    },
+    {
+      "id": "dot-grid-a4-cc0",
+      "name": "Dot Grid A4 · Geri Borbas",
+      "url": "https://github.com/Geri-Borbas/Dot_Grid_A4",
+      "type": "Hoja A4 punteada PDF, puntos cada 5 mm",
+      "status": "Incorporado: PDF original alojado en RUMA",
+      "rights_check": "El README y el LICENSE del repositorio identifican el PDF A4 de 5 mm como CC0 1.0.",
+      "notes": "Útil para bullet journal, dibujo, diagramas y planificación."
+    },
+    {
+      "id": "free-printable-tangram-cc0",
+      "name": "Free Printable Tangram · bricksphd",
+      "url": "https://github.com/bricksphd/Free-Printable-Tangram",
+      "type": "Plantilla PDF de tangram",
+      "status": "Incorporado: PDF original alojado en RUMA",
+      "rights_check": "El README del repositorio declara que la plantilla imprimible se comparte bajo CC0 1.0.",
+      "notes": "Plantilla para imprimir, recortar y armar figuras geométricas."
+    },
+    {
+      "id": "lab-notebook-unlicense",
+      "name": "Lab Notebook · cypnk",
+      "url": "https://github.com/cypnk/Lab-Notebook",
+      "type": "Cuaderno e índice de laboratorio en PDF",
+      "status": "Incorporado: dos PDF originales alojados en RUMA",
+      "rights_check": "El repositorio contiene The Unlicense, una dedicación al dominio público para los archivos compartidos.",
+      "notes": "Cuaderno de hasta 200 hojas numeradas y PDF separado de índice."
     }
   ],
   "candidate_items": [
