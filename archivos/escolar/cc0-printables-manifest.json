@@ -16,5 +16,77 @@
     "sample": "crossword_15x15_gh.pdf",
     "archive_bytes": 194002,
     "preview_bytes": 558678
+  },
+  {
+    "title": "Libro para colorear · 20 citas",
+    "archive": "archivos/creativa/cc0-libro-colorear-20-citas.zip",
+    "preview": "previews/creativa/cc0-colorear-muestra.pdf",
+    "pdf_count": 1,
+    "sample": "words-to-colour_classic_20_gh.pdf",
+    "archive_bytes": 628391,
+    "preview_bytes": 644778
+  },
+  {
+    "title": "Fichas de entrevista a autores",
+    "archive": "archivos/creativa/cc0-fichas-entrevista-autor.zip",
+    "preview": "previews/creativa/cc0-entrevista-autor-muestra.pdf",
+    "pdf_count": 1,
+    "sample": "author-interview_classic_10_gh.pdf",
+    "archive_bytes": 84602,
+    "preview_bytes": 113991
+  },
+  {
+    "title": "Laberintos · colección de 30",
+    "archive": "archivos/infantil/cc0-laberintos-30.zip",
+    "preview": "previews/infantil/cc0-laberintos-30-muestra.pdf",
+    "pdf_count": 1,
+    "sample": "mazes_classic_gh-30-huge-looped.pdf",
+    "archive_bytes": 355616,
+    "preview_bytes": 414085
+  },
+  {
+    "title": "Laberintos · 15 adicionales",
+    "archive": "archivos/infantil/cc0-laberintos-15-adicionales.zip",
+    "preview": "previews/infantil/cc0-laberintos-15-muestra.pdf",
+    "pdf_count": 1,
+    "sample": "maze_square-triangle-hexagon-circle_medium_15mazes_gh.pdf",
+    "archive_bytes": 388652,
+    "preview_bytes": 455347
+  },
+  {
+    "title": "Vocabulario · 40 páginas",
+    "archive": "archivos/escolar/cc0-vocabulario-40-paginas.zip",
+    "preview": "previews/escolar/cc0-vocabulario-muestra.pdf",
+    "pdf_count": 1,
+    "sample": "vocabulary-builder_classic_gh-40pages.pdf",
+    "archive_bytes": 150061,
+    "preview_bytes": 269823
+  },
+  {
+    "title": "Sopa de letras · tres variantes",
+    "archive": "archivos/escolar/cc0-sopa-de-letras.zip",
+    "preview": "previews/escolar/cc0-sopa-de-letras-muestra.pdf",
+    "pdf_count": 3,
+    "sample": "word-search_classic_20-easy-fantasy.pdf",
+    "archive_bytes": 2224766,
+    "preview_bytes": 5340513
+  },
+  {
+    "title": "Seguimiento de hábitos y escritura",
+    "archive": "archivos/personal/cc0-seguimiento-habitos-escritura.zip",
+    "preview": "previews/personal/cc0-habitos-muestra.pdf",
+    "pdf_count": 4,
+    "sample": "habit-tracker_classic_gh_journal.pdf",
+    "archive_bytes": 2667055,
+    "preview_bytes": 907041
+  },
+  {
+    "title": "Planificador semanal · octubre a diciembre 2026",
+    "archive": "archivos/personal/cc0-planificador-semanal-oct-dic-2026.zip",
+    "preview": "previews/personal/cc0-planificador-semanal-muestra.pdf",
+    "pdf_count": 1,
+    "sample": "weekly-planner_classic_Oct-Dec-2026_gh.pdf",
+    "archive_bytes": 59789,
+    "preview_bytes": 119359
   }
 ]\n
