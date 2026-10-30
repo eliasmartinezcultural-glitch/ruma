@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "updated": "2026-10-29",
+  "purpose": "Fuentes de investigación para encontrar papelería y obras de dominio público. Una fuente no equivale a una autorización general: se verifica cada objeto antes de incorporarlo al catálogo.",
+  "sources": [
+    {
+      "id": "loc-free-to-use",
+      "name": "Library of Congress — Free to Use and Reuse",
+      "url": "https://www.loc.gov/free-to-use/",
+      "type": "Colecciones institucionales",
+      "potential": ["ilustraciones", "carteles", "mapas", "libros infantiles", "jardines", "aves", "vida rural", "material escolar"],
+      "status": "Fuente prioritaria de investigación",
+      "rights_check": "La biblioteca presenta conjuntos seleccionados como libres de derechos para usar y reutilizar. Revisar la ficha individual y cualquier excepción antes de descargar y redistribuir.",
+      "notes": "La página reúne más de 100 conjuntos temáticos."
+    },
+    {
+      "id": "nypl-digital-collections",
+      "name": "New York Public Library — Digital Collections",
+      "url": "https://digitalcollections.nypl.org/",
+      "type": "Biblioteca digital institucional",
+      "potential": ["ilustraciones", "papeles decorativos", "mapas", "manuscritos", "fotografías", "libros"],
+      "status": "Fuente prioritaria con revisión individual",
+      "rights_check": "Usar el filtro Search Only Public Domain y revisar la declaración de derechos de cada objeto. La NYPL aclara que sus etiquetas se refieren a restricciones conocidas en Estados Unidos, no a una conclusión jurídica mundial.",
+      "notes": "Atribución recomendada: From The New York Public Library, con enlace a la ficha original."
+    },
+    {
+      "id": "reusable-art",
+      "name": "Reusable Art",
+      "url": "https://www.reusableart.com/",
+      "type": "Archivo curado de ilustraciones históricas",
+      "potential": ["fondos y patrones", "marcos", "flores", "animales", "alfabetos", "dibujos escolares", "mapas vintage"],
+      "status": "Fuente prioritaria con revisión por pieza",
+      "rights_check": "Revisar la declaración de dominio público, fecha, autoría y procedencia de cada ilustración. Conservar atribución y notas históricas.",
+      "notes": "La colección declara reunir miles de imágenes de dominio público. Ejemplos revisados: Golden Marbled Background (catálogo Henry Gilbert de 1827), Free Mixed Flowers Drawing (1867) y Flourish Page Frame (libro de 1907)."
+    }
+  ],
+  "candidate_items": [
+    {
+      "id": "golden-marbled-background-1827",
+      "title": "Golden Marbled Background",
+      "source_id": "reusable-art",
+      "source_page": "https://www.reusableart.com/golden-marbled-background.html",
+      "category": "creativa",
+      "potential_use": ["papel decorativo", "fondo para tarjetas", "scrapbooking"],
+      "status": "Investigado; archivo maestro pendiente de incorporación",
+      "rights_note": "La ficha de origen lo identifica como dominio público bajo sus criterios y lo atribuye a la cubierta de un catálogo Henry Gilbert de 1827. Revisar el archivo original y la situación aplicable en cada jurisdicción."
+    },
+    {
+      "id": "free-mixed-flowers-drawing-1867",
+      "title": "Free Mixed Flowers Drawing",
+      "source_id": "reusable-art",
+      "source_page": "https://www.reusableart.com/free-mixed-flowers-drawing.html",
+      "category": "decorativa",
+      "potential_use": ["lámina para colorear", "tarjetas", "papelería botánica"],
+      "status": "Investigado; archivo maestro pendiente de incorporación",
+      "rights_note": "La ficha describe una ilustración de 1867 y la identifica como dominio público. Autor señalado como Simon, sin identificación adicional en la publicación."
+    },
+    {
+      "id": "flourish-page-frame-1907",
+      "title": "Flourish Page Frame",
+      "source_id": "reusable-art",
+      "source_page": "https://www.reusableart.com/flourish-page-frame.html",
+      "category": "creativa",
+      "potential_use": ["marcos", "separadores", "páginas de diario", "tarjetas"],
+      "status": "Investigado; archivo maestro pendiente de incorporación",
+      "rights_note": "La ficha lo atribuye a una publicación sobre Hubert y Jan van Eyck de 1907 y lo identifica como dominio público."
+    }
+  ]
+}
