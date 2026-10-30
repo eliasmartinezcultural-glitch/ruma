@@ -78,7 +78,7 @@ function validRecord(r){return r&&r.id&&r.title&&r.description&&['comercial','es
 function closePreview(){previewLayer.classList.remove('open');previewContent.replaceChildren();}
 function showPreview(r){
  previewTitle.textContent=r.title;
- previewCaption.textContent=r.creator+' · '+r.license+(r.source?' · Fuente: '+r.source:'');
+ previewCaption.textContent=r.attribution+' · Fuente: '+r.source;
  previewContent.replaceChildren();
  if(/\.pdf($|[?#])/i.test(r.preview)){const frame=document.createElement('iframe');frame.src=r.preview+'#toolbar=1&navpanes=0';frame.title='Vista previa de '+r.title;previewContent.append(frame);}
  else{const img=document.createElement('img');img.src=r.preview;img.alt='Vista previa de '+r.title;previewContent.append(img);}
@@ -108,7 +108,7 @@ function render(){
   const body=document.createElement('div');body.className='resource-body';
   const title=document.createElement('h3');title.textContent=r.title;
   const desc=document.createElement('p');desc.textContent=r.description;
-  const meta=document.createElement('div');meta.className='meta';meta.textContent='Creación: '+r.creator+' · '+r.license;
+  const meta=document.createElement('div');meta.className='meta';meta.textContent=r.attribution+' · '+r.license;
   const actions=document.createElement('div');actions.className='resource-actions';
   const preview=document.createElement('button');preview.className='preview-btn';preview.type='button';preview.textContent='👁 Ver antes';preview.addEventListener('click',()=>showPreview(r));
   const link=document.createElement('a');link.className='btn primary download';link.href=r.file;link.setAttribute('download','');link.textContent='⬇ Obtener gratis';
