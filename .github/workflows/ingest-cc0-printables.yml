@@ -1,0 +1,102 @@
+name: Incorporar imprimibles CC0
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/ingest-cc0-printables.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+
+      - name: Descargar y validar colecciones CC0
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p archivos/escolar previews/escolar /tmp/ruma-packs
+
+          curl --fail --location --retry 3 \
+            "https://github.com/dead0eye/free-printable-resources/releases/download/sudoku-puzzles/Sudoku.Puzzles.Easy.-.25.v1.0.0.zip" \
+            --output /tmp/ruma-packs/sudoku.zip
+
+          curl --fail --location --retry 3 \
+            "https://github.com/dead0eye/free-printable-resources/releases/download/crossword-puzzles/Crossword.Puzzle.15x15.v1.0.0.zip" \
+            --output /tmp/ruma-packs/crosswords.zip
+
+          python3 <<'PY'
+          import json
+          import zipfile
+          from pathlib import Path
+
+          packs = [
+              (Path("/tmp/ruma-packs/sudoku.zip"), Path("archivos/escolar/cc0-sudoku-facil-25.zip"), Path("previews/escolar/cc0-sudoku-muestra.pdf"), "Sudoku fácil"),
+              (Path("/tmp/ruma-packs/crosswords.zip"), Path("archivos/escolar/cc0-crucigramas-15x15.zip"), Path("previews/escolar/cc0-crucigramas-muestra.pdf"), "Crucigramas 15x15"),
+          ]
+          manifest = []
+          for archive, destination, preview, title in packs:
+              if not archive.exists() or archive.stat().st_size == 0:
+                  raise SystemExit(f"Descarga vacía: {archive}")
+              with zipfile.ZipFile(archive) as z:
+                  bad = z.testzip()
+                  if bad:
+                      raise SystemExit(f"CRC incorrecto en {archive}: {bad}")
+                  pdf_names = []
+                  for info in z.infolist():
+                      name = info.filename.replace("\\", "/")
+                      if info.is_dir():
+                          continue
+                      if name.startswith("/") or ".." in Path(name).parts:
+                          raise SystemExit(f"Ruta insegura en ZIP: {name}")
+                      if name.lower().endswith(".pdf"):
+                          pdf_names.append(info.filename)
+                      elif Path(name).suffix.lower() not in {".txt", ".md", ".license"}:
+                          raise SystemExit(f"Tipo de archivo inesperado en ZIP: {name}")
+                  if not pdf_names:
+                      raise SystemExit(f"No se encontraron PDF en {archive}")
+                  pdf_names.sort()
+                  sample = z.read(pdf_names[0])
+                  if not sample.startswith(b"%PDF-") or b"%%EOF" not in sample[-2048:]:
+                      raise SystemExit(f"PDF de muestra inválido: {pdf_names[0]}")
+                  if len(sample) > 15_000_000:
+                      raise SystemExit(f"PDF de muestra demasiado grande: {pdf_names[0]}")
+                  destination.parent.mkdir(parents=True, exist_ok=True)
+                  preview.parent.mkdir(parents=True, exist_ok=True)
+                  destination.write_bytes(archive.read_bytes())
+                  preview.write_bytes(sample)
+                  manifest.append({
+                      "title": title,
+                      "archive": str(destination),
+                      "preview": str(preview),
+                      "pdf_count": len(pdf_names),
+                      "sample": Path(pdf_names[0]).name,
+                      "archive_bytes": destination.stat().st_size,
+                      "preview_bytes": preview.stat().st_size
+                  })
+                  print(f"VALIDADO: {title} · {len(pdf_names)} PDF · {destination.stat().st_size} bytes")
+          Path("archivos/escolar/cc0-printables-manifest.json").write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2) + "\\n",
+              encoding="utf-8"
+          )
+          PY
+
+      - name: Guardar archivos dentro de RUMA
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archivos/escolar/ previews/escolar/
+          if git diff --cached --quiet; then
+            echo "No hay archivos nuevos para guardar."
+            exit 0
+          fi
+          git commit -m "Incorporar packs de imprimibles CC0"
+          git push
