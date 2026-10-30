@@ -8,7 +8,16 @@
       "name": "Library of Congress — Free to Use and Reuse",
       "url": "https://www.loc.gov/free-to-use/",
       "type": "Colecciones institucionales",
-      "potential": ["ilustraciones", "carteles", "mapas", "libros infantiles", "jardines", "aves", "vida rural", "material escolar"],
+      "potential": [
+        "ilustraciones",
+        "carteles",
+        "mapas",
+        "libros infantiles",
+        "jardines",
+        "aves",
+        "vida rural",
+        "material escolar"
+      ],
       "status": "Fuente prioritaria de investigación",
       "rights_check": "La biblioteca presenta conjuntos seleccionados como libres de derechos para usar y reutilizar. Revisar la ficha individual y cualquier excepción antes de descargar y redistribuir.",
       "notes": "La página reúne más de 100 conjuntos temáticos."
@@ -18,7 +27,14 @@
       "name": "New York Public Library — Digital Collections",
       "url": "https://digitalcollections.nypl.org/",
       "type": "Biblioteca digital institucional",
-      "potential": ["ilustraciones", "papeles decorativos", "mapas", "manuscritos", "fotografías", "libros"],
+      "potential": [
+        "ilustraciones",
+        "papeles decorativos",
+        "mapas",
+        "manuscritos",
+        "fotografías",
+        "libros"
+      ],
       "status": "Fuente prioritaria con revisión individual",
       "rights_check": "Usar el filtro Search Only Public Domain y revisar la declaración de derechos de cada objeto. La NYPL aclara que sus etiquetas se refieren a restricciones conocidas en Estados Unidos, no a una conclusión jurídica mundial.",
       "notes": "Atribución recomendada: From The New York Public Library, con enlace a la ficha original."
@@ -28,10 +44,34 @@
       "name": "Reusable Art",
       "url": "https://www.reusableart.com/",
       "type": "Archivo curado de ilustraciones históricas",
-      "potential": ["fondos y patrones", "marcos", "flores", "animales", "alfabetos", "dibujos escolares", "mapas vintage"],
+      "potential": [
+        "fondos y patrones",
+        "marcos",
+        "flores",
+        "animales",
+        "alfabetos",
+        "dibujos escolares",
+        "mapas vintage"
+      ],
       "status": "Fuente prioritaria con revisión por pieza",
       "rights_check": "Revisar la declaración de dominio público, fecha, autoría y procedencia de cada ilustración. Conservar atribución y notas históricas.",
       "notes": "La colección declara reunir miles de imágenes de dominio público. Ejemplos revisados: Golden Marbled Background (catálogo Henry Gilbert de 1827), Free Mixed Flowers Drawing (1867) y Flourish Page Frame (libro de 1907)."
+    },
+    {
+      "id": "openmoji",
+      "name": "OpenMoji — colección de pictogramas vectoriales",
+      "url": "https://github.com/hfg-gmuend/openmoji",
+      "type": "Biblioteca abierta de gráficos SVG y PNG",
+      "potential": [
+        "stickers vectoriales",
+        "iconos escolares",
+        "papelería creativa",
+        "símbolos para agendas",
+        "recursos decorativos"
+      ],
+      "status": "Fuente incorporada: 18 archivos SVG publicados en RUMA",
+      "rights_check": "Los gráficos de OpenMoji se publican bajo Creative Commons Atribución-CompartirIgual 4.0 (CC BY-SA 4.0). La licencia permite compartir y adaptar incluso con fines comerciales, con atribución y compartir-igual para adaptaciones. Se fija la versión 17.0.0 para mantener la procedencia estable.",
+      "notes": "Atribución oficial: All emojis designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0. Cada archivo conserva su SVG original y su enlace de procedencia."
     }
   ],
   "candidate_items": [
@@ -41,7 +81,11 @@
       "source_id": "reusable-art",
       "source_page": "https://www.reusableart.com/golden-marbled-background.html",
       "category": "creativa",
-      "potential_use": ["papel decorativo", "fondo para tarjetas", "scrapbooking"],
+      "potential_use": [
+        "papel decorativo",
+        "fondo para tarjetas",
+        "scrapbooking"
+      ],
       "status": "Investigado; archivo maestro pendiente de incorporación",
       "rights_note": "La ficha de origen lo identifica como dominio público bajo sus criterios y lo atribuye a la cubierta de un catálogo Henry Gilbert de 1827. Revisar el archivo original y la situación aplicable en cada jurisdicción."
     },
@@ -51,7 +95,11 @@
       "source_id": "reusable-art",
       "source_page": "https://www.reusableart.com/free-mixed-flowers-drawing.html",
       "category": "decorativa",
-      "potential_use": ["lámina para colorear", "tarjetas", "papelería botánica"],
+      "potential_use": [
+        "lámina para colorear",
+        "tarjetas",
+        "papelería botánica"
+      ],
       "status": "Investigado; archivo maestro pendiente de incorporación",
       "rights_note": "La ficha describe una ilustración de 1867 y la identifica como dominio público. Autor señalado como Simon, sin identificación adicional en la publicación."
     },
@@ -61,7 +109,12 @@
       "source_id": "reusable-art",
       "source_page": "https://www.reusableart.com/flourish-page-frame.html",
       "category": "creativa",
-      "potential_use": ["marcos", "separadores", "páginas de diario", "tarjetas"],
+      "potential_use": [
+        "marcos",
+        "separadores",
+        "páginas de diario",
+        "tarjetas"
+      ],
       "status": "Investigado; archivo maestro pendiente de incorporación",
       "rights_note": "La ficha lo atribuye a una publicación sobre Hubert y Jan van Eyck de 1907 y lo identifica como dominio público."
     }
