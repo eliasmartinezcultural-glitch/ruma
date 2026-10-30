@@ -1,0 +1,105 @@
+name: Incorporar organizadores CC BY 4.0
+# Agrupa muestras PDF originales con atribución visible y licencia indicada.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/ingest-ccby-chore-charts.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+
+      - name: Descargar muestras originales
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "https://github.com/halallens-no/chore-chart-kit/archive/refs/heads/main.zip" -o /tmp/chore-chart-kit.zip
+
+      - name: Validar y agrupar PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          import json
+          import zipfile
+          from pathlib import Path
+
+          source = Path("/tmp/chore-chart-kit.zip")
+          packs = [
+              {
+                  "title": "Organizadores para familias y chicos",
+                  "destination": "archivos/infantil/ccby-organizadores-familiares.zip",
+                  "preview": "previews/infantil/ccby-perrito-muestra.pdf",
+                  "files": [
+                      "blue-puppy-adventure-chore-chart.pdf",
+                      "creature-catcher-quest-chore-chart.pdf",
+                      "kawaii-bow-ribbon-kiss-kitty-chore-chart.pdf"
+                  ]
+              },
+              {
+                  "title": "Organizadores para estudio y trabajo",
+                  "destination": "archivos/comercial/ccby-organizadores-trabajo.zip",
+                  "preview": "previews/comercial/ccby-checklist-oficina-muestra.pdf",
+                  "files": [
+                      "cobalt-daily-office-checklist.pdf",
+                      "executive-navy-weekly-office-planner.pdf",
+                      "espresso-monthly-duty-calendar.pdf"
+                  ]
+              }
+          ]
+          manifest = []
+          with zipfile.ZipFile(source) as original:
+              for pack in packs:
+                  destination = Path(pack["destination"])
+                  preview = Path(pack["preview"])
+                  destination.parent.mkdir(parents=True, exist_ok=True)
+                  preview.parent.mkdir(parents=True, exist_ok=True)
+                  with zipfile.ZipFile(destination, "w", compression=zipfile.ZIP_DEFLATED) as output:
+                      for filename in pack["files"]:
+                          matches = [name for name in original.namelist() if name.endswith("/samples/pdfs/" + filename)]
+                          if len(matches) != 1:
+                              raise SystemExit(f"No se encontró una sola copia de {filename}: {matches}")
+                          data = original.read(matches[0])
+                          if not data.startswith(b"%PDF-") or b"%%EOF" not in data[-2048:]:
+                              raise SystemExit(f"PDF inválido: {filename}")
+                          output.writestr(filename, data)
+                  first = original.read(next(name for name in original.namelist() if name.endswith("/samples/pdfs/" + pack["files"][0])))
+                  preview.write_bytes(first)
+                  manifest.append({
+                      "title": pack["title"],
+                      "archive": pack["destination"],
+                      "preview": pack["preview"],
+                      "pdf_count": len(pack["files"]),
+                      "files": pack["files"],
+                      "archive_bytes": destination.stat().st_size,
+                      "preview_bytes": preview.stat().st_size
+                  })
+                  print(f"VALIDADO: {pack['title']} · {len(pack['files'])} PDF · {destination.stat().st_size} bytes")
+          Path("archivos/comercial/ccby-organizadores-manifest.json").write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2),
+              encoding="utf-8"
+          )
+          PY
+
+      - name: Guardar archivos dentro de RUMA
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archivos/ previews/
+          if git diff --cached --quiet; then
+            echo "No hay archivos nuevos para guardar."
+            exit 0
+          fi
+          git commit -m "Incorporar organizadores imprimibles CC BY 4.0"
+          git push
