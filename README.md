@@ -77,10 +77,20 @@ Cada elemento de `resources` en `catalogo.json` utiliza:
 - `license`: licencia o fundamento de dominio público verificado.
 - `file`: ruta local al archivo alojado en RUMA.
 - `preview`: ruta local a una vista previa auténtica.
+- `id`: identificador único y estable.
+- `added`: fecha de incorporación en formato `AAAA-MM-DD`.
+- `file`: ruta local al archivo descargable alojado en RUMA.
+- `preview`: ruta local a una vista previa auténtica, alojada en RUMA.
+- `licenseUrl`: enlace a la licencia o declaración de derechos.
+- `source`: institución o procedencia y enlace a la ficha original.
+- `attribution`: texto de atribución que debe acompañar al material.
+- `rightsNote`: nota breve que explica por qué se permite redistribuirlo.
 - `icon`: símbolo visual opcional.
 - `tags`: palabras para búsqueda.
 
-No se publica una ficha hasta que el archivo y su vista previa estén listos.
+El motor solo muestra fichas que contienen estos campos y cuyas rutas locales de archivo y vista previa responden correctamente. No se aceptan enlaces externos como descarga o vista previa. La ventana **Novedades** muestra materiales añadidos en los últimos 45 días.
+
+El detalle operativo está en `PROTOCOLO-DE-CARGA.md`.
 
 ## Pruebas antes de publicar
 
