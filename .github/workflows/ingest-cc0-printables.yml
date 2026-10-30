@@ -1,4 +1,5 @@
 name: Incorporar imprimibles CC0
+# Descarga y guarda archivos CC0 dentro de RUMA; no publica enlaces externos.
 
 on:
   push:
