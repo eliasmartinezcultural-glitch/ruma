@@ -88,5 +88,14 @@
     "sample": "weekly-planner_classic_Oct-Dec-2026_gh.pdf",
     "archive_bytes": 59789,
     "preview_bytes": 119359
+  },
+  {
+    "title": "Abecedario de trazos · A-Z",
+    "archive": "archivos/escolar/cc0-abecedario-trazos-a-z.zip",
+    "preview": "previews/escolar/cc0-trazado-letra-a-muestra.pdf",
+    "pdf_count": 26,
+    "sample": "traced-letter-a.pdf",
+    "archive_bytes": 209185,
+    "preview_bytes": 9261
   }
 ]
