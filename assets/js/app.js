@@ -14,3 +14,17 @@ $("#language").addEventListener("change",e=>{language=e.target.value;applyLangua
 $("#copy-alias").addEventListener("click",async()=>{try{await navigator.clipboard.writeText("ocarina.guitarra");$("#copy-status").textContent=translations[language].copied}catch(e){$("#copy-status").textContent=translations[language].copyFail}});
 $("#share").addEventListener("click",async()=>{const data={title:"RUMA — La biblioteca del campo abierto",text:"Lecturas y recursos gratuitos para descargar e imprimir.",url:location.href};if(navigator.share){try{await navigator.share(data)}catch(e){}}else{try{await navigator.clipboard.writeText(location.href);$("#copy-status").textContent=translations[language].copied}catch(e){location.href="mailto:?subject=RUMA%20biblioteca%20abierta&body="+encodeURIComponent(location.href)}}});
 init();
+/* Herramientas de lectura accesible: funcionan sin servicios externos. */
+(function(){
+ const body=document.body;
+ const plus=document.getElementById("font-increase");
+ const minus=document.getElementById("font-decrease");
+ const contrast=document.getElementById("contrast-toggle");
+ const reset=document.getElementById("access-reset");
+ if(!plus||!minus||!contrast||!reset)return;
+ let enlarged=false;
+ plus.addEventListener("click",()=>{body.classList.add("large-text");enlarged=true;});
+ minus.addEventListener("click",()=>{body.classList.remove("large-text");enlarged=false;});
+ contrast.addEventListener("click",()=>{const active=body.classList.toggle("high-contrast");contrast.setAttribute("aria-pressed",String(active));});
+ reset.addEventListener("click",()=>{body.classList.remove("large-text","high-contrast");enlarged=false;contrast.setAttribute("aria-pressed","false");});
+})();
