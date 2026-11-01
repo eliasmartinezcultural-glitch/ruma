@@ -1,0 +1,17 @@
+{
+  "name": "RUMA — La biblioteca del campo abierto",
+  "short_name": "RUMA",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbf9f3",
+  "theme_color": "#f4f0e6",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "assets/ruma-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
