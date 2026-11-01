@@ -1,76 +1,49 @@
-# RUMA — La biblioteca del campo abierto
+# RUMA — Biblioteca abierta y curada
 
 **RUMA ES ACCESO.**  
-**Tomá lo que necesites. Compartí lo que puedas. Agradecé si querés.**
+**Buscamos, curamos, agrupamos y acercamos. No creamos los archivos.**
 
-RUMA es una biblioteca digital comunitaria de lecturas y recursos útiles, listos para consultar, descargar e imprimir. Se inspira en una mesa en medio del campo: alguien deja café y vasos para quien pase; quien quiere y puede, deja un agradecimiento voluntario. No hay vendedor, registro ni obligación.
+RUMA es una página breve, visual y fácil de usar que ayuda a encontrar materiales ya existentes: libros, lecturas, documentos, mapas, recursos educativos y culturales de bibliotecas, archivos y repositorios de todo el mundo.
 
-## Sitio y estructura
+## Qué hace RUMA
+- Busca materiales en fuentes confiables.
+- Los agrupa por temas y necesidades.
+- Verifica autoría, procedencia, licencia y condiciones de acceso.
+- Explica de forma sencilla qué ofrece cada material.
+- Acerca al usuario a la fuente original o a una descarga directa verificada.
 
-- `index.html`: portada y biblioteca.
-- `assets/css/style.css`: identidad visual responsive, accesibilidad y estilos de impresión.
-- `assets/js/app.js`: búsqueda, filtros, idioma y acciones de compartir/copiar alias.
-- `catalog.json`: catálogo de publicaciones.
-- `recursos/`: materiales descargables.
-- `docs/politica-de-contenidos.html`: política de derechos y publicación.
-- `manifest.webmanifest`: metadatos para una futura experiencia instalable.
+## Qué NO hace RUMA
+- No escribe libros, guías, fichas ni imprimibles.
+- No crea ni modifica obras de terceros.
+- No se atribuye la autoría de los materiales.
+- No promete que un archivo sea de dominio público mundial sin verificar los territorios pertinentes.
+- No cobra por acceder a los materiales.
 
-El sitio es estático: no requiere servidor propio, base de datos, cuentas, cookies de seguimiento ni servicios pagos. Está preparado para GitHub Pages. El buscador y los filtros funcionan en el navegador.
+## Diseño y experiencia
+Página corta, colorida, visual y multidispositivo. Categorías grandes, buscador visible, textos claros y controles básicos de lectura. Debe ser fácil para personas mayores y usuarios con poca experiencia digital.
 
-## Primera colección
+## Criterios mundiales de curaduría
+Cada ficha del catálogo debe identificar, cuando corresponda:
+- título y autor o institución responsable;
+- fuente original y enlace comprobado;
+- idioma y formato;
+- estado de derechos y licencia;
+- territorio o jurisdicción evaluada;
+- condiciones de uso, atribución y redistribución.
 
-La primera versión incluye seis recursos originales de RUMA, preparados como documentos HTML imprimibles en tamaño A4:
-- Planificador semanal.
-- Registro de gastos del hogar.
-- Diario de lectura.
-- Lista de compras y almacén.
-- Ficha para una idea comunitaria.
-- Señaladores para imprimir.
+**Importante:** que un archivo se pueda consultar gratis en Internet no significa que RUMA pueda alojarlo o redistribuirlo. Cuando no haya permiso claro para copiar el archivo, RUMA enlaza a la fuente legítima y explica las condiciones. Si los derechos son dudosos, no se incorpora.
 
-Se abren en una pestaña y se pueden guardar como PDF con la opción Imprimir del navegador. Los recursos originales de esta colección se ofrecen bajo **Creative Commons Atribución 4.0 Internacional (CC BY 4.0)**: se pueden compartir y adaptar con atribución, según los términos de esa licencia.
+## Catálogo
+El catálogo comienza vacío hasta incorporar materiales externos con procedencia y derechos verificados. Los seis imprimibles originales creados durante una etapa de prueba fueron retirados del catálogo: no forman parte del modelo editorial de RUMA.
 
-## La ley mundial de RUMA
+## Tecnología
+Sitio estático HTML, CSS y JavaScript. No requiere base de datos, cuentas de usuario ni servicios pagos. Preparado para GitHub Pages.
 
-1. **Acceso libre:** consultar y descargar sin pagar, registrarse ni entregar datos personales.
-2. **Donación voluntaria:** jamás condiciona el acceso, la descarga, la calidad ni la disponibilidad.
-3. **Derechos respetados:** solo se publican obras de dominio público verificado, materiales con licencias que permitan redistribución o archivos con autorización verificable.
-4. **Créditos intactos:** autoría, título, fuente y licencia visibles; se respetan todas las condiciones.
-5. **Transparencia territorial:** no se presume que una obra libre en un país lo sea en todo el mundo. Se evalúan autor, edición, traducción, ilustraciones y territorio.
-6. **Descarga clara:** sin publicidad invasiva, acortadores ni cadenas de enlaces.
-7. **Calidad antes que cantidad:** cada archivo se revisa y describe honestamente.
-8. **Accesibilidad:** navegación sencilla, móvil primero, textos claros y formatos imprimibles.
-9. **Sin discriminación económica:** quien no puede donar recibe exactamente el mismo acceso.
-10. **Crecimiento responsable:** desde San Patricio del Chañar hacia la Patagonia, Argentina y el mundo.
-
-## La caja de agradecimiento
-
-Alias: **ocarina.guitarra**  
-Titular: **Elías Martínez**
-
-Es una invitación, nunca una obligación. No es un precio, una compra ni una condición de uso.
-
-## Incorporar nuevos materiales
-
-Antes de sumar un archivo, completar su ficha con:
-- título, autoría y descripción;
-- categoría, idioma y formato;
-- fuente primaria y enlace verificable;
-- tipo de derecho: dominio público, licencia abierta o permiso;
-- territorio evaluado y fundamento;
-- condiciones de atribución y uso;
-- archivo final revisado y descarga funcional.
-
-**Si los derechos no están claros, el archivo no se publica.** Una obra gratuita en Internet no necesariamente puede redistribuirse. Las traducciones, ediciones, prólogos, ilustraciones y escaneos pueden tener derechos propios.
-
-## Estado de esta versión
-
-La estructura web y la primera colección de seis recursos originales ya están cargadas en el repositorio. La biblioteca literaria internacional todavía necesita una curaduría obra por obra; no se van a presentar enlaces externos como descargas alojadas por RUMA ni se van a inventar permisos. La activación pública de GitHub Pages depende de que Pages esté habilitado en la configuración del repositorio.
+## Agradecimiento voluntario
+Alias: **ocarina.guitarra** · Titular: **Elías Martínez**.  
+La colaboración es opcional y nunca condiciona el acceso.
 
 ## Identidad
-
-RUMA — Biblioteca digital comunitaria  
-Un proyecto de Ocarina Producciones  
-San Patricio del Chañar · Neuquén · Argentina  
-Tecnología y desarrollo: Elías Martínez / Ocarina Producciones
+Ocarina Producciones · San Patricio del Chañar · Neuquén · Argentina.
 
 **Tomá lo que necesites. Compartí lo que puedas. Agradecé si querés.**
