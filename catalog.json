@@ -1,0 +1,108 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-10-31",
+  "resources": [
+    {
+      "id": "plan-semanal",
+      "title": "Planificador semanal",
+      "description": "Organizá tareas, turnos, comidas y pequeños objetivos de toda la semana. Formato A4 para imprimir.",
+      "category": "papeleria",
+      "categoryLabel": "Papelería útil",
+      "icon": "▦",
+      "format": "A4 · HTML imprimible",
+      "rightsLabel": "Original RUMA · CC BY 4.0",
+      "file": "recursos/planificador-semanal.html",
+      "tags": [
+        "agenda",
+        "organización",
+        "semana",
+        "planner"
+      ]
+    },
+    {
+      "id": "presupuesto-hogar",
+      "title": "Registro de gastos del hogar",
+      "description": "Una hoja sencilla para anotar ingresos, gastos y prioridades sin complicaciones.",
+      "category": "papeleria",
+      "categoryLabel": "Papelería útil",
+      "icon": "＋",
+      "format": "A4 · HTML imprimible",
+      "rightsLabel": "Original RUMA · CC BY 4.0",
+      "file": "recursos/registro-gastos-hogar.html",
+      "tags": [
+        "presupuesto",
+        "dinero",
+        "familia",
+        "gastos"
+      ]
+    },
+    {
+      "id": "diario-lectura",
+      "title": "Mi diario de lectura",
+      "description": "Registrá libros, autores, frases favoritas y lo que te dejó cada lectura.",
+      "category": "aprendizaje",
+      "categoryLabel": "Aprendizaje",
+      "icon": "▤",
+      "format": "A4 · HTML imprimible",
+      "rightsLabel": "Original RUMA · CC BY 4.0",
+      "file": "recursos/diario-de-lectura.html",
+      "tags": [
+        "lectura",
+        "escuela",
+        "libros",
+        "estudio"
+      ]
+    },
+    {
+      "id": "lista-compras",
+      "title": "Lista de compras y almacén",
+      "description": "Una lista práctica por rubros para planificar compras y evitar olvidos.",
+      "category": "comunidad",
+      "categoryLabel": "Comunidad",
+      "icon": "☷",
+      "format": "A4 · HTML imprimible",
+      "rightsLabel": "Original RUMA · CC BY 4.0",
+      "file": "recursos/lista-de-compras.html",
+      "tags": [
+        "compras",
+        "hogar",
+        "alimentos",
+        "lista"
+      ]
+    },
+    {
+      "id": "proyecto-comunitario",
+      "title": "Ficha para una idea comunitaria",
+      "description": "Pasá de una buena intención a una propuesta concreta: necesidad, personas, tareas y próximos pasos.",
+      "category": "comunidad",
+      "categoryLabel": "Comunidad",
+      "icon": "♡",
+      "format": "A4 · HTML imprimible",
+      "rightsLabel": "Original RUMA · CC BY 4.0",
+      "file": "recursos/ficha-proyecto-comunitario.html",
+      "tags": [
+        "comunidad",
+        "proyecto",
+        "organización",
+        "barrio"
+      ]
+    },
+    {
+      "id": "marcapaginas",
+      "title": "Señaladores para imprimir",
+      "description": "Cuatro señaladores con mensajes amables para recortar, regalar y compartir.",
+      "category": "imprimir",
+      "categoryLabel": "Imprimir y decorar",
+      "icon": "✿",
+      "format": "A4 · HTML imprimible",
+      "rightsLabel": "Original RUMA · CC BY 4.0",
+      "file": "recursos/senaladores.html",
+      "tags": [
+        "marcapáginas",
+        "regalo",
+        "lectura",
+        "decoración"
+      ]
+    }
+  ]
+}
